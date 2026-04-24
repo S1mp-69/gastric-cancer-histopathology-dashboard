@@ -1,0 +1,13 @@
+{
+  "total_images": 31096,
+  "class_distribution": {
+    "ADI": 3887,
+    "DEB": 3887,
+    "LYM": 3887,
+    "MUC": 3887,
+    "MUS": 3887,
+    "NOR": 3887,
+    "STR": 3887,
+    "TUM": 3887
+  }
+}
