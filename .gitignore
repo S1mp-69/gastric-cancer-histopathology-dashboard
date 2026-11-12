@@ -3,16 +3,21 @@ __pycache__/
 .venv/
 .env
 app.db
-data/raw/*
-!data/raw/.gitkeep
-!data/raw/README.md
 data/uploads/*
 !data/uploads/.gitkeep
 models/checkpoints/*
 !models/checkpoints/.gitkeep
-!models/checkpoints/gastric_rnn_classifier.pt
 model_train/logs/*
 !model_train/logs/.gitkeep
-!model_train/logs/training_summary.json
 model_train/runs/*
 !model_train/runs/.gitkeep
+
+# Local research environments, data and immutable working outputs
+.venv*/
+.sync-backups/
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+stain_research/wheelhouse/
+stain_research/runs/
+stain_research/upstream/*.egg-info/

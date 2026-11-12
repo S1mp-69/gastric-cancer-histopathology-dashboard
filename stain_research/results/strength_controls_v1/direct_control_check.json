@@ -1,0 +1,24 @@
+{
+  "0.5": {
+    "direct_uniform_gain": 1.4250678051678871,
+    "interpolated_uniform_gain": 1.4249256022615358,
+    "direct_uniform_change_rms": 6.348266071121822,
+    "adaptive_change_rms": 6.347899546667257,
+    "adaptive_minus_direct_uniform": -0.12020335012829204,
+    "descriptive_stratified_image_bootstrap_95_interval": [
+      -0.2933549833522908,
+      0.026274698995402215
+    ]
+  },
+  "2.0": {
+    "direct_uniform_gain": 1.2532563253609865,
+    "interpolated_uniform_gain": 1.2532377186667885,
+    "direct_uniform_change_rms": 6.348266071121822,
+    "adaptive_change_rms": 6.347899546667257,
+    "adaptive_minus_direct_uniform": -0.08860668510498618,
+    "descriptive_stratified_image_bootstrap_95_interval": [
+      -0.2035350136107168,
+      0.010828398996477218
+    ]
+  }
+}

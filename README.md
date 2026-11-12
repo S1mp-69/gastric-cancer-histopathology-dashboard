@@ -2,8 +2,6 @@
 
 This project is a gastric cancer analysis website built around the GCHTID histopathology dataset, the notebook benchmark results, the clinical CSV, and the biomarker spreadsheet.
 
-This folder is the GitHub-safe version of the project. It keeps the code, support files, trained checkpoint, and benchmark artifacts, but leaves out the large raw image dataset, local virtual environment, uploads, and SQLite database file.
-
 ## What it includes
 
 - A gastric tissue classifier based on a lightweight CNN encoder plus BiLSTM and attention
@@ -16,13 +14,13 @@ This folder is the GitHub-safe version of the project. It keeps the code, suppor
   - confusion matrix display
   - clinical stage analysis
   - biomarker target exploration
-- A bundled trained checkpoint so the copied repo can still run predictions without the raw dataset
+- A fallback similarity model so the website still works even before a full checkpoint is trained
 
 ## Project structure
 
 - `app/`: FastAPI app, analytics layer, SQL models, inference logic, dashboard UI
 - `training/`: manifest generation and training scripts
-- `data/raw/`: empty in this GitHub-safe copy; add the extracted histopathology images here if you want full dataset-backed training or the fallback similarity mode
+- `data/raw/HMU-GC-HE-30K/all_image/`: extracted histopathology images
 - `data/support/`: clinical CSV, biomarker XLSX, notebook, and benchmark JSON
 - `data/uploads/`: uploaded inference samples
 - `models/checkpoints/`: trained model checkpoints
@@ -39,7 +37,7 @@ This folder is the GitHub-safe version of the project. It keeps the code, suppor
 
 ## Setup
 
-Use Python `3.11` if possible because the PyTorch dependency is most reliable there.
+Use Python `3.11` if possible (Python `3.12` is also supported by the pinned PyTorch build). The requirements file is configured for the official CUDA 12.8 wheels.
 
 ```powershell
 py -3.11 -m venv .venv
@@ -59,40 +57,29 @@ Then open:
 
 `http://127.0.0.1:8000`
 
-In this GitHub-safe copy, the included checkpoint is enabled by default so the upload demo can still work even before the raw dataset is downloaded.
-
 ## Train the model checkpoint
 
-Generate a manifest:
+Generate a new local-path manifest without overwriting prior manifests:
 
 ```powershell
-python -m training.prepare_manifest
+python -m training.prepare_manifest --output model_train/runs/dataset_manifest_local.csv
 ```
 
 Run training:
 
 ```powershell
-python -m training.train --epochs 5 --batch-size 32
+python -m training.train --epochs 40 --batch-size 32
 ```
 
-The trained checkpoint is saved to:
+Each training run is saved in its own timestamped folder under:
 
-`models/checkpoints/gastric_rnn_classifier.pt`
+`model_train/runs/`
 
-## Dataset download for full training and fallback mode
+The original checkpoint at `models/checkpoints/gastric_rnn_classifier.pt` is retained as the baseline. A new checkpoint is activated for the dashboard only when its validation accuracy exceeds that baseline; otherwise the fallback similarity model remains available.
 
-The raw image dataset is not bundled in this copy because it is too large for a normal GitHub repository.
+## Fallback inference mode
 
-Place the extracted dataset at:
-
-`data/raw/HMU-GC-HE-30K/all_image`
-
-Useful source links:
-
-- Kaggle dataset page: `https://www.kaggle.com/datasets/orvile/gastric-cancer-histopathology-tissue-image-dataset`
-- Figshare archive: `https://figshare.com/articles/dataset/Gastric_Cancer_Histopathology_Tissue_Image_Dataset_GCHTID_/25954813`
-
-Once the dataset is present, the training scripts and the fallback similarity mode can use the full image collection.
+If you do not train the checkpoint, the app still works using a fallback similarity model built from the real dataset. This keeps the upload workflow functional while the trained model is being prepared.
 
 ## Suggested presentation flow
 
@@ -108,5 +95,4 @@ Once the dataset is present, the training scripts and the fallback similarity mo
 - This project intentionally avoids ResNet50.
 - The "cancer percentage" is derived from tissue-class probabilities for reporting inside the dashboard.
 - The benchmark numbers displayed in the dashboard come from the provided notebook outputs and confusion matrix.
-- The GitHub-safe copy excludes the raw image dataset, `.venv`, `app.db`, and uploaded sample files.
 - For real medical deployment, the model must be validated further with clinical supervision.
