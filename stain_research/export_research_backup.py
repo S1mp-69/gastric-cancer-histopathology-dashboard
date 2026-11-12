@@ -77,7 +77,8 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     export_results()
-    paths = [ROOT / n for n in ['.gitignore', 'README.md', 'requirements.txt', 'database_schema.sql']]
+    paths = [ROOT / n for n in ['.gitignore', 'README.md', 'requirements.txt', 'database_schema.sql',
+                               'data/raw/.gitkeep', 'data/uploads/.gitkeep']]
     for directory in ['app', 'training']:
         paths += [p for p in (ROOT / directory).rglob('*') if p.is_file()
                   and '__pycache__' not in p.parts
@@ -87,7 +88,7 @@ def main():
     for directory in ['stain_research/upstream', 'stain_research/results']:
         paths += [p for p in (ROOT / directory).rglob('*') if p.is_file()
                   and '__pycache__' not in p.parts and not any(x.endswith('.egg-info') for x in p.parts)
-                  and (p.suffix in {'.py', '.md', '.txt', '.json', '.csv'} or p.name == 'LICENSE')]
+                  and (p.suffix in {'.py', '.md', '.txt', '.json', '.csv'} or p.name in {'LICENSE', '.gitignore'})]
     forbidden = re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|github_pat_[A-Za-z0-9_]{20,}|gh[pousr]_[A-Za-z0-9]{30,}|AKIA[A-Z0-9]{16}')
     elements, hashes = [], {}
     for path in sorted(set(paths)):

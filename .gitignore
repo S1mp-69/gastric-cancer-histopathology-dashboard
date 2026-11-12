@@ -21,3 +21,5 @@ data/raw/*
 stain_research/wheelhouse/
 stain_research/runs/
 stain_research/upstream/*.egg-info/
+model_train/active_model.json
+stain_research/upstream/example_images/
