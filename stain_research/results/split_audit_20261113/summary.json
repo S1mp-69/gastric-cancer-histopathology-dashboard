@@ -1,0 +1,55 @@
+{
+  "status": "PROVISIONAL exact-file-deduplicated image split; not patient independent",
+  "source_images": 31096,
+  "retained_unique_file_images": 29910,
+  "excluded_redundant_or_conflicting_images": 1186,
+  "retained_counts": {
+    "test": 3090,
+    "train": 23761,
+    "val": 3059
+  },
+  "retained_class_split_counts": {
+    "test/ADI": 388,
+    "test/DEB": 388,
+    "test/LYM": 381,
+    "test/MUC": 382,
+    "test/MUS": 389,
+    "test/NOR": 386,
+    "test/STR": 389,
+    "test/TUM": 387,
+    "train/ADI": 3032,
+    "train/DEB": 3046,
+    "train/LYM": 2847,
+    "train/MUC": 2821,
+    "train/MUS": 3098,
+    "train/NOR": 2752,
+    "train/STR": 3082,
+    "train/TUM": 3083,
+    "val/ADI": 384,
+    "val/DEB": 388,
+    "val/LYM": 375,
+    "val/MUC": 375,
+    "val/MUS": 388,
+    "val/NOR": 374,
+    "val/STR": 389,
+    "val/TUM": 386
+  },
+  "excluded_counts": {
+    "train": 1115,
+    "val": 51,
+    "test": 20
+  },
+  "policy": "Retain one lexicographically first representative per exact-file hash; prefer original test, then val, then train; conflicting-label groups excluded entirely",
+  "source_assignment_changes": 0,
+  "remaining_exact_hash_duplicates": 0,
+  "test_access": "Byte hashing only; test pixels not decoded and no test inference performed",
+  "remaining_limits": [
+    "Patient and slide mapping unavailable",
+    "Near-duplicate and alternate-encoding duplicate detection incomplete",
+    "Existing exploratory use of this dataset prevents claims of an independent replication"
+  ],
+  "patient_independent_training_ready": false,
+  "source_audit_sha256": "0e783538d55e82cc3d721fef72520c6e63392d91648dd64d9733b42758d90e8e",
+  "manifest_sha256": "46482e6205af93363078cb256559a4ba3e62c5297d10f9a82263c192e1093833",
+  "portable_manifest_sha256": "342a80ea4799fcbed394d7763d7d267c739106eb9f3d189b16211b61ccffa638"
+}

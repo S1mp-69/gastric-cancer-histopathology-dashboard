@@ -37,6 +37,14 @@ def export_results():
                 out = target / study / name
                 out.parent.mkdir(parents=True, exist_ok=True)
                 out.write_text(json.dumps(portable(json.loads(path.read_text(encoding='utf-8'))), indent=2) + '\n', encoding='utf-8')
+    for study, names in {'provenance_audit_20261113': ['local_provenance.json'],
+                         'split_audit_20261113': ['summary.json', 'baseline_plan.json', 'verification.json']}.items():
+        for name in names:
+            path = source / study / name
+            if path.is_file():
+                out = target / study / name
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_text(json.dumps(portable(json.loads(path.read_text(encoding='utf-8'))), indent=2) + '\n', encoding='utf-8')
     pilot = source / 'classifier_local_20261113'
     patterns = ['LOCAL_RESULTS.md', 'audit.json', 'gpu_verification.json', 'loader_checks.json',
                 'smoke_pilot_reproducibility.json', 'preservation_after.json',
