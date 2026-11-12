@@ -30,6 +30,11 @@ The inspected public repository file listing does not contain that split table
 or a patch-to-slide/patient mapping. No mapping was found in these checked sources;
 this is not a claim that none can exist elsewhere or be obtained from the authors.
 
+The paper's supplementary DOCX could not be inspected in this session: the PMC
+download returned an HTML page, and the publisher's alternate host could not be
+resolved. This access limit is recorded in the local supplementary_access.json;
+the supplement remains an unchecked resource, not evidence that no mapping exists.
+
 ## Provisional duplicate-controlled candidate
 
 `prepare_audited_split.py` verified the original image byte hashes and saved a
