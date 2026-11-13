@@ -1,0 +1,1 @@
+Private Overleaf import pending. Upload the ZIP, choose main.tex, use pdfLaTeX, and compile. No project link exists. Local Tectonic build is verified separately. Author details supplied by the student; guide is not listed as a coauthor without authorization.

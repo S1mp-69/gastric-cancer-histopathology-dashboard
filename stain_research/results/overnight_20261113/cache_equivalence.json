@@ -1,0 +1,390 @@
+{
+  "cases": 64,
+  "all_exact_pixel_matches": true,
+  "details": [
+    {
+      "class": "ADI",
+      "index": 0,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 0,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 0,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 0,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 1,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 1,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 1,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "ADI",
+      "index": 1,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3032,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3032,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3032,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3032,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3033,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3033,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3033,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "DEB",
+      "index": 3033,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6078,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6078,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6078,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6078,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6079,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6079,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6079,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "LYM",
+      "index": 6079,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8925,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8925,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8925,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8925,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8926,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8926,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8926,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUC",
+      "index": 8926,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11746,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11746,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11746,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11746,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11747,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11747,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11747,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "MUS",
+      "index": 11747,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14844,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14844,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14844,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14844,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14845,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14845,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14845,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "NOR",
+      "index": 14845,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17596,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17596,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17596,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17596,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17597,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17597,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17597,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "STR",
+      "index": 17597,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20678,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20678,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20678,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20678,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20679,
+      "strength": null,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20679,
+      "strength": 1.0,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20679,
+      "strength": 0.6415826293979074,
+      "exact_pixel_match": true
+    },
+    {
+      "class": "TUM",
+      "index": 20679,
+      "strength": 0.0,
+      "exact_pixel_match": true
+    }
+  ]
+}

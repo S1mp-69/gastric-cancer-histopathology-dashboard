@@ -1,0 +1,17 @@
+{
+  "directory": "stain_research\\cache\\float64-source-decomposition-v1_8d1a929be24c4162",
+  "key": "8d1a929be24c416232275322129f22599e6985faaebc6a4e0ea4f27c0f3b3ecb",
+  "source": {
+    "version": "float64-source-decomposition-v1",
+    "manifest_sha256": "46482e6205af93363078cb256559a4ba3e62c5297d10f9a82263c192e1093833",
+    "controller_sha256": "d611157d8eb8d8eab3c57f4f6dee765d6c3bab5078faba424e7807d403697e46",
+    "transform_sha256": "989c53992e39e4356092f34b536c44ae6f8da13c1290a215115e6ef98e8f28f9",
+    "cache_code_sha256": "4b6ba1ff14cd0ab078fe8510a5350bd81b55cbec31fbb42fe1ad6af2a1ce89ba",
+    "numpy": "2.2.5",
+    "resize": "PIL RGB resize 224x224 default bicubic; no geometry before decomposition",
+    "concentrations_dtype": "float64",
+    "diagnostics_dtype": "float64",
+    "image_hashes": "342b42e1ff33985a693ca4a73f870a46e6ee52090366a5b767a08e1ec920ed47",
+    "excluded_partition": "test"
+  }
+}

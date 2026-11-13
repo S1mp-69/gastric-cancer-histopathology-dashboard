@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-13T20:52:38+05:30",
+  "page_counts": {
+    "report": 24,
+    "presentation": 15
+  },
+  "automated_checks_passed": true,
+  "word_renderer": "Microsoft Word PDF export; Poppler rasterization",
+  "presentation_renderer": "Artifact Tool import/edit/export with finalizer",
+  "human_visual_review": "Initial reviewed template; refreshed numeric fields need normal presenter review",
+  "overleaf_import_complete": false
+}

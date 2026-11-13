@@ -1,0 +1,111 @@
+{
+  "status": "exploratory preprocessing control study, no classifier evidence",
+  "images": 80,
+  "excluded_previous_validation_images": 160,
+  "repeats_per_sigma": 3,
+  "results": {
+    "0.5": {
+      "fixed_gain": 1.724723360781573,
+      "condition_vs_fixed_gain_spearman": 0.3250117205813408,
+      "residual_vs_fixed_gain_spearman": 0.506727613689639,
+      "magnitude_matched_uniform_strength": 0.55722968725604,
+      "magnitude_matched_uniform_gain": 1.4249256022615358,
+      "matched_uniform_augmentation_rms": 6.347899548195885,
+      "shuffled_assignments": 500,
+      "matched_shuffled_mean_gain": 1.4140913681894989,
+      "matched_shuffled_gain_5_95_percentiles": [
+        1.3426348405411717,
+        1.4722936683249206
+      ],
+      "fraction_shuffles_at_least_as_stable_as_adaptive": 0.008,
+      "maximum_shuffled_rms_matching_error": 1.055854070841633e-09,
+      "components": {
+        "adaptive": {
+          "mean_gain": 1.3048644550395951,
+          "mean_augmentation_rms": 6.347899546667257,
+          "magnitude_matched_uniform_gain": 1.4249256022615358,
+          "difference_vs_matched_uniform": -0.12006114722194064,
+          "descriptive_stratified_image_bootstrap_95_interval": [
+            -0.29720839435407265,
+            0.019683210599596677
+          ]
+        },
+        "condition_only": {
+          "mean_gain": 1.2665574030692361,
+          "mean_augmentation_rms": 5.943302966827067,
+          "magnitude_matched_uniform_gain": 1.4005304862996464,
+          "difference_vs_matched_uniform": -0.13397308323041038,
+          "descriptive_stratified_image_bootstrap_95_interval": [
+            -0.3255054546695188,
+            0.024277514606516646
+          ]
+        },
+        "residual_only": {
+          "mean_gain": 1.4145219843792982,
+          "mean_augmentation_rms": 6.761077684174028,
+          "magnitude_matched_uniform_gain": 1.4497778194092348,
+          "difference_vs_matched_uniform": -0.03525583502993621,
+          "descriptive_stratified_image_bootstrap_95_interval": [
+            -0.21779688897308214,
+            0.12015072578747205
+          ]
+        }
+      }
+    },
+    "2.0": {
+      "fixed_gain": 1.471611586198264,
+      "condition_vs_fixed_gain_spearman": 0.43581809657759024,
+      "residual_vs_fixed_gain_spearman": 0.4315518049695265,
+      "magnitude_matched_uniform_strength": 0.55722968725604,
+      "magnitude_matched_uniform_gain": 1.2532377186667885,
+      "matched_uniform_augmentation_rms": 6.347899548195885,
+      "shuffled_assignments": 500,
+      "matched_shuffled_mean_gain": 1.2536502146004116,
+      "matched_shuffled_gain_5_95_percentiles": [
+        1.2066330065655422,
+        1.2874300299405144
+      ],
+      "fraction_shuffles_at_least_as_stable_as_adaptive": 0.0,
+      "maximum_shuffled_rms_matching_error": 1.0593739219189047e-09,
+      "components": {
+        "adaptive": {
+          "mean_gain": 1.1646496402560005,
+          "mean_augmentation_rms": 6.347899546667257,
+          "magnitude_matched_uniform_gain": 1.2532377186667885,
+          "difference_vs_matched_uniform": -0.08858807841078815,
+          "descriptive_stratified_image_bootstrap_95_interval": [
+            -0.21115738632570186,
+            0.007306224681819837
+          ]
+        },
+        "condition_only": {
+          "mean_gain": 1.1567995558882487,
+          "mean_augmentation_rms": 5.943302966827067,
+          "magnitude_matched_uniform_gain": 1.2369842237769362,
+          "difference_vs_matched_uniform": -0.08018466788868725,
+          "descriptive_stratified_image_bootstrap_95_interval": [
+            -0.20872842108624498,
+            0.024400825137383054
+          ]
+        },
+        "residual_only": {
+          "mean_gain": 1.2711369590470658,
+          "mean_augmentation_rms": 6.761077684174028,
+          "magnitude_matched_uniform_gain": 1.2701249957593945,
+          "difference_vs_matched_uniform": 0.0010119632876716092,
+          "descriptive_stratified_image_bootstrap_95_interval": [
+            -0.13164258008054586,
+            0.11275017701358275
+          ]
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Offline magnitude matching uses validation image changes, not a deployable policy.",
+    "Fixed/shuffled scores interpolate 21-point strength curves; adaptive scores are direct.",
+    "Matching controls mean per-image RGB RMS, not every image or OD/pixel-change distribution.",
+    "Image bootstrap ignores unknown slide/patient clustering and controller fit uncertainty.",
+    "Synthetic noise only; no clinical, classification or uniqueness claim."
+  ]
+}
