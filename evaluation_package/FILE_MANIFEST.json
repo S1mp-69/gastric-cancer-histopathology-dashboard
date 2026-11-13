@@ -1,4 +1,8 @@
 {
+  "DELIVERY_STATUS.json": {
+    "bytes": 1117,
+    "sha256": "37b6c0ca22ca215e1ada1c97075e53291a2ffda1707b27e65b8143ac97d998e1"
+  },
   "DEMO_CHECKLIST.md": {
     "bytes": 1067,
     "sha256": "972456a40ae6f2934f95a4e718b196f274666f8081c66f823ac781afedb43cfc"
@@ -17,7 +21,15 @@
   },
   "last_refresh.json": {
     "bytes": 445,
-    "sha256": "e9e6ccd6f9bc2a933bc84a77906d61fbab9a8518518880b12d9ad3320c6305d6"
+    "sha256": "ea2b8af18551e31f8aea992b54878917ad5ebe07f12c0420266c97d35243c9de"
+  },
+  "MORNING_STATUS_20261113_0900.md": {
+    "bytes": 4772,
+    "sha256": "346e93824ec607646c98e5a3ab5a849cc296a3054508205dd09fb0e114b78b5e"
+  },
+  "OTHER_PC_OVERNIGHT_PROMPT.md": {
+    "bytes": 3519,
+    "sha256": "3ecc2691f4dfc4073cbb7f935163b37262f4b08fb9f71d7d3365f596e2cd6aa4"
   },
   "Overleaf_Paper_Source.zip": {
     "bytes": 76157,
@@ -26,6 +38,14 @@
   "OVERLEAF_STATUS.md": {
     "bytes": 423,
     "sha256": "31d6b2c59689af6c287d0a0737d7d7b9183842395a6f741353b5ee0441938751"
+  },
+  "OVERNIGHT_REVIEW_20261113.md": {
+    "bytes": 4783,
+    "sha256": "e3b562b38382951045056c529a8676d914b420a528908ff9974f19fca9ced936"
+  },
+  "PACKAGE_READY.json": {
+    "bytes": 492,
+    "sha256": "0221aa302a7b059040761e598d44f12a87d4bab08c577e1f0f9e811e94173269"
   },
   "Presentation_Script_and_Viva.md": {
     "bytes": 5727,
@@ -47,6 +67,10 @@
     "bytes": 305685,
     "sha256": "1078c3672f07621100bc96e6fa7d3bd16e92a1a047eb182dec2992efb31fe919"
   },
+  "REPORT_TEMPLATE_STATUS.json": {
+    "bytes": 628,
+    "sha256": "4879369bece2aa0cdfcc550347283a7054040795255e96bf4985fc25648b8a90"
+  },
   "START_HERE.md": {
     "bytes": 1855,
     "sha256": "84948202e70bf3075a1e0d0762a12e5a24b83cc749255bcea0ea0179b8c301c3"
@@ -60,12 +84,16 @@
     "sha256": "b6b5a257feeddb4dddc4d4683c96c1f8d86e66a47c591ed219a6d808d3ecf86c"
   },
   "final_results/FINAL_RESULTS.md": {
-    "bytes": 1838,
-    "sha256": "9dc1197a7dff7dde7961323982fff5a0734650b68a7bf5889b1cbc232e0c365c"
+    "bytes": 1848,
+    "sha256": "dbe0d6b09a4f5ea3661059e638efa9fcb5e487518a502b8002531f312424a5ce"
   },
   "final_results/learning_curves.png": {
     "bytes": 279466,
     "sha256": "a05ff9d936d2a104a3a211a7026fc35d65d9b160d42f3f1fd4712b486dfa9e03"
+  },
+  "final_results/preservation_after.json": {
+    "bytes": 112,
+    "sha256": "2a997b64ecfb55c98f255e2dffdbad55b7db75cbe31aaf3d025751d84abc40a1"
   },
   "final_results/summary.csv": {
     "bytes": 436,
@@ -82,5 +110,9 @@
   "overleaf/README.md": {
     "bytes": 260,
     "sha256": "3c8676e171488e704a9517e45d9dc3ced1976cd3a4ee3d1e420fd78981f9e3ae"
+  },
+  "templates/Project_Report_Format.docx": {
+    "bytes": 3738850,
+    "sha256": "970a14861f293d95190de9b971eb9b4050de5b169e58a2ae51ff40787890f056"
   }
 }
