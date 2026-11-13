@@ -30,6 +30,18 @@ def export_results():
     source = ROOT / 'stain_research/runs'
     target = ROOT / 'stain_research/results'
     target.mkdir(exist_ok=True)
+    campaign = source / 'overnight_20261113'
+    for pattern in ['campaign_config.json', 'cpu_benchmark.json', 'throughput_benchmark.json',
+                    'cache_reference.json', 'cache_equivalence.json', 'amp_recovery_verification.json',
+                    'recovery_confirmed.json', 'campaign_state.json', 'worker_failures.json',
+                    'seed*/history.json', 'seed*/metrics.json', 'seed*/progress.json']:
+        for path in campaign.glob(pattern):
+            out = target / campaign.name / path.relative_to(campaign)
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(json.dumps(portable(json.loads(path.read_text(encoding='utf-8'))), indent=2) + '\n', encoding='utf-8')
+    rehearsal = source / 'demo_20261113/rehearsal.json'
+    if rehearsal.exists():
+        (target / 'demo_rehearsal_20261113.json').write_text(json.dumps(portable(json.loads(rehearsal.read_text(encoding='utf-8'))), indent=2) + '\n', encoding='utf-8')
     for study in ['controller_v1', 'strength_controls_v1', 'decomposition_audit', 'preprocessing_v1']:
         for name in ['summary.json', 'direct_control_check.json', 'stain_parameters.json', 'training_parameters.json']:
             path = source / study / name
@@ -84,7 +96,7 @@ def main():
                   and '__pycache__' not in p.parts
                   and p.suffix in {'.py', '.html', '.js', '.css', '.svg'}]
     paths += [p for p in (ROOT / 'stain_research').glob('*') if p.is_file()
-              and p.suffix in {'.py', '.md', '.txt'}]
+              and p.suffix in {'.py', '.md', '.txt', '.mjs', '.ps1'}]
     for directory in ['stain_research/upstream', 'stain_research/results']:
         paths += [p for p in (ROOT / directory).rglob('*') if p.is_file()
                   and '__pycache__' not in p.parts and not any(x.endswith('.egg-info') for x in p.parts)

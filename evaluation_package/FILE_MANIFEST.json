@@ -1,0 +1,86 @@
+{
+  "DEMO_CHECKLIST.md": {
+    "bytes": 1067,
+    "sha256": "972456a40ae6f2934f95a4e718b196f274666f8081c66f823ac781afedb43cfc"
+  },
+  "evaluation_snapshot.json": {
+    "bytes": 95754,
+    "sha256": "c6c6fcf1898b0a1ed89ce984423b847a6cf5beedbc2ac651616c5247cb5e261b"
+  },
+  "IEEE_LOCAL_BUILD.json": {
+    "bytes": 196,
+    "sha256": "427b0845404566b64d8841e55803edb9dd51f2f4e933a85336051ac30dccd334"
+  },
+  "IEEE_Paper_Draft.pdf": {
+    "bytes": 72500,
+    "sha256": "43d1abe448d11c140f0272e380d1cf401518a54393312d5967a973bfff7fd82b"
+  },
+  "last_refresh.json": {
+    "bytes": 445,
+    "sha256": "e9e6ccd6f9bc2a933bc84a77906d61fbab9a8518518880b12d9ad3320c6305d6"
+  },
+  "Overleaf_Paper_Source.zip": {
+    "bytes": 76157,
+    "sha256": "0f734800b4c5f7a85a2fe56be541cbb3ea4e796e4e53bfa89323b9693a6186f1"
+  },
+  "OVERLEAF_STATUS.md": {
+    "bytes": 423,
+    "sha256": "31d6b2c59689af6c287d0a0737d7d7b9183842395a6f741353b5ee0441938751"
+  },
+  "Presentation_Script_and_Viva.md": {
+    "bytes": 5727,
+    "sha256": "c7797d0357559ac6de8ac7be72559e4784ea43a00de83e750bdeca18c195ae2c"
+  },
+  "Progress_Presentation.pdf": {
+    "bytes": 156298,
+    "sha256": "68223b3ff89d01645dd4cecdea6d38e89c6b4f9d6094381e97e5045c14b3ad6c"
+  },
+  "Progress_Presentation.pptx": {
+    "bytes": 66000,
+    "sha256": "9c612cc59dd15c95a2f49dd6f5f1c21c20e52d1ed9626b6d9a2bb0e964a3929a"
+  },
+  "Progress_Report.docx": {
+    "bytes": 3662784,
+    "sha256": "c737f024c57e29e0498f48c73191ec8470e46ab652fc694783aef33df5341749"
+  },
+  "Progress_Report.pdf": {
+    "bytes": 305685,
+    "sha256": "1078c3672f07621100bc96e6fa7d3bd16e92a1a047eb182dec2992efb31fe919"
+  },
+  "START_HERE.md": {
+    "bytes": 1855,
+    "sha256": "84948202e70bf3075a1e0d0762a12e5a24b83cc749255bcea0ea0179b8c301c3"
+  },
+  "final_results/analysis.json": {
+    "bytes": 50752,
+    "sha256": "b1c03282b3fe2abd5ae389584f798ca3645e37266547bb36e458e205182e9b18"
+  },
+  "final_results/confusion_matrices.png": {
+    "bytes": 191644,
+    "sha256": "b6b5a257feeddb4dddc4d4683c96c1f8d86e66a47c591ed219a6d808d3ecf86c"
+  },
+  "final_results/FINAL_RESULTS.md": {
+    "bytes": 1838,
+    "sha256": "9dc1197a7dff7dde7961323982fff5a0734650b68a7bf5889b1cbc232e0c365c"
+  },
+  "final_results/learning_curves.png": {
+    "bytes": 279466,
+    "sha256": "a05ff9d936d2a104a3a211a7026fc35d65d9b160d42f3f1fd4712b486dfa9e03"
+  },
+  "final_results/summary.csv": {
+    "bytes": 436,
+    "sha256": "608c004e8e5e06d47b3a67a134561e88deda9473e23f2e0d4f2e9bd68dd047f9"
+  },
+  "overleaf/IEEEtran.cls": {
+    "bytes": 281957,
+    "sha256": "da751920a317ed318b7b5cd7fa585a6cc7d28502d457856382e9be24b10a3bd7"
+  },
+  "overleaf/main.tex": {
+    "bytes": 18189,
+    "sha256": "85f7d5a49a2faef7bcd0f064e60e59d14604e1113562a3da5b0d724c1bc822bc"
+  },
+  "overleaf/README.md": {
+    "bytes": 260,
+    "sha256": "3c8676e171488e704a9517e45d9dc3ced1976cd3a4ee3d1e420fd78981f9e3ae"
+  }
+}

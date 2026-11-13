@@ -1,0 +1,181 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb,booktabs,url}
+\title{Decomposition-Aware Stain Augmentation for Gastric Histopathology: An Exploratory Study}
+\author{\IEEEauthorblockN{Amlan Choudhury}\IEEEauthorblockA{School of Computer Science and Engineering\\KIIT Deemed to be University}}
+\begin{document}
+\maketitle
+\begin{abstract}
+We investigate whether stain-decomposition diagnostics can guide residual-preserving augmentation for eight-class gastric tissue classification. A CNN--BiLSTM--attention classifier is evaluated using standard, residual-fixed, uniformly weaker and adaptive augmentation. An exact-file-controlled provisional split retains 23,761 training and 3,059 validation images; patient independence remains unverified. All 12 bounded runs completed across three matched seeds per arm. Adaptive mean validation macro-F1 was $0.6836\pm0.0047$, versus $0.6776\pm0.0106$ for standard and $0.6822\pm0.0141$ for fixed augmentation. Mean tumor recall fell from 79.97\% for standard to 75.56\% for adaptive. Paired seed differences against fixed changed sign, and exploratory uncertainty was wide. A historical three-epoch pilot did not establish benefit beyond weaker controls. Preprocessing numerical stability, classifier validation and legacy notebook metrics are kept distinct. The results support a reproducible exploratory method and identify data-provenance limitations, but do not establish superiority, novelty or clinical benefit. Final test inference remains reserved.
+\end{abstract}
+\begin{IEEEkeywords}
+gastric histopathology, stain augmentation, decomposition diagnostics, recurrent attention, data leakage
+\end{IEEEkeywords}
+
+\section{Introduction}
+Eight-class tissue analysis provides a way to examine the constituent regions of gastric histopathology images. HMU-GC-HE-30K contains 31,096 labeled patches derived from 300 whole-slide images \cite{lou}. Practical research must distinguish predictive performance from preprocessing behavior and account for dependence between related images.
+
+We extend a tissue-classification application with an experimental augmentation controller. The question is whether stain-decomposition diagnostics provide useful information for assigning augmentation strength. Numerical stability is evaluated separately from a limited downstream classification experiment. The work comprises a controller, matched preprocessing controls, a GPU pilot, and a duplication audit. These are exploratory contributions. Priority over all existing methods and superior classification are not established.
+
+\section{Related Work}
+Lou et al. introduced the gastric dataset and evaluated ViT and EfficientNet-based classifiers \cite{lou}. Their reported AUC values and protocol cannot be compared directly with accuracy from our brief pilot.
+
+Stain SAN samples stain matrices from a training-derived target distribution and combines augmentation with normalization \cite{kim}. Its authors explicitly propose alternative target distributions as future work. Implementing those suggestions alone does not establish methodological invention. Our SVD implementation is attributed to their published method and MIT-licensed code.
+
+Marini et al. evaluate generated stain styles against a large reference database and discard inadmissible variations \cite{marini}. Their method is closely related to quality-controlled augmentation. Our candidate uses source-decomposition fit and conditioning instead of reference-style admissibility. That distinction motivates experiments but does not establish sufficient novelty by itself. Broader adaptive-augmentation literature must be considered before publication claims.
+
+CASA, a 2026 preprint, uses adversarial stain perturbations with budgets calibrated from multicenter data \cite{hong}. It further demonstrates that controlling perturbation budgets is established related work. The present study tests a different source-diagnostic signal without claiming calibrated coverage guarantees.
+
+\section{Application and Architecture}
+The application accepts a tissue image through FastAPI and stores predictions in SQLite. HTML, CSS and JavaScript provide image upload, probability display, dataset summaries and prediction history. Clinical and biomarker tables support separate dashboard exploration and are not fused with image features.
+
+An RGB image is resized to $224\times224$ and divided into sixteen $56\times56$ subpatches in raster order. A shared CNN uses channel widths 32, 64 and 128, batch normalization, ReLU and pooling. A projection produces 128 features per subpatch. A two-layer bidirectional LSTM uses hidden size 128 per direction. Additive attention aggregates its 256-dimensional outputs. The classifier maps through 128 hidden units to eight logits, with dropout 0.2. The architecture is identical across classifier arms.
+
+Classes are adipose (ADI), debris (DEB), lymphocytes (LYM), mucus (MUC), muscle (MUS), normal mucosa (NOR), stroma (STR) and tumor epithelium (TUM). Tissue classification does not establish patient diagnosis or tumor area. The historical dashboard's weighted ``cancer percentage'' is excluded from scientific outcomes.
+
+\section{Experimental Controller}
+Let $V$ denote optical density, $W\in\mathbb{R}^{3\times2}$ the SVD stain matrix, and $H$ least-squares concentrations. Tissue pixels have optical-density norm greater than 0.3. Diagnostics are
+\begin{equation}
+ e=\frac{\|V-WH\|_F}{\max(\|V\|_F,\epsilon)},\qquad k=\log\kappa(W),
+\end{equation}
+with residual norms computed on tissue pixels. They describe numerical fit and conditioning, not medical image quality.
+
+Training-only tenth and ninetieth percentiles $l_j,u_j$ define risk and strength:
+\begin{equation}
+ q=\frac12\sum_{j=1}^{2}\operatorname{clip}\left(\frac{x_j-l_j}{\max(u_j-l_j,\epsilon)},0,1\right),
+ \qquad \alpha=1-0.9q.
+\end{equation}
+The constants are fixed exploratory choices. A target $W_t$ follows the training-fitted spherical Gaussian baseline, clipped to nonnegative components. With $s\sim U(0.8,1.2)$, tissue density is updated by
+\begin{equation}
+ V_{\mathrm{new}}=V+\alpha(W_ts-W)H.
+\end{equation}
+This retains the source decomposition residual. Fixed, weaker, shuffled and adaptive residual arms share this reconstruction so residual retention cannot be mistaken for a controller effect. Failed extraction returns the source unchanged. Geometric augmentation remains available during training.
+
+\section{Evaluation Protocol}
+\subsection{Preprocessing studies}
+The controller fit used 160 training images, 20 per class. A separate 160-image validation sample received six independent disturbances per image. Clean and noisy inputs shared the sampled target and intensity factor. Sensitivity gain was output-pair RMS difference divided by input-pair RMS difference. It measures noise response rather than classification.
+
+A follow-up excluded those validation images and sampled 80 others. It reused the training fit and tested Gaussian RGB noise with standard deviations 0.5 and 2.0 intensity levels, three realizations per image. Fixed-strength curves used 21 values. Uniform and 500 shuffled controls were matched to mean per-image RGB change. This validation-level matching is an offline control, not a deployment policy. Direct uniform-control calculations checked interpolation. Image-bootstrap intervals omit unknown patient clustering.
+
+\subsection{Duplication and provenance}
+Byte-hash auditing found 932 exact-duplicate groups containing 2,118 of the 31,096 files. Of these, 334 crossed historical splits and 165 spanned training and test. No cross-class exact-file conflicts were found. All duplicate identities were quarantined from pilot selection. Selected training and validation images were also checked for decoded-pixel equality.
+
+A later provisional manifest retained 29,910 unique-file representatives: 23,761 training, 3,059 validation and 3,090 test images. Representative priority preserved historical test membership, then validation, then training. No retained image changed its historical split. This later manifest was not used for the small classifier pilot below; it is used for the separate extended image-level campaign. Exact-file deduplication does not resolve near-duplicates or unknown patient dependence. Verified patch-to-slide/patient mapping is unavailable. Test bytes were hashed for audit only, with no test inference.
+
+\subsection{Classifier pilot}
+The pilot used 512 training and 128 validation images, balanced across classes, seed 42, three epochs per arm and batch size 16. Arms shared initialization, batch order, geometry and an AdamW budget. Stain and channel statistics were fitted on pilot training data only. Validation used deterministic raw RGB preprocessing with shared training-fitted channel standardization.
+
+Six arms compared standard color augmentation, original-compatible spherical SAN, residual-preserving fixed SAN, uniformly weaker SAN, shuffled strengths and the adaptive controller. Every best checkpoint was reloaded before evaluation. Hardware was an RTX 3050 Laptop GPU with 4 GB VRAM, using PyTorch 2.7.0 and CUDA 12.8. These short runs assess feasibility and failure modes, rather than converged performance.
+
+\section{Results}
+Initial diagnostic risk correlated with fixed-arm sensitivity (Spearman $\rho=0.557$). Follow-up adaptive gains were lower than matched uniform means (Table~\ref{tab:noise}). Direct calculations reproduced uniform gains within 0.00015. However, descriptive image-bootstrap intervals for adaptive-minus-uniform included zero at both noise levels. The residual-only component did not show consistent benefit. These findings motivate further tests without confirming robustness.
+
+\begin{table}[t]\caption{Follow-up sensitivity gain. Lower indicates less synthetic noise amplification.}\label{tab:noise}\centering
+\begin{tabular}{lrrr}\toprule
+Noise sigma & Fixed & Matched uniform & Adaptive\\\midrule
+0.5 & 1.7247 & 1.4249 & 1.3049\\
+2.0 & 1.4716 & 1.2532 & 1.1646\\\bottomrule
+\end{tabular}\end{table}
+
+\begin{table}[t]\caption{Three-epoch classifier pilot. These are validation outcomes, not independent test results.}\label{tab:pilot}\centering
+\begin{tabular}{lrr}\toprule
+Arm & Accuracy (\%) & Macro-F1\\\midrule
+Standard & 33.59 & 0.2438\\
+Original SAN & 32.81 & 0.2177\\
+Residual fixed & 30.47 & 0.2323\\
+Uniform weaker & 33.59 & 0.2802\\
+Shuffled & 35.94 & 0.2768\\
+Adaptive & 35.16 & 0.2651\\\bottomrule
+\end{tabular}\end{table}
+
+The adaptive classifier did not exceed weaker or shuffled controls in macro-F1 (Table~\ref{tab:pilot}). Adaptive tumor and normal-mucosa recall were zero on their respective 16-image validation subsets. Uniformly weaker augmentation obtained tumor recall 0.625. These outcomes warrant attention, but the short budget prevents attributing them to a stable treatment effect. No pilot model was activated in the dashboard.
+
+
+\section{Extended Image-Level Campaign}
+The subsequent campaign uses the provisional exact-file-controlled manifest with
+23,761 training and 3,059 validation images. The 3,090 test images remain outside
+tuning and inference. Patient linkage is unavailable, so these image-level
+validation results cannot establish patient-independent generalization.
+
+Standard augmentation, residual-preserving fixed augmentation, uniformly weaker
+augmentation and the full controller share initialization within each seed,
+geometry streams, ordering, optimizer, a 40-epoch ceiling and early stopping
+with patience seven on validation macro-F1. A validation-loss scheduler halves
+the learning rate after two non-improving epochs. Training-only cached diagnostics
+fit the controller and stain parameters. Three epochs are not a convergence claim.
+
+Float64 cached decompositions reproduced uncached controller output exactly in
+64 checks. The cache covers training and validation only. Two ADI extractions
+failed and retain unchanged-image fallback. Targets, intensities and geometry
+remain stochastic. Main CPU threads are limited to two and each loader worker
+to one. A training-only warm-cache benchmark selected batch 64 and four workers,
+achieving 238.7 images/s, while batch 96 failed the VRAM-headroom rule.
+This joint configuration comparison does not isolate cache speedup.
+
+\begin{table}[t]\caption{Extended campaign snapshot at 13 Nov 2026 20:52 IST. Seed 42 illustration; all four runs are complete and use their selected best checkpoints. Dashes denote
+unavailable measurements.}\label{tab:overnight}\centering
+\begin{tabular}{lrrr}\toprule
+Arm & Epoch & Accuracy (\%) & Macro-F1\\\midrule
+Standard & 40 & 68.65 & 0.6867\\
+Residual fixed & 34 & 66.72 & 0.6661\\
+Uniform weaker & 40 & 67.80 & 0.6760\\
+Adaptive & 40 & 69.01 & 0.6888\\
+\bottomrule\end{tabular}\end{table}
+
+Completed-run metrics reload the saved best checkpoint. Frequent resumable
+checkpoints include optimizer, scheduler, scaler, random states and mid-epoch
+position. No research checkpoint is activated in the application. The 09:00
+reporting snapshot does not stop the bounded campaign. Novelty and clinical
+benefit remain unconfirmed, and any preliminary between-arm differences require
+replication and a verified grouped or external evaluation design.
+
+
+\section{Completed Three-Seed Comparison}
+All 12 bounded runs completed, using seeds 42, 43 and 44 for each arm.
+Results below are validation mean and sample standard deviation across seeds;
+the same 3,059 validation images recur, so these are not independent cohorts.
+\begin{table}[t]\caption{Completed campaign validation results, three seeds per arm.}\centering
+\begin{tabular}{lrr}\toprule
+Arm & Accuracy (\%) & Macro-F1\\\midrule
+Standard & $67.70\pm1.15$ & $0.6776\pm0.0106$\\
+Residual fixed & $68.30\pm1.38$ & $0.6822\pm0.0141$\\
+Uniform weaker & $68.22\pm0.63$ & $0.6804\pm0.0061$\\
+Adaptive & $68.41\pm0.59$ & $0.6836\pm0.0047$\\
+\bottomrule\end{tabular}\end{table}
+Adaptive minus standard macro-F1 differences were 0.0021, 0.0023 and 0.0137;
+adaptive minus fixed differences were 0.0227, -0.0101 and -0.0084. The mean
+adaptive advantage over fixed was only 0.0014. Exploratory paired 95\% Student
+$t$ intervals with two degrees of freedom were [-0.0105,0.0225] versus standard,
+[-0.0445,0.0473] versus fixed and [-0.0223,0.0286] versus weaker. These wide
+intervals assume approximately normal independent seed differences, use only
+three seeds, are not multiplicity adjusted and do not quantify patient uncertainty.
+No superiority claim follows from them.
+
+Mean TUM recall was 79.97\% for standard and 75.56\% for adaptive; mean DEB
+recall was 65.72\% and 62.89\%, respectively. Adaptive improved mean ADI, MUS,
+NOR and STR recall, but had higher mean ten-bin calibration error (0.0213 versus
+0.0157). The numerical tradeoffs preclude a uniform or clinical-benefit claim.
+Checkpoint hashes, per-seed initialization hashes, common configurations,
+ordered validation identities, finite best-model tensors, saved prediction
+metrics and resumable-state keys passed audit. This does not independently
+repeat all inference or prove bit-identical interrupted optimization. AMP and
+Windows file-lock recoveries remain documented. The final test set is untouched.
+Shuffled diagnostic assignments were not tested at this full budget. Patient
+mapping, near-duplicate control and independent external validation are unresolved.
+
+\section{Discussion and Limitations}
+Lower preprocessing sensitivity does not establish better tissue discrimination. A controller may suppress useful training variation or affect classes differently. Controls must separate residual preservation, perturbation magnitude and diagnostic assignment.
+
+The historical pilot used one seed and three epochs. The completed campaign uses three seeds, but shares validation images and validation-based checkpoint selection; prior exploratory validation use also restricts inference. Exact-file auditing improves reproducibility but does not establish patient independence. No external clinical validation, real scanner robustness or tumor-area measurement is provided. The weighted dashboard score must not be interpreted as a clinical probability.
+
+Three matched seeds per arm are now complete. Next steps are verified grouping, a fuller related-work review and a locked independent evaluation design. Final choices should be confirmed on an untouched grouped or external cohort. The paper's current contribution is an exploratory mechanism and transparent evaluation, with novelty still subject to a complete related-work review.
+
+\section{Conclusion}
+A decomposition-aware controller and reproducible research workflow were implemented. Preprocessing means favored adaptive control on sampled images, with inconclusive image-level intervals. The short classifier pilot did not establish benefit beyond weaker or random controls. Duplicate leakage and unavailable patient linkage remain immediate concerns. The completed campaign has a modest adaptive mean macro-F1 lead with worse tumor recall than standard and sign changes against fixed control. Superiority, novelty and improved diagnosis remain unconfirmed.
+
+\begin{thebibliography}{4}
+\bibitem{lou} S. Lou et al., ``A large histological images dataset of gastric cancer with tumour microenvironment annotation for AI,'' \emph{Scientific Data}, vol. 12, art. 138, 2025, doi: 10.1038/s41597-025-04489-9.
+\bibitem{kim} T. Kim et al., ``Stain SAN: simultaneous augmentation and normalization for histopathology images,'' \emph{Journal of Medical Imaging}, vol. 11, no. 4, art. 044006, 2024, doi: 10.1117/1.JMI.11.4.044006.
+\bibitem{marini} N. Marini et al., ``Data-driven color augmentation for H\&E stained images in computational pathology,'' \emph{Journal of Pathology Informatics}, vol. 14, art. 100183, 2023, doi: 10.1016/j.jpi.2022.100183.
+\bibitem{hong} M. Hong, ``Physics-grounded adversarial stain augmentation with calibrated coverage guarantees,'' \emph{arXiv preprint arXiv:2605.13889}, 2026, doi: 10.48550/arXiv.2605.13889.
+\end{thebibliography}
+\end{document}

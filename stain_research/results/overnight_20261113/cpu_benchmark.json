@@ -1,0 +1,30 @@
+{
+  "sample_images": 128,
+  "input_policy": "TRAIN only, warm filesystem cache",
+  "read_verify_decode_resize_seconds": 0.33705319999990024,
+  "read_verify_decode_resize_images_per_second": 379.76200789678865,
+  "decomposition_cpu_trials": [
+    {
+      "threads": 1,
+      "blas_threads_per_task": 1,
+      "seconds": 1.5733809999999266,
+      "images_per_second": 81.35346746910378,
+      "extraction_successes": 128
+    },
+    {
+      "threads": 2,
+      "blas_threads_per_task": 1,
+      "seconds": 0.9084970999999769,
+      "images_per_second": 140.89202926459893,
+      "extraction_successes": 128
+    },
+    {
+      "threads": 4,
+      "blas_threads_per_task": 1,
+      "seconds": 0.6172321999999895,
+      "images_per_second": 207.3773856905103,
+      "extraction_successes": 128
+    }
+  ],
+  "selected_cache_threads": 4
+}

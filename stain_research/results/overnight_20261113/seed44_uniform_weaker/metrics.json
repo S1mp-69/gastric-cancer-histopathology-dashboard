@@ -1,0 +1,164 @@
+{
+  "arm": "uniform_weaker",
+  "seed": 44,
+  "best_epoch": 40,
+  "completed_epochs": 40,
+  "stop_reason": "maximum_epoch_budget",
+  "validation": {
+    "accuracy": 0.6894409937888198,
+    "macro_f1": 0.6873346585026894,
+    "loss": 0.8392269254616701,
+    "per_class": {
+      "ADI": {
+        "precision": 0.8202247191011236,
+        "recall": 0.7604166666666666,
+        "f1-score": 0.7891891891891892,
+        "support": 384.0
+      },
+      "DEB": {
+        "precision": 0.625,
+        "recall": 0.7474226804123711,
+        "f1-score": 0.6807511737089202,
+        "support": 388.0
+      },
+      "LYM": {
+        "precision": 0.8455497382198953,
+        "recall": 0.8613333333333333,
+        "f1-score": 0.8533685601056803,
+        "support": 375.0
+      },
+      "MUC": {
+        "precision": 0.6649746192893401,
+        "recall": 0.6986666666666667,
+        "f1-score": 0.6814044213263979,
+        "support": 375.0
+      },
+      "MUS": {
+        "precision": 0.7927170868347339,
+        "recall": 0.729381443298969,
+        "f1-score": 0.7597315436241611,
+        "support": 388.0
+      },
+      "NOR": {
+        "precision": 0.5451612903225806,
+        "recall": 0.45187165775401067,
+        "f1-score": 0.49415204678362573,
+        "support": 374.0
+      },
+      "STR": {
+        "precision": 0.717391304347826,
+        "recall": 0.5089974293059126,
+        "f1-score": 0.5954887218045113,
+        "support": 389.0
+      },
+      "TUM": {
+        "precision": 0.5615384615384615,
+        "recall": 0.7564766839378239,
+        "f1-score": 0.6445916114790287,
+        "support": 386.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        292,
+        7,
+        1,
+        49,
+        13,
+        14,
+        0,
+        8
+      ],
+      [
+        1,
+        290,
+        13,
+        15,
+        13,
+        18,
+        11,
+        27
+      ],
+      [
+        1,
+        12,
+        323,
+        0,
+        0,
+        13,
+        7,
+        19
+      ],
+      [
+        37,
+        23,
+        2,
+        262,
+        7,
+        20,
+        4,
+        20
+      ],
+      [
+        13,
+        26,
+        6,
+        7,
+        283,
+        16,
+        33,
+        4
+      ],
+      [
+        11,
+        36,
+        18,
+        39,
+        6,
+        169,
+        16,
+        79
+      ],
+      [
+        0,
+        39,
+        10,
+        11,
+        34,
+        26,
+        198,
+        71
+      ],
+      [
+        1,
+        31,
+        9,
+        11,
+        1,
+        34,
+        7,
+        292
+      ]
+    ],
+    "ece_10_bins": 0.027214565890682572,
+    "multiclass_brier": 0.4210110958015424
+  },
+  "checkpoint_reload_verified": true,
+  "best_checkpoint_sha256": "2e2a2293b3590e5ed641e07e557f188a31d13f109cb926c536a0f1e89beb464f",
+  "mean_epoch_seconds": 118.98254953000014,
+  "total_epoch_seconds": 4759.301981200006,
+  "failures_by_class": {
+    "ADI": 80,
+    "DEB": 0,
+    "LYM": 0,
+    "MUC": 0,
+    "MUS": 0,
+    "NOR": 0,
+    "STR": 0,
+    "TUM": 0
+  },
+  "initial_sha256": "39f9cabdafd13917b04c201fc2924d753777c6acbde0a5e7b0c0f6aa6735722b",
+  "finished_at": "2026-11-13T16:30:25+05:30",
+  "test_evaluated": false,
+  "patient_independence": "UNVERIFIED; provisional exact-file-controlled image split"
+}

@@ -1,0 +1,15 @@
+{
+  "campaign": "12 of 12 complete; no additional training launched",
+  "report": "Teacher template applied; 24 pages",
+  "presentation": "15 editable slides",
+  "ieee": "Local compilation passed; private Overleaf import pending authentication",
+  "pending": [
+    "Guide certification signatures",
+    "Genuine institutional plagiarism report",
+    "Private Overleaf import and real URL"
+  ],
+  "drive_report": "https://docs.google.com/document/d/1ST9Q3Xla4wSjld9x3ao7TTIQyNxlXlic/edit",
+  "drive_presentation": "https://docs.google.com/presentation/d/18owBj_flB0v1-dprG80TIM3X6EdfpnXX/edit",
+  "github_branch": "research/local-backup-2026-11-13",
+  "github_publication": "Prepared; receipt recorded after successful push"
+}

@@ -23,3 +23,7 @@ stain_research/runs/
 stain_research/upstream/*.egg-info/
 model_train/active_model.json
 stain_research/upstream/example_images/
+stain_research/cache/
+evaluation_package/.build/
+evaluation_package/.qa/
+evaluation_package/.refresh.lock

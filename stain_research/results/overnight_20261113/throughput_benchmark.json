@@ -1,0 +1,161 @@
+{
+  "trials": [
+    {
+      "batch_size": 16,
+      "workers": 0,
+      "warmup_including_worker_start_seconds": 2.1034340000001066,
+      "timed_steps": 9,
+      "timed_images": 144,
+      "seconds": 2.2290493999998944,
+      "images_per_second": 64.60152924381434,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 396.17236328125,
+      "peak_reserved_mib": 534.0,
+      "cuda_free_mib": 2683.7000007629395,
+      "telemetry": {
+        "gpu_csv": "0, 703, 38.03, 12.69",
+        "recorded_at": "2026-11-13T03:42:23+05:30"
+      },
+      "eligible": true
+    },
+    {
+      "batch_size": 32,
+      "workers": 0,
+      "warmup_including_worker_start_seconds": 1.1442010000000664,
+      "timed_steps": 9,
+      "timed_images": 288,
+      "seconds": 4.106190400000287,
+      "images_per_second": 70.1380043165996,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 683.98583984375,
+      "peak_reserved_mib": 1032.0,
+      "cuda_free_mib": 2185.7000007629395,
+      "telemetry": {
+        "gpu_csv": "0, 1201, 37.56, 12.58",
+        "recorded_at": "2026-11-13T03:42:28+05:30"
+      },
+      "eligible": true
+    },
+    {
+      "batch_size": 64,
+      "workers": 0,
+      "warmup_including_worker_start_seconds": 2.177108800000042,
+      "timed_steps": 9,
+      "timed_images": 576,
+      "seconds": 8.569658999999774,
+      "images_per_second": 67.2138763047649,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 1288.30078125,
+      "peak_reserved_mib": 1996.0,
+      "cuda_free_mib": 1221.7000007629395,
+      "telemetry": {
+        "gpu_csv": "2, 2165, 40.38, 21.82",
+        "recorded_at": "2026-11-13T03:42:39+05:30"
+      },
+      "eligible": true
+    },
+    {
+      "batch_size": 64,
+      "workers": 2,
+      "warmup_including_worker_start_seconds": 1.5195973999998387,
+      "timed_steps": 9,
+      "timed_images": 576,
+      "seconds": 3.1264659999997093,
+      "images_per_second": 184.2335723465579,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 1288.30078125,
+      "peak_reserved_mib": 1996.0,
+      "cuda_free_mib": 1221.7000007629395,
+      "telemetry": {
+        "gpu_csv": "84, 2165, 42.44, 29.45",
+        "recorded_at": "2026-11-13T03:42:55+05:30"
+      },
+      "eligible": true
+    },
+    {
+      "batch_size": 64,
+      "workers": 4,
+      "warmup_including_worker_start_seconds": 1.4182362000001376,
+      "timed_steps": 9,
+      "timed_images": 576,
+      "seconds": 2.4134400000002643,
+      "images_per_second": 238.66348448684738,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 1288.30078125,
+      "peak_reserved_mib": 1996.0,
+      "cuda_free_mib": 1221.7000007629395,
+      "telemetry": {
+        "gpu_csv": "92, 2165, 44.97, 32.15",
+        "recorded_at": "2026-11-13T03:43:21+05:30"
+      },
+      "eligible": true
+    },
+    {
+      "batch_size": 96,
+      "workers": 2,
+      "warmup_including_worker_start_seconds": 2.1000515000000632,
+      "timed_steps": 9,
+      "timed_images": 864,
+      "seconds": 4.469135300000289,
+      "images_per_second": 193.3259885866387,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 1893.4912109375,
+      "peak_reserved_mib": 2934.0,
+      "cuda_free_mib": 283.70000076293945,
+      "telemetry": {
+        "gpu_csv": "0, 3103, 42.16, 24.12",
+        "recorded_at": "2026-11-13T03:43:41+05:30"
+      },
+      "eligible": false
+    },
+    {
+      "batch_size": 96,
+      "workers": 4,
+      "warmup_including_worker_start_seconds": 1.8224331000001257,
+      "timed_steps": 9,
+      "timed_images": 864,
+      "seconds": 3.4225203999999394,
+      "images_per_second": 252.44553692069016,
+      "finite_loss_and_gradients": true,
+      "skipped_amp_steps": 0,
+      "peak_allocated_mib": 1893.9287109375,
+      "peak_reserved_mib": 2924.0,
+      "cuda_free_mib": 293.70000076293945,
+      "telemetry": {
+        "gpu_csv": "93, 3093, 45.78, 42.13",
+        "recorded_at": "2026-11-13T03:44:09+05:30"
+      },
+      "eligible": false
+    }
+  ],
+  "selected": {
+    "batch_size": 64,
+    "workers": 4,
+    "warmup_including_worker_start_seconds": 1.4182362000001376,
+    "timed_steps": 9,
+    "timed_images": 576,
+    "seconds": 2.4134400000002643,
+    "images_per_second": 238.66348448684738,
+    "finite_loss_and_gradients": true,
+    "skipped_amp_steps": 0,
+    "peak_allocated_mib": 1288.30078125,
+    "peak_reserved_mib": 1996.0,
+    "cuda_free_mib": 1221.7000007629395,
+    "telemetry": {
+      "gpu_csv": "92, 2165, 44.97, 32.15",
+      "recorded_at": "2026-11-13T03:43:21+05:30"
+    },
+    "eligible": true
+  },
+  "protocol": "TRAIN-only warm-cache residual augmentation with real GPU forward/backward, AMP fp16, optimizer updates; benchmark weights discarded",
+  "cpu_threads_main": 2,
+  "cpu_threads_per_worker": 1,
+  "maximum_workers": 4,
+  "headroom_rule": "CUDA reserved <=3072 MiB and free >=768 MiB; no overclocking or thermal changes"
+}
