@@ -1,0 +1,20 @@
+{
+  "exact_valid_strength_multiset": true,
+  "repeatability": true,
+  "assignment_changes_by_epoch": true,
+  "validation_diagnostics_unchanged": true,
+  "four_worker_tensor_equivalence": true,
+  "smoke_epochs": 2,
+  "checkpoint_interruption_and_resume_passed": true,
+  "best_reload_verified": true,
+  "test_accessed": false,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "telemetry": {
+    "gpu_csv": "0, 905, 38.62, 12.43",
+    "recorded_at": "2026-11-16T15:49:19+05:30"
+  },
+  "prior_measured_full_epoch_seconds": 119.3,
+  "expected_full_campaign_hours_at_ceiling": 3.9766666666666666,
+  "smoke_epoch_seconds_including_startup": 24.520817600000555,
+  "note": "Full-data epoch measurement will refine prior estimate; smoke startup makes linear extrapolation unsuitable"
+}
