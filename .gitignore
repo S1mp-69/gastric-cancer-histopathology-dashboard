@@ -24,6 +24,11 @@ stain_research/upstream/*.egg-info/
 model_train/active_model.json
 stain_research/upstream/example_images/
 stain_research/cache/
+data/external/
 evaluation_package/.build/
 evaluation_package/.qa/
 evaluation_package/.refresh.lock
+# Local reference inputs and machine readiness markers
+evaluation_package/templates/
+evaluation_package/OTHER_PC_OVERNIGHT_PROMPT.md
+evaluation_package/PACKAGE_READY.json
