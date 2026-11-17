@@ -1,0 +1,39 @@
+{
+  "research_snapshot_commit": "d5afc63c7628ddda2464b78b5704613a03369ede",
+  "branch": "research/local-backup-2026-11-13",
+  "local_source_and_remote_head_match": true,
+  "drive_files": [
+    {
+      "id": "1ST9Q3Xla4wSjld9x3ao7TTIQyNxlXlic",
+      "url": "https://docs.google.com/document/d/1ST9Q3Xla4wSjld9x3ao7TTIQyNxlXlic/edit?usp=drivesdk&ouid=106373725931768516514&rtpof=true&sd=true",
+      "title": "Gastric_Histopathology_Research_Report_17_Nov_2026.docx",
+      "modified_time": "2026-11-17T02:15:03.743Z",
+      "size": 3695970,
+      "submitted_local_sha256": "4957c122c6c027bd86e769ba5c9ab14824e8de48b7d149afc0f1a78a0edb9a45"
+    },
+    {
+      "id": "18owBj_flB0v1-dprG80TIM3X6EdfpnXX",
+      "url": "https://docs.google.com/presentation/d/18owBj_flB0v1-dprG80TIM3X6EdfpnXX/edit?usp=drivesdk&ouid=106373725931768516514&rtpof=true&sd=true",
+      "title": "Gastric_Histopathology_Research_Presentation_17_Nov_2026.pptx",
+      "modified_time": "2026-11-17T02:14:54.485Z",
+      "size": 79254,
+      "submitted_local_sha256": "44e31fb511da3b2f1b189e298148f7b853f66c630e1cd25441f01df3371681b1"
+    },
+    {
+      "id": "1LVJ_DmkzrxDd2ku35YurnpTQF-iG2fL8",
+      "url": "https://drive.google.com/file/d/1LVJ_DmkzrxDd2ku35YurnpTQF-iG2fL8/view?usp=drivesdk",
+      "title": "Gastric_Research_Evaluation_17_Nov_2026.zip",
+      "modified_time": "2026-11-17T02:14:59.004Z",
+      "size": 5974829,
+      "submitted_local_sha256": "14f6db9f75ece366fd9f2ed3b3219ee00c7dc2e7c0ac8645766dd83faf847029"
+    }
+  ],
+  "verification": "Successful byte uploads followed by metadata readback of the same existing IDs, expected sizes and new revision timestamps; no sharing changes.",
+  "scope": "Research source, portable reports and numeric predictions; raw data, environments, databases and model checkpoints excluded from these uploads.",
+  "remaining": [
+    "Guide review and verified declarations/signatures",
+    "Authenticated private Overleaf project and real link",
+    "Genuine institutional Turnitin reports and required scores; no guarantee"
+  ],
+  "training_and_test": "All bounded runs and frozen final test complete; no active trainer and no post-test tuning."
+}
