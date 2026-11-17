@@ -1,3707 +1,2865 @@
 {
-  "final_analysis": {
-    "complete_runs": 12,
-    "summary": [
+  "as_of": "2026-11-17T07:15:02+05:30",
+  "as_of_display": "17 November 2026, 07:15 IST",
+  "abstract": "We test whether numerical stain-decomposition diagnostics improve source-specific strength assignment for residual-preserving augmentation. An eight-class HMU experiment uses an exact-duplicate-controlled image split without verified patient mapping. A five-group HiESD experiment uses a quality-screened patient-grouped subset and ImageNet-pretrained ResNet18. Standard, fixed, uniformly weaker, global shuffled, adaptive and within-class shuffled controls share seed-specific initialization and bounded training rules. Across three seeds, HMU adaptive validation macro-F1 is 0.6836 versus global shuffled 0.6890; HiESD adaptive is 0.7131 versus global shuffled 0.7350. On the frozen test of 1613 patches from 7 reserved patients, adaptive mean macro-F1 is 0.6602 versus within-class shuffled 0.6749. The prespecified difference is -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. A positive adaptive-minus-within-class validation contrast reverses on the reserved cases. These data do not establish diagnostic-assignment benefit. Independent prediction audits support numerical integrity; coarse masks, rare-class support and seven test-patient clusters limit generalization. Reweighting illustrates known metric behavior, not a new metric. Algorithmic novelty and clinical benefit are unconfirmed.",
+  "hmu": [
+    {
+      "label": "Standard",
+      "mean": 0.6775761972821549,
+      "sd": 0.010562794025446048
+    },
+    {
+      "label": "Residual fixed",
+      "mean": 0.6822010804383736,
+      "sd": 0.014127164419335057
+    },
+    {
+      "label": "Uniform weaker",
+      "mean": 0.6804224566652567,
+      "sd": 0.006062505166790856
+    },
+    {
+      "label": "Global shuffled",
+      "mean": 0.6890412006081469,
+      "sd": 0.0029036607705010043
+    },
+    {
+      "label": "Adaptive",
+      "mean": 0.6835975419614794,
+      "sd": 0.0046705888028972
+    }
+  ],
+  "hiesd": [
+    {
+      "arm": "standard",
+      "label": "Standard",
+      "n": 3,
+      "macro_f1_mean": 0.7270318977299168,
+      "macro_f1_sd": 0.009045779535535776
+    },
+    {
+      "arm": "residual_fixed",
+      "label": "Residual fixed",
+      "n": 3,
+      "macro_f1_mean": 0.7259989854261961,
+      "macro_f1_sd": 0.009937603291844673
+    },
+    {
+      "arm": "uniform_weaker",
+      "label": "Uniform weaker",
+      "n": 3,
+      "macro_f1_mean": 0.7220159361161895,
+      "macro_f1_sd": 0.009881554015886525
+    },
+    {
+      "arm": "shuffled",
+      "label": "Global shuffled",
+      "n": 3,
+      "macro_f1_mean": 0.734958167991525,
+      "macro_f1_sd": 0.026721569689059085
+    },
+    {
+      "arm": "adaptive",
+      "label": "Adaptive",
+      "n": 3,
+      "macro_f1_mean": 0.7130900600593889,
+      "macro_f1_sd": 0.006641987062165179
+    },
+    {
+      "arm": "within_class_shuffled",
+      "label": "Within-class shuffled",
+      "n": 3,
+      "macro_f1_mean": 0.7062542021685285,
+      "macro_f1_sd": 0.012017083690455881
+    }
+  ],
+  "hiesd_runs": [
+    {
+      "seed": 42,
+      "arm": "standard",
+      "accuracy": 0.806554756195044,
+      "macro_f1": 0.7323851221927293,
+      "tumor_recall": 0.7777777777777778,
+      "other_recall": 0.08974358974358974,
+      "ece_15bins": 0.07027347689624024,
+      "brier": 0.31937051275361694,
+      "epochs": 22,
+      "best_epoch": 15,
+      "elapsed_seconds": 498.8692942999987
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "accuracy": 0.832933653077538,
+      "macro_f1": 0.7221915890935497,
+      "tumor_recall": 0.9494949494949495,
+      "other_recall": 0.07051282051282051,
+      "ece_15bins": 0.09260556413877685,
+      "brier": 0.30292740451895184,
+      "epochs": 32,
+      "best_epoch": 25,
+      "elapsed_seconds": 1315.2237087999965
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "accuracy": 0.815347721822542,
+      "macro_f1": 0.7334240539105976,
+      "tumor_recall": 0.9292929292929293,
+      "other_recall": 0.04487179487179487,
+      "ece_15bins": 0.08508321335561561,
+      "brier": 0.31760417026785126,
+      "epochs": 25,
+      "best_epoch": 18,
+      "elapsed_seconds": 1030.2654771000016
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "accuracy": 0.8049560351718625,
+      "macro_f1": 0.7389635758854963,
+      "tumor_recall": 0.8383838383838383,
+      "other_recall": 0.08333333333333333,
+      "ece_15bins": 0.09121025642521564,
+      "brier": 0.32747701758453596,
+      "epochs": 22,
+      "best_epoch": 15,
+      "elapsed_seconds": 903.0780238000007
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "accuracy": 0.8089528377298162,
+      "macro_f1": 0.7116857598682518,
+      "tumor_recall": 0.8888888888888888,
+      "other_recall": 0.05128205128205128,
+      "ece_15bins": 0.0848780389455297,
+      "brier": 0.3272359540314794,
+      "epochs": 26,
+      "best_epoch": 19,
+      "elapsed_seconds": 1081.8232542000042
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "accuracy": 0.7913669064748201,
+      "macro_f1": 0.7321227412140957,
+      "tumor_recall": 0.9090909090909091,
+      "other_recall": 0.1346153846153846,
+      "ece_15bins": 0.08009488474455574,
+      "brier": 0.34167983158435206,
+      "epochs": 11,
+      "best_epoch": 4,
+      "elapsed_seconds": 248.70777850000013
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "accuracy": 0.7825739408473221,
+      "macro_f1": 0.7185280497831006,
+      "tumor_recall": 0.9696969696969697,
+      "other_recall": 0.038461538461538464,
+      "ece_15bins": 0.08700968836137148,
+      "brier": 0.34746314626823993,
+      "epochs": 11,
+      "best_epoch": 4,
+      "elapsed_seconds": 457.3552892000007
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "accuracy": 0.8049560351718625,
+      "macro_f1": 0.7161214932370809,
+      "tumor_recall": 0.8686868686868687,
+      "other_recall": 0.05128205128205128,
+      "ece_15bins": 0.10283569011280386,
+      "brier": 0.3322397739061187,
+      "epochs": 18,
+      "best_epoch": 11,
+      "elapsed_seconds": 740.1229008000009
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "accuracy": 0.8033573141486811,
+      "macro_f1": 0.7064599961802154,
+      "tumor_recall": 0.7474747474747475,
+      "other_recall": 0.019230769230769232,
+      "ece_15bins": 0.10265936537516959,
+      "brier": 0.3398234925058133,
+      "epochs": 8,
+      "best_epoch": 1,
+      "elapsed_seconds": 333.39987850000034
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "accuracy": 0.7857713828936851,
+      "macro_f1": 0.7072625127757638,
+      "tumor_recall": 0.9191919191919192,
+      "other_recall": 0.057692307692307696,
+      "ece_15bins": 0.0913900512394955,
+      "brier": 0.34830255766647206,
+      "epochs": 11,
+      "best_epoch": 4,
+      "elapsed_seconds": 459.69804279999516
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "accuracy": 0.8009592326139089,
+      "macro_f1": 0.7165878297829253,
+      "tumor_recall": 0.8888888888888888,
+      "other_recall": 0.05128205128205128,
+      "ece_15bins": 0.08267596771391177,
+      "brier": 0.328992759667461,
+      "epochs": 9,
+      "best_epoch": 2,
+      "elapsed_seconds": 203.6373367999986
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "accuracy": 0.8225419664268585,
+      "macro_f1": 0.7372773174019379,
+      "tumor_recall": 0.898989898989899,
+      "other_recall": 0.09615384615384616,
+      "ece_15bins": 0.09150250862351808,
+      "brier": 0.30819272330642145,
+      "epochs": 19,
+      "best_epoch": 12,
+      "elapsed_seconds": 786.7619278999991
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "accuracy": 0.7921662669864109,
+      "macro_f1": 0.7165022612008902,
+      "tumor_recall": 0.8888888888888888,
+      "other_recall": 0.08333333333333333,
+      "ece_15bins": 0.07577531236252914,
+      "brier": 0.3222181697914132,
+      "epochs": 9,
+      "best_epoch": 2,
+      "elapsed_seconds": 375.80945339999744
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "accuracy": 0.8161470823341327,
+      "macro_f1": 0.7594509319088634,
+      "tumor_recall": 0.898989898989899,
+      "other_recall": 0.10897435897435898,
+      "ece_15bins": 0.08573721033587256,
+      "brier": 0.3087887975825904,
+      "epochs": 22,
+      "best_epoch": 15,
+      "elapsed_seconds": 903.4681092999963
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "accuracy": 0.815347721822542,
+      "macro_f1": 0.7203219075341512,
+      "tumor_recall": 0.9090909090909091,
+      "other_recall": 0.0641025641025641,
+      "ece_15bins": 0.08600306618127895,
+      "brier": 0.31639529771901476,
+      "epochs": 25,
+      "best_epoch": 18,
+      "elapsed_seconds": 1024.529322800001
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "macro_f1": 0.7073123588019511,
+      "accuracy": 0.7961630695443646,
+      "epochs": 22,
+      "best_epoch": 15,
+      "tumor_recall": 0.898989898989899,
+      "other_recall": 0.057692307692307696
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "macro_f1": 0.6937430318463376,
+      "accuracy": 0.8105515587529976,
+      "epochs": 22,
+      "best_epoch": 15,
+      "tumor_recall": 0.9191919191919192,
+      "other_recall": 0.04487179487179487
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "macro_f1": 0.7177072158572968,
+      "accuracy": 0.8161470823341327,
+      "epochs": 27,
+      "best_epoch": 20,
+      "tumor_recall": 0.9595959595959596,
+      "other_recall": 0.09615384615384616
+    }
+  ],
+  "class_rows": [
+    {
+      "seed": 42,
+      "arm": "standard",
+      "class_code": "tumor",
+      "precision": 0.9625,
+      "recall": 0.7777777777777778,
+      "f1-score": 0.8603351955307262,
+      "support": 99.0
+    },
+    {
+      "seed": 42,
+      "arm": "standard",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8092243186582809,
+      "recall": 0.9380315917375456,
+      "f1-score": 0.8688801350590883,
+      "support": 823.0
+    },
+    {
+      "seed": 42,
+      "arm": "standard",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.896774193548387,
+      "recall": 0.8373493975903614,
+      "f1-score": 0.8660436137071651,
+      "support": 166.0
+    },
+    {
+      "seed": 42,
+      "arm": "standard",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 42,
+      "arm": "standard",
+      "class_code": "other",
+      "precision": 0.25925925925925924,
+      "recall": 0.08974358974358974,
+      "f1-score": 0.13333333333333333,
+      "support": 156.0
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "class_code": "tumor",
+      "precision": 0.9306930693069307,
+      "recall": 0.9494949494949495,
+      "f1-score": 0.94,
+      "support": 99.0
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8237747653806048,
+      "recall": 0.959902794653706,
+      "f1-score": 0.8866442199775533,
+      "support": 823.0
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9395973154362416,
+      "recall": 0.8433734939759037,
+      "f1-score": 0.8888888888888888,
+      "support": 166.0
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "class_code": "lymphoid",
+      "precision": 0.6363636363636364,
+      "recall": 1.0,
+      "f1-score": 0.7777777777777778,
+      "support": 7.0
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "class_code": "other",
+      "precision": 0.3548387096774194,
+      "recall": 0.07051282051282051,
+      "f1-score": 0.11764705882352941,
+      "support": 156.0
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "class_code": "tumor",
+      "precision": 0.9019607843137255,
+      "recall": 0.9292929292929293,
+      "f1-score": 0.9154228855721394,
+      "support": 99.0
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8146596858638744,
+      "recall": 0.945321992709599,
+      "f1-score": 0.875140607424072,
+      "support": 823.0
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9315068493150684,
+      "recall": 0.8192771084337349,
+      "f1-score": 0.8717948717948718,
+      "support": 166.0
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "class_code": "other",
+      "precision": 0.175,
+      "recall": 0.04487179487179487,
+      "f1-score": 0.07142857142857142,
+      "support": 156.0
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "class_code": "tumor",
+      "precision": 0.9880952380952381,
+      "recall": 0.8383838383838383,
+      "f1-score": 0.907103825136612,
+      "support": 99.0
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8112407211028632,
+      "recall": 0.9295261239368166,
+      "f1-score": 0.8663646659116648,
+      "support": 823.0
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9025974025974026,
+      "recall": 0.8373493975903614,
+      "f1-score": 0.86875,
+      "support": 166.0
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "class_code": "other",
+      "precision": 0.20967741935483872,
+      "recall": 0.08333333333333333,
+      "f1-score": 0.11926605504587157,
+      "support": 156.0
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "class_code": "tumor",
+      "precision": 0.946236559139785,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.9166666666666666,
+      "support": 99.0
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8083769633507853,
+      "recall": 0.9380315917375456,
+      "f1-score": 0.8683914510686164,
+      "support": 823.0
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9194630872483222,
+      "recall": 0.8253012048192772,
+      "f1-score": 0.8698412698412699,
+      "support": 166.0
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "class_code": "lymphoid",
+      "precision": 0.7,
+      "recall": 1.0,
+      "f1-score": 0.8235294117647058,
+      "support": 7.0
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "class_code": "other",
+      "precision": 0.18181818181818182,
+      "recall": 0.05128205128205128,
+      "f1-score": 0.08,
+      "support": 156.0
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "class_code": "tumor",
+      "precision": 0.8256880733944955,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.8653846153846154,
+      "support": 99.0
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8193832599118943,
+      "recall": 0.9040097205346294,
+      "f1-score": 0.8596187175043327,
+      "support": 823.0
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.8888888888888888,
+      "recall": 0.7710843373493976,
+      "f1-score": 0.8258064516129032,
+      "support": 166.0
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "class_code": "other",
+      "precision": 0.25609756097560976,
+      "recall": 0.1346153846153846,
+      "f1-score": 0.17647058823529413,
+      "support": 156.0
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "class_code": "tumor",
+      "precision": 0.8205128205128205,
+      "recall": 0.9696969696969697,
+      "f1-score": 0.8888888888888888,
+      "support": 99.0
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8012889366272825,
+      "recall": 0.9064398541919806,
+      "f1-score": 0.8506271379703535,
+      "support": 823.0
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.8493150684931506,
+      "recall": 0.7469879518072289,
+      "f1-score": 0.7948717948717948,
+      "support": 166.0
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "class_code": "lymphoid",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 7.0
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "class_code": "other",
+      "precision": 0.12,
+      "recall": 0.038461538461538464,
+      "f1-score": 0.05825242718446602,
+      "support": 156.0
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "class_code": "tumor",
+      "precision": 0.9347826086956522,
+      "recall": 0.8686868686868687,
+      "f1-score": 0.900523560209424,
+      "support": 99.0
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8083333333333333,
+      "recall": 0.9428918590522479,
+      "f1-score": 0.8704430734716769,
+      "support": 823.0
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.948905109489051,
+      "recall": 0.7831325301204819,
+      "f1-score": 0.858085808580858,
+      "support": 166.0
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "class_code": "lymphoid",
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1-score": 0.875,
+      "support": 7.0
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "class_code": "other",
+      "precision": 0.1509433962264151,
+      "recall": 0.05128205128205128,
+      "f1-score": 0.07655502392344497,
+      "support": 156.0
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "class_code": "tumor",
+      "precision": 0.9866666666666667,
+      "recall": 0.7474747474747475,
+      "f1-score": 0.8505747126436781,
+      "support": 99.0
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.7813102119460501,
+      "recall": 0.9854191980558931,
+      "f1-score": 0.8715744223535733,
+      "support": 823.0
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9322033898305084,
+      "recall": 0.6626506024096386,
+      "f1-score": 0.7746478873239436,
+      "support": 166.0
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "class_code": "lymphoid",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 7.0
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "class_code": "other",
+      "precision": 0.23076923076923078,
+      "recall": 0.019230769230769232,
+      "f1-score": 0.03550295857988166,
+      "support": 156.0
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "class_code": "tumor",
+      "precision": 0.8348623853211009,
+      "recall": 0.9191919191919192,
+      "f1-score": 0.875,
+      "support": 99.0
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8017057569296375,
+      "recall": 0.913730255164034,
+      "f1-score": 0.8540601930721181,
+      "support": 823.0
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.8266666666666667,
+      "recall": 0.7469879518072289,
+      "f1-score": 0.7848101265822784,
+      "support": 166.0
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "class_code": "other",
+      "precision": 0.1956521739130435,
+      "recall": 0.057692307692307696,
+      "f1-score": 0.0891089108910891,
+      "support": 156.0
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "class_code": "tumor",
+      "precision": 0.9263157894736842,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.9072164948453608,
+      "support": 99.0
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8041884816753927,
+      "recall": 0.9331713244228432,
+      "f1-score": 0.8638920134983127,
+      "support": 823.0
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.793939393939394,
+      "recall": 0.7891566265060241,
+      "f1-score": 0.7915407854984894,
+      "support": 166.0
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "class_code": "other",
+      "precision": 0.2857142857142857,
+      "recall": 0.05128205128205128,
+      "f1-score": 0.08695652173913043,
+      "support": 156.0
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "class_code": "tumor",
+      "precision": 0.9270833333333334,
+      "recall": 0.898989898989899,
+      "f1-score": 0.9128205128205128,
+      "support": 99.0
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.818087318087318,
+      "recall": 0.9562575941676792,
+      "f1-score": 0.8817927170868347,
+      "support": 823.0
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9703703703703703,
+      "recall": 0.7891566265060241,
+      "f1-score": 0.8704318936877077,
+      "support": 166.0
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "class_code": "lymphoid",
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1-score": 0.875,
+      "support": 7.0
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "class_code": "other",
+      "precision": 0.30612244897959184,
+      "recall": 0.09615384615384616,
+      "f1-score": 0.14634146341463414,
+      "support": 156.0
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "class_code": "tumor",
+      "precision": 0.88,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.8844221105527639,
+      "support": 99.0
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8046462513199577,
+      "recall": 0.9258809234507898,
+      "f1-score": 0.8610169491525423,
+      "support": 823.0
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.8344827586206897,
+      "recall": 0.7289156626506024,
+      "f1-score": 0.7781350482315113,
+      "support": 166.0
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "class_code": "lymphoid",
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1-score": 0.9333333333333333,
+      "support": 7.0
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "class_code": "other",
+      "precision": 0.2549019607843137,
+      "recall": 0.08333333333333333,
+      "f1-score": 0.12560386473429952,
+      "support": 156.0
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "class_code": "tumor",
+      "precision": 0.9175257731958762,
+      "recall": 0.898989898989899,
+      "f1-score": 0.9081632653061225,
+      "support": 99.0
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8185654008438819,
+      "recall": 0.9428918590522479,
+      "f1-score": 0.8763410502540937,
+      "support": 823.0
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9166666666666666,
+      "recall": 0.7951807228915663,
+      "f1-score": 0.8516129032258064,
+      "support": 166.0
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "class_code": "lymphoid",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 7.0
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "class_code": "other",
+      "precision": 0.3090909090909091,
+      "recall": 0.10897435897435898,
+      "f1-score": 0.16113744075829384,
+      "support": 156.0
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "class_code": "tumor",
+      "precision": 0.989010989010989,
+      "recall": 0.9090909090909091,
+      "f1-score": 0.9473684210526315,
+      "support": 99.0
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8171247357293869,
+      "recall": 0.9392466585662211,
+      "f1-score": 0.8739400791407574,
+      "support": 823.0
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.8695652173913043,
+      "recall": 0.8433734939759037,
+      "f1-score": 0.8562691131498471,
+      "support": 166.0
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "class_code": "lymphoid",
+      "precision": 0.7,
+      "recall": 1.0,
+      "f1-score": 0.8235294117647058,
+      "support": 7.0
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "class_code": "other",
+      "precision": 0.23255813953488372,
+      "recall": 0.0641025641025641,
+      "f1-score": 0.10050251256281408,
+      "support": 156.0
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "class_code": "tumor",
+      "precision": 0.9468085106382979,
+      "recall": 0.898989898989899,
+      "f1-score": 0.9222797927461139,
+      "support": 99.0
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8063829787234043,
+      "recall": 0.9210206561360875,
+      "f1-score": 0.8598979013045944,
+      "support": 823.0
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.8986486486486487,
+      "recall": 0.8012048192771084,
+      "f1-score": 0.8471337579617835,
+      "support": 166.0
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "class_code": "lymphoid",
+      "precision": 0.7,
+      "recall": 1.0,
+      "f1-score": 0.8235294117647058,
+      "support": 7.0
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "class_code": "other",
+      "precision": 0.15254237288135594,
+      "recall": 0.057692307692307696,
+      "f1-score": 0.08372093023255814,
+      "support": 156.0
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "class_code": "tumor",
+      "precision": 0.9285714285714286,
+      "recall": 0.9191919191919192,
+      "f1-score": 0.9238578680203046,
+      "support": 99.0
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8176033934252386,
+      "recall": 0.93681652490887,
+      "f1-score": 0.8731596828992072,
+      "support": 823.0
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9019607843137255,
+      "recall": 0.8313253012048193,
+      "f1-score": 0.8652037617554859,
+      "support": 166.0
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "class_code": "lymphoid",
+      "precision": 0.5833333333333334,
+      "recall": 1.0,
+      "f1-score": 0.7368421052631579,
+      "support": 7.0
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "class_code": "other",
+      "precision": 0.15555555555555556,
+      "recall": 0.04487179487179487,
+      "f1-score": 0.06965174129353234,
+      "support": 156.0
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "class_code": "tumor",
+      "precision": 0.8962264150943396,
+      "recall": 0.9595959595959596,
+      "f1-score": 0.926829268292683,
+      "support": 99.0
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "class_code": "mucosa_inflammation",
+      "precision": 0.8237179487179487,
+      "recall": 0.93681652490887,
+      "f1-score": 0.8766344513928368,
+      "support": 823.0
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "class_code": "intestinal_metaplasia",
+      "precision": 0.9432624113475178,
+      "recall": 0.8012048192771084,
+      "f1-score": 0.8664495114006515,
+      "support": 166.0
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "class_code": "lymphoid",
+      "precision": 0.6363636363636364,
+      "recall": 1.0,
+      "f1-score": 0.7777777777777778,
+      "support": 7.0
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "class_code": "other",
+      "precision": 0.2631578947368421,
+      "recall": 0.09615384615384616,
+      "f1-score": 0.14084507042253522,
+      "support": 156.0
+    }
+  ],
+  "within_comparison": {
+    "seed_differences": [
+      0.004373401066300686,
+      0.01351948092942623,
+      0.0026146916768543527
+    ],
+    "mean": 0.0068358578908604235,
+    "exploratory_95_t_interval": [
+      -0.007707782439023084,
+      0.02137949822074393
+    ]
+  },
+  "within_text": "Adaptive-minus-within-class-shuffled validation differences are +0.0044, +0.0135, +0.0026; mean +0.0068, exploratory three-seed t interval [-0.0077, +0.0214]. This post-hoc validation contrast does not establish superiority over standard or global shuffled augmentation.",
+  "completed_hiesd_runs": 18,
+  "within_status": "3 of three seeds complete",
+  "test_complete": true,
+  "test": {
+    "stage": "complete",
+    "patches": 1613,
+    "patients": 7,
+    "class_counts": {
+      "tumor": 316,
+      "mucosa_inflammation": 786,
+      "intestinal_metaplasia": 203,
+      "lymphoid": 9,
+      "other": 299
+    },
+    "per_seed": [
       {
+        "seed": 42,
         "arm": "standard",
-        "n": 3,
-        "accuracy_mean": 0.6770186335403727,
-        "accuracy_sd": 0.011469633731839684,
-        "macro_f1_mean": 0.6775761972821549,
-        "macro_f1_sd": 0.010562794025446048,
-        "ece_10_bins_mean": 0.0156996817344984,
-        "ece_10_bins_sd": 0.002878315566206369,
-        "multiclass_brier_mean": 0.4343854929267454,
-        "multiclass_brier_sd": 0.010605440769384272,
-        "recall_mean": {
-          "ADI": 0.7256944444444444,
-          "DEB": 0.6572164948453608,
-          "LYM": 0.848,
-          "MUC": 0.6453333333333333,
-          "MUS": 0.7061855670103093,
-          "NOR": 0.5062388591800356,
-          "STR": 0.5278491859468724,
-          "TUM": 0.7996545768566494
+        "accuracy": 0.7259764414135151,
+        "macro_f1": 0.687829580702938,
+        "balanced_accuracy": 0.7361610705267386,
+        "ece_15": 0.08899656762192873,
+        "brier": 0.4101114327673104,
+        "per_class": {
+          "tumor": {
+            "precision": 0.9087136929460581,
+            "recall": 0.6930379746835443,
+            "f1-score": 0.7863554757630161,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7694013303769401,
+            "recall": 0.8829516539440203,
+            "f1-score": 0.8222748815165877,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5425867507886435,
+            "recall": 0.8472906403940886,
+            "f1-score": 0.6615384615384615,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.6923076923076923,
+            "recall": 1.0,
+            "f1-score": 0.8181818181818182,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.55,
+            "recall": 0.25752508361204013,
+            "f1-score": 0.35079726651480636,
+            "support": 299.0
+          },
+          "accuracy": 0.7259764414135151,
+          "macro avg": {
+            "precision": 0.6926018932838668,
+            "recall": 0.7361610705267386,
+            "f1-score": 0.687829580702938,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.7270482655226863,
+            "recall": 0.7259764414135151,
+            "f1-score": 0.7075887873261141,
+            "support": 1613.0
+          }
         },
-        "confusion_matrix_sum": [
+        "confusion_matrix": [
           [
-            836,
-            18,
-            0,
-            181,
-            43,
-            52,
-            0,
-            22
-          ],
-          [
-            11,
-            765,
-            48,
-            40,
-            38,
-            67,
-            67,
-            128
-          ],
-          [
-            0,
-            40,
-            954,
-            0,
-            2,
-            43,
-            27,
-            59
-          ],
-          [
-            108,
-            73,
-            3,
-            726,
-            23,
-            99,
-            24,
-            69
-          ],
-          [
-            30,
-            93,
-            3,
-            17,
-            822,
-            58,
-            127,
-            14
-          ],
-          [
-            26,
-            60,
-            65,
-            105,
-            11,
-            568,
-            48,
-            239
-          ],
-          [
-            0,
-            77,
-            34,
-            23,
-            87,
-            92,
-            616,
-            238
-          ],
-          [
-            0,
-            48,
-            13,
-            19,
-            3,
-            116,
-            33,
-            926
-          ]
-        ]
-      },
-      {
-        "arm": "residual_fixed",
-        "n": 3,
-        "accuracy_mean": 0.6830118775198867,
-        "accuracy_sd": 0.013847522694029078,
-        "macro_f1_mean": 0.6822010804383736,
-        "macro_f1_sd": 0.014127164419335057,
-        "ece_10_bins_mean": 0.02021549330325874,
-        "ece_10_bins_sd": 0.0019860965699465185,
-        "multiclass_brier_mean": 0.427910110379324,
-        "multiclass_brier_sd": 0.016152140766185208,
-        "recall_mean": {
-          "ADI": 0.7838541666666667,
-          "DEB": 0.6649484536082475,
-          "LYM": 0.8497777777777777,
-          "MUC": 0.6773333333333333,
-          "MUS": 0.7147766323024055,
-          "NOR": 0.49465240641711233,
-          "STR": 0.5372750642673522,
-          "TUM": 0.7417962003454232
-        },
-        "confusion_matrix_sum": [
-          [
-            903,
-            25,
-            0,
-            110,
-            41,
-            52,
-            1,
-            20
-          ],
-          [
-            8,
-            774,
-            51,
-            62,
-            51,
-            62,
-            77,
-            79
-          ],
-          [
-            0,
-            37,
-            956,
-            2,
-            2,
-            44,
-            22,
-            62
-          ],
-          [
-            134,
-            66,
-            3,
-            762,
-            29,
-            70,
-            11,
-            50
-          ],
-          [
-            39,
-            72,
-            6,
-            21,
-            832,
-            56,
-            127,
-            11
-          ],
-          [
-            27,
-            68,
-            64,
-            117,
-            12,
-            555,
-            49,
-            230
-          ],
-          [
-            0,
-            84,
-            40,
-            29,
-            110,
-            84,
-            627,
-            193
-          ],
-          [
-            2,
-            60,
-            29,
-            28,
-            6,
-            131,
-            43,
-            859
-          ]
-        ]
-      },
-      {
-        "arm": "uniform_weaker",
-        "n": 3,
-        "accuracy_mean": 0.6822491010134031,
-        "accuracy_sd": 0.006262583870764276,
-        "macro_f1_mean": 0.6804224566652567,
-        "macro_f1_sd": 0.006062505166790856,
-        "ece_10_bins_mean": 0.024186432517482856,
-        "ece_10_bins_sd": 0.0030854124808198844,
-        "multiclass_brier_mean": 0.4286520875451301,
-        "multiclass_brier_sd": 0.006799347010582473,
-        "recall_mean": {
-          "ADI": 0.765625,
-          "DEB": 0.7096219931271478,
-          "LYM": 0.8542222222222222,
-          "MUC": 0.6782222222222222,
-          "MUS": 0.7336769759450171,
-          "NOR": 0.46524064171123,
-          "STR": 0.49528706083976004,
-          "TUM": 0.7556131260794473
-        },
-        "confusion_matrix_sum": [
-          [
-            882,
-            27,
-            1,
-            133,
-            48,
-            40,
-            0,
-            21
-          ],
-          [
-            4,
-            826,
-            47,
-            55,
-            49,
-            56,
-            49,
-            78
-          ],
-          [
-            1,
-            38,
-            961,
-            1,
-            2,
-            40,
-            23,
-            59
-          ],
-          [
-            122,
-            64,
-            4,
-            763,
-            30,
-            74,
-            10,
-            58
-          ],
-          [
-            33,
-            87,
-            9,
-            20,
-            854,
-            52,
-            96,
-            13
-          ],
-          [
-            27,
-            93,
-            56,
-            122,
-            17,
-            522,
-            48,
-            237
-          ],
-          [
-            1,
-            107,
-            34,
-            37,
-            110,
-            84,
-            578,
-            216
-          ],
-          [
-            2,
-            73,
-            19,
-            33,
-            6,
-            112,
-            38,
-            875
-          ]
-        ]
-      },
-      {
-        "arm": "adaptive",
-        "n": 3,
-        "accuracy_mean": 0.6841015582434347,
-        "accuracy_sd": 0.00588730201993687,
-        "macro_f1_mean": 0.6835975419614794,
-        "macro_f1_sd": 0.0046705888028972,
-        "ece_10_bins_mean": 0.021251288048904336,
-        "ece_10_bins_sd": 0.004671517886621079,
-        "multiclass_brier_mean": 0.42824349373308385,
-        "multiclass_brier_sd": 0.008734548019586388,
-        "recall_mean": {
-          "ADI": 0.779513888888889,
-          "DEB": 0.6288659793814433,
-          "LYM": 0.8355555555555555,
-          "MUC": 0.6542222222222223,
-          "MUS": 0.7534364261168385,
-          "NOR": 0.5196078431372549,
-          "STR": 0.5458440445586975,
-          "TUM": 0.7556131260794473
-        },
-        "confusion_matrix_sum": [
-          [
-            898,
-            26,
-            0,
-            100,
-            63,
-            52,
-            0,
-            13
-          ],
-          [
-            10,
-            732,
-            46,
-            68,
-            69,
-            61,
-            77,
-            101
-          ],
-          [
-            0,
-            20,
-            940,
-            4,
-            3,
-            51,
-            44,
-            63
-          ],
-          [
-            154,
-            50,
-            3,
-            736,
-            25,
-            87,
-            19,
-            51
-          ],
-          [
+            219,
             36,
-            73,
-            5,
-            19,
-            877,
-            54,
-            91,
-            9
-          ],
-          [
-            29,
-            58,
-            52,
-            106,
-            19,
-            583,
-            58,
-            217
-          ],
-          [
-            0,
-            66,
-            32,
-            34,
-            122,
-            86,
-            637,
-            190
-          ],
-          [
-            2,
-            47,
-            15,
-            29,
-            7,
-            118,
-            65,
-            875
-          ]
-        ]
-      }
-    ],
-    "paired": [
-      {
-        "adaptive_minus": "standard",
-        "seeds": [
-          42,
-          43,
-          44
-        ],
-        "macro_f1_differences": [
-          0.0020540924977214825,
-          0.002317732491947333,
-          0.013692209048304482
-        ],
-        "mean": 0.006021344679324432,
-        "sd": 0.006644471132987532,
-        "exploratory_t_interval_95": [
-          -0.010484436637387084,
-          0.022527125996035947
-        ],
-        "interval_assumption": "Independent approximately normal seed differences; n=3, very uncertain; not patient-level uncertainty or multiplicity-adjusted evidence"
-      },
-      {
-        "adaptive_minus": "residual_fixed",
-        "seeds": [
-          42,
-          43,
-          44
-        ],
-        "macro_f1_differences": [
-          0.022702096833308483,
-          -0.010090424210023485,
-          -0.008422288053967608
-        ],
-        "mean": 0.0013964615231057964,
-        "sd": 0.018470063387473847,
-        "exploratory_t_interval_95": [
-          -0.044485719477862555,
-          0.04727864252407415
-        ],
-        "interval_assumption": "Independent approximately normal seed differences; n=3, very uncertain; not patient-level uncertainty or multiplicity-adjusted evidence"
-      },
-      {
-        "adaptive_minus": "uniform_weaker",
-        "seeds": [
-          42,
-          43,
-          44
-        ],
-        "macro_f1_differences": [
-          0.01277051587769229,
-          0.004381576851756108,
-          -0.00762683684078036
-        ],
-        "mean": 0.0031750852962226794,
-        "sd": 0.010252059104668974,
-        "exploratory_t_interval_95": [
-          -0.022292441349736618,
-          0.028642611942181977
-        ],
-        "interval_assumption": "Independent approximately normal seed differences; n=3, very uncertain; not patient-level uncertainty or multiplicity-adjusted evidence"
-      }
-    ],
-    "runs": [
-      {
-        "arm": "standard",
-        "seed": 42,
-        "epochs": 40,
-        "best_epoch": 39,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6864988558352403,
-        "macro_f1": 0.6867235772622982,
-        "ece_10_bins": 0.015096926755397026,
-        "multiclass_brier": 0.4271183491685228,
-        "per_class": {
-          "ADI": {
-            "precision": 0.8436578171091446,
-            "recall": 0.7447916666666666,
-            "f1-score": 0.7911479944674965,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.5979591836734693,
-            "recall": 0.7551546391752577,
-            "f1-score": 0.6674259681093394,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8825214899713467,
-            "recall": 0.8213333333333334,
-            "f1-score": 0.850828729281768,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.6612903225806451,
-            "recall": 0.656,
-            "f1-score": 0.6586345381526104,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.8224852071005917,
-            "recall": 0.7164948453608248,
-            "f1-score": 0.7658402203856749,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5337423312883436,
-            "recall": 0.46524064171123,
-            "f1-score": 0.49714285714285716,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6785714285714286,
-            "recall": 0.5372750642673522,
-            "f1-score": 0.599713055954089,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5698324022346368,
-            "recall": 0.7927461139896373,
-            "f1-score": 0.6630552546045504,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            286,
-            9,
-            0,
             56,
-            13,
-            14,
             0,
-            6
+            5
           ],
           [
-            1,
-            293,
-            13,
-            7,
-            7,
-            20,
-            17,
-            30
-          ],
-          [
-            0,
-            19,
-            308,
-            0,
-            1,
-            15,
-            10,
-            22
-          ],
-          [
-            37,
-            34,
-            1,
-            246,
-            6,
-            24,
-            5,
-            22
-          ],
-          [
-            8,
-            38,
-            1,
-            5,
-            278,
-            16,
-            40,
-            2
-          ],
-          [
-            7,
+            2,
+            694,
             33,
-            16,
-            42,
-            4,
-            174,
-            17,
-            81
+            0,
+            57
           ],
           [
-            0,
-            39,
-            9,
-            9,
-            27,
-            28,
-            209,
-            68
-          ],
-          [
-            0,
-            25,
-            1,
             7,
-            2,
-            35,
-            10,
-            306
-          ]
-        ],
-        "mean_epoch_seconds": 59.69630245250001
-      },
-      {
-        "arm": "residual_fixed",
-        "seed": 42,
-        "epochs": 34,
-        "best_epoch": 27,
-        "stop_reason": "early_stopping",
-        "accuracy": 0.6672115070284407,
-        "macro_f1": 0.6660755729267112,
-        "ece_10_bins": 0.02032957206309407,
-        "multiclass_brier": 0.4465551512968581,
-        "per_class": {
-          "ADI": {
-            "precision": 0.8116343490304709,
-            "recall": 0.7630208333333334,
-            "f1-score": 0.7865771812080536,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.6,
-            "recall": 0.6726804123711341,
-            "f1-score": 0.6342648845686513,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8056265984654731,
-            "recall": 0.84,
-            "f1-score": 0.8224543080939948,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.6612466124661247,
-            "recall": 0.6506666666666666,
-            "f1-score": 0.6559139784946236,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.7636887608069164,
-            "recall": 0.6829896907216495,
-            "f1-score": 0.7210884353741497,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5227963525835866,
-            "recall": 0.45989304812834225,
-            "f1-score": 0.48933143669985774,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6517571884984026,
-            "recall": 0.5244215938303342,
-            "f1-score": 0.5811965811965812,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5583657587548638,
-            "recall": 0.7435233160621761,
-            "f1-score": 0.6377777777777778,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            293,
-            12,
-            0,
-            38,
-            13,
-            21,
-            0,
-            7
-          ],
-          [
-            1,
-            261,
-            19,
-            15,
-            19,
-            18,
-            26,
-            29
-          ],
-          [
-            0,
-            18,
-            315,
-            2,
-            1,
-            13,
-            6,
-            20
-          ],
-          [
-            47,
-            31,
-            1,
-            244,
-            12,
-            17,
-            4,
-            19
-          ],
-          [
-            12,
-            25,
-            4,
-            10,
-            265,
-            20,
-            48,
-            4
-          ],
-          [
-            8,
-            26,
-            28,
-            40,
-            5,
+            23,
             172,
-            14,
-            81
-          ],
-          [
             0,
-            33,
-            14,
-            12,
-            32,
-            27,
-            204,
-            67
-          ],
-          [
-            0,
-            29,
-            10,
-            8,
-            0,
-            41,
-            11,
-            287
-          ]
-        ],
-        "mean_epoch_seconds": 119.22271071176465
-      },
-      {
-        "arm": "uniform_weaker",
-        "seed": 42,
-        "epochs": 40,
-        "best_epoch": 38,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6779993461915659,
-        "macro_f1": 0.6760071538823273,
-        "ece_10_bins": 0.024297966145346763,
-        "multiclass_brier": 0.4309097162916907,
-        "per_class": {
-          "ADI": {
-            "precision": 0.8131868131868132,
-            "recall": 0.7708333333333334,
-            "f1-score": 0.7914438502673797,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.6308068459657702,
-            "recall": 0.6649484536082474,
-            "f1-score": 0.6474278544542033,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8447368421052631,
-            "recall": 0.856,
-            "f1-score": 0.8503311258278146,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.657608695652174,
-            "recall": 0.6453333333333333,
-            "f1-score": 0.6514131897711979,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.7331670822942643,
-            "recall": 0.7577319587628866,
-            "f1-score": 0.7452471482889734,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5403726708074534,
-            "recall": 0.46524064171123,
-            "f1-score": 0.5,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6768707482993197,
-            "recall": 0.5115681233933161,
-            "f1-score": 0.582723279648609,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5566218809980806,
-            "recall": 0.7512953367875648,
-            "f1-score": 0.639470782800441,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            296,
-            9,
-            0,
-            40,
-            19,
-            15,
-            0,
-            5
-          ],
-          [
-            2,
-            258,
-            18,
-            18,
-            22,
-            18,
-            21,
-            31
-          ],
-          [
-            0,
-            13,
-            321,
-            0,
-            1,
-            10,
-            8,
-            22
-          ],
-          [
-            47,
-            22,
-            1,
-            242,
-            15,
-            28,
-            4,
-            16
-          ],
-          [
-            9,
-            26,
-            1,
-            6,
-            294,
-            18,
-            29,
-            5
-          ],
-          [
-            9,
-            29,
-            19,
-            41,
-            6,
-            174,
-            15,
-            81
-          ],
-          [
-            1,
-            33,
-            13,
-            11,
-            40,
-            21,
-            199,
-            71
-          ],
-          [
-            0,
-            19,
-            7,
-            10,
-            4,
-            38,
-            18,
-            290
-          ]
-        ],
-        "mean_epoch_seconds": 116.93794041749975
-      },
-      {
-        "arm": "adaptive",
-        "seed": 42,
-        "epochs": 40,
-        "best_epoch": 36,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6900948022229487,
-        "macro_f1": 0.6887776697600196,
-        "ece_10_bins": 0.017703746699086597,
-        "multiclass_brier": 0.41974541337195326,
-        "per_class": {
-          "ADI": {
-            "precision": 0.806282722513089,
-            "recall": 0.8020833333333334,
-            "f1-score": 0.804177545691906,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.6918604651162791,
-            "recall": 0.6134020618556701,
-            "f1-score": 0.6502732240437158,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8710601719197708,
-            "recall": 0.8106666666666666,
-            "f1-score": 0.8397790055248618,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.6666666666666666,
-            "recall": 0.6826666666666666,
-            "f1-score": 0.6745718050065876,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.7210401891252955,
-            "recall": 0.7860824742268041,
-            "f1-score": 0.752157829839704,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5559006211180124,
-            "recall": 0.4786096256684492,
-            "f1-score": 0.514367816091954,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6253369272237197,
-            "recall": 0.596401028277635,
-            "f1-score": 0.6105263157894737,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5971074380165289,
-            "recall": 0.7487046632124352,
-            "f1-score": 0.664367816091954,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            308,
-            4,
-            0,
-            36,
-            18,
-            14,
-            0,
-            4
-          ],
-          [
-            3,
-            238,
-            15,
-            26,
-            35,
-            19,
-            26,
-            26
-          ],
-          [
-            0,
-            8,
-            304,
-            1,
-            1,
-            17,
-            22,
-            22
-          ],
-          [
-            47,
-            16,
-            1,
-            256,
-            10,
-            22,
-            7,
-            16
-          ],
-          [
-            12,
-            15,
-            0,
-            7,
-            305,
-            14,
-            33,
-            2
-          ],
-          [
-            11,
-            23,
-            17,
-            41,
-            9,
-            179,
-            25,
-            69
-          ],
-          [
-            0,
-            23,
-            9,
-            9,
-            40,
-            20,
-            232,
-            56
-          ],
-          [
-            1,
-            17,
-            3,
-            8,
-            5,
-            37,
-            26,
-            289
-          ]
-        ],
-        "mean_epoch_seconds": 119.29647900000005
-      },
-      {
-        "arm": "standard",
-        "seed": 43,
-        "epochs": 36,
-        "best_epoch": 29,
-        "stop_reason": "early_stopping",
-        "accuracy": 0.6802876757110167,
-        "macro_f1": 0.679989401970562,
-        "ece_10_bins": 0.013170473538180828,
-        "multiclass_brier": 0.42948285721050655,
-        "per_class": {
-          "ADI": {
-            "precision": 0.7994505494505495,
-            "recall": 0.7578125,
-            "f1-score": 0.7780748663101604,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.6971428571428572,
-            "recall": 0.6288659793814433,
-            "f1-score": 0.6612466124661247,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8329048843187661,
-            "recall": 0.864,
-            "f1-score": 0.8481675392670157,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.6666666666666666,
-            "recall": 0.6506666666666666,
-            "f1-score": 0.6585695006747638,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.8212121212121212,
-            "recall": 0.6984536082474226,
-            "f1-score": 0.754874651810585,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5280898876404494,
-            "recall": 0.5026737967914439,
-            "f1-score": 0.5150684931506849,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6535947712418301,
-            "recall": 0.5141388174807198,
-            "f1-score": 0.5755395683453237,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5334448160535117,
-            "recall": 0.8264248704663213,
-            "f1-score": 0.6483739837398373,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            291,
-            5,
-            0,
-            50,
-            11,
-            19,
-            0,
-            8
-          ],
-          [
-            5,
-            244,
-            18,
-            16,
-            12,
-            24,
-            22,
-            47
-          ],
-          [
-            0,
-            11,
-            324,
-            0,
-            1,
-            14,
-            7,
-            18
-          ],
-          [
-            42,
-            20,
-            1,
-            244,
-            5,
-            32,
-            6,
-            25
-          ],
-          [
-            15,
-            28,
-            1,
-            5,
-            271,
-            19,
-            45,
-            4
-          ],
-          [
-            11,
-            12,
-            25,
-            34,
-            1,
-            188,
-            15,
-            88
-          ],
-          [
-            0,
-            19,
-            14,
-            10,
-            29,
-            28,
-            200,
-            89
-          ],
-          [
-            0,
-            11,
-            6,
-            7,
-            0,
-            32,
-            11,
-            319
-          ]
-        ],
-        "mean_epoch_seconds": 56.48768823888875
-      },
-      {
-        "arm": "residual_fixed",
-        "seed": 43,
-        "epochs": 40,
-        "best_epoch": 40,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6930369401765283,
-        "macro_f1": 0.6923975586725328,
-        "ece_10_bins": 0.018174816075202167,
-        "multiclass_brier": 0.41818325315711236,
-        "per_class": {
-          "ADI": {
-            "precision": 0.783375314861461,
-            "recall": 0.8098958333333334,
-            "f1-score": 0.7964148527528809,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.7039106145251397,
-            "recall": 0.6494845360824743,
-            "f1-score": 0.675603217158177,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8403141361256544,
-            "recall": 0.856,
-            "f1-score": 0.8480845442536328,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.7038123167155426,
-            "recall": 0.64,
-            "f1-score": 0.6703910614525139,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.7698412698412699,
-            "recall": 0.75,
-            "f1-score": 0.7597911227154047,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5289672544080605,
-            "recall": 0.5614973262032086,
-            "f1-score": 0.5447470817120622,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6612903225806451,
-            "recall": 0.5269922879177378,
-            "f1-score": 0.586552217453505,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5846774193548387,
-            "recall": 0.7512953367875648,
-            "f1-score": 0.6575963718820862,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            311,
-            4,
-            0,
-            26,
-            15,
-            21,
-            0,
-            7
-          ],
-          [
-            5,
-            252,
-            17,
-            23,
-            15,
-            24,
-            27,
-            25
-          ],
-          [
-            0,
-            6,
-            321,
-            0,
-            0,
-            17,
-            8,
-            23
-          ],
-          [
-            58,
-            20,
-            1,
-            240,
-            6,
-            30,
-            4,
-            16
-          ],
-          [
-            14,
-            22,
-            1,
-            2,
-            291,
-            19,
-            36,
-            3
-          ],
-          [
-            8,
-            16,
-            19,
-            34,
-            3,
-            210,
-            17,
-            67
-          ],
-          [
-            0,
-            24,
-            12,
-            7,
-            45,
-            31,
-            205,
-            65
-          ],
-          [
-            1,
-            14,
-            11,
-            9,
-            3,
-            45,
-            13,
-            290
-          ]
-        ],
-        "mean_epoch_seconds": 117.15649392500026
-      },
-      {
-        "arm": "uniform_weaker",
-        "seed": 43,
-        "epochs": 40,
-        "best_epoch": 38,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6793069630598235,
-        "macro_f1": 0.6779255576107532,
-        "ece_10_bins": 0.021046765516419232,
-        "multiclass_brier": 0.43403545054215725,
-        "per_class": {
-          "ADI": {
-            "precision": 0.8352272727272727,
-            "recall": 0.765625,
-            "f1-score": 0.7989130434782609,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.6289592760180995,
-            "recall": 0.7164948453608248,
-            "f1-score": 0.6698795180722892,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8590785907859079,
-            "recall": 0.8453333333333334,
-            "f1-score": 0.8521505376344086,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.6442786069651741,
-            "recall": 0.6906666666666667,
-            "f1-score": 0.6666666666666666,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.7737430167597765,
-            "recall": 0.7139175257731959,
-            "f1-score": 0.7426273458445041,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.514367816091954,
-            "recall": 0.4786096256684492,
-            "f1-score": 0.49584487534626037,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6654411764705882,
-            "recall": 0.4652956298200514,
-            "f1-score": 0.5476550680786687,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5678294573643411,
-            "recall": 0.7590673575129534,
-            "f1-score": 0.6496674057649667,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            294,
-            11,
-            0,
-            44,
-            16,
-            11,
-            0,
-            8
-          ],
-          [
-            1,
-            278,
-            16,
-            22,
-            14,
-            20,
-            17,
-            20
-          ],
-          [
-            0,
-            13,
-            317,
-            1,
-            1,
-            17,
-            8,
-            18
-          ],
-          [
-            38,
-            19,
-            1,
-            259,
-            8,
-            26,
-            2,
-            22
-          ],
-          [
-            11,
-            35,
-            2,
-            7,
-            277,
-            18,
-            34,
-            4
-          ],
-          [
-            7,
-            28,
-            19,
-            42,
-            5,
-            179,
-            17,
-            77
-          ],
-          [
-            0,
-            35,
-            11,
-            15,
-            36,
-            37,
-            181,
-            74
-          ],
-          [
-            1,
-            23,
-            3,
-            12,
-            1,
-            40,
-            13,
-            293
-          ]
-        ],
-        "mean_epoch_seconds": 122.28663423500021
-      },
-      {
-        "arm": "adaptive",
-        "seed": 43,
-        "epochs": 38,
-        "best_epoch": 31,
-        "stop_reason": "early_stopping",
-        "accuracy": 0.6838836220987251,
-        "macro_f1": 0.6823071344625093,
-        "ece_10_bins": 0.01950592642400965,
-        "multiclass_brier": 0.4277883547356962,
-        "per_class": {
-          "ADI": {
-            "precision": 0.7847769028871391,
-            "recall": 0.7786458333333334,
-            "f1-score": 0.7816993464052288,
-            "support": 384.0
-          },
-          "DEB": {
-            "precision": 0.672972972972973,
-            "recall": 0.6417525773195877,
-            "f1-score": 0.6569920844327177,
-            "support": 388.0
-          },
-          "LYM": {
-            "precision": 0.8320610687022901,
-            "recall": 0.872,
-            "f1-score": 0.8515625,
-            "support": 375.0
-          },
-          "MUC": {
-            "precision": 0.6685236768802229,
-            "recall": 0.64,
-            "f1-score": 0.6539509536784741,
-            "support": 375.0
-          },
-          "MUS": {
-            "precision": 0.7474226804123711,
-            "recall": 0.7474226804123711,
-            "f1-score": 0.7474226804123711,
-            "support": 388.0
-          },
-          "NOR": {
-            "precision": 0.5397260273972603,
-            "recall": 0.5267379679144385,
-            "f1-score": 0.5331529093369418,
-            "support": 374.0
-          },
-          "STR": {
-            "precision": 0.6506410256410257,
-            "recall": 0.5218508997429306,
-            "f1-score": 0.579172610556348,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5845213849287169,
-            "recall": 0.7435233160621761,
-            "f1-score": 0.6545039908779932,
-            "support": 386.0
-          }
-        },
-        "confusion_matrix": [
-          [
-            299,
-            10,
-            0,
-            35,
-            24,
-            13,
-            0,
-            3
-          ],
-          [
-            6,
-            249,
-            16,
-            21,
-            20,
-            17,
-            27,
-            32
-          ],
-          [
-            0,
-            8,
-            327,
-            0,
-            1,
-            14,
-            10,
-            15
-          ],
-          [
-            53,
-            18,
-            1,
-            240,
-            9,
-            32,
-            6,
-            16
-          ],
-          [
-            11,
-            27,
-            2,
-            6,
-            290,
-            17,
-            34,
             1
           ],
           [
-            11,
-            20,
-            23,
-            33,
-            5,
-            197,
-            15,
-            70
-          ],
-          [
             0,
-            22,
-            15,
-            12,
-            38,
-            32,
-            203,
-            67
+            0,
+            0,
+            9,
+            0
           ],
           [
-            1,
-            16,
-            9,
-            12,
-            1,
-            43,
-            17,
-            287
+            13,
+            149,
+            56,
+            4,
+            77
           ]
-        ],
-        "mean_epoch_seconds": 122.44066445526369
+        ]
       },
       {
-        "arm": "standard",
-        "seed": 44,
-        "epochs": 39,
-        "best_epoch": 32,
-        "stop_reason": "early_stopping",
-        "accuracy": 0.6642693690748611,
-        "macro_f1": 0.6660156126136045,
-        "ece_10_bins": 0.01883164490991734,
-        "multiclass_brier": 0.4465552724012068,
+        "seed": 42,
+        "arm": "residual_fixed",
+        "accuracy": 0.7179169249845009,
+        "macro_f1": 0.6750398147796337,
+        "balanced_accuracy": 0.7131492423924983,
+        "ece_15": 0.10774212683939592,
+        "brier": 0.43057850501794304,
         "per_class": {
-          "ADI": {
-            "precision": 0.8409090909090909,
-            "recall": 0.6744791666666666,
-            "f1-score": 0.7485549132947977,
-            "support": 384.0
+          "tumor": {
+            "precision": 0.8516949152542372,
+            "recall": 0.6360759493670886,
+            "f1-score": 0.7282608695652174,
+            "support": 316.0
           },
-          "DEB": {
-            "precision": 0.6826347305389222,
-            "recall": 0.5876288659793815,
-            "f1-score": 0.631578947368421,
-            "support": 388.0
+          "mucosa_inflammation": {
+            "precision": 0.7402862985685071,
+            "recall": 0.9211195928753181,
+            "f1-score": 0.8208616780045351,
+            "support": 786.0
           },
-          "LYM": {
-            "precision": 0.8429319371727748,
-            "recall": 0.8586666666666667,
-            "f1-score": 0.8507265521796565,
-            "support": 375.0
+          "intestinal_metaplasia": {
+            "precision": 0.5674740484429066,
+            "recall": 0.8078817733990148,
+            "f1-score": 0.6666666666666666,
+            "support": 203.0
           },
-          "MUC": {
-            "precision": 0.6327077747989276,
-            "recall": 0.6293333333333333,
-            "f1-score": 0.6310160427807486,
-            "support": 375.0
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
           },
-          "MUS": {
-            "precision": 0.7562326869806094,
-            "recall": 0.7036082474226805,
-            "f1-score": 0.7289719626168224,
-            "support": 388.0
+          "other": {
+            "precision": 0.6122448979591837,
+            "recall": 0.20066889632107024,
+            "f1-score": 0.3022670025188917,
+            "support": 299.0
           },
-          "NOR": {
-            "precision": 0.49878934624697335,
-            "recall": 0.5508021390374331,
-            "f1-score": 0.5235069885641678,
-            "support": 374.0
+          "accuracy": 0.7179169249845009,
+          "macro avg": {
+            "precision": 0.7043400320449671,
+            "recall": 0.7131492423924983,
+            "f1-score": 0.6750398147796337,
+            "support": 1613.0
           },
-          "STR": {
-            "precision": 0.6310975609756098,
-            "recall": 0.532133676092545,
-            "f1-score": 0.5774058577405857,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5375,
-            "recall": 0.7797927461139896,
-            "f1-score": 0.6363636363636364,
-            "support": 386.0
+          "weighted avg": {
+            "precision": 0.716682628777986,
+            "recall": 0.7179169249845009,
+            "f1-score": 0.6873857200836583,
+            "support": 1613.0
           }
         },
         "confusion_matrix": [
           [
-            259,
-            4,
+            201,
+            58,
+            55,
             0,
-            75,
-            19,
-            19,
-            0,
-            8
-          ],
-          [
-            5,
-            228,
-            17,
-            17,
-            19,
-            23,
-            28,
-            51
-          ],
-          [
-            0,
-            10,
-            322,
-            0,
-            0,
-            14,
-            10,
-            19
-          ],
-          [
-            29,
-            19,
-            1,
-            236,
-            12,
-            43,
-            13,
-            22
-          ],
-          [
-            7,
-            27,
-            1,
-            7,
-            273,
-            23,
-            42,
-            8
+            2
           ],
           [
             8,
-            15,
-            24,
-            29,
-            6,
-            206,
-            16,
-            70
-          ],
-          [
-            0,
+            724,
             19,
-            11,
-            4,
+            0,
+            35
+          ],
+          [
+            7,
             31,
-            36,
-            207,
-            81
+            164,
+            0,
+            1
           ],
           [
             0,
-            12,
-            6,
-            5,
-            1,
-            49,
-            12,
-            301
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            20,
+            165,
+            51,
+            3,
+            60
           ]
-        ],
-        "mean_epoch_seconds": 61.88482582307673
+        ]
       },
       {
-        "arm": "residual_fixed",
-        "seed": 44,
-        "epochs": 40,
-        "best_epoch": 36,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6887871853546911,
-        "macro_f1": 0.6881301097158766,
-        "ece_10_bins": 0.02214209177147998,
-        "multiclass_brier": 0.41899192668400165,
+        "seed": 42,
+        "arm": "uniform_weaker",
+        "accuracy": 0.6980781153130812,
+        "macro_f1": 0.6632848040320083,
+        "balanced_accuracy": 0.696021614197812,
+        "ece_15": 0.11873376862794363,
+        "brier": 0.4647064642081234,
         "per_class": {
-          "ADI": {
-            "precision": 0.8422535211267606,
-            "recall": 0.7786458333333334,
-            "f1-score": 0.8092016238159675,
-            "support": 384.0
+          "tumor": {
+            "precision": 0.8414634146341463,
+            "recall": 0.6550632911392406,
+            "f1-score": 0.7366548042704626,
+            "support": 316.0
           },
-          "DEB": {
-            "precision": 0.6641221374045801,
-            "recall": 0.6726804123711341,
-            "f1-score": 0.6683738796414853,
-            "support": 388.0
+          "mucosa_inflammation": {
+            "precision": 0.7096774193548387,
+            "recall": 0.8956743002544529,
+            "f1-score": 0.7919010123734533,
+            "support": 786.0
           },
-          "LYM": {
-            "precision": 0.851063829787234,
-            "recall": 0.8533333333333334,
-            "f1-score": 0.8521970705725699,
-            "support": 375.0
+          "intestinal_metaplasia": {
+            "precision": 0.6007905138339921,
+            "recall": 0.7487684729064039,
+            "f1-score": 0.6666666666666666,
+            "support": 203.0
           },
-          "MUC": {
-            "precision": 0.6603325415676959,
-            "recall": 0.7413333333333333,
-            "f1-score": 0.6984924623115578,
-            "support": 375.0
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
           },
-          "MUS": {
-            "precision": 0.770949720670391,
-            "recall": 0.711340206185567,
-            "f1-score": 0.739946380697051,
-            "support": 388.0
+          "other": {
+            "precision": 0.4909090909090909,
+            "recall": 0.1806020066889632,
+            "f1-score": 0.26405867970660146,
+            "support": 299.0
           },
-          "NOR": {
-            "precision": 0.5274390243902439,
-            "recall": 0.4625668449197861,
-            "f1-score": 0.4928774928774929,
-            "support": 374.0
+          "accuracy": 0.6980781153130812,
+          "macro avg": {
+            "precision": 0.6785680877464136,
+            "recall": 0.696021614197812,
+            "f1-score": 0.6632848040320083,
+            "support": 1613.0
           },
-          "STR": {
-            "precision": 0.6526946107784432,
-            "recall": 0.5604113110539846,
-            "f1-score": 0.603042876901798,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5708502024291497,
-            "recall": 0.7305699481865285,
-            "f1-score": 0.6409090909090909,
-            "support": 386.0
+          "weighted avg": {
+            "precision": 0.681463845708253,
+            "recall": 0.6980781153130812,
+            "f1-score": 0.6678352623402933,
+            "support": 1613.0
           }
         },
         "confusion_matrix": [
           [
-            299,
-            9,
+            207,
+            64,
+            44,
             0,
-            46,
-            13,
-            10,
-            1,
-            6
+            1
+          ],
+          [
+            9,
+            704,
+            19,
+            0,
+            54
+          ],
+          [
+            11,
+            39,
+            152,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            19,
+            185,
+            38,
+            3,
+            54
+          ]
+        ]
+      },
+      {
+        "seed": 42,
+        "arm": "shuffled",
+        "accuracy": 0.7024178549287042,
+        "macro_f1": 0.6810515494431275,
+        "balanced_accuracy": 0.7184264400097492,
+        "ece_15": 0.10445259828339876,
+        "brier": 0.44910196446376566,
+        "per_class": {
+          "tumor": {
+            "precision": 0.9107142857142857,
+            "recall": 0.6455696202531646,
+            "f1-score": 0.7555555555555555,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.737186477644493,
+            "recall": 0.8600508905852418,
+            "f1-score": 0.7938931297709924,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5719063545150501,
+            "recall": 0.8423645320197044,
+            "f1-score": 0.6812749003984063,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.453416149068323,
+            "recall": 0.24414715719063546,
+            "f1-score": 0.3173913043478261,
+            "support": 299.0
+          },
+          "accuracy": 0.7024178549287042,
+          "macro avg": {
+            "precision": 0.6846446533884303,
+            "recall": 0.7184264400097492,
+            "f1-score": 0.6810515494431275,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6978504056120705,
+            "recall": 0.7024178549287042,
+            "f1-score": 0.6842335065410526,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            204,
+            53,
+            56,
+            0,
+            3
           ],
           [
             2,
-            261,
-            15,
+            676,
             24,
-            17,
-            20,
-            24,
-            25
+            0,
+            84
+          ],
+          [
+            5,
+            26,
+            171,
+            0,
+            1
           ],
           [
             0,
-            13,
-            320,
             0,
-            1,
-            14,
-            8,
-            19
-          ],
-          [
-            29,
-            15,
-            1,
-            278,
-            11,
-            23,
-            3,
-            15
-          ],
-          [
-            13,
-            25,
-            1,
+            0,
             9,
-            276,
+            0
+          ],
+          [
+            13,
+            162,
+            48,
+            3,
+            73
+          ]
+        ]
+      },
+      {
+        "seed": 42,
+        "arm": "adaptive",
+        "accuracy": 0.6949783013019218,
+        "macro_f1": 0.6635823746012581,
+        "balanced_accuracy": 0.7032056112480776,
+        "ece_15": 0.12361585831538682,
+        "brier": 0.46205337081411174,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8789237668161435,
+            "recall": 0.620253164556962,
+            "f1-score": 0.7272727272727273,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7258403361344538,
+            "recall": 0.8791348600508906,
+            "f1-score": 0.7951668584579977,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5604026845637584,
+            "recall": 0.8226600985221675,
+            "f1-score": 0.6666666666666666,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.453125,
+            "recall": 0.1939799331103679,
+            "f1-score": 0.2716627634660422,
+            "support": 299.0
+          },
+          "accuracy": 0.6949783013019218,
+          "macro avg": {
+            "precision": 0.6736583575028712,
+            "recall": 0.7032056112480776,
+            "f1-score": 0.6635823746012581,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.684591775872303,
+            "recall": 0.6949783013019218,
+            "f1-score": 0.6689982131990908,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            196,
+            60,
+            58,
+            0,
+            2
+          ],
+          [
+            7,
+            691,
+            20,
+            0,
+            68
+          ],
+          [
+            3,
+            33,
+            167,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
             17,
-            43,
+            168,
+            53,
+            3,
+            58
+          ]
+        ]
+      },
+      {
+        "seed": 42,
+        "arm": "within_class_shuffled",
+        "accuracy": 0.7073775573465592,
+        "macro_f1": 0.6858678561058952,
+        "balanced_accuracy": 0.7133520948536212,
+        "ece_15": 0.1119158046443641,
+        "brier": 0.4513431233770603,
+        "per_class": {
+          "tumor": {
+            "precision": 0.9248826291079812,
+            "recall": 0.6234177215189873,
+            "f1-score": 0.7448015122873346,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7264248704663212,
+            "recall": 0.8918575063613231,
+            "f1-score": 0.8006853226727584,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5821917808219178,
+            "recall": 0.8374384236453202,
+            "f1-score": 0.6868686868686869,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.8181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.9,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.48484848484848486,
+            "recall": 0.2140468227424749,
+            "f1-score": 0.29698375870069604,
+            "support": 299.0
+          },
+          "accuracy": 0.7073775573465592,
+          "macro avg": {
+            "precision": 0.7073059166853046,
+            "recall": 0.7133520948536212,
+            "f1-score": 0.6858678561058952,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.7028835237599709,
+            "recall": 0.7073775573465592,
+            "f1-score": 0.6825966700492482,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            197,
+            64,
+            52,
+            0,
+            3
+          ],
+          [
+            1,
+            701,
+            19,
+            0,
+            65
+          ],
+          [
+            4,
+            29,
+            170,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            11,
+            171,
+            51,
+            2,
+            64
+          ]
+        ]
+      },
+      {
+        "seed": 43,
+        "arm": "standard",
+        "accuracy": 0.6825790452572845,
+        "macro_f1": 0.6637557670914477,
+        "balanced_accuracy": 0.6992282246447269,
+        "ece_15": 0.11564428672905822,
+        "brier": 0.4748353198655085,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8251748251748252,
+            "recall": 0.7468354430379747,
+            "f1-score": 0.7840531561461794,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7354618015963512,
+            "recall": 0.8206106870229007,
+            "f1-score": 0.7757065544197234,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5402298850574713,
+            "recall": 0.6945812807881774,
+            "f1-score": 0.6077586206896551,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.3954802259887006,
+            "recall": 0.23411371237458195,
+            "f1-score": 0.29411764705882354,
+            "support": 299.0
+          },
+          "accuracy": 0.6825790452572845,
+          "macro avg": {
+            "precision": 0.6492693475634697,
+            "recall": 0.6992282246447269,
+            "f1-score": 0.6637557670914477,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6655260229679262,
+            "recall": 0.6825790452572845,
+            "f1-score": 0.6673878557352567,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            236,
+            29,
+            46,
+            0,
+            5
+          ],
+          [
+            24,
+            645,
+            19,
+            0,
+            98
+          ],
+          [
+            7,
+            51,
+            141,
+            0,
             4
           ],
           [
-            11,
-            26,
-            17,
-            43,
-            4,
-            173,
-            18,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            19,
+            152,
+            55,
+            3,
+            70
+          ]
+        ]
+      },
+      {
+        "seed": 43,
+        "arm": "residual_fixed",
+        "accuracy": 0.6683199008059516,
+        "macro_f1": 0.6545277552800732,
+        "balanced_accuracy": 0.6723624764066931,
+        "ece_15": 0.14485711284254324,
+        "brier": 0.505332589023171,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8486238532110092,
+            "recall": 0.5854430379746836,
+            "f1-score": 0.6928838951310862,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7102803738317757,
+            "recall": 0.8702290076335878,
+            "f1-score": 0.7821612349914236,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5415162454873647,
+            "recall": 0.7389162561576355,
+            "f1-score": 0.625,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1-score": 0.9473684210526315,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.3448275862068966,
+            "recall": 0.16722408026755853,
+            "f1-score": 0.22522522522522523,
+            "support": 299.0
+          },
+          "accuracy": 0.6683199008059516,
+          "macro avg": {
+            "precision": 0.6690496117474092,
+            "recall": 0.6723624764066931,
+            "f1-score": 0.6545277552800732,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.649458622167546,
+            "recall": 0.6683199008059516,
+            "f1-score": 0.6425751393034707,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            185,
+            59,
+            62,
+            0,
+            10
+          ],
+          [
+            8,
+            684,
+            12,
+            0,
             82
           ],
           [
+            6,
+            44,
+            150,
             0,
-            27,
-            14,
-            10,
-            33,
-            26,
-            218,
-            61
+            3
           ],
           [
-            1,
-            17,
-            8,
-            11,
-            3,
-            45,
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
             19,
-            282
+            176,
+            53,
+            1,
+            50
           ]
-        ],
-        "mean_epoch_seconds": 118.63999293749949
+        ]
       },
       {
+        "seed": 43,
         "arm": "uniform_weaker",
-        "seed": 44,
-        "epochs": 40,
-        "best_epoch": 40,
-        "stop_reason": "maximum_epoch_budget",
-        "accuracy": 0.6894409937888198,
-        "macro_f1": 0.6873346585026894,
-        "ece_10_bins": 0.027214565890682572,
-        "multiclass_brier": 0.4210110958015424,
+        "accuracy": 0.6999380037197768,
+        "macro_f1": 0.6548903548275995,
+        "balanced_accuracy": 0.6919706699611197,
+        "ece_15": 0.1177216387282819,
+        "brier": 0.4514729759895631,
         "per_class": {
-          "ADI": {
-            "precision": 0.8202247191011236,
-            "recall": 0.7604166666666666,
-            "f1-score": 0.7891891891891892,
-            "support": 384.0
+          "tumor": {
+            "precision": 0.8604651162790697,
+            "recall": 0.5854430379746836,
+            "f1-score": 0.696798493408663,
+            "support": 316.0
           },
-          "DEB": {
-            "precision": 0.625,
-            "recall": 0.7474226804123711,
-            "f1-score": 0.6807511737089202,
-            "support": 388.0
+          "mucosa_inflammation": {
+            "precision": 0.6980582524271844,
+            "recall": 0.9147582697201018,
+            "f1-score": 0.7918502202643172,
+            "support": 786.0
           },
-          "LYM": {
-            "precision": 0.8455497382198953,
-            "recall": 0.8613333333333333,
-            "f1-score": 0.8533685601056803,
-            "support": 375.0
+          "intestinal_metaplasia": {
+            "precision": 0.646551724137931,
+            "recall": 0.7389162561576355,
+            "f1-score": 0.6896551724137931,
+            "support": 203.0
           },
-          "MUC": {
-            "precision": 0.6649746192893401,
-            "recall": 0.6986666666666667,
-            "f1-score": 0.6814044213263979,
-            "support": 375.0
+          "lymphoid": {
+            "precision": 0.6428571428571429,
+            "recall": 1.0,
+            "f1-score": 0.782608695652174,
+            "support": 9.0
           },
-          "MUS": {
-            "precision": 0.7927170868347339,
-            "recall": 0.729381443298969,
-            "f1-score": 0.7597315436241611,
-            "support": 388.0
+          "other": {
+            "precision": 0.5409836065573771,
+            "recall": 0.22073578595317725,
+            "f1-score": 0.31353919239904987,
+            "support": 299.0
           },
-          "NOR": {
-            "precision": 0.5451612903225806,
-            "recall": 0.45187165775401067,
-            "f1-score": 0.49415204678362573,
-            "support": 374.0
+          "accuracy": 0.6999380037197768,
+          "macro avg": {
+            "precision": 0.677783168451741,
+            "recall": 0.6919706699611197,
+            "f1-score": 0.6548903548275995,
+            "support": 1613.0
           },
-          "STR": {
-            "precision": 0.717391304347826,
-            "recall": 0.5089974293059126,
-            "f1-score": 0.5954887218045113,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5615384615384615,
-            "recall": 0.7564766839378239,
-            "f1-score": 0.6445916114790287,
-            "support": 386.0
+          "weighted avg": {
+            "precision": 0.693968118907826,
+            "recall": 0.6999380037197768,
+            "f1-score": 0.671651763070723,
+            "support": 1613.0
           }
         },
         "confusion_matrix": [
           [
-            292,
-            7,
-            1,
-            49,
-            13,
-            14,
-            0,
-            8
-          ],
-          [
-            1,
-            290,
-            13,
-            15,
-            13,
-            18,
-            11,
-            27
-          ],
-          [
-            1,
-            12,
-            323,
-            0,
-            0,
-            13,
-            7,
-            19
-          ],
-          [
+            185,
+            87,
             37,
-            23,
-            2,
-            262,
-            7,
-            20,
-            4,
-            20
+            1,
+            6
           ],
           [
-            13,
-            26,
-            6,
             7,
-            283,
-            16,
-            33,
-            4
-          ],
-          [
+            719,
             11,
-            36,
-            18,
-            39,
-            6,
-            169,
-            16,
-            79
+            1,
+            48
+          ],
+          [
+            9,
+            42,
+            150,
+            0,
+            2
           ],
           [
             0,
-            39,
-            10,
-            11,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            14,
+            182,
             34,
-            26,
-            198,
+            3,
+            66
+          ]
+        ]
+      },
+      {
+        "seed": 43,
+        "arm": "shuffled",
+        "accuracy": 0.6057036577805331,
+        "macro_f1": 0.5416417457560985,
+        "balanced_accuracy": 0.5627361625714609,
+        "ece_15": 0.21831840836550975,
+        "brier": 0.6282418467116951,
+        "per_class": {
+          "tumor": {
+            "precision": 0.9076923076923077,
+            "recall": 0.37341772151898733,
+            "f1-score": 0.5291479820627802,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.5862884160756501,
+            "recall": 0.9465648854961832,
+            "f1-score": 0.724087591240876,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5751633986928104,
+            "recall": 0.43349753694581283,
+            "f1-score": 0.4943820224719101,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.3673469387755102,
+            "recall": 0.06020066889632107,
+            "f1-score": 0.10344827586206896,
+            "support": 299.0
+          },
+          "accuracy": 0.6057036577805331,
+          "macro avg": {
+            "precision": 0.6372982122472557,
+            "recall": 0.5627361625714609,
+            "f1-score": 0.5416417457560985,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6081824977648781,
+            "recall": 0.6057036577805331,
+            "f1-score": 0.5426834964699374,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            118,
+            155,
+            42,
+            0,
+            1
+          ],
+          [
+            4,
+            744,
+            8,
+            0,
+            30
+          ],
+          [
+            3,
+            112,
+            88,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            5,
+            258,
+            15,
+            3,
+            18
+          ]
+        ]
+      },
+      {
+        "seed": 43,
+        "arm": "adaptive",
+        "accuracy": 0.6931184128952262,
+        "macro_f1": 0.6577260954232037,
+        "balanced_accuracy": 0.7093712320815867,
+        "ece_15": 0.11064069374924626,
+        "brier": 0.4662297508572346,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8181818181818182,
+            "recall": 0.7120253164556962,
+            "f1-score": 0.7614213197969543,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.759090909090909,
+            "recall": 0.8498727735368957,
+            "f1-score": 0.801920768307323,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5139318885448917,
+            "recall": 0.8177339901477833,
+            "f1-score": 0.6311787072243346,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.4065040650406504,
+            "recall": 0.16722408026755853,
+            "f1-score": 0.23696682464454977,
+            "support": 299.0
+          },
+          "accuracy": 0.6931184128952262,
+          "macro avg": {
+            "precision": 0.6495417361716539,
+            "recall": 0.7093712320815867,
+            "f1-score": 0.6577260954232037,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6744040904604318,
+            "recall": 0.6931184128952262,
+            "f1-score": 0.6680815280811776,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            225,
+            36,
+            53,
+            0,
+            2
+          ],
+          [
+            23,
+            668,
+            24,
+            0,
             71
           ],
           [
-            1,
-            31,
+            5,
+            32,
+            166,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
             9,
-            11,
-            1,
-            34,
-            7,
-            292
+            0
+          ],
+          [
+            22,
+            144,
+            80,
+            3,
+            50
           ]
-        ],
-        "mean_epoch_seconds": 118.98254953000014
+        ]
       },
       {
-        "arm": "adaptive",
-        "seed": 44,
-        "epochs": 35,
-        "best_epoch": 28,
-        "stop_reason": "early_stopping",
-        "accuracy": 0.6783262504086303,
-        "macro_f1": 0.679707821661909,
-        "ece_10_bins": 0.026544191023616763,
-        "multiclass_brier": 0.437196713091602,
+        "seed": 43,
+        "arm": "within_class_shuffled",
+        "accuracy": 0.7104773713577185,
+        "macro_f1": 0.6583061759255695,
+        "balanced_accuracy": 0.7038898080019972,
+        "ece_15": 0.10093126931474286,
+        "brier": 0.4377977433518255,
         "per_class": {
-          "ADI": {
-            "precision": 0.7950819672131147,
-            "recall": 0.7578125,
-            "f1-score": 0.776,
-            "support": 384.0
+          "tumor": {
+            "precision": 0.8473895582329317,
+            "recall": 0.6677215189873418,
+            "f1-score": 0.7469026548672566,
+            "support": 316.0
           },
-          "DEB": {
-            "precision": 0.6843575418994413,
-            "recall": 0.6314432989690721,
-            "f1-score": 0.6568364611260054,
-            "support": 388.0
+          "mucosa_inflammation": {
+            "precision": 0.728744939271255,
+            "recall": 0.916030534351145,
+            "f1-score": 0.8117249154453213,
+            "support": 786.0
           },
-          "LYM": {
-            "precision": 0.8803418803418803,
-            "recall": 0.824,
-            "f1-score": 0.8512396694214877,
-            "support": 375.0
+          "intestinal_metaplasia": {
+            "precision": 0.5777777777777777,
+            "recall": 0.7684729064039408,
+            "f1-score": 0.6596194503171248,
+            "support": 203.0
           },
-          "MUC": {
-            "precision": 0.6798866855524079,
-            "recall": 0.64,
-            "f1-score": 0.6593406593406593,
-            "support": 375.0
+          "lymphoid": {
+            "precision": 0.6923076923076923,
+            "recall": 1.0,
+            "f1-score": 0.8181818181818182,
+            "support": 9.0
           },
-          "MUS": {
-            "precision": 0.7540106951871658,
-            "recall": 0.7268041237113402,
-            "f1-score": 0.7401574803149606,
-            "support": 388.0
+          "other": {
+            "precision": 0.5376344086021505,
+            "recall": 0.16722408026755853,
+            "f1-score": 0.25510204081632654,
+            "support": 299.0
           },
-          "NOR": {
-            "precision": 0.5111111111111111,
-            "recall": 0.553475935828877,
-            "f1-score": 0.5314505776636713,
-            "support": 374.0
+          "accuracy": 0.7104773713577185,
+          "macro avg": {
+            "precision": 0.6767708752383614,
+            "recall": 0.7038898080019972,
+            "f1-score": 0.6583061759255695,
+            "support": 1613.0
           },
-          "STR": {
-            "precision": 0.6558441558441559,
-            "recall": 0.519280205655527,
-            "f1-score": 0.5796269727403156,
-            "support": 389.0
-          },
-          "TUM": {
-            "precision": 0.5496323529411765,
-            "recall": 0.7746113989637305,
-            "f1-score": 0.6430107526881721,
-            "support": 386.0
+          "weighted avg": {
+            "precision": 0.6973595591819679,
+            "recall": 0.7104773713577185,
+            "f1-score": 0.6767383245258338,
+            "support": 1613.0
           }
         },
         "confusion_matrix": [
           [
-            291,
+            211,
+            49,
+            56,
+            0,
+            0
+          ],
+          [
+            11,
+            720,
             12,
-            0,
-            29,
-            21,
-            25,
-            0,
-            6
-          ],
-          [
             1,
-            245,
-            15,
-            21,
-            14,
-            25,
-            24,
-            43
+            42
+          ],
+          [
+            10,
+            36,
+            156,
+            0,
+            1
           ],
           [
             0,
-            4,
-            309,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            17,
+            183,
+            46,
             3,
-            1,
-            20,
-            12,
-            26
+            50
+          ]
+        ]
+      },
+      {
+        "seed": 44,
+        "arm": "standard",
+        "accuracy": 0.657160570365778,
+        "macro_f1": 0.628286840600644,
+        "balanced_accuracy": 0.6653994411986803,
+        "ece_15": 0.1511477476421233,
+        "brier": 0.5164379469316391,
+        "per_class": {
+          "tumor": {
+            "precision": 0.861244019138756,
+            "recall": 0.569620253164557,
+            "f1-score": 0.6857142857142857,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7019730010384216,
+            "recall": 0.8600508905852418,
+            "f1-score": 0.773013150371641,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.47112462006079026,
+            "recall": 0.7635467980295566,
+            "f1-score": 0.5827067669172933,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.8181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.9,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.39603960396039606,
+            "recall": 0.13377926421404682,
+            "f1-score": 0.2,
+            "support": 299.0
+          },
+          "accuracy": 0.657160570365778,
+          "macro avg": {
+            "precision": 0.6497126124760364,
+            "recall": 0.6653994411986803,
+            "f1-score": 0.628286840600644,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6480605484712842,
+            "recall": 0.657160570365778,
+            "f1-score": 0.6264497979925819,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            180,
+            40,
+            95,
+            0,
+            1
           ],
           [
-            54,
             16,
-            1,
-            240,
-            6,
-            33,
-            6,
-            19
+            676,
+            34,
+            0,
+            60
           ],
           [
-            13,
-            31,
-            3,
-            6,
-            282,
-            23,
-            24,
-            6
+            4,
+            44,
+            155,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            9,
+            203,
+            45,
+            2,
+            40
+          ]
+        ]
+      },
+      {
+        "seed": 44,
+        "arm": "residual_fixed",
+        "accuracy": 0.6955982641041537,
+        "macro_f1": 0.6792780524603108,
+        "balanced_accuracy": 0.7022261522062038,
+        "ece_15": 0.11716166851835372,
+        "brier": 0.45317617047443387,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8755980861244019,
+            "recall": 0.5791139240506329,
+            "f1-score": 0.6971428571428572,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7293868921775899,
+            "recall": 0.8778625954198473,
+            "f1-score": 0.7967667436489607,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5559440559440559,
+            "recall": 0.7832512315270936,
+            "f1-score": 0.6503067484662577,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.8181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.9,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.5031055900621118,
+            "recall": 0.2709030100334448,
+            "f1-score": 0.3521739130434783,
+            "support": 299.0
+          },
+          "accuracy": 0.6955982641041537,
+          "macro avg": {
+            "precision": 0.6964432884979955,
+            "recall": 0.7022261522062038,
+            "f1-score": 0.6792780524603108,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6947525998857705,
+            "recall": 0.6955982641041537,
+            "f1-score": 0.6769795866732029,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            183,
+            61,
+            68,
+            0,
+            4
           ],
           [
             7,
+            690,
             15,
-            12,
-            32,
-            5,
-            207,
-            18,
-            78
+            0,
+            74
+          ],
+          [
+            7,
+            35,
+            159,
+            0,
+            2
           ],
           [
             0,
-            21,
-            8,
-            13,
-            44,
-            34,
-            202,
-            67
-          ],
-          [
             0,
-            14,
-            3,
+            0,
             9,
-            1,
-            38,
-            22,
-            299
+            0
+          ],
+          [
+            12,
+            160,
+            44,
+            2,
+            81
           ]
-        ],
-        "mean_epoch_seconds": 118.97090866000009
+        ]
+      },
+      {
+        "seed": 44,
+        "arm": "uniform_weaker",
+        "accuracy": 0.6484810911345319,
+        "macro_f1": 0.630386770578856,
+        "balanced_accuracy": 0.6525367046322798,
+        "ece_15": 0.16723602293295958,
+        "brier": 0.5200201519433464,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8125,
+            "recall": 0.5348101265822784,
+            "f1-score": 0.6450381679389313,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.6979381443298969,
+            "recall": 0.861323155216285,
+            "f1-score": 0.7710706150341685,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.4645161290322581,
+            "recall": 0.7093596059113301,
+            "f1-score": 0.5614035087719298,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.9,
+            "recall": 1.0,
+            "f1-score": 0.9473684210526315,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.40869565217391307,
+            "recall": 0.15719063545150502,
+            "f1-score": 0.22705314009661837,
+            "support": 299.0
+          },
+          "accuracy": 0.6484810911345319,
+          "macro avg": {
+            "precision": 0.6567299851072136,
+            "recall": 0.6525367046322798,
+            "f1-score": 0.630386770578856,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.638515905540513,
+            "recall": 0.6484810911345319,
+            "f1-score": 0.6201324745471934,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            169,
+            47,
+            94,
+            0,
+            6
+          ],
+          [
+            20,
+            677,
+            29,
+            0,
+            60
+          ],
+          [
+            4,
+            53,
+            144,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            15,
+            193,
+            43,
+            1,
+            47
+          ]
+        ]
+      },
+      {
+        "seed": 44,
+        "arm": "shuffled",
+        "accuracy": 0.6999380037197768,
+        "macro_f1": 0.6821927390180597,
+        "balanced_accuracy": 0.7004800429118634,
+        "ece_15": 0.11865088955186864,
+        "brier": 0.4577288389697924,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8721461187214612,
+            "recall": 0.6044303797468354,
+            "f1-score": 0.7140186915887851,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7131230925737538,
+            "recall": 0.8918575063613231,
+            "f1-score": 0.7925381571509327,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5992217898832685,
+            "recall": 0.7586206896551724,
+            "f1-score": 0.6695652173913044,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.8181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.9,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.5174825174825175,
+            "recall": 0.24749163879598662,
+            "f1-score": 0.334841628959276,
+            "support": 299.0
+          },
+          "accuracy": 0.6999380037197768,
+          "macro avg": {
+            "precision": 0.7040310673685639,
+            "recall": 0.7004800429118634,
+            "f1-score": 0.6821927390180597,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6942627753974984,
+            "recall": 0.6999380037197768,
+            "f1-score": 0.6774360100756028,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            191,
+            68,
+            55,
+            0,
+            2
+          ],
+          [
+            10,
+            701,
+            11,
+            0,
+            64
+          ],
+          [
+            5,
+            41,
+            154,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            13,
+            173,
+            37,
+            2,
+            74
+          ]
+        ]
+      },
+      {
+        "seed": 44,
+        "arm": "adaptive",
+        "accuracy": 0.6937383756974581,
+        "macro_f1": 0.6593617261583047,
+        "balanced_accuracy": 0.7029814721822352,
+        "ece_15": 0.11005512297486048,
+        "brier": 0.4551021681774361,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8894736842105263,
+            "recall": 0.5348101265822784,
+            "f1-score": 0.6679841897233202,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.7467811158798283,
+            "recall": 0.8854961832061069,
+            "f1-score": 0.810244470314319,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.498567335243553,
+            "recall": 0.8571428571428571,
+            "f1-score": 0.6304347826086957,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1-score": 0.8571428571428571,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.5461538461538461,
+            "recall": 0.23745819397993312,
+            "f1-score": 0.331002331002331,
+            "support": 299.0
+          },
+          "accuracy": 0.6937383756974581,
+          "macro avg": {
+            "precision": 0.6861951962975507,
+            "recall": 0.7029814721822352,
+            "f1-score": 0.6593617261583047,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.7063253628930644,
+            "recall": 0.6937383756974581,
+            "f1-score": 0.6711701185202552,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            169,
+            48,
+            97,
+            0,
+            2
+          ],
+          [
+            5,
+            696,
+            28,
+            0,
+            57
+          ],
+          [
+            3,
+            26,
+            174,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            13,
+            162,
+            50,
+            3,
+            71
+          ]
+        ]
+      },
+      {
+        "seed": 44,
+        "arm": "within_class_shuffled",
+        "accuracy": 0.6993180409175449,
+        "macro_f1": 0.6804779884190421,
+        "balanced_accuracy": 0.7088671866937967,
+        "ece_15": 0.11515650323142343,
+        "brier": 0.4528996842611365,
+        "per_class": {
+          "tumor": {
+            "precision": 0.8733624454148472,
+            "recall": 0.6329113924050633,
+            "f1-score": 0.7339449541284404,
+            "support": 316.0
+          },
+          "mucosa_inflammation": {
+            "precision": 0.734475374732334,
+            "recall": 0.8727735368956743,
+            "f1-score": 0.7976744186046512,
+            "support": 786.0
+          },
+          "intestinal_metaplasia": {
+            "precision": 0.5578231292517006,
+            "recall": 0.8078817733990148,
+            "f1-score": 0.6599597585513078,
+            "support": 203.0
+          },
+          "lymphoid": {
+            "precision": 0.8181818181818182,
+            "recall": 1.0,
+            "f1-score": 0.9,
+            "support": 9.0
+          },
+          "other": {
+            "precision": 0.47586206896551725,
+            "recall": 0.23076923076923078,
+            "f1-score": 0.3108108108108108,
+            "support": 299.0
+          },
+          "accuracy": 0.6993180409175449,
+          "macro avg": {
+            "precision": 0.6919409673092435,
+            "recall": 0.7088671866937967,
+            "f1-score": 0.6804779884190421,
+            "support": 1613.0
+          },
+          "weighted avg": {
+            "precision": 0.6919805750236375,
+            "recall": 0.6993180409175449,
+            "f1-score": 0.6781791456578989,
+            "support": 1613.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            200,
+            49,
+            65,
+            0,
+            2
+          ],
+          [
+            8,
+            686,
+            18,
+            0,
+            74
+          ],
+          [
+            6,
+            33,
+            164,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            9,
+            0
+          ],
+          [
+            15,
+            166,
+            47,
+            2,
+            69
+          ]
+        ]
       }
     ],
-    "integrity": [
-      {
-        "run": "seed42_standard",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
+    "arm_means": {
+      "standard": {
+        "accuracy": 0.6885720190121926,
+        "macro_f1": 0.6599573961316766,
+        "balanced_accuracy": 0.700262912123382,
+        "ece_15": 0.11859620066437009,
+        "brier": 0.4671282331881527
       },
-      {
-        "run": "seed42_residual_fixed",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
+      "residual_fixed": {
+        "accuracy": 0.6939450299648687,
+        "macro_f1": 0.6696152075066726,
+        "balanced_accuracy": 0.6959126236684651,
+        "ece_15": 0.12325363606676427,
+        "brier": 0.4630290881718493
       },
-      {
-        "run": "seed42_uniform_weaker",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
+      "uniform_weaker": {
+        "accuracy": 0.6821657367224633,
+        "macro_f1": 0.6495206431461545,
+        "balanced_accuracy": 0.6801763295970704,
+        "ece_15": 0.13456381009639504,
+        "brier": 0.4787331973803443
       },
-      {
-        "run": "seed42_adaptive",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
+      "shuffled": {
+        "accuracy": 0.6693531721430047,
+        "macro_f1": 0.6349620114057619,
+        "balanced_accuracy": 0.6605475484976912,
+        "ece_15": 0.1471406320669257,
+        "brier": 0.5116908833817511
       },
-      {
-        "run": "seed43_standard",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
+      "adaptive": {
+        "accuracy": 0.6939450299648687,
+        "macro_f1": 0.6602233987275888,
+        "balanced_accuracy": 0.7051861051706331,
+        "ece_15": 0.11477055834649785,
+        "brier": 0.46112842994959413
       },
-      {
-        "run": "seed43_residual_fixed",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
-      },
-      {
-        "run": "seed43_uniform_weaker",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
-      },
-      {
-        "run": "seed43_adaptive",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
-      },
-      {
-        "run": "seed44_standard",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
-      },
-      {
-        "run": "seed44_residual_fixed",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
-      },
-      {
-        "run": "seed44_uniform_weaker",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
-      },
-      {
-        "run": "seed44_adaptive",
-        "config_matches": true,
-        "initial_hash_matches": true,
-        "prediction_metrics_recomputed": true,
-        "best_hash_matches": true,
-        "best_tensors_finite": true,
-        "resumable_state_present": true,
-        "validation_identity_sha256": "99861c8fa54873c6c9ff7e49f50408af742ec62590d26904a12f37d55ee16bc6"
+      "within_class_shuffled": {
+        "accuracy": 0.7057243232072742,
+        "macro_f1": 0.6748840068168356,
+        "balanced_accuracy": 0.708703029849805,
+        "ece_15": 0.10933452573017681,
+        "brier": 0.4473468503300075
       }
+    },
+    "primary_adaptive_minus_within_class": -0.01466060808924674,
+    "descriptive_patient_cluster_interval": [
+      -0.03756926108545829,
+      0.00692240802152803
     ],
-    "scope": "Validation only; exact-file-controlled image split; no patient independence; checkpoints selected on validation",
-    "inference": "Descriptive three-seed comparison; no superiority, clinical benefit or novelty established"
+    "bootstrap_draws_missing_classes": 31,
+    "bootstrap_convention": "Fixed five classes, zero_division=0 even if a class is absent in a draw; small-cluster interval is descriptive and may be unstable.",
+    "protocol_sha256": "dc7e4b0d923fcd56dda6b5c71e8eb7453a0eaae5f4df18f4c9e3a064641374bc",
+    "checkpoint_freeze_sha256": "15ba818d4c3fbcac503ce5db20c931f5fe26b8bfe6a47b63311df16b1f32720e",
+    "patch_manifest_sha256": "1e3d6b4ee732730cb47d24f699afa7079ff86be55139bcb1dc05d414ca38175f",
+    "scope": "Frozen final test on reserved public-release patients; not independent cross-hospital external testing, not clinical validation. No tuning after test access.",
+    "independent_verification": true
   },
-  "as_of": "2026-11-13T20:52:38+05:30",
-  "as_of_display": "13 Nov 2026 20:52 IST",
-  "campaign": "overnight_20261113",
-  "first_seed": [
-    {
-      "arm": "standard",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 39,
-      "accuracy": 0.6864988558352403,
-      "macro_f1": 0.6867235772622982,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8436578171091446,
-          "recall": 0.7447916666666666,
-          "f1-score": 0.7911479944674965,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.5979591836734693,
-          "recall": 0.7551546391752577,
-          "f1-score": 0.6674259681093394,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8825214899713467,
-          "recall": 0.8213333333333334,
-          "f1-score": 0.850828729281768,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6612903225806451,
-          "recall": 0.656,
-          "f1-score": 0.6586345381526104,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.8224852071005917,
-          "recall": 0.7164948453608248,
-          "f1-score": 0.7658402203856749,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5337423312883436,
-          "recall": 0.46524064171123,
-          "f1-score": 0.49714285714285716,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6785714285714286,
-          "recall": 0.5372750642673522,
-          "f1-score": 0.599713055954089,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5698324022346368,
-          "recall": 0.7927461139896373,
-          "f1-score": 0.6630552546045504,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 0,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 59.69630245250001
-    },
-    {
-      "arm": "residual_fixed",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 34,
-      "best_epoch": 27,
-      "accuracy": 0.6672115070284407,
-      "macro_f1": 0.6660755729267112,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8116343490304709,
-          "recall": 0.7630208333333334,
-          "f1-score": 0.7865771812080536,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6,
-          "recall": 0.6726804123711341,
-          "f1-score": 0.6342648845686513,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8056265984654731,
-          "recall": 0.84,
-          "f1-score": 0.8224543080939948,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6612466124661247,
-          "recall": 0.6506666666666666,
-          "f1-score": 0.6559139784946236,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7636887608069164,
-          "recall": 0.6829896907216495,
-          "f1-score": 0.7210884353741497,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5227963525835866,
-          "recall": 0.45989304812834225,
-          "f1-score": 0.48933143669985774,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6517571884984026,
-          "recall": 0.5244215938303342,
-          "f1-score": 0.5811965811965812,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5583657587548638,
-          "recall": 0.7435233160621761,
-          "f1-score": 0.6377777777777778,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 68,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "early_stopping",
-      "mean_epoch_seconds": 119.22271071176465
-    },
-    {
-      "arm": "uniform_weaker",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 38,
-      "accuracy": 0.6779993461915659,
-      "macro_f1": 0.6760071538823273,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8131868131868132,
-          "recall": 0.7708333333333334,
-          "f1-score": 0.7914438502673797,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6308068459657702,
-          "recall": 0.6649484536082474,
-          "f1-score": 0.6474278544542033,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8447368421052631,
-          "recall": 0.856,
-          "f1-score": 0.8503311258278146,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.657608695652174,
-          "recall": 0.6453333333333333,
-          "f1-score": 0.6514131897711979,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7331670822942643,
-          "recall": 0.7577319587628866,
-          "f1-score": 0.7452471482889734,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5403726708074534,
-          "recall": 0.46524064171123,
-          "f1-score": 0.5,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6768707482993197,
-          "recall": 0.5115681233933161,
-          "f1-score": 0.582723279648609,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5566218809980806,
-          "recall": 0.7512953367875648,
-          "f1-score": 0.639470782800441,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 116.93794041749975
-    },
-    {
-      "arm": "adaptive",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 36,
-      "accuracy": 0.6900948022229487,
-      "macro_f1": 0.6887776697600196,
-      "per_class": {
-        "ADI": {
-          "precision": 0.806282722513089,
-          "recall": 0.8020833333333334,
-          "f1-score": 0.804177545691906,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6918604651162791,
-          "recall": 0.6134020618556701,
-          "f1-score": 0.6502732240437158,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8710601719197708,
-          "recall": 0.8106666666666666,
-          "f1-score": 0.8397790055248618,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6666666666666666,
-          "recall": 0.6826666666666666,
-          "f1-score": 0.6745718050065876,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7210401891252955,
-          "recall": 0.7860824742268041,
-          "f1-score": 0.752157829839704,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5559006211180124,
-          "recall": 0.4786096256684492,
-          "f1-score": 0.514367816091954,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6253369272237197,
-          "recall": 0.596401028277635,
-          "f1-score": 0.6105263157894737,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5971074380165289,
-          "recall": 0.7487046632124352,
-          "f1-score": 0.664367816091954,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 119.29647900000005
-    }
+  "test_text": "The frozen final test completed on 1613 patches from 7 reserved patients. The prespecified adaptive-minus-within-class-shuffled mean macro-F1 difference was -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. Of 1,000 cluster draws, 31 lacked at least one class; fixed five-class zero-division-zero scoring was retained. Only 7 usable patient clusters limit precision. All models were frozen before acquisition; no tuning follows test access. This is held-out public-release testing, not independent clinical external validation.",
+  "labels": {
+    "standard": "Standard",
+    "residual_fixed": "Residual fixed",
+    "uniform_weaker": "Uniform weaker",
+    "shuffled": "Global shuffled",
+    "adaptive": "Adaptive",
+    "within_class_shuffled": "Within-class shuffled"
+  },
+  "references": [
+    "[1] S. Lou et al., A large histological images dataset of gastric cancer with tumour microenvironment annotation for AI, Scientific Data, 12, 138, 2025. doi:10.1038/s41597-025-04489-9.",
+    "[2] C. Wang et al., A fully annotated pathology slide dataset for early gastric cancer and precancerous lesions, Scientific Data, 2025. doi:10.1038/s41597-025-05679-1.",
+    "[3] T. Kim et al., Stain SAN: simultaneous augmentation and normalization for histopathology images, Journal of Medical Imaging, 11(4), 044006, 2024. doi:10.1117/1.JMI.11.4.044006.",
+    "[4] N. Marini et al., Data-driven color augmentation for H&E stained images in computational pathology, Journal of Pathology Informatics, 14, 100183, 2023. doi:10.1016/j.jpi.2022.100183.",
+    "[5] J. Brabec, T. Komarek, V. Franc and L. Machlica, On Model Evaluation under Non-constant Class Imbalance, ICCS, 2020; arXiv:2001.05571.",
+    "[6] J. Opitz, A Closer Look at Classification Evaluation Metrics and a Critical Reflection of Common Evaluation Practice, Transactions of the ACL, 12, pp.820\u2013836, 2024. doi:10.1162/tacl_a_00675.",
+    "[7] Local evidence: stain_research/results/hiesd_resnet_ablation_v1; results/shuffled_20261116; publication_readiness/publication_audit_20261117; ranking_audit_20261117; frozen final-test protocol and checkpoint freeze. Snapshot 2026-11-17T07:15+05:30.",
+    "[8] KIIT School of Computer Science and Engineering, Project_Report-format..docx, institutional template supplied by the student. Sample template results are not project evidence.",
+    "[9] M. Hong, Physics-Grounded Adversarial Stain Augmentation with Calibrated Coverage Guarantees, arXiv:2605.13889, 2026. Preprint; a different multi-center task and calibration protocol."
   ],
-  "all_runs": [
-    {
-      "arm": "standard",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 39,
-      "accuracy": 0.6864988558352403,
-      "macro_f1": 0.6867235772622982,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8436578171091446,
-          "recall": 0.7447916666666666,
-          "f1-score": 0.7911479944674965,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.5979591836734693,
-          "recall": 0.7551546391752577,
-          "f1-score": 0.6674259681093394,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8825214899713467,
-          "recall": 0.8213333333333334,
-          "f1-score": 0.850828729281768,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6612903225806451,
-          "recall": 0.656,
-          "f1-score": 0.6586345381526104,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.8224852071005917,
-          "recall": 0.7164948453608248,
-          "f1-score": 0.7658402203856749,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5337423312883436,
-          "recall": 0.46524064171123,
-          "f1-score": 0.49714285714285716,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6785714285714286,
-          "recall": 0.5372750642673522,
-          "f1-score": 0.599713055954089,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5698324022346368,
-          "recall": 0.7927461139896373,
-          "f1-score": 0.6630552546045504,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 0,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 59.69630245250001
-    },
-    {
-      "arm": "residual_fixed",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 34,
-      "best_epoch": 27,
-      "accuracy": 0.6672115070284407,
-      "macro_f1": 0.6660755729267112,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8116343490304709,
-          "recall": 0.7630208333333334,
-          "f1-score": 0.7865771812080536,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6,
-          "recall": 0.6726804123711341,
-          "f1-score": 0.6342648845686513,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8056265984654731,
-          "recall": 0.84,
-          "f1-score": 0.8224543080939948,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6612466124661247,
-          "recall": 0.6506666666666666,
-          "f1-score": 0.6559139784946236,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7636887608069164,
-          "recall": 0.6829896907216495,
-          "f1-score": 0.7210884353741497,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5227963525835866,
-          "recall": 0.45989304812834225,
-          "f1-score": 0.48933143669985774,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6517571884984026,
-          "recall": 0.5244215938303342,
-          "f1-score": 0.5811965811965812,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5583657587548638,
-          "recall": 0.7435233160621761,
-          "f1-score": 0.6377777777777778,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 68,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "early_stopping",
-      "mean_epoch_seconds": 119.22271071176465
-    },
-    {
-      "arm": "uniform_weaker",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 38,
-      "accuracy": 0.6779993461915659,
-      "macro_f1": 0.6760071538823273,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8131868131868132,
-          "recall": 0.7708333333333334,
-          "f1-score": 0.7914438502673797,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6308068459657702,
-          "recall": 0.6649484536082474,
-          "f1-score": 0.6474278544542033,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8447368421052631,
-          "recall": 0.856,
-          "f1-score": 0.8503311258278146,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.657608695652174,
-          "recall": 0.6453333333333333,
-          "f1-score": 0.6514131897711979,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7331670822942643,
-          "recall": 0.7577319587628866,
-          "f1-score": 0.7452471482889734,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5403726708074534,
-          "recall": 0.46524064171123,
-          "f1-score": 0.5,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6768707482993197,
-          "recall": 0.5115681233933161,
-          "f1-score": 0.582723279648609,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5566218809980806,
-          "recall": 0.7512953367875648,
-          "f1-score": 0.639470782800441,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 116.93794041749975
-    },
-    {
-      "arm": "adaptive",
-      "seed": 42,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 36,
-      "accuracy": 0.6900948022229487,
-      "macro_f1": 0.6887776697600196,
-      "per_class": {
-        "ADI": {
-          "precision": 0.806282722513089,
-          "recall": 0.8020833333333334,
-          "f1-score": 0.804177545691906,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6918604651162791,
-          "recall": 0.6134020618556701,
-          "f1-score": 0.6502732240437158,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8710601719197708,
-          "recall": 0.8106666666666666,
-          "f1-score": 0.8397790055248618,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6666666666666666,
-          "recall": 0.6826666666666666,
-          "f1-score": 0.6745718050065876,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7210401891252955,
-          "recall": 0.7860824742268041,
-          "f1-score": 0.752157829839704,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5559006211180124,
-          "recall": 0.4786096256684492,
-          "f1-score": 0.514367816091954,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6253369272237197,
-          "recall": 0.596401028277635,
-          "f1-score": 0.6105263157894737,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5971074380165289,
-          "recall": 0.7487046632124352,
-          "f1-score": 0.664367816091954,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 119.29647900000005
-    },
-    {
-      "arm": "standard",
-      "seed": 43,
-      "status": "Complete",
-      "epoch": 36,
-      "best_epoch": 29,
-      "accuracy": 0.6802876757110167,
-      "macro_f1": 0.679989401970562,
-      "per_class": {
-        "ADI": {
-          "precision": 0.7994505494505495,
-          "recall": 0.7578125,
-          "f1-score": 0.7780748663101604,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6971428571428572,
-          "recall": 0.6288659793814433,
-          "f1-score": 0.6612466124661247,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8329048843187661,
-          "recall": 0.864,
-          "f1-score": 0.8481675392670157,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6666666666666666,
-          "recall": 0.6506666666666666,
-          "f1-score": 0.6585695006747638,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.8212121212121212,
-          "recall": 0.6984536082474226,
-          "f1-score": 0.754874651810585,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5280898876404494,
-          "recall": 0.5026737967914439,
-          "f1-score": 0.5150684931506849,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6535947712418301,
-          "recall": 0.5141388174807198,
-          "f1-score": 0.5755395683453237,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5334448160535117,
-          "recall": 0.8264248704663213,
-          "f1-score": 0.6483739837398373,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 0,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "early_stopping",
-      "mean_epoch_seconds": 56.48768823888875
-    },
-    {
-      "arm": "residual_fixed",
-      "seed": 43,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 40,
-      "accuracy": 0.6930369401765283,
-      "macro_f1": 0.6923975586725328,
-      "per_class": {
-        "ADI": {
-          "precision": 0.783375314861461,
-          "recall": 0.8098958333333334,
-          "f1-score": 0.7964148527528809,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.7039106145251397,
-          "recall": 0.6494845360824743,
-          "f1-score": 0.675603217158177,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8403141361256544,
-          "recall": 0.856,
-          "f1-score": 0.8480845442536328,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.7038123167155426,
-          "recall": 0.64,
-          "f1-score": 0.6703910614525139,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7698412698412699,
-          "recall": 0.75,
-          "f1-score": 0.7597911227154047,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5289672544080605,
-          "recall": 0.5614973262032086,
-          "f1-score": 0.5447470817120622,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6612903225806451,
-          "recall": 0.5269922879177378,
-          "f1-score": 0.586552217453505,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5846774193548387,
-          "recall": 0.7512953367875648,
-          "f1-score": 0.6575963718820862,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 117.15649392500026
-    },
-    {
-      "arm": "uniform_weaker",
-      "seed": 43,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 38,
-      "accuracy": 0.6793069630598235,
-      "macro_f1": 0.6779255576107532,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8352272727272727,
-          "recall": 0.765625,
-          "f1-score": 0.7989130434782609,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6289592760180995,
-          "recall": 0.7164948453608248,
-          "f1-score": 0.6698795180722892,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8590785907859079,
-          "recall": 0.8453333333333334,
-          "f1-score": 0.8521505376344086,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6442786069651741,
-          "recall": 0.6906666666666667,
-          "f1-score": 0.6666666666666666,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7737430167597765,
-          "recall": 0.7139175257731959,
-          "f1-score": 0.7426273458445041,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.514367816091954,
-          "recall": 0.4786096256684492,
-          "f1-score": 0.49584487534626037,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6654411764705882,
-          "recall": 0.4652956298200514,
-          "f1-score": 0.5476550680786687,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5678294573643411,
-          "recall": 0.7590673575129534,
-          "f1-score": 0.6496674057649667,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 122.28663423500021
-    },
-    {
-      "arm": "adaptive",
-      "seed": 43,
-      "status": "Complete",
-      "epoch": 38,
-      "best_epoch": 31,
-      "accuracy": 0.6838836220987251,
-      "macro_f1": 0.6823071344625093,
-      "per_class": {
-        "ADI": {
-          "precision": 0.7847769028871391,
-          "recall": 0.7786458333333334,
-          "f1-score": 0.7816993464052288,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.672972972972973,
-          "recall": 0.6417525773195877,
-          "f1-score": 0.6569920844327177,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8320610687022901,
-          "recall": 0.872,
-          "f1-score": 0.8515625,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6685236768802229,
-          "recall": 0.64,
-          "f1-score": 0.6539509536784741,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7474226804123711,
-          "recall": 0.7474226804123711,
-          "f1-score": 0.7474226804123711,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5397260273972603,
-          "recall": 0.5267379679144385,
-          "f1-score": 0.5331529093369418,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6506410256410257,
-          "recall": 0.5218508997429306,
-          "f1-score": 0.579172610556348,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5845213849287169,
-          "recall": 0.7435233160621761,
-          "f1-score": 0.6545039908779932,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 76,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "early_stopping",
-      "mean_epoch_seconds": 122.44066445526369
-    },
-    {
-      "arm": "standard",
-      "seed": 44,
-      "status": "Complete",
-      "epoch": 39,
-      "best_epoch": 32,
-      "accuracy": 0.6642693690748611,
-      "macro_f1": 0.6660156126136045,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8409090909090909,
-          "recall": 0.6744791666666666,
-          "f1-score": 0.7485549132947977,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6826347305389222,
-          "recall": 0.5876288659793815,
-          "f1-score": 0.631578947368421,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8429319371727748,
-          "recall": 0.8586666666666667,
-          "f1-score": 0.8507265521796565,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6327077747989276,
-          "recall": 0.6293333333333333,
-          "f1-score": 0.6310160427807486,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7562326869806094,
-          "recall": 0.7036082474226805,
-          "f1-score": 0.7289719626168224,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.49878934624697335,
-          "recall": 0.5508021390374331,
-          "f1-score": 0.5235069885641678,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6310975609756098,
-          "recall": 0.532133676092545,
-          "f1-score": 0.5774058577405857,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5375,
-          "recall": 0.7797927461139896,
-          "f1-score": 0.6363636363636364,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 0,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "early_stopping",
-      "mean_epoch_seconds": 61.88482582307673
-    },
-    {
-      "arm": "residual_fixed",
-      "seed": 44,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 36,
-      "accuracy": 0.6887871853546911,
-      "macro_f1": 0.6881301097158766,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8422535211267606,
-          "recall": 0.7786458333333334,
-          "f1-score": 0.8092016238159675,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6641221374045801,
-          "recall": 0.6726804123711341,
-          "f1-score": 0.6683738796414853,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.851063829787234,
-          "recall": 0.8533333333333334,
-          "f1-score": 0.8521970705725699,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6603325415676959,
-          "recall": 0.7413333333333333,
-          "f1-score": 0.6984924623115578,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.770949720670391,
-          "recall": 0.711340206185567,
-          "f1-score": 0.739946380697051,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5274390243902439,
-          "recall": 0.4625668449197861,
-          "f1-score": 0.4928774928774929,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6526946107784432,
-          "recall": 0.5604113110539846,
-          "f1-score": 0.603042876901798,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5708502024291497,
-          "recall": 0.7305699481865285,
-          "f1-score": 0.6409090909090909,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 118.63999293749949
-    },
-    {
-      "arm": "uniform_weaker",
-      "seed": 44,
-      "status": "Complete",
-      "epoch": 40,
-      "best_epoch": 40,
-      "accuracy": 0.6894409937888198,
-      "macro_f1": 0.6873346585026894,
-      "per_class": {
-        "ADI": {
-          "precision": 0.8202247191011236,
-          "recall": 0.7604166666666666,
-          "f1-score": 0.7891891891891892,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.625,
-          "recall": 0.7474226804123711,
-          "f1-score": 0.6807511737089202,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8455497382198953,
-          "recall": 0.8613333333333333,
-          "f1-score": 0.8533685601056803,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6649746192893401,
-          "recall": 0.6986666666666667,
-          "f1-score": 0.6814044213263979,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7927170868347339,
-          "recall": 0.729381443298969,
-          "f1-score": 0.7597315436241611,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5451612903225806,
-          "recall": 0.45187165775401067,
-          "f1-score": 0.49415204678362573,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.717391304347826,
-          "recall": 0.5089974293059126,
-          "f1-score": 0.5954887218045113,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5615384615384615,
-          "recall": 0.7564766839378239,
-          "f1-score": 0.6445916114790287,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 80,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "maximum_epoch_budget",
-      "mean_epoch_seconds": 118.98254953000014
-    },
-    {
-      "arm": "adaptive",
-      "seed": 44,
-      "status": "Complete",
-      "epoch": 35,
-      "best_epoch": 28,
-      "accuracy": 0.6783262504086303,
-      "macro_f1": 0.679707821661909,
-      "per_class": {
-        "ADI": {
-          "precision": 0.7950819672131147,
-          "recall": 0.7578125,
-          "f1-score": 0.776,
-          "support": 384.0
-        },
-        "DEB": {
-          "precision": 0.6843575418994413,
-          "recall": 0.6314432989690721,
-          "f1-score": 0.6568364611260054,
-          "support": 388.0
-        },
-        "LYM": {
-          "precision": 0.8803418803418803,
-          "recall": 0.824,
-          "f1-score": 0.8512396694214877,
-          "support": 375.0
-        },
-        "MUC": {
-          "precision": 0.6798866855524079,
-          "recall": 0.64,
-          "f1-score": 0.6593406593406593,
-          "support": 375.0
-        },
-        "MUS": {
-          "precision": 0.7540106951871658,
-          "recall": 0.7268041237113402,
-          "f1-score": 0.7401574803149606,
-          "support": 388.0
-        },
-        "NOR": {
-          "precision": 0.5111111111111111,
-          "recall": 0.553475935828877,
-          "f1-score": 0.5314505776636713,
-          "support": 374.0
-        },
-        "STR": {
-          "precision": 0.6558441558441559,
-          "recall": 0.519280205655527,
-          "f1-score": 0.5796269727403156,
-          "support": 389.0
-        },
-        "TUM": {
-          "precision": 0.5496323529411765,
-          "recall": 0.7746113989637305,
-          "f1-score": 0.6430107526881721,
-          "support": 386.0
-        }
-      },
-      "failures_by_class": {
-        "ADI": 70,
-        "DEB": 0,
-        "LYM": 0,
-        "MUC": 0,
-        "MUS": 0,
-        "NOR": 0,
-        "STR": 0,
-        "TUM": 0
-      },
-      "checkpoint_reload_verified": true,
-      "stop_reason": "early_stopping",
-      "mean_epoch_seconds": 118.97090866000009
-    }
-  ],
-  "config": {
-    "created_at": "2026-11-13T03:47:32+05:30",
-    "morning_snapshot_due": "2026-11-13T09:00:00+05:30",
-    "campaign_wall_hours": 24,
-    "seeds": [
-      42,
-      43,
-      44
-    ],
-    "arms": [
-      "standard",
-      "residual_fixed",
-      "uniform_weaker",
-      "adaptive"
-    ],
-    "max_epochs": 40,
-    "patience": 7,
-    "min_delta": 0.0001,
-    "batch_size": 64,
-    "workers": 4,
-    "amp": true,
-    "learning_rate": 0.001,
-    "weight_decay": 0.0001,
-    "checkpoint_seconds": 120,
-    "estimated_epoch_seconds": 114.5585900000109,
-    "early_stopping": "Validation macro-F1, improvement >0.0001, patience7; common 40-epoch ceiling",
-    "scheduler": "ReduceLROnPlateau validation loss, patience2, factor0.5",
-    "evaluation": "Raw resized RGB, train-fitted channel standardization, deterministic AMP validation; no stain normalization or test-time augmentation",
-    "split": "Provisional exact-file-controlled historical image split; patient independence UNVERIFIED",
-    "comparison": "Same split, initial model per seed, geometry, order, optimizer and stopping rules",
-    "authorization": "User instruction on 13 November explicitly permits exploratory provisional-split training despite unavailable patient mapping",
-    "source_versions": {
-      "torch": "2.7.0+cu128",
-      "torchvision": "0.22.0+cu128",
-      "numpy": "2.2.5",
-      "pandas": "2.2.3",
-      "Pillow": "11.2.1"
-    },
-    "dashboard_activation": false,
-    "test_evaluation": false
+  "final_status": {
+    "stage": "complete",
+    "test_complete": true,
+    "materials_built": true
   },
-  "throughput": 238.66348448684738,
-  "benchmark": {
-    "trials": [
-      {
-        "batch_size": 16,
-        "workers": 0,
-        "warmup_including_worker_start_seconds": 2.1034340000001066,
-        "timed_steps": 9,
-        "timed_images": 144,
-        "seconds": 2.2290493999998944,
-        "images_per_second": 64.60152924381434,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 396.17236328125,
-        "peak_reserved_mib": 534.0,
-        "cuda_free_mib": 2683.7000007629395,
-        "telemetry": {
-          "gpu_csv": "0, 703, 38.03, 12.69",
-          "recorded_at": "2026-11-13T03:42:23+05:30"
-        },
-        "eligible": true
-      },
-      {
-        "batch_size": 32,
-        "workers": 0,
-        "warmup_including_worker_start_seconds": 1.1442010000000664,
-        "timed_steps": 9,
-        "timed_images": 288,
-        "seconds": 4.106190400000287,
-        "images_per_second": 70.1380043165996,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 683.98583984375,
-        "peak_reserved_mib": 1032.0,
-        "cuda_free_mib": 2185.7000007629395,
-        "telemetry": {
-          "gpu_csv": "0, 1201, 37.56, 12.58",
-          "recorded_at": "2026-11-13T03:42:28+05:30"
-        },
-        "eligible": true
-      },
-      {
-        "batch_size": 64,
-        "workers": 0,
-        "warmup_including_worker_start_seconds": 2.177108800000042,
-        "timed_steps": 9,
-        "timed_images": 576,
-        "seconds": 8.569658999999774,
-        "images_per_second": 67.2138763047649,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 1288.30078125,
-        "peak_reserved_mib": 1996.0,
-        "cuda_free_mib": 1221.7000007629395,
-        "telemetry": {
-          "gpu_csv": "2, 2165, 40.38, 21.82",
-          "recorded_at": "2026-11-13T03:42:39+05:30"
-        },
-        "eligible": true
-      },
-      {
-        "batch_size": 64,
-        "workers": 2,
-        "warmup_including_worker_start_seconds": 1.5195973999998387,
-        "timed_steps": 9,
-        "timed_images": 576,
-        "seconds": 3.1264659999997093,
-        "images_per_second": 184.2335723465579,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 1288.30078125,
-        "peak_reserved_mib": 1996.0,
-        "cuda_free_mib": 1221.7000007629395,
-        "telemetry": {
-          "gpu_csv": "84, 2165, 42.44, 29.45",
-          "recorded_at": "2026-11-13T03:42:55+05:30"
-        },
-        "eligible": true
-      },
-      {
-        "batch_size": 64,
-        "workers": 4,
-        "warmup_including_worker_start_seconds": 1.4182362000001376,
-        "timed_steps": 9,
-        "timed_images": 576,
-        "seconds": 2.4134400000002643,
-        "images_per_second": 238.66348448684738,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 1288.30078125,
-        "peak_reserved_mib": 1996.0,
-        "cuda_free_mib": 1221.7000007629395,
-        "telemetry": {
-          "gpu_csv": "92, 2165, 44.97, 32.15",
-          "recorded_at": "2026-11-13T03:43:21+05:30"
-        },
-        "eligible": true
-      },
-      {
-        "batch_size": 96,
-        "workers": 2,
-        "warmup_including_worker_start_seconds": 2.1000515000000632,
-        "timed_steps": 9,
-        "timed_images": 864,
-        "seconds": 4.469135300000289,
-        "images_per_second": 193.3259885866387,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 1893.4912109375,
-        "peak_reserved_mib": 2934.0,
-        "cuda_free_mib": 283.70000076293945,
-        "telemetry": {
-          "gpu_csv": "0, 3103, 42.16, 24.12",
-          "recorded_at": "2026-11-13T03:43:41+05:30"
-        },
-        "eligible": false
-      },
-      {
-        "batch_size": 96,
-        "workers": 4,
-        "warmup_including_worker_start_seconds": 1.8224331000001257,
-        "timed_steps": 9,
-        "timed_images": 864,
-        "seconds": 3.4225203999999394,
-        "images_per_second": 252.44553692069016,
-        "finite_loss_and_gradients": true,
-        "skipped_amp_steps": 0,
-        "peak_allocated_mib": 1893.9287109375,
-        "peak_reserved_mib": 2924.0,
-        "cuda_free_mib": 293.70000076293945,
-        "telemetry": {
-          "gpu_csv": "93, 3093, 45.78, 42.13",
-          "recorded_at": "2026-11-13T03:44:09+05:30"
-        },
-        "eligible": false
-      }
-    ],
-    "selected": {
-      "batch_size": 64,
-      "workers": 4,
-      "warmup_including_worker_start_seconds": 1.4182362000001376,
-      "timed_steps": 9,
-      "timed_images": 576,
-      "seconds": 2.4134400000002643,
-      "images_per_second": 238.66348448684738,
-      "finite_loss_and_gradients": true,
-      "skipped_amp_steps": 0,
-      "peak_allocated_mib": 1288.30078125,
-      "peak_reserved_mib": 1996.0,
-      "cuda_free_mib": 1221.7000007629395,
-      "telemetry": {
-        "gpu_csv": "92, 2165, 44.97, 32.15",
-        "recorded_at": "2026-11-13T03:43:21+05:30"
-      },
-      "eligible": true
-    },
-    "protocol": "TRAIN-only warm-cache residual augmentation with real GPU forward/backward, AMP fp16, optimizer updates; benchmark weights discarded",
-    "cpu_threads_main": 2,
-    "cpu_threads_per_worker": 1,
-    "maximum_workers": 4,
-    "headroom_rule": "CUDA reserved <=3072 MiB and free >=768 MiB; no overclocking or thermal changes"
-  },
-  "completed_runs": 12,
-  "patient_independence": false,
-  "test_evaluated": false,
-  "author": "Amlan Choudhury",
-  "report_template_status": "Supplied KIIT template; certificate unsigned and genuine plagiarism report pending",
-  "overleaf_status": "Unauthenticated login page observed; no project imported; uploadable ZIP retained"
+  "failure": null
 }

@@ -1,0 +1,52 @@
+{
+  "public_release": {
+    "patients": 44,
+    "slides": 104
+  },
+  "allocated_patients": {
+    "train": 30,
+    "validation": 7,
+    "reserved_test": 7
+  },
+  "sampled_cohorts": {
+    "train": {
+      "patches": 2543,
+      "patients": 16,
+      "slides_with_sampled_patches": 20,
+      "class_counts": {
+        "mucosa_inflammation": 1484,
+        "intestinal_metaplasia": 373,
+        "lymphoid": 206,
+        "other": 227,
+        "tumor": 253
+      }
+    },
+    "validation": {
+      "patches": 1251,
+      "patients": 7,
+      "slides_with_sampled_patches": 14,
+      "class_counts": {
+        "tumor": 99,
+        "mucosa_inflammation": 823,
+        "intestinal_metaplasia": 166,
+        "other": 156,
+        "lymphoid": 7
+      }
+    },
+    "reserved_test": {
+      "patches": 1613,
+      "patients": 7,
+      "slides_with_sampled_patches": 13,
+      "class_counts": {
+        "tumor": 316,
+        "mucosa_inflammation": 786,
+        "intestinal_metaplasia": 203,
+        "other": 299,
+        "lymphoid": 9
+      }
+    }
+  },
+  "development_manifest_sha256": "05840d3b64ac07e6a550bfcb3a5628e179c679ce0aa5421f47134303de2e2252",
+  "final_test_manifest_sha256": "1e3d6b4ee732730cb47d24f699afa7079ff86be55139bcb1dc05d414ca38175f",
+  "limitations": "Annotation/QC-selected subsets; allocated patients differ from sampled coverage. Coarse masks and small rare-class supports; public-release holdout, not independent cross-hospital validation."
+}

@@ -1,1 +1,3 @@
-No authenticated Overleaf session was available at the recorded inspection. No private project or real link is claimed. The updated IEEE ZIP is uploadable and local compilation is checked in IEEE_LOCAL_BUILD.json. Sign in, upload the ZIP as a private project, select main.tex and pdfLaTeX, compile, then record the real project URL. Verified author: Amlan Choudhury; no unverified email or guide coauthorship is inserted.
+# Overleaf status
+
+An authenticated project session was unavailable: /project redirected to the Overleaf login screen on 17 November 2026. No real project link has been created. Import Overleaf_Paper_Source.zip after signing in and record the actual private project URL. The local PDF compiled successfully.

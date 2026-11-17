@@ -110,5 +110,19 @@
     "mean_train_plus_validation_epoch_seconds": 42.78488905909001,
     "training_images_per_epoch_second_proxy": 59.43687259508548,
     "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "within_seed43",
+    "epochs": 22,
+    "mean_train_plus_validation_epoch_seconds": 42.34055499090953,
+    "training_images_per_epoch_second_proxy": 60.06062038029447,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "within_seed44",
+    "epochs": 27,
+    "mean_train_plus_validation_epoch_seconds": 41.71492504074073,
+    "training_images_per_epoch_second_proxy": 60.96139445333746,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
   }
 ]

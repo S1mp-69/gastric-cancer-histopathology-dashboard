@@ -1,17 +1,18 @@
 {
-  "snapshot": "2026-11-17T06:17:12+05:30",
-  "completed_hiesd_runs": 16,
-  "test_complete": false,
+  "snapshot": "2026-11-17T07:15:02+05:30",
+  "completed_hiesd_runs": 18,
+  "test_complete": true,
   "files": {
-    "Progress_Report.docx": "727c2b4954cedbcc924a8418588ec3f27a9ba191fb904e609b3226c69ba1231b",
-    "Progress_Report.pdf": "4cf396552f37dadaa384f4a0795d78b336d5415f4de950d96bd66c3fbcd08e8b",
-    "Progress_Presentation.pptx": "654275d914200f7415917e61a835335bd577c8591cce289398bb0c3aaf4cc134",
-    "Progress_Presentation.pdf": "7945ab714b3365192ff361dbaa7a162212ff3fc1b71e9f6980dceffe6bc14d36",
-    "IEEE_Paper_Draft.pdf": "c89b1c62a6e6b9e5fb4ea13e1b74bd08848f06e94414a9237b44d9e4ad9f0f08",
-    "Overleaf_Paper_Source.zip": "6f25036482f34301fe7beeb3b9bd282c138e533dc41f88d7cfd074b707217f8e"
+    "Progress_Report.docx": "4957c122c6c027bd86e769ba5c9ab14824e8de48b7d149afc0f1a78a0edb9a45",
+    "Progress_Report.pdf": "3f33a28230dbaca1b3c40235ead1dd1a0b425527dd93148ed7c5e246235f647c",
+    "Progress_Presentation.pptx": "44e31fb511da3b2f1b189e298148f7b853f66c630e1cd25441f01df3371681b1",
+    "Progress_Presentation.pdf": "dabbff7b400820844e1f7f540dab9308ef16b42240d114883567c03bf0dec2d5",
+    "IEEE_Paper_Draft.pdf": "5f599f40fd2296f10d8f6d5cc184336cf5de972b7cc4834c4226e565a603f44c",
+    "Overleaf_Paper_Source.zip": "184a256c1616632e1e3f3f8aa21f91dfdec50b4676547211d6695ac7f9db3679"
   },
   "build_log": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\.sync-backups\\publication_build_20261117\\build.log",
-  "status": "generated; final visual inspection required after each changed export",
+  "status": "generated and visually reviewed",
   "overleaf_authenticated_project": "pending",
-  "turnitin": "pending genuine institutional reports"
+  "turnitin": "pending genuine institutional reports",
+  "release_prepared_at": "2026-11-17T07:43:17+05:30"
 }

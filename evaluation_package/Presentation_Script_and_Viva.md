@@ -1,52 +1,73 @@
-# Solo presentation script and viva
+# Solo presentation script
 
-Use the 15-slide deck. Aim for 8–10 minutes; the brief demo may add 2 minutes.
-Author: Amlan Choudhury, 23051241. Guide: Dr. Asif Uddin Khan. Year supplied: 2027.
+Opening: I tested whether numerical stain-decomposition diagnostics help decide augmentation strength for gastric tissue classification. My central result is a controlled negative finding; I am not claiming a new clinically useful classifier.
 
-1. Title (20 sec): I study gastric tissue classification and adaptive stain augmentation. The application works; the research outcome is modest and mixed.
-2. Problem (30 sec): H&E appearance varies. I ask whether decomposition reliability can guide augmentation strength rather than changing every image equally.
-3. Dataset (35 sec): 31,096 patches, eight classes. Clinical tables are separate and cannot link patches to patients in this release.
-4. Application (30 sec): FastAPI, HTML/CSS/JavaScript and SQLite prediction history. This is a prototype, not clinical diagnosis.
-5. Architecture (40 sec): Sixteen spatial patches, CNN features, two-layer bidirectional LSTM, additive attention and eight logits. Spatial sequence does not represent time.
-6. Prior work (35 sec): Stain SAN supplies sampling/decomposition foundations; admissibility-based color augmentation is related work. The proposed diagnostic signal is not automatically novel.
-7. Controller (50 sec): Measure decomposition error and conditioning, normalize with training-fitted ranges, reduce stain perturbation for risky images, preserve residual information and retain extraction failures unchanged.
-8. Preprocessing study (35 sec): Mean synthetic-noise gain favored adaptive, but descriptive intervals included no improvement. Numerical stability is not classifier validation.
-9. Historical pilot (25 sec): The six-arm 512/128-image, three-epoch pilot was short, not convergence.
-10. Negative pilot results (30 sec): Adaptive F1 0.2651 did not beat weaker 0.2802 or shuffled 0.2768. I retain that negative result.
-11. Duplicate audit (40 sec): 932 duplicate groups, 334 crossing historical splits, 165 spanning train/test. The retained manifest has 23,761 train, 3,059 validation and 3,090 test. Exact-file control does not prove patient independence.
-12. Completed research (40 sec): Four arms times three seeds are complete. Adaptive mean tumor recall 75.56% was worse than standard 79.97%. Patient mapping and a locked independent evaluation remain needed.
-13. Final table (60 sec): Standard mean F1 0.6776, fixed 0.6822, weaker 0.6804, adaptive 0.6836. SDs describe seeds, not patients. Adaptive beats fixed in one of three seeds. Mean fixed difference is only 0.0014 and exploratory paired intervals include zero. I do not claim superiority.
-14. Compute (30 sec): CUDA training, batch64/four workers, mixed precision, deterministic caching and random augmentation. Last/best checkpoints are separate. All twelve completed outputs were audited; recoveries remain in logs.
-15. Demo and conclusion (45 sec): Show a TRAIN patch, model source, eight probabilities and isolated SQL history. The demo uses prototype-baseline, not research weights. Conclude with the small average gain, tumor-recall regression and remaining validation work.
+Data: The first dataset has eight tissue classes. Exact duplicates crossed its historical splits, so I created a provisional exact-file-controlled manifest. Without image-to-patient IDs I cannot claim patient independence. The second dataset, HiESD, supplies patient IDs; I froze patient partitions before acquisition and screened a selected annotated subset using released quality masks.
 
-## Viva answers
+Method: A stain model separates basis, concentration and reconstruction residual. The controller weakens perturbations when numerical diagnostics look worse. I compare standard augmentation, fixed full strength, one uniform mean strength, a global shuffle, adaptive source assignment and a within-class shuffle. The last control preserves each tissue class strength bank but removes which image gets which strength. It is an evaluation control, not a deployment feature.
 
-**What is the research contribution?** A candidate decomposition-aware strength controller plus a matched, auditable evaluation. It is not a proven novel superior algorithm.
+Fairness: The same seed shares initial weights, split, geometry, batch order, optimizer and stopping rules. Runs have a 40-epoch ceiling, seven-epoch early stopping and full resumable checkpoints. The original HMU architecture is CNN/BiLSTM/attention; HiESD uses pretrained ResNet18, so I do not attribute cross-study score differences to one change.
 
-**Why four arms?** Standard tests baseline benefit, residual-fixed tests value beyond residual preservation, weaker tests whether simply reducing strength is sufficient, and adaptive tests the proposed assignment.
+Results: HMU adaptive mean validation macro-F1 is 0.6836 against shuffled 0.6890. HiESD adaptive is 0.7131 against shuffled 0.7350 and standard 0.7270. The controller does not win on average. Lower numerical noise amplification is not proof of better classification. I retain these negative results.
 
-**What would show the diagnostics matter?** A full-budget shuffled-assignment control, under a fixed protocol. It was only tested in the small pilot; no new campaign has been launched.
+Secondary analysis: Rankings change under hypothetical class and patient weighting. This is a known property of F1, independently checked on saved predictions. It is not a measured effect of changing QC and not an assumed clinical prevalence. Seven validation lymphoid patches make that class particularly fragile.
 
-**Why not claim improvement?** Three seeds give a modest average difference, sign reversals versus fixed, wide exploratory paired intervals and worse mean tumor recall than standard.
+Final evaluation: Read the frozen-test status on the final-results slide. Explain the prespecified adaptive-minus-within-class contrast, all-arm reporting, small patient-cluster uncertainty and prohibition of tuning after test access. Do not quote pending values as completed results.
 
-**What does macro-F1 mean?** Compute F1 for each tissue class and average equally, so frequent/easier classes do not dominate the summary.
+Demonstration: The application accepts a patch, displays eight probabilities and stores a prediction row in isolated SQLite. It uses the original configured predictor, not the research ResNet18. Prototype fallback is explicitly identified and training-only reference images are used by the demo wrapper. The output is not a patient diagnosis.
 
-**What is the main data limitation?** Patient/slide mapping is unavailable. Exact duplicates are controlled, but patient independence and complete near-duplicate freedom are not demonstrated.
+Closing: My contribution is a reproducible empirical study with a stronger assignment control and transparent limitations. Algorithmic novelty, clinical value and publication acceptance remain unconfirmed.
 
-**Did you tune on test data?** No test inference was run in this campaign. Validation selected checkpoints and informed exploratory development; final confirmation requires a locked design.
+Validation class tradeoff: HiESD adaptive tumor recall is 0.906 versus standard 0.859; other recall is 0.058 versus standard 0.092. This is not overall or clinical superiority.
 
-**Why preserve the residual?** Stain decomposition does not reconstruct every image component. Retaining the reconstruction residual avoids deliberately discarding that information; its benefit still needs comparison.
+Adaptive-minus-within-class-shuffled validation differences are +0.0044, +0.0135, +0.0026; mean +0.0068, exploratory three-seed t interval [-0.0077, +0.0214]. This post-hoc validation contrast does not establish superiority over standard or global shuffled augmentation.
 
-**Does caching freeze randomness?** No. Source decompositions/diagnostics are cached; target stains, intensity and geometry remain random by image/epoch.
+Current snapshot: The frozen final test completed on 1613 patches from 7 reserved patients. The prespecified adaptive-minus-within-class-shuffled mean macro-F1 difference was -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. Of 1,000 cluster draws, 31 lacked at least one class; fixed five-class zero-division-zero scoring was retained. Only 7 usable patient clusters limit precision. All models were frozen before acquisition; no tuning follows test access. This is held-out public-release testing, not independent clinical external validation.
+On the frozen test, adaptive intestinal-metaplasia recall is 0.833 versus standard 0.768, but tumor recall is 0.622 versus standard 0.670. The validation benefit against within-class shuffle reverses. No parameters or checkpoints are changed after this result.
 
-**How reliable are interrupted runs?** Full state is resumable and best-checkpoint reload checks passed. Recovery logs are retained. These checks do not prove bit-identical uninterrupted optimization.
 
-**Is the demo the research model?** No. It identifies its prototype-baseline source; research weights were not activated.
+# Viva answers
 
-**Is the weighted dashboard percentage a clinical risk?** No. It is an uncalibrated heuristic, not diagnosis or tumor area.
+## What is the novelty?
 
-**Is the report final and signed?** It follows the supplied KIIT template. Guide certification signatures and an authentic Turnitin attachment remain pending. No similarity score is promised.
+No algorithmic priority is established. The proposed empirical contribution is a matched evaluation of diagnostic-to-strength assignment, with a class-conditional permutation falsification control and data-integrity evidence. Venue suitability requires guide review.
 
-**Is the IEEE paper published or on Overleaf?** It is a locally compiled draft with an uploadable source ZIP. No authenticated private Overleaf import or real link has been completed.
+## Why can a negative result be research?
 
-**What next?** Review class failures, obtain grouped mapping/external data, fix the evaluation protocol and related-work position before further experiments.
+A properly controlled experiment can reject a plausible hypothesis. It must answer a useful question and meet scientific and venue standards; a failed method alone does not guarantee publication.
+
+## Why within-class shuffled?
+
+A global shuffle changes class-strength association. Permuting within tissue class preserves that association while breaking source-specific diagnostic assignment. It uses training labels only.
+
+## Does the adaptive controller improve accuracy?
+
+The completed original replicated validation studies do not show benefit over shuffled strength assignment. Use the frozen-test snapshot for the final contrast, without tuning to its result.
+
+## Are patients independent?
+
+HiESD partitions use supplied patient IDs with disjoint groups. The selected public-release test is not independent cross-hospital validation. HMU has no verified image-to-patient mapping.
+
+## Why not compare published accuracies?
+
+Different cohorts, labels, preprocessing, splits, models and metrics prevent a fair direct rank. Compare methods qualitatively and report our matched same-split experiment numerically.
+
+## What does macro-F1 mean?
+
+Compute F1 from precision and recall separately for each class, then take the arithmetic mean. It can change under prevalence shifts because precision changes.
+
+## Does reweighting prove your QC changes model rankings?
+
+No. It reweights fixed saved predictions under hypothetical target mixtures. Actual QC variants would require separate controlled data construction and retraining.
+
+## What are the main failures?
+
+Other has poor recall; only seven validation lymphoid patches make rare-class estimates unstable. Coarse masks and selected patient coverage further limit inference.
+
+## What is stored in SQL?
+
+Prediction ID, image filename, predicted tissue class, confidence, probability payload and timestamp. It is application history, not a verified patient registry.
+
+## What remains for submission?
+
+Guide review, verified declarations and references, final authentic Overleaf URL, genuine Turnitin outputs and venue-specific formatting/requirements. No guaranteed acceptance or AI-detection score.

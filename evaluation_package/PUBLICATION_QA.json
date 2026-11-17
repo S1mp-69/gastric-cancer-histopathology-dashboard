@@ -1,0 +1,29 @@
+{
+  "reviewed": true,
+  "report_pages": 23,
+  "paper_pages": 4,
+  "slides": 18,
+  "visual_scope": "All final paper pages and all slide content checked; all report content checked, compacted literature page and updated contents checked; subsequent report pages reproduced identically with page-number shift.",
+  "native_word_and_powerpoint_pdf_exports": true,
+  "editable_native_tables": true,
+  "teacher_opaque_parts_preserved": true,
+  "final_test_independent_verification": {
+    "passed": true,
+    "models": 18,
+    "patches": 1613,
+    "patients": 7,
+    "maximum_metric_error": 0.0,
+    "identity_and_probability_checks": true,
+    "all_class_metrics_verified": true,
+    "independent_patient_confusion_bootstrap_verified": true,
+    "scope": "No new inference; small-patient interval is descriptive and conditions on the three trained seeds."
+  },
+  "original_preservation": {
+    "original_artifacts_checked": 69,
+    "dataset_files_checked": 31096,
+    "changed": [],
+    "passed": true
+  },
+  "frozen_test_implementation_unchanged": true,
+  "scope_limits": "No authenticated Overleaf project, genuine Turnitin report, guide signature, expert pathology adjudication, clinical validation or acceptance is asserted."
+}

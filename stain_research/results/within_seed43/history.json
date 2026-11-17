@@ -1,0 +1,2158 @@
+[
+  {
+    "epoch": 1,
+    "train": {
+      "loss": 0.7269198916533122,
+      "images_per_second": 62.32657929546977,
+      "seconds": 40.80121320000035,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8025579536370904,
+      "macro_f1": 0.6650653913801376,
+      "nll": 0.7897804738711015,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9493670886075949,
+          "recall": 0.7575757575757576,
+          "f1-score": 0.8426966292134831,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.7848837209302325,
+          "recall": 0.9842041312272175,
+          "f1-score": 0.8733153638814016,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8943089430894309,
+          "recall": 0.6626506024096386,
+          "f1-score": 0.7612456747404844,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1-score": 0.8235294117647058,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.2857142857142857,
+          "recall": 0.01282051282051282,
+          "f1-score": 0.024539877300613498,
+          "support": 156.0
+        },
+        "accuracy": 0.8025579536370904,
+        "macro avg": {
+          "precision": 0.7228548076683088,
+          "recall": 0.6834502008066252,
+          "f1-score": 0.6650653913801376,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7496989266362969,
+          "recall": 0.8025579536370904,
+          "f1-score": 0.749900255407432,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          75,
+          22,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          810,
+          7,
+          0,
+          4
+        ],
+        [
+          1,
+          54,
+          110,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          146,
+          4,
+          3,
+          2
+        ]
+      ]
+    },
+    "epoch_seconds": 42.613596600000164,
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 2,
+    "train": {
+      "loss": 0.5451643323270158,
+      "images_per_second": 59.91759382290465,
+      "seconds": 42.441624899998715,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7737809752198241,
+      "macro_f1": 0.6670404669000705,
+      "nll": 0.6114771401853585,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9529411764705882,
+          "recall": 0.8181818181818182,
+          "f1-score": 0.8804347826086957,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8158482142857143,
+          "recall": 0.8882138517618469,
+          "f1-score": 0.8504944735311227,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.7213114754098361,
+          "recall": 0.7951807228915663,
+          "f1-score": 0.7564469914040115,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5384615384615384,
+          "recall": 1.0,
+          "f1-score": 0.7,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.22972972972972974,
+          "recall": 0.10897435897435898,
+          "f1-score": 0.14782608695652175,
+          "support": 156.0
+        },
+        "accuracy": 0.7737809752198241,
+        "macro avg": {
+          "precision": 0.6516584268714813,
+          "recall": 0.7221101503619181,
+          "f1-score": 0.6670404669000705,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7395116149902737,
+          "recall": 0.7737809752198241,
+          "f1-score": 0.7519193168126764,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          81,
+          9,
+          0,
+          0,
+          9
+        ],
+        [
+          3,
+          731,
+          46,
+          1,
+          42
+        ],
+        [
+          1,
+          27,
+          132,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          129,
+          5,
+          5,
+          17
+        ]
+      ]
+    },
+    "epoch_seconds": 44.13331929999549,
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 3,
+    "train": {
+      "loss": 0.5131958726818431,
+      "images_per_second": 64.1854161446259,
+      "seconds": 39.61959239999851,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7498001598721024,
+      "macro_f1": 0.6532428253577778,
+      "nll": 0.8359275034291567,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.8415841584158416,
+          "recall": 0.8585858585858586,
+          "f1-score": 0.85,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.7966480446927374,
+          "recall": 0.8663426488456865,
+          "f1-score": 0.830034924330617,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.6853932584269663,
+          "recall": 0.7349397590361446,
+          "f1-score": 0.7093023255813954,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1-score": 0.7777777777777778,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.16666666666666666,
+          "recall": 0.07051282051282051,
+          "f1-score": 0.0990990990990991,
+          "support": 156.0
+        },
+        "accuracy": 0.7498001598721024,
+        "macro avg": {
+          "precision": 0.6253311529131695,
+          "recall": 0.7060762173961022,
+          "f1-score": 0.6532428253577778,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7059856105665173,
+          "recall": 0.7498001598721024,
+          "f1-score": 0.7241541428253503,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          85,
+          10,
+          4,
+          0,
+          0
+        ],
+        [
+          13,
+          713,
+          49,
+          0,
+          48
+        ],
+        [
+          1,
+          36,
+          122,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          2,
+          136,
+          3,
+          4,
+          11
+        ]
+      ]
+    },
+    "epoch_seconds": 41.30631920000451,
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 4,
+    "train": {
+      "loss": 0.4561316471281738,
+      "images_per_second": 60.18075715201353,
+      "seconds": 42.25603260000207,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7849720223820943,
+      "macro_f1": 0.6909463716740787,
+      "nll": 0.7825883691735881,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.8103448275862069,
+          "recall": 0.9494949494949495,
+          "f1-score": 0.8744186046511628,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8150609080841639,
+          "recall": 0.8942891859052248,
+          "f1-score": 0.8528389339513326,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.7924528301886793,
+          "recall": 0.7590361445783133,
+          "f1-score": 0.7753846153846153,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1-score": 0.7777777777777778,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.3064516129032258,
+          "recall": 0.12179487179487179,
+          "f1-score": 0.1743119266055046,
+          "support": 156.0
+        },
+        "accuracy": 0.7849720223820943,
+        "macro avg": {
+          "precision": 0.6721347630251825,
+          "recall": 0.7449230303546719,
+          "f1-score": 0.6909463716740787,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7472641344229184,
+          "recall": 0.7849720223820943,
+          "f1-score": 0.759236479337459,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          94,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          736,
+          29,
+          0,
+          40
+        ],
+        [
+          2,
+          35,
+          126,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          2,
+          127,
+          4,
+          4,
+          19
+        ]
+      ]
+    },
+    "epoch_seconds": 44.17850290000206,
+    "learning_rate": 0.0001
+  },
+  {
+    "epoch": 5,
+    "train": {
+      "loss": 0.44204299927132834,
+      "images_per_second": 58.135227600803084,
+      "seconds": 43.7428413000016,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7490007993605116,
+      "macro_f1": 0.6719145894783127,
+      "nll": 0.7214094742263059,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9183673469387755,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.9137055837563451,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8114558472553699,
+          "recall": 0.8262454434993924,
+          "f1-score": 0.818783865141481,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.6780487804878049,
+          "recall": 0.8373493975903614,
+          "f1-score": 0.7493261455525606,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.6,
+          "recall": 0.8571428571428571,
+          "f1-score": 0.7058823529411765,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.22,
+          "recall": 0.14102564102564102,
+          "f1-score": 0.171875,
+          "support": 156.0
+        },
+        "accuracy": 0.7490007993605116,
+        "macro avg": {
+          "precision": 0.6455743949363901,
+          "recall": 0.7141708496698322,
+          "f1-score": 0.6719145894783127,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7272762807346794,
+          "recall": 0.7490007993605116,
+          "f1-score": 0.7357776102602961,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          90,
+          8,
+          0,
+          0,
+          1
+        ],
+        [
+          8,
+          680,
+          61,
+          0,
+          74
+        ],
+        [
+          0,
+          24,
+          139,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          125,
+          5,
+          4,
+          22
+        ]
+      ]
+    },
+    "epoch_seconds": 45.552343700001074,
+    "learning_rate": 5e-05
+  },
+  {
+    "epoch": 6,
+    "train": {
+      "loss": 0.3782346227531868,
+      "images_per_second": 60.86211140113381,
+      "seconds": 41.78297429999657,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7985611510791367,
+      "macro_f1": 0.651518480553757,
+      "nll": 0.8224639273185333,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.8411214953271028,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.8737864077669902,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8050314465408805,
+          "recall": 0.9331713244228432,
+          "f1-score": 0.8643781654473832,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8866666666666667,
+          "recall": 0.8012048192771084,
+          "f1-score": 0.8417721518987342,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.038461538461538464,
+          "recall": 0.00641025641025641,
+          "f1-score": 0.01098901098901099,
+          "support": 156.0
+        },
+        "accuracy": 0.7985611510791367,
+        "macro avg": {
+          "precision": 0.6142562293992377,
+          "recall": 0.7299754618402234,
+          "f1-score": 0.651518480553757,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7214217227875256,
+          "recall": 0.7985611510791367,
+          "f1-score": 0.7545988921888653,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          90,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          768,
+          15,
+          0,
+          23
+        ],
+        [
+          0,
+          30,
+          133,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          147,
+          2,
+          6,
+          1
+        ]
+      ]
+    },
+    "epoch_seconds": 43.57988750000368,
+    "learning_rate": 5e-05
+  },
+  {
+    "epoch": 7,
+    "train": {
+      "loss": 0.3775755219861742,
+      "images_per_second": 62.290956797057824,
+      "seconds": 40.82454589999543,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8017585931254996,
+      "macro_f1": 0.6549095039259162,
+      "nll": 0.828635303093661,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.898989898989899,
+          "recall": 0.898989898989899,
+          "f1-score": 0.898989898989899,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.814498933901919,
+          "recall": 0.928311057108141,
+          "f1-score": 0.8676888131743328,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.7734806629834254,
+          "recall": 0.8433734939759037,
+          "f1-score": 0.8069164265129684,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.15789473684210525,
+          "recall": 0.019230769230769232,
+          "f1-score": 0.03428571428571429,
+          "support": 156.0
+        },
+        "accuracy": 0.8017585931254996,
+        "macro avg": {
+          "precision": 0.6289728465434697,
+          "recall": 0.7379810438609425,
+          "f1-score": 0.6549095039259162,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7321039101549931,
+          "recall": 0.8017585931254996,
+          "f1-score": 0.7570513654187583,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          89,
+          5,
+          4,
+          0,
+          1
+        ],
+        [
+          10,
+          764,
+          34,
+          0,
+          15
+        ],
+        [
+          0,
+          25,
+          140,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          144,
+          3,
+          6,
+          3
+        ]
+      ]
+    },
+    "epoch_seconds": 42.498337700002594,
+    "learning_rate": 5e-05
+  },
+  {
+    "epoch": 8,
+    "train": {
+      "loss": 0.3489253196573801,
+      "images_per_second": 61.945380422029835,
+      "seconds": 41.052295100002084,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7937649880095923,
+      "macro_f1": 0.6426594191256174,
+      "nll": 0.9238958364958576,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9081632653061225,
+          "recall": 0.898989898989899,
+          "f1-score": 0.9035532994923858,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8142548596112311,
+          "recall": 0.9161603888213852,
+          "f1-score": 0.8622069754145226,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.7513227513227513,
+          "recall": 0.8554216867469879,
+          "f1-score": 0.8,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.4666666666666667,
+          "recall": 1.0,
+          "f1-score": 0.6363636363636364,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.043478260869565216,
+          "recall": 0.00641025641025641,
+          "f1-score": 0.0111731843575419,
+          "support": 156.0
+        },
+        "accuracy": 0.7937649880095923,
+        "macro avg": {
+          "precision": 0.5967771607552674,
+          "recall": 0.7353964461937057,
+          "f1-score": 0.6426594191256174,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7152747920121861,
+          "recall": 0.7937649880095923,
+          "f1-score": 0.7498366743646845,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          89,
+          8,
+          2,
+          0,
+          0
+        ],
+        [
+          8,
+          754,
+          40,
+          0,
+          21
+        ],
+        [
+          1,
+          21,
+          142,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          143,
+          5,
+          7,
+          1
+        ]
+      ]
+    },
+    "epoch_seconds": 42.74520019999909,
+    "learning_rate": 2.5e-05
+  },
+  {
+    "epoch": 9,
+    "train": {
+      "loss": 0.3305204183601555,
+      "images_per_second": 62.66902600886838,
+      "seconds": 40.578260299997055,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7985611510791367,
+      "macro_f1": 0.6824098706421762,
+      "nll": 0.7747348335911807,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9278350515463918,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.9183673469387755,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8146551724137931,
+          "recall": 0.9185905224787363,
+          "f1-score": 0.863506567675614,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8235294117647058,
+          "recall": 0.8433734939759037,
+          "f1-score": 0.8333333333333334,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5833333333333334,
+          "recall": 1.0,
+          "f1-score": 0.7368421052631579,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.13636363636363635,
+          "recall": 0.038461538461538464,
+          "f1-score": 0.06,
+          "support": 156.0
+        },
+        "accuracy": 0.7985611510791367,
+        "macro avg": {
+          "precision": 0.6571433210843721,
+          "recall": 0.7419032928014175,
+          "f1-score": 0.6824098706421762,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7389119264257765,
+          "recall": 0.7985611510791367,
+          "f1-score": 0.7629380500512746,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          90,
+          7,
+          2,
+          0,
+          0
+        ],
+        [
+          6,
+          756,
+          26,
+          0,
+          35
+        ],
+        [
+          1,
+          22,
+          140,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          143,
+          2,
+          5,
+          6
+        ]
+      ]
+    },
+    "epoch_seconds": 42.264109999996435,
+    "learning_rate": 2.5e-05
+  },
+  {
+    "epoch": 10,
+    "train": {
+      "loss": 0.3189719301764533,
+      "images_per_second": 62.57484143583252,
+      "seconds": 40.639336499996716,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7841726618705036,
+      "macro_f1": 0.6553533254920565,
+      "nll": 0.889312151810534,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9306930693069307,
+          "recall": 0.9494949494949495,
+          "f1-score": 0.94,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8173719376391982,
+          "recall": 0.8918590522478737,
+          "f1-score": 0.852992446252179,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.7540106951871658,
+          "recall": 0.8493975903614458,
+          "f1-score": 0.7988668555240793,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.4666666666666667,
+          "recall": 1.0,
+          "f1-score": 0.6363636363636364,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.1,
+          "recall": 0.03205128205128205,
+          "f1-score": 0.04854368932038835,
+          "support": 156.0
+        },
+        "accuracy": 0.7841726618705036,
+        "macro avg": {
+          "precision": 0.6137484737599923,
+          "recall": 0.7445605748311102,
+          "f1-score": 0.6553533254920565,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7265133178306814,
+          "recall": 0.7841726618705036,
+          "f1-score": 0.7511686988577669,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          94,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          734,
+          42,
+          0,
+          41
+        ],
+        [
+          1,
+          19,
+          141,
+          1,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          140,
+          4,
+          7,
+          5
+        ]
+      ]
+    },
+    "epoch_seconds": 42.337934700000915,
+    "learning_rate": 2.5e-05
+  },
+  {
+    "epoch": 11,
+    "train": {
+      "loss": 0.3084567012254338,
+      "images_per_second": 63.87832061609089,
+      "seconds": 39.810064000004786,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7889688249400479,
+      "macro_f1": 0.6913997085006649,
+      "nll": 0.7604304265251739,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9230769230769231,
+          "recall": 0.8484848484848485,
+          "f1-score": 0.8842105263157894,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8103448275862069,
+          "recall": 0.913730255164034,
+          "f1-score": 0.8589377498572245,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.9416058394160584,
+          "recall": 0.7771084337349398,
+          "f1-score": 0.8514851485148515,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5833333333333334,
+          "recall": 1.0,
+          "f1-score": 0.7368421052631579,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.18072289156626506,
+          "recall": 0.09615384615384616,
+          "f1-score": 0.12552301255230125,
+          "support": 156.0
+        },
+        "accuracy": 0.7889688249400479,
+        "macro avg": {
+          "precision": 0.6878167629957573,
+          "recall": 0.7270954767075337,
+          "f1-score": 0.6913997085006649,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7568993463219824,
+          "recall": 0.7889688249400479,
+          "f1-score": 0.7678086567435854,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          84,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          752,
+          7,
+          0,
+          58
+        ],
+        [
+          1,
+          26,
+          129,
+          0,
+          10
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          135,
+          1,
+          5,
+          15
+        ]
+      ]
+    },
+    "epoch_seconds": 41.49487750000117,
+    "learning_rate": 1.25e-05
+  },
+  {
+    "epoch": 12,
+    "train": {
+      "loss": 0.3018440658001744,
+      "images_per_second": 63.86784845543003,
+      "seconds": 39.81659159999981,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7929656274980016,
+      "macro_f1": 0.6648694997365238,
+      "nll": 0.8016595415931811,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9239130434782609,
+          "recall": 0.8585858585858586,
+          "f1-score": 0.8900523560209425,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8094218415417559,
+          "recall": 0.9185905224787363,
+          "f1-score": 0.8605577689243028,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8235294117647058,
+          "recall": 0.8433734939759037,
+          "f1-score": 0.8333333333333334,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5384615384615384,
+          "recall": 1.0,
+          "f1-score": 0.7,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.09523809523809523,
+          "recall": 0.02564102564102564,
+          "f1-score": 0.04040404040404041,
+          "support": 156.0
+        },
+        "accuracy": 0.7929656274980016,
+        "macro avg": {
+          "precision": 0.6381127860968713,
+          "recall": 0.7292381801363048,
+          "f1-score": 0.6648694997365238,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7297792349100941,
+          "recall": 0.7929656274980016,
+          "f1-score": 0.7561075864965133,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          85,
+          13,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          756,
+          26,
+          0,
+          36
+        ],
+        [
+          1,
+          23,
+          140,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          142,
+          3,
+          6,
+          4
+        ]
+      ]
+    },
+    "epoch_seconds": 41.510155199997826,
+    "learning_rate": 1.25e-05
+  },
+  {
+    "epoch": 13,
+    "train": {
+      "loss": 0.2938132951145232,
+      "images_per_second": 64.28313237956701,
+      "seconds": 39.55936720000318,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8089528377298162,
+      "macro_f1": 0.6792834789676895,
+      "nll": 0.8524119053527319,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9108910891089109,
+          "recall": 0.9292929292929293,
+          "f1-score": 0.92,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8121720881427072,
+          "recall": 0.9404617253948967,
+          "f1-score": 0.8716216216216216,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8846153846153846,
+          "recall": 0.8313253012048193,
+          "f1-score": 0.8571428571428571,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5833333333333334,
+          "recall": 1.0,
+          "f1-score": 0.7368421052631579,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.034482758620689655,
+          "recall": 0.00641025641025641,
+          "f1-score": 0.010810810810810811,
+          "support": 156.0
+        },
+        "accuracy": 0.8089528377298162,
+        "macro avg": {
+          "precision": 0.6450989307642051,
+          "recall": 0.7414980424605804,
+          "f1-score": 0.6792834789676895,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7313386441946802,
+          "recall": 0.8089528377298162,
+          "f1-score": 0.7654314069573441,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          774,
+          16,
+          0,
+          26
+        ],
+        [
+          1,
+          25,
+          138,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          147,
+          2,
+          5,
+          1
+        ]
+      ]
+    },
+    "epoch_seconds": 41.25341109999863,
+    "learning_rate": 1.25e-05
+  },
+  {
+    "epoch": 14,
+    "train": {
+      "loss": 0.2958285157553005,
+      "images_per_second": 63.68437058278095,
+      "seconds": 39.93130509999901,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8057553956834532,
+      "macro_f1": 0.6721999593835176,
+      "nll": 0.8175072360286515,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.8952380952380953,
+          "recall": 0.9494949494949495,
+          "f1-score": 0.9215686274509803,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8162393162393162,
+          "recall": 0.928311057108141,
+          "f1-score": 0.8686753837407618,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8333333333333334,
+          "recall": 0.8433734939759037,
+          "f1-score": 0.8383233532934131,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5384615384615384,
+          "recall": 1.0,
+          "f1-score": 0.7,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.10344827586206896,
+          "recall": 0.019230769230769232,
+          "f1-score": 0.032432432432432434,
+          "support": 156.0
+        },
+        "accuracy": 0.8057553956834532,
+        "macro avg": {
+          "precision": 0.6373441118268705,
+          "recall": 0.7480820539619527,
+          "f1-score": 0.6721999593835176,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7343197632538573,
+          "recall": 0.8057553956834532,
+          "f1-score": 0.7636101287309833,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          94,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          764,
+          24,
+          0,
+          26
+        ],
+        [
+          1,
+          25,
+          140,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          142,
+          4,
+          6,
+          3
+        ]
+      ]
+    },
+    "epoch_seconds": 41.625529600001755,
+    "learning_rate": 6.25e-06
+  },
+  {
+    "epoch": 15,
+    "train": {
+      "loss": 0.29142246641748965,
+      "images_per_second": 63.49148219322383,
+      "seconds": 40.05261719999544,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8105515587529976,
+      "macro_f1": 0.6937430318463376,
+      "nll": 0.820596466390349,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9285714285714286,
+          "recall": 0.9191919191919192,
+          "f1-score": 0.9238578680203046,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8176033934252386,
+          "recall": 0.93681652490887,
+          "f1-score": 0.8731596828992072,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.9019607843137255,
+          "recall": 0.8313253012048193,
+          "f1-score": 0.8652037617554859,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5833333333333334,
+          "recall": 1.0,
+          "f1-score": 0.7368421052631579,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.15555555555555556,
+          "recall": 0.04487179487179487,
+          "f1-score": 0.06965174129353234,
+          "support": 156.0
+        },
+        "accuracy": 0.8105515587529976,
+        "macro avg": {
+          "precision": 0.6774048990398562,
+          "recall": 0.7464411080354807,
+          "f1-score": 0.6937430318463376,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7537103552466996,
+          "recall": 0.8105515587529976,
+          "f1-score": 0.7751556664988821,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          91,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          771,
+          12,
+          0,
+          35
+        ],
+        [
+          1,
+          24,
+          138,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          140,
+          3,
+          5,
+          7
+        ]
+      ]
+    },
+    "epoch_seconds": 41.74753310000233,
+    "learning_rate": 6.25e-06
+  },
+  {
+    "epoch": 16,
+    "train": {
+      "loss": 0.2956813943582963,
+      "images_per_second": 61.230011636662546,
+      "seconds": 41.531921499998134,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8057553956834532,
+      "macro_f1": 0.6856486870868048,
+      "nll": 0.8090933164437231,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9029126213592233,
+          "recall": 0.9393939393939394,
+          "f1-score": 0.9207920792079208,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8191603875134553,
+          "recall": 0.9246658566221142,
+          "f1-score": 0.8687214611872146,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8853503184713376,
+          "recall": 0.8373493975903614,
+          "f1-score": 0.8606811145510835,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5384615384615384,
+          "recall": 1.0,
+          "f1-score": 0.7,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.16326530612244897,
+          "recall": 0.05128205128205128,
+          "f1-score": 0.07804878048780488,
+          "support": 156.0
+        },
+        "accuracy": 0.8057553956834532,
+        "macro avg": {
+          "precision": 0.6618300343856007,
+          "recall": 0.7505382489776933,
+          "f1-score": 0.6856486870868048,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7512103276008886,
+          "recall": 0.8057553956834532,
+          "f1-score": 0.7722340952599834,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          93,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          761,
+          15,
+          0,
+          39
+        ],
+        [
+          1,
+          24,
+          139,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          138,
+          3,
+          6,
+          8
+        ]
+      ]
+    },
+    "epoch_seconds": 43.30763809999917,
+    "learning_rate": 6.25e-06
+  },
+  {
+    "epoch": 17,
+    "train": {
+      "loss": 0.28863052661101085,
+      "images_per_second": 63.74828153508738,
+      "seconds": 39.89127189999999,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8097521982414069,
+      "macro_f1": 0.6879222824917389,
+      "nll": 0.862987194606345,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9207920792079208,
+          "recall": 0.9393939393939394,
+          "f1-score": 0.93,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8160676532769556,
+          "recall": 0.9380315917375456,
+          "f1-score": 0.8728094968908988,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8954248366013072,
+          "recall": 0.8253012048192772,
+          "f1-score": 0.8589341692789969,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5833333333333334,
+          "recall": 1.0,
+          "f1-score": 0.7368421052631579,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.10256410256410256,
+          "recall": 0.02564102564102564,
+          "f1-score": 0.041025641025641026,
+          "support": 156.0
+        },
+        "accuracy": 0.8097521982414069,
+        "macro avg": {
+          "precision": 0.6636364009967239,
+          "recall": 0.7456735523183575,
+          "f1-score": 0.6879222824917389,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7446090732994958,
+          "recall": 0.8097521982414069,
+          "f1-score": 0.7710097384319468,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          93,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          772,
+          13,
+          0,
+          32
+        ],
+        [
+          1,
+          25,
+          137,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          143,
+          3,
+          5,
+          4
+        ]
+      ]
+    },
+    "epoch_seconds": 41.6086731999967,
+    "learning_rate": 3.125e-06
+  },
+  {
+    "epoch": 18,
+    "train": {
+      "loss": 0.28953469441811774,
+      "images_per_second": 63.780165005229385,
+      "seconds": 39.87133039999753,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8001598721023181,
+      "macro_f1": 0.6921786998505886,
+      "nll": 0.832520168891056,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.8932038834951457,
+          "recall": 0.9292929292929293,
+          "f1-score": 0.9108910891089109,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8162162162162162,
+          "recall": 0.9173754556500607,
+          "f1-score": 0.8638443935926774,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.9019607843137255,
+          "recall": 0.8313253012048193,
+          "f1-score": 0.8652037617554859,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5833333333333334,
+          "recall": 1.0,
+          "f1-score": 0.7368421052631579,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.15517241379310345,
+          "recall": 0.057692307692307696,
+          "f1-score": 0.08411214953271028,
+          "support": 156.0
+        },
+        "accuracy": 0.8001598721023181,
+        "macro avg": {
+          "precision": 0.6699773262303049,
+          "recall": 0.7471371987680234,
+          "f1-score": 0.6921786998505886,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7499511194988819,
+          "recall": 0.8001598721023181,
+          "f1-score": 0.7698044510502887,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          755,
+          13,
+          0,
+          46
+        ],
+        [
+          1,
+          24,
+          138,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          139,
+          2,
+          5,
+          9
+        ]
+      ]
+    },
+    "epoch_seconds": 41.55585669999709,
+    "learning_rate": 3.125e-06
+  },
+  {
+    "epoch": 19,
+    "train": {
+      "loss": 0.29189117541708814,
+      "images_per_second": 63.958138510529466,
+      "seconds": 39.76038210000115,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7873701039168665,
+      "macro_f1": 0.6895586899334469,
+      "nll": 0.8508333421344284,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9038461538461539,
+          "recall": 0.9494949494949495,
+          "f1-score": 0.9261083743842364,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8154696132596685,
+          "recall": 0.8967193195625759,
+          "f1-score": 0.8541666666666666,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8128654970760234,
+          "recall": 0.8373493975903614,
+          "f1-score": 0.8249258160237388,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1-score": 0.7777777777777778,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.11666666666666667,
+          "recall": 0.04487179487179487,
+          "f1-score": 0.06481481481481481,
+          "support": 156.0
+        },
+        "accuracy": 0.7873701039168665,
+        "macro avg": {
+          "precision": 0.6570423134424297,
+          "recall": 0.7456870923039363,
+          "f1-score": 0.6895586899334469,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7339748032874835,
+          "recall": 0.7873701039168665,
+          "f1-score": 0.7571200133862528,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          94,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          738,
+          29,
+          0,
+          49
+        ],
+        [
+          2,
+          21,
+          139,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          141,
+          3,
+          4,
+          7
+        ]
+      ]
+    },
+    "epoch_seconds": 41.45796530000371,
+    "learning_rate": 3.125e-06
+  },
+  {
+    "epoch": 20,
+    "train": {
+      "loss": 0.28904321503789226,
+      "images_per_second": 63.66883688269154,
+      "seconds": 39.94104739999602,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.8041566746602717,
+      "macro_f1": 0.6822263038411448,
+      "nll": 0.8470605637053316,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9292929292929293,
+          "recall": 0.9292929292929293,
+          "f1-score": 0.9292929292929293,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.816916488222698,
+          "recall": 0.9270959902794653,
+          "f1-score": 0.8685258964143426,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8789808917197452,
+          "recall": 0.8313253012048193,
+          "f1-score": 0.8544891640866873,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5384615384615384,
+          "recall": 1.0,
+          "f1-score": 0.7,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.125,
+          "recall": 0.038461538461538464,
+          "f1-score": 0.058823529411764705,
+          "support": 156.0
+        },
+        "accuracy": 0.8041566746602717,
+        "macro avg": {
+          "precision": 0.6577303695393821,
+          "recall": 0.7452351518477505,
+          "f1-score": 0.6822263038411448,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7462048989624211,
+          "recall": 0.8041566746602717,
+          "f1-score": 0.7695591403482248,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          763,
+          16,
+          0,
+          39
+        ],
+        [
+          1,
+          24,
+          138,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          140,
+          3,
+          6,
+          6
+        ]
+      ]
+    },
+    "epoch_seconds": 41.62956600000325,
+    "learning_rate": 1.5625e-06
+  },
+  {
+    "epoch": 21,
+    "train": {
+      "loss": 0.281905074875232,
+      "images_per_second": 63.85375901254199,
+      "seconds": 39.82537720000255,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7969624300559552,
+      "macro_f1": 0.689222371159266,
+      "nll": 0.8533656918745247,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.92,
+          "recall": 0.9292929292929293,
+          "f1-score": 0.9246231155778895,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8111587982832618,
+          "recall": 0.9185905224787363,
+          "f1-score": 0.8615384615384616,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.86875,
+          "recall": 0.8373493975903614,
+          "f1-score": 0.852760736196319,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1-score": 0.7777777777777778,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.0625,
+          "recall": 0.019230769230769232,
+          "f1-score": 0.029411764705882353,
+          "support": 156.0
+        },
+        "accuracy": 0.7969624300559552,
+        "macro avg": {
+          "precision": 0.6597544869293797,
+          "recall": 0.7408927237185592,
+          "f1-score": 0.689222371159266,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7330781266520143,
+          "recall": 0.7969624300559552,
+          "f1-score": 0.7611309386375027,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          92,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          756,
+          18,
+          0,
+          43
+        ],
+        [
+          1,
+          24,
+          139,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          145,
+          3,
+          4,
+          3
+        ]
+      ]
+    },
+    "epoch_seconds": 41.50213929999882,
+    "learning_rate": 1.5625e-06
+  },
+  {
+    "epoch": 22,
+    "train": {
+      "loss": 0.2846890436093544,
+      "images_per_second": 63.73622188865629,
+      "seconds": 39.8988199000014,
+      "amp_backoffs": 0
+    },
+    "validation": {
+      "accuracy": 0.7937649880095923,
+      "macro_f1": 0.667075306522678,
+      "nll": 0.8566282001807154,
+      "classification_report": {
+        "tumor": {
+          "precision": 0.9263157894736842,
+          "recall": 0.8888888888888888,
+          "f1-score": 0.9072164948453608,
+          "support": 99.0
+        },
+        "mucosa_inflammation": {
+          "precision": 0.8122977346278317,
+          "recall": 0.9149453219927096,
+          "f1-score": 0.8605714285714285,
+          "support": 823.0
+        },
+        "intestinal_metaplasia": {
+          "precision": 0.8057142857142857,
+          "recall": 0.8493975903614458,
+          "f1-score": 0.8269794721407625,
+          "support": 166.0
+        },
+        "lymphoid": {
+          "precision": 0.5384615384615384,
+          "recall": 1.0,
+          "f1-score": 0.7,
+          "support": 7.0
+        },
+        "other": {
+          "precision": 0.0975609756097561,
+          "recall": 0.02564102564102564,
+          "f1-score": 0.04060913705583756,
+          "support": 156.0
+        },
+        "accuracy": 0.7937649880095923,
+        "macro avg": {
+          "precision": 0.6360700647774192,
+          "recall": 0.735774565376814,
+          "f1-score": 0.667075306522678,
+          "support": 1251.0
+        },
+        "weighted avg": {
+          "precision": 0.7297870608709226,
+          "recall": 0.7937649880095923,
+          "f1-score": 0.7566573432934083,
+          "support": 1251.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          88,
+          8,
+          3,
+          0,
+          0
+        ],
+        [
+          5,
+          753,
+          28,
+          0,
+          37
+        ],
+        [
+          1,
+          24,
+          141,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          142,
+          3,
+          6,
+          4
+        ]
+      ]
+    },
+    "epoch_seconds": 41.58931290000328,
+    "learning_rate": 1.5625e-06
+  }
+]

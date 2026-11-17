@@ -1,13 +1,13 @@
-# Publication package — 2026-11-17T06:17:12+05:30
+# Publication package — 2026-11-17T07:15:02+05:30
 
 Use Progress_Report.docx/PDF (prescribed teacher structure), Progress_Presentation.pptx/PDF (editable), IEEE_Paper_Draft.pdf, and Overleaf_Paper_Source.zip.
 
 ## Verified finding
 Adaptive validation macro-F1 is below global shuffled in both original three-seed studies: HMU 0.6836 vs 0.6890; HiESD 0.7131 vs 0.7350. This supports a controlled empirical evaluation, not an accuracy-superiority or guaranteed-novelty claim.
 
-HiESD completed runs: 16/18. Within-class control: 1 of three seeds complete; seed 43 active.
+HiESD completed runs: 18/18. Within-class control: 3 of three seeds complete.
 
-The final-test protocol was frozen before reserved-pixel acquisition. It evaluates all six arms and seeds 42, 43 and 44 using validation-selected best checkpoints, with adaptive-minus-within-class-shuffled patch macro-F1 as the primary contrast. The seven reserved patients cover 13 source slides (about 7.53 GiB). Model hashes are frozen before acquisition. No tuning follows test access. Current stage: waiting for within-class controls. No final-test scores are available in this snapshot.
+The frozen final test completed on 1613 patches from 7 reserved patients. The prespecified adaptive-minus-within-class-shuffled mean macro-F1 difference was -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. Of 1,000 cluster draws, 31 lacked at least one class; fixed five-class zero-division-zero scoring was retained. Only 7 usable patient clusters limit precision. All models were frozen before acquisition; no tuning follows test access. This is held-out public-release testing, not independent clinical external validation.
 
 ## Evidence
 publication_results/PUBLICATION_SNAPSHOT.json; publication_readiness/publication_audit_20261117/AUDIT.json; publication_readiness/ranking_audit_20261117; repository stain_research/results. The frozen final-test protocol lives in stain_research/runs/final_test_hiesd_v1 and a portable copy accompanies this package. No post-test tuning.

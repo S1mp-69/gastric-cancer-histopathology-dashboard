@@ -3,6 +3,13 @@ $ErrorActionPreference = 'Stop'
 $publicationRoot = Split-Path -Parent $PSScriptRoot
 $publicationMutex = New-Object System.Threading.Mutex($false, 'Gastric_HiESD_WithinClass_V1')
 if (-not $publicationMutex.WaitOne(0)) { Write-Output 'The publication workflow is already running.'; exit 2 }
+$publicationExisting = @(Get-CimInstance Win32_Process | Where-Object {
+    $_.Name -match '^python(w)?\.exe$' -and $_.CommandLine -match 'within_class_publication_queue\.py|hiesd_within_class_train\.py|publication_finalize_pipeline\.py'
+})
+if ($publicationExisting.Count -gt 0) {
+    Write-Output ('Existing publication processes are active; no duplicate launched. PIDs: ' + (($publicationExisting | Select-Object -ExpandProperty ProcessId) -join ', '))
+    $publicationMutex.ReleaseMutex();$publicationMutex.Dispose();exit 2
+}
 Add-Type -TypeDefinition @'
 using System.Runtime.InteropServices;
 public class GastricPublicationAwake { [DllImport("kernel32.dll")] public static extern uint SetThreadExecutionState(uint flags); }

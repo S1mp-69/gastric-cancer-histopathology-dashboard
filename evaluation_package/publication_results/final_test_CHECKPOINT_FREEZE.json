@@ -1,0 +1,121 @@
+{
+  "protocol_sha256": "dc7e4b0d923fcd56dda6b5c71e8eb7453a0eaae5f4df18f4c9e3a064641374bc",
+  "checkpoints": [
+    {
+      "seed": 42,
+      "arm": "standard",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet18_seed42_v3\\best.pt",
+      "sha256": "e060317f2611c418e676f5c5f6482cf0dec95ce05dc333c09c085619a24ad293"
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_residual_fixed\\best.pt",
+      "sha256": "95912998934ecda930d87b3727510a7ac86d3f5da128edf85f60d5a05a5fd172"
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_uniform_weaker\\best.pt",
+      "sha256": "d3561880aeb2194cc333b0f7ae8a950accdc4989ce0e88567163fd0884668ff7"
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_shuffled\\best.pt",
+      "sha256": "d44b350a654ac67e86e47f9b75c8f9c6e0900bb41021937639258acfa84e3434"
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_adaptive\\best.pt",
+      "sha256": "85f6bfc001d63193e4d4f53495f2c9d4025f122313a652e5b9ff2e9b7fff14ab"
+    },
+    {
+      "seed": 42,
+      "arm": "within_class_shuffled",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_within_class_v1\\within_seed42\\best.pt",
+      "sha256": "7379e3a4b278ab9d16223e71ba1ee627be0d5afca3c26ff2722dbc3d848cd905"
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_standard\\best.pt",
+      "sha256": "d569c892c9c8012e5a2b73e1b514155c0c9a2d889ce392bcee6c20870555856c"
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_residual_fixed\\best.pt",
+      "sha256": "ea35e40e06efc15e73e04ea294fe1dad629cc781ea0a32f2b267f4d94a209755"
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_uniform_weaker\\best.pt",
+      "sha256": "798cd1a5a142d944d1197cb767c4dbff1e18f9b1991011f5195f53bcef5e3d31"
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_shuffled\\best.pt",
+      "sha256": "948a562192529587423309e035be4c85b369f501942e128f98a5ef3b057266ed"
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_adaptive\\best.pt",
+      "sha256": "c5118026d5c7e1120ef3f16ce7eac7c0a6fcbb55914375b837ce695f7f21545c"
+    },
+    {
+      "seed": 43,
+      "arm": "within_class_shuffled",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_within_class_v1\\within_seed43\\best.pt",
+      "sha256": "1454f789f438be74d33f4668937e7da2ea30dfa73bfc13efa6a650d7f289b420"
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_standard\\best.pt",
+      "sha256": "036afa85543c087be2c04b56140b7d0af9be0bb6ad3a25a0febd52c8b902b20b"
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_residual_fixed\\best.pt",
+      "sha256": "3b7501cb879502db7b013c592ba123df02bdba750b6ef5500f7e5357d7edb089"
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_uniform_weaker\\best.pt",
+      "sha256": "513d2e5f6ac6f46d96ee5ce27fb643800036daf44926a08ae492486ad3688536"
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_shuffled\\best.pt",
+      "sha256": "ac3dd8e85da070cf91f43546ff49c2469be6ed7b3340d915f9a4b33e1548249b"
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_adaptive\\best.pt",
+      "sha256": "10f32af376ed83a721761e14db205a5c5bc7e2421e945b46b812989e1909326d"
+    },
+    {
+      "seed": 44,
+      "arm": "within_class_shuffled",
+      "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_within_class_v1\\within_seed44\\best.pt",
+      "sha256": "577533f5d51ac5f138716e47c3ff07cbf95f0a1e071f38528418a0d32c6bc068"
+    }
+  ],
+  "implementation_sha256": {
+    "publication_finalize_pipeline.py": "dec1dd8e3465d3b193d1acb5d6ded0ac97c70c68612912346b2c1859a13a5243",
+    "hiesd_final_test_extract.py": "4cec2189b49a811735f54a7e1ea54cb6b3c8553bc5ce2d133507a36232735fea",
+    "hiesd_expand_pilot.py": "0bfe9ed4f3d79bf50cf1f30133a09d19663de200b9300e2407eb4fbaf7bb7e26",
+    "hiesd_pilot.py": "1ee350972df56f420e121ff65785f05f338a41764a36d8dfd827990ec4fe29e8",
+    "hiesd_expand_v3.py": "697dca5f0447c51b5a44c030c475b1f454f696291f14df7d0e2792269481600a",
+    "verify_final_test.py": "1250850385bc6b45c485515eff2d3fe3782992ab560b89b7627f304b045de2ff"
+  }
+}

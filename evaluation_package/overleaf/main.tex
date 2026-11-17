@@ -5,7 +5,7 @@
 \author{\IEEEauthorblockN{Amlan Choudhury}\IEEEauthorblockA{School of Computer Science and Engineering\\KIIT Deemed to be University}}
 \begin{document}\maketitle
 \begin{abstract}
-We evaluate whether source-image decomposition diagnostics usefully assign residual-preserving stain-augmentation strength. An eight-class HMU study uses an exact-duplicate-controlled image split without verified patient mapping; a five-group HiESD study uses a quality-screened patient-grouped subset with ImageNet-pretrained ResNet18. Standard, fixed, uniformly weaker, global shuffled and adaptive augmentation share seed-specific initial weights, geometry and bounded training budgets. Across three seeds, HMU adaptive mean validation macro-F1 is 0.6836 versus 0.6890 for shuffled; HiESD adaptive is 0.7131 versus 0.7350 for shuffled and 0.7270 for standard. These completed results do not establish adaptive superiority. A within-class permutation control isolates source-specific assignment while preserving each class strength bank. The frozen reserved-patient test remains pending or active. Exact-duplicate auditing and independent metric verification improve reproducibility. Reweighting saved predictions illustrates known prevalence sensitivity rather than a novel metric. Rare-class support, coarse annotations, selected patient coverage and development reuse limit inference; clinical benefit and novelty are unconfirmed.
+We test whether numerical stain-decomposition diagnostics improve source-specific strength assignment for residual-preserving augmentation. An eight-class HMU experiment uses an exact-duplicate-controlled image split without verified patient mapping. A five-group HiESD experiment uses a quality-screened patient-grouped subset and ImageNet-pretrained ResNet18. Standard, fixed, uniformly weaker, global shuffled, adaptive and within-class shuffled controls share seed-specific initialization and bounded training rules. Across three seeds, HMU adaptive validation macro-F1 is 0.6836 versus global shuffled 0.6890; HiESD adaptive is 0.7131 versus global shuffled 0.7350. On the frozen test of 1613 patches from 7 reserved patients, adaptive mean macro-F1 is 0.6602 versus within-class shuffled 0.6749. The prespecified difference is -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. A positive adaptive-minus-within-class validation contrast reverses on the reserved cases. These data do not establish diagnostic-assignment benefit. Independent prediction audits support numerical integrity; coarse masks, rare-class support and seven test-patient clusters limit generalization. Reweighting illustrates known metric behavior, not a new metric. Algorithmic novelty and clinical benefit are unconfirmed.
 \end{abstract}
 \begin{IEEEkeywords}gastric histopathology, stain augmentation, controlled ablation, patient grouping, reproducibility\end{IEEEkeywords}
 \section{Introduction}
@@ -19,6 +19,7 @@ The empirical contribution is an auditable falsification study: exact-duplicate 
 Lou et al. introduced the HMU gastric tissue patch dataset and evaluated classification methods under their release protocol \cite{lou}. Wang et al. released HiESD with gastric ESD slide annotations, patient metadata and quality masks \cite{wang}. Our selected subset and five-group mapping are not their full benchmark. Published AUC or differently constructed benchmark scores cannot be ranked against our validation macro-F1.
 
 Stain SAN samples stain representations from a training-derived distribution \cite{kim}. Marini et al. investigate data-driven H\&E color augmentation and admissible variation \cite{marini}. Adaptive and quality-aware augmentation are established areas; changing the diagnostic formula alone does not demonstrate methodological novelty. The implemented extraction follows attributed Stain SAN-derived code. Our hypothesis concerns whether the source-to-strength association adds value beyond a matched strength bank.
+Hong's 2026 CASA preprint calibrates adversarial stain budgets using multi-center statistics \cite{hong}. Its Camelyon17-WILDS evaluation addresses a different task and protocol. Our source-diagnostic rule provides no analogous coverage guarantee; its validation scores are not directly comparable with that study.
 
 F1 depends on more than class recall. Brabec et al. show that prevalence changes can alter classifier order \cite{brabec}; Opitz examines evaluation properties and common practice \cite{opitz}. Thus a reversal under hypothetical weighting is expected to be possible. Its presence here motivates fuller class reporting, not a claim of a previously unknown phenomenon.
 
@@ -60,22 +61,35 @@ Macro-F1 is the arithmetic mean of class F1 scores with zero division defined as
 
 \section{Results}
 \subsection{Completed validation comparisons}
-\begin{table}[t]\caption{HMU exact-duplicate-controlled validation. Three seeds per arm; no verified patient mapping.}\centering\begin{tabular}{lr}\toprule Arm & Mean macro-F1\\\midrule
-Standard & 0.6776\\Residual fixed & 0.6822\\Uniform weaker & 0.6804\\Global shuffled & 0.6890\\Adaptive & 0.6836\\\bottomrule\end{tabular}\end{table}
+\begin{table}[t]\caption{HMU exact-duplicate-controlled validation. Three seeds per arm; no verified patient mapping.}\centering\begin{tabular}{lr}\toprule Arm & Macro-F1 mean $\pm$ SD\\\midrule
+Standard & $0.6776\pm0.0106$\\
+Residual fixed & $0.6822\pm0.0141$\\
+Uniform weaker & $0.6804\pm0.0061$\\
+Global shuffled & $0.6890\pm0.0029$\\
+Adaptive & $0.6836\pm0.0047$\\
+\bottomrule\end{tabular}\end{table}
 In HMU, adaptive minus global shuffled mean macro-F1 is -0.0054; an exploratory three-seed $t$ interval includes zero. Adaptive mean tumor recall is 75.56\% versus standard 79.97\%. Thus the small adaptive gain over standard is not evidence for diagnostic-specific assignment.
 
-\begin{table}[t]\caption{HiESD selected patient-grouped validation. Incomplete added controls remain explicitly partial.}\centering\begin{tabular}{lrr}\toprule Arm & Seeds & Macro-F1 mean $\pm$ SD\\\midrule
+\begin{table}[t]\caption{HiESD selected patient-grouped validation. Three matched seeds per arm.}\centering\begin{tabular}{lrr}\toprule Arm & Seeds & Macro-F1 mean $\pm$ SD\\\midrule
 Standard & 3 & $0.7270\pm0.0090$\\
 Residual fixed & 3 & $0.7260\pm0.0099$\\
 Uniform weaker & 3 & $0.7220\pm0.0099$\\
 Global shuffled & 3 & $0.7350\pm0.0267$\\
 Adaptive & 3 & $0.7131\pm0.0066$\\
-Within-class shuffled & 1 & Pending replication\\
+Within-class shuffled & 3 & $0.7063\pm0.0120$\\
 \bottomrule\end{tabular}\end{table}
-The original HiESD five-arm experiment completed all 15 runs. Adaptive-minus-global-shuffled seed differences are -0.0273, +0.0008 and -0.0391; the mean is -0.0219. Standard reaches 0.7270 versus adaptive 0.7131. These data do not establish diagnostic-guided accuracy benefit. Added within-class-control status: 1 of three seeds complete; seed 43 active. A partial control is not a replicated result.
+The original HiESD five-arm experiment completed all 15 runs. Adaptive-minus-global-shuffled seed differences are -0.0273, +0.0008 and -0.0391; the mean is -0.0219. Standard reaches 0.7270 versus adaptive 0.7131. These data do not establish diagnostic-guided accuracy benefit. Added within-class-control status: 3 of three seeds complete.
+Adaptive-minus-within-class-shuffled validation differences are +0.0044, +0.0135, +0.0026; mean +0.0068, exploratory three-seed t interval [-0.0077, +0.0214]. This post-hoc validation contrast does not establish superiority over standard or global shuffled augmentation.
 
 \begin{figure}[t]\centering\includegraphics[width=\linewidth]{figures/validation.png}\caption{HiESD validation macro-F1. Error bars are sample SD across three seeds on the same validation cases; only fully replicated arms are shown.}\end{figure}
 The validation lymphoid support is only seven patches. The broad other class has weak recall. These failure modes limit claims based on a single aggregate score. Earlier v2/v3 experiments changed selected patients, quality filtering, normalization and architecture, so their score increase is not attributed to one intervention. A three-epoch pilot is reported as historical exploratory evidence, not convergence.
+There is a class tradeoff: adaptive mean tumor recall is 0.906 versus 0.859 for standard and 0.828 for global shuffled, while other recall is 0.058 versus standard 0.092. Higher recall in one group does not establish overall superiority or clinical benefit.
+\begin{table}[t]\caption{HiESD validation mean per-class recall over three seeds. Support counts distinct validation cases once.}\centering\begin{tabular}{lrrrr}\toprule Class & $n$ & Std. & Shuf. & Adapt.\\\midrule
+Tumor & 99 & 0.859 & 0.828 & 0.906\\
+Muc./infl. & 823 & 0.925 & 0.953 & 0.930\\
+IM & 166 & 0.799 & 0.765 & 0.805\\
+Lymphoid & 7 & 1.000 & 1.000 & 1.000\\
+Other & 156 & 0.092 & 0.071 & 0.058\\\bottomrule\end{tabular}\end{table}
 
 \subsection{Secondary construction and weighting analyses}
 A training-mask audit reconstructed the reference sampling exactly. Relaxing purity or removing patient-class caps changed membership substantially, but those variants were not retrained. A separate analysis reweighted the same 1,251 saved validation cases using 24 predefined, correlated recipes. Relative to natural weighting, 22 of 23 alternative recipes changed the winning arm and 21 changed the adaptive-minus-shuffled contrast sign. Lymphoid contributed about 69.4\% of the natural-to-equal-class contrast shift. Equal-class weighting increases its target mass from about 0.56\% to 20\%; this hypothetical target is not clinical prevalence. No claim is made that an actual QC intervention caused a ranking reversal. Class-only reweighting leaves recall and balanced accuracy unchanged.
@@ -83,8 +97,14 @@ A training-mask audit reconstructed the reference sampling exactly. Relaxing pur
 An exploratory train-only rank-assignment feasibility study showed local loss-response continuity, including at initialization. Its subsequent exact finite-grid comparison did not distinguish ranked from random assignments: same-direction mean loss difference was about $+0.00030$ with an interval including zero, and the independent-direction difference was slightly negative. This proposal was not promoted to a new training campaign.
 
 \subsection{Frozen reserved-patient test}
-The final-test protocol was frozen before reserved-pixel acquisition. It evaluates all six arms and seeds 42, 43 and 44 using validation-selected best checkpoints, with adaptive-minus-within-class-shuffled patch macro-F1 as the primary contrast. The seven reserved patients cover 13 source slides (about 7.53 GiB). Model hashes are frozen before acquisition. No tuning follows test access. Current stage: waiting for within-class controls. No final-test scores are available in this snapshot.
-
+The frozen final test completed on 1613 patches from 7 reserved patients. The prespecified adaptive-minus-within-class-shuffled mean macro-F1 difference was -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. Of 1,000 cluster draws, 31 lacked at least one class; fixed five-class zero-division-zero scoring was retained. Only 7 usable patient clusters limit precision. All models were frozen before acquisition; no tuning follows test access. This is held-out public-release testing, not independent clinical external validation.
+\begin{table}[t]\caption{Frozen reserved-patient test: three-seed mean and sample SD.}\centering\begin{tabular}{lr}\toprule Arm & Macro-F1 mean $\pm$ SD\\\midrule
+Standard & $0.6600\pm0.0300$\\
+Residual fixed & $0.6696\pm0.0132$\\
+Uniform weaker & $0.6495\pm0.0171$\\
+Global shuffled & $0.6350\pm0.0808$\\
+Adaptive & $0.6602\pm0.0030$\\
+Within-class shuffled & $0.6749\pm0.0146$\\\bottomrule\end{tabular}\end{table} Adaptive's validation lead over within-class shuffled reverses on reserved patients: adaptive-minus-within-class differences are negative in all three test seeds. Global shuffled has the highest validation mean and the lowest test mean among these six arms; within-class shuffled has the highest test point estimate. These are descriptions of the frozen outputs, not a basis for choosing a new model or attributing the reversal to QC. The patient-cluster interval includes zero, so inferiority is not established. Adaptive test mean intestinal-metaplasia recall is 0.833 versus standard 0.768, while tumor recall is 0.622 versus standard 0.670. Other recall remains about 0.200 for adaptive; lymphoid support is only nine patches.
 The protocol fixes all six arms, three seeds, validation-selected best checkpoints and the primary adaptive-minus-within-class-shuffled contrast before reserved-pixel acquisition. Exact development/test patch collisions or missing test classes stop confirmation rather than trigger cohort revision. Patient-cluster bootstrap uses 1,000 resamples and fixed five-class, zero-division-zero scoring, reporting draws missing classes. With only seven patient clusters, the interval is descriptive and potentially unstable. No tuning is permitted after test access.
 
 \section{Implementation and Reproducibility}
@@ -94,16 +114,19 @@ Experiments use a fresh Python 3.12 environment with PyTorch 2.7/CUDA 12.8 on a 
 
 \section{Limitations and Conclusion}
 Repeated reuse of development validation, post-hoc control addition and exploratory secondary analyses limit confirmatory interpretation. The selected HiESD subset is small, imbalanced and annotation-driven; mask boundaries are coarse and no local expert adjudication has occurred. Patient grouping controls known IDs within the public release, but held-out public-release patients do not establish independent cross-hospital or clinical generalization. The HMU study has no verified patient mapping, and exact-file checks do not resolve near duplicates.
+The shuffled controls preserve strength distributions, not realized pixel-change energy: the latter also depends on the receiving image and sampled stain transformation. Patient-cluster intervals condition on the three trained seeds and are not a precise estimate of generalization across institutions or training seeds.
 
-Completed original comparisons provide no evidence that the tested adaptive controller improves classification over shuffled strength assignment. A transparent controlled negative result is more defensible than a renamed method or an unsupported novelty claim. Publication depends on the final evidence, contextual contribution, guide review and venue assessment; no acceptance or clinical benefit is promised.
+The original validation comparisons and frozen patient test do not establish a classification benefit for the tested diagnostic-assignment rule. The results emphasize conditional permutation controls, provenance audits and separate validation/test reporting when evaluating heuristic stain policies. The selected cohort does not establish algorithmic priority or clinical usefulness.
 
 \section*{Data, Code and Assistance Statement}
-Public data must be obtained from the original HMU and HiESD releases under their terms; source records preserve their identifiers and checksums. Research source and portable evidence are maintained in the existing project research branch. No new human recruitment or clinical deployment is reported; institutional review requirements for public de-identified data remain for the authors to confirm. Author, funding, competing-interest and ethics declarations require final human confirmation. AI assistance was used for coding, analysis and drafting; the named author must verify all claims, citations and responsibility before submission. This draft has not received a Turnitin assessment or peer review. Snapshot: 2026-11-17T06:17:12+05:30.
+Public data must be obtained from the original HMU and HiESD releases under their terms; source records preserve their identifiers and checksums. Research source and portable evidence are maintained in the existing project research branch. No new human recruitment or clinical deployment is reported; institutional review requirements for public de-identified data remain for the authors to confirm. Author, funding, competing-interest and ethics declarations require final human confirmation. AI assistance was used for coding, analysis and drafting; the named author must verify all claims, citations and responsibility before submission. This draft has not received a Turnitin assessment or peer review. Snapshot: 2026-11-17T07:15:02+05:30.
+Repository and numerical evidence: \url{https://github.com/S1mp-69/gastric-cancer-histopathology-dashboard/tree/research/local-backup-2026-11-13}. Raw images and large checkpoints are excluded from the portable package.
 \begin{thebibliography}{9}
 \bibitem{lou} S. Lou et al., ``A large histological images dataset of gastric cancer with tumour microenvironment annotation for AI,'' \emph{Scientific Data}, vol.12, art.138, 2025, doi:10.1038/s41597-025-04489-9.
 \bibitem{wang} C. Wang et al., ``A fully annotated pathology slide dataset for early gastric cancer and precancerous lesions,'' \emph{Scientific Data}, 2025, doi:10.1038/s41597-025-05679-1.
 \bibitem{kim} T. Kim et al., ``Stain SAN: simultaneous augmentation and normalization for histopathology images,'' \emph{Journal of Medical Imaging}, vol.11, no.4, art.044006, 2024, doi:10.1117/1.JMI.11.4.044006.
 \bibitem{marini} N. Marini et al., ``Data-driven color augmentation for H\&E stained images in computational pathology,'' \emph{Journal of Pathology Informatics}, vol.14, art.100183, 2023, doi:10.1016/j.jpi.2022.100183.
+\bibitem{hong} M. Hong, ``Physics-grounded adversarial stain augmentation with calibrated coverage guarantees,'' arXiv:2605.13889, 2026, preprint.
 \bibitem{brabec} J. Brabec, T. Komarek, V. Franc, and L. Machlica, ``On model evaluation under non-constant class imbalance,'' \emph{ICCS}, 2020, arXiv:2001.05571.
 \bibitem{opitz} J. Opitz, ``A closer look at classification evaluation metrics and a critical reflection of common evaluation practice,'' \emph{Transactions of the ACL}, vol.12, pp.820--836, 2024, doi:10.1162/tacl\_a\_00675.
 \end{thebibliography}\end{document}

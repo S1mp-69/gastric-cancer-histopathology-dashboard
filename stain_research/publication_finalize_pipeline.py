@@ -47,7 +47,7 @@ def main():
             assert all(torch.isfinite(t).all() for t in state['model_state_dict'].values());del state
             runs.append({'seed':seed,'arm':arm,'checkpoint':str(p/'best.pt'),'sha256':r['best_checkpoint_sha256']})
     freeze={'protocol_sha256':digest(protocol_path),'checkpoints':runs,
-            'implementation_sha256':{n:digest(ROOT/'stain_research'/n) for n in ['publication_finalize_pipeline.py','hiesd_final_test_extract.py','hiesd_expand_pilot.py','hiesd_pilot.py','hiesd_expand_v3.py']}}
+            'implementation_sha256':{n:digest(ROOT/'stain_research'/n) for n in ['publication_finalize_pipeline.py','hiesd_final_test_extract.py','hiesd_expand_pilot.py','hiesd_pilot.py','hiesd_expand_v3.py','verify_final_test.py']}}
     if (LOCK/'CHECKPOINT_FREEZE.json').exists():assert json.loads((LOCK/'CHECKPOINT_FREEZE.json').read_text())==freeze
     else:atomic(LOCK/'CHECKPOINT_FREEZE.json',freeze)
     atomic(LOCK/'STATUS.json',{'stage':'final_test_acquisition','slides':len(protocol['selected']),'GiB':protocol['raw_bytes']/1024**3})
@@ -98,13 +98,16 @@ def main():
             delta.append(f1_score(labels[ids],predictions[(seed,'adaptive')][ids],labels=list(range(5)),average='macro',zero_division=0)-f1_score(labels[ids],predictions[(seed,'within_class_shuffled')][ids],labels=list(range(5)),average='macro',zero_division=0))
         samples.append(float(np.mean(delta)))
     means={a:{k:float(np.mean([r[k] for r in evaluations if r['arm']==a])) for k in ['accuracy','macro_f1','balanced_accuracy','ece_15','brier']} for a in protocol['models']}
-    result={'stage':'complete','patches':len(rows),'patients':len(unique),'class_counts':{c:int((labels==i).sum()) for i,c in enumerate(NAMES)},
+    result={'stage':'inference_complete','patches':len(rows),'patients':len(unique),'class_counts':{c:int((labels==i).sum()) for i,c in enumerate(NAMES)},
             'per_seed':evaluations,'arm_means':means,'primary_adaptive_minus_within_class':means['adaptive']['macro_f1']-means['within_class_shuffled']['macro_f1'],
             'descriptive_patient_cluster_interval':np.quantile(samples,[.025,.975]).tolist(),'bootstrap_draws_missing_classes':missing,
             'bootstrap_convention':'Fixed five classes, zero_division=0 even if a class is absent in a draw; small-cluster interval is descriptive and may be unstable.',
             'protocol_sha256':digest(protocol_path),'checkpoint_freeze_sha256':digest(LOCK/'CHECKPOINT_FREEZE.json'),'patch_manifest_sha256':patch_manifest_sha,
             'scope':'Frozen final test on reserved public-release patients; not independent cross-hospital external testing, not clinical validation. No tuning after test access.'}
     atomic(PORTABLE/'RESULTS.json',result)
+    from verify_final_test import main as verify_final
+    verify_final()
+    result['stage']='complete';result['independent_verification']=True;atomic(PORTABLE/'RESULTS.json',result)
     atomic(LOCK/'STATUS.json',{'stage':'building_publication_materials','test_complete':True})
     builder=ROOT/'stain_research/refresh_publication_package.py'
     if builder.exists():subprocess.run([sys.executable,'-u',str(builder)],cwd=ROOT,check=True)

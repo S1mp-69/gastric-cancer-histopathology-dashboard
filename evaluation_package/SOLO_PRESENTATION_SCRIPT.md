@@ -18,4 +18,9 @@ Demonstration: The application accepts a patch, displays eight probabilities and
 
 Closing: My contribution is a reproducible empirical study with a stronger assignment control and transparent limitations. Algorithmic novelty, clinical value and publication acceptance remain unconfirmed.
 
-Current snapshot: The final-test protocol was frozen before reserved-pixel acquisition. It evaluates all six arms and seeds 42, 43 and 44 using validation-selected best checkpoints, with adaptive-minus-within-class-shuffled patch macro-F1 as the primary contrast. The seven reserved patients cover 13 source slides (about 7.53 GiB). Model hashes are frozen before acquisition. No tuning follows test access. Current stage: waiting for within-class controls. No final-test scores are available in this snapshot.
+Validation class tradeoff: HiESD adaptive tumor recall is 0.906 versus standard 0.859; other recall is 0.058 versus standard 0.092. This is not overall or clinical superiority.
+
+Adaptive-minus-within-class-shuffled validation differences are +0.0044, +0.0135, +0.0026; mean +0.0068, exploratory three-seed t interval [-0.0077, +0.0214]. This post-hoc validation contrast does not establish superiority over standard or global shuffled augmentation.
+
+Current snapshot: The frozen final test completed on 1613 patches from 7 reserved patients. The prespecified adaptive-minus-within-class-shuffled mean macro-F1 difference was -0.0147, with descriptive patient-cluster interval [-0.0376, +0.0069]. Of 1,000 cluster draws, 31 lacked at least one class; fixed five-class zero-division-zero scoring was retained. Only 7 usable patient clusters limit precision. All models were frozen before acquisition; no tuning follows test access. This is held-out public-release testing, not independent clinical external validation.
+On the frozen test, adaptive intestinal-metaplasia recall is 0.833 versus standard 0.768, but tumor recall is 0.622 versus standard 0.670. The validation benefit against within-class shuffle reverses. No parameters or checkpoints are changed after this result.
