@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "seed": 42,
+      "arm": "standard",
+      "epochs": 22,
+      "best_epoch": 15,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "arm": "residual_fixed",
+      "epochs": 32,
+      "best_epoch": 25,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "arm": "uniform_weaker",
+      "epochs": 25,
+      "best_epoch": 18,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "arm": "shuffled",
+      "epochs": 22,
+      "best_epoch": 15,
+      "passed": true
+    },
+    {
+      "seed": 42,
+      "arm": "adaptive",
+      "epochs": 26,
+      "best_epoch": 19,
+      "passed": true
+    },
+    {
+      "seed": 43,
+      "arm": "standard",
+      "epochs": 11,
+      "best_epoch": 4,
+      "passed": true
+    },
+    {
+      "seed": 43,
+      "arm": "residual_fixed",
+      "epochs": 11,
+      "best_epoch": 4,
+      "passed": true
+    },
+    {
+      "seed": 43,
+      "arm": "uniform_weaker",
+      "epochs": 18,
+      "best_epoch": 11,
+      "passed": true
+    },
+    {
+      "seed": 43,
+      "arm": "shuffled",
+      "epochs": 8,
+      "best_epoch": 1,
+      "passed": true
+    },
+    {
+      "seed": 43,
+      "arm": "adaptive",
+      "epochs": 11,
+      "best_epoch": 4,
+      "passed": true
+    },
+    {
+      "seed": 44,
+      "arm": "standard",
+      "epochs": 9,
+      "best_epoch": 2,
+      "passed": true
+    },
+    {
+      "seed": 44,
+      "arm": "residual_fixed",
+      "epochs": 19,
+      "best_epoch": 12,
+      "passed": true
+    },
+    {
+      "seed": 44,
+      "arm": "uniform_weaker",
+      "epochs": 9,
+      "best_epoch": 2,
+      "passed": true
+    },
+    {
+      "seed": 44,
+      "arm": "shuffled",
+      "epochs": 22,
+      "best_epoch": 15,
+      "passed": true
+    },
+    {
+      "seed": 44,
+      "arm": "adaptive",
+      "epochs": 25,
+      "best_epoch": 18,
+      "passed": true
+    }
+  ],
+  "cache_images_verified": 3794,
+  "train_only_quantiles_verified": true,
+  "initialization_config_stopping_and_checkpoint_checks": true,
+  "same_validation_order": true,
+  "finite_best_and_last_model_tensors": true,
+  "resume_state_keys_present": true,
+  "reserved_test_accessed": false,
+  "original_baseline_preserved": true,
+  "limitations": [
+    "No new inference or bitwise interrupted-vs-uninterrupted equivalence proof",
+    "No expert pathology label audit",
+    "No near-duplicate assessment beyond exact file hashes"
+  ]
+}

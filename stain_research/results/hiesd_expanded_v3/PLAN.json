@@ -1,0 +1,745 @@
+{
+  "version": "hiesd-expanded-v3",
+  "hf_revision": "89878d1841ef7ca3830ba23f7844bac4cc0cdb7a",
+  "manifest_sha256": "243cc41a2952930adfdaf178334d7213a858eee7839cae3004caef5a94e45b3c",
+  "selected": [
+    {
+      "id": 54167390,
+      "name": "dd621e0b-7c68-46b7-a8d3-d5ae58414ea4.svs",
+      "size": 317006124,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167390",
+      "supplied_md5": "baaa37b9fddaf46c8685682483cc8770",
+      "computed_md5": "baaa37b9fddaf46c8685682483cc8770",
+      "mimetype": "image/tiff",
+      "slide_id": "dd621e0b-7c68-46b7-a8d3-d5ae58414ea4",
+      "patient_id": "Patient20",
+      "split": "train",
+      "eligible_patch_counts": [
+        9,
+        86,
+        1,
+        14,
+        0
+      ]
+    },
+    {
+      "id": 54166346,
+      "name": "09e6163a-30aa-4b03-828f-48c10b718703.svs",
+      "size": 306100811,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166346",
+      "supplied_md5": "94d4ce63ee377f1c20e01635ef4dfd89",
+      "computed_md5": "94d4ce63ee377f1c20e01635ef4dfd89",
+      "mimetype": "image/tiff",
+      "slide_id": "09e6163a-30aa-4b03-828f-48c10b718703",
+      "patient_id": "Patient38",
+      "split": "train",
+      "eligible_patch_counts": [
+        113,
+        63,
+        12,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54163220,
+      "name": "0dddc3e2-b189-43fb-81c1-d0cac38f3cbd.svs",
+      "size": 613169887,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163220",
+      "supplied_md5": "604e564a127745235daae97b0379de41",
+      "computed_md5": "604e564a127745235daae97b0379de41",
+      "mimetype": "image/tiff",
+      "slide_id": "0dddc3e2-b189-43fb-81c1-d0cac38f3cbd",
+      "patient_id": "Patient3",
+      "split": "train",
+      "eligible_patch_counts": [
+        15,
+        88,
+        105,
+        37,
+        8
+      ]
+    },
+    {
+      "id": 54163244,
+      "name": "4d9b4a03-38dd-437f-9e5a-cd39b11f4f68.svs",
+      "size": 302746029,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163244",
+      "supplied_md5": "bc6a01bb20bc1a8f3f46f587d93170e3",
+      "computed_md5": "bc6a01bb20bc1a8f3f46f587d93170e3",
+      "mimetype": "image/tiff",
+      "slide_id": "4d9b4a03-38dd-437f-9e5a-cd39b11f4f68",
+      "patient_id": "Patient8",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        98,
+        60,
+        7,
+        0
+      ]
+    },
+    {
+      "id": 54166406,
+      "name": "48b199a8-10fc-452e-a0e3-707b3f34a56a.svs",
+      "size": 351760952,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166406",
+      "supplied_md5": "691dc97a1d94e5b7cc6aab09afa975ba",
+      "computed_md5": "691dc97a1d94e5b7cc6aab09afa975ba",
+      "mimetype": "image/tiff",
+      "slide_id": "48b199a8-10fc-452e-a0e3-707b3f34a56a",
+      "patient_id": "Patient33",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        127,
+        0,
+        0,
+        128
+      ]
+    },
+    {
+      "id": 54167270,
+      "name": "bc0df5cb-8fa6-4230-9c9d-81e33a1c835b.svs",
+      "size": 228512473,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167270",
+      "supplied_md5": "62617ba9aa9061959c67330080b026df",
+      "computed_md5": "62617ba9aa9061959c67330080b026df",
+      "mimetype": "image/tiff",
+      "slide_id": "bc0df5cb-8fa6-4230-9c9d-81e33a1c835b",
+      "patient_id": "Patient17",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        128,
+        0,
+        0,
+        41
+      ]
+    },
+    {
+      "id": 54167132,
+      "name": "335e9762-e6ed-40ec-973e-47ccfc25a6eb.svs",
+      "size": 309034320,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167132",
+      "supplied_md5": "b88648c5c34b8bc3d004781f6dc2e195",
+      "computed_md5": "b88648c5c34b8bc3d004781f6dc2e195",
+      "mimetype": "image/tiff",
+      "slide_id": "335e9762-e6ed-40ec-973e-47ccfc25a6eb",
+      "patient_id": "Patient15",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        128,
+        0,
+        0,
+        11
+      ]
+    },
+    {
+      "id": 54163268,
+      "name": "6c6bcc80-c875-471e-87e9-1aef6725d80e.svs",
+      "size": 363517897,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163268",
+      "supplied_md5": "fe737894203674b04bff3c9474f827f7",
+      "computed_md5": "fe737894203674b04bff3c9474f827f7",
+      "mimetype": "image/tiff",
+      "slide_id": "6c6bcc80-c875-471e-87e9-1aef6725d80e",
+      "patient_id": "Patient12",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        128,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54163262,
+      "name": "5f016de5-c205-4159-88de-9bf2ae7a5bfe.svs",
+      "size": 420132591,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163262",
+      "supplied_md5": "d87ab2fb4b5c3f38f2af25d1980c9213",
+      "computed_md5": "d87ab2fb4b5c3f38f2af25d1980c9213",
+      "mimetype": "image/tiff",
+      "slide_id": "5f016de5-c205-4159-88de-9bf2ae7a5bfe",
+      "patient_id": "Patient0",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        128,
+        0,
+        2,
+        25
+      ]
+    },
+    {
+      "id": 54167120,
+      "name": "97f6e6fd-ecb0-47e7-a5ca-0807d02e7126.svs",
+      "size": 562399016,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167120",
+      "supplied_md5": "13d504e1fc5b423e8ea8c26059b44814",
+      "computed_md5": "13d504e1fc5b423e8ea8c26059b44814",
+      "mimetype": "image/tiff",
+      "slide_id": "97f6e6fd-ecb0-47e7-a5ca-0807d02e7126",
+      "patient_id": "Patient7",
+      "split": "train",
+      "eligible_patch_counts": [
+        1,
+        70,
+        3,
+        7,
+        0
+      ]
+    },
+    {
+      "id": 54167348,
+      "name": "d30c4abc-2831-4939-998d-c70526150550.svs",
+      "size": 584992123,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167348",
+      "supplied_md5": "4cd8dddb32805993a72e8c9e3be0db1d",
+      "computed_md5": "4cd8dddb32805993a72e8c9e3be0db1d",
+      "mimetype": "image/tiff",
+      "slide_id": "d30c4abc-2831-4939-998d-c70526150550",
+      "patient_id": "Patient32",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        128,
+        13,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54167246,
+      "name": "ad9d9983-8e0f-4cd2-aa73-9a8dd1362a8d.svs",
+      "size": 363945045,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167246",
+      "supplied_md5": "7af115f3a4610a6a94948453f44e9b3e",
+      "computed_md5": "7af115f3a4610a6a94948453f44e9b3e",
+      "mimetype": "image/tiff",
+      "slide_id": "ad9d9983-8e0f-4cd2-aa73-9a8dd1362a8d",
+      "patient_id": "Patient18",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        98,
+        5,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54163229,
+      "name": "1b1fbfd6-3de1-42c6-8305-d4ab74f93711.svs",
+      "size": 269252899,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163229",
+      "supplied_md5": "bb8c60a2a12710387dda0d14f345943d",
+      "computed_md5": "bb8c60a2a12710387dda0d14f345943d",
+      "mimetype": "image/tiff",
+      "slide_id": "1b1fbfd6-3de1-42c6-8305-d4ab74f93711",
+      "patient_id": "Patient37",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        40,
+        13,
+        4,
+        0
+      ]
+    },
+    {
+      "id": 54167123,
+      "name": "185da75d-8839-4ae3-acda-d3d0f95bc1aa.svs",
+      "size": 902533660,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167123",
+      "supplied_md5": "ec7a48d65875b671f40552b69d9c269d",
+      "computed_md5": "ec7a48d65875b671f40552b69d9c269d",
+      "mimetype": "image/tiff",
+      "slide_id": "185da75d-8839-4ae3-acda-d3d0f95bc1aa",
+      "patient_id": "Patient5",
+      "split": "validation",
+      "eligible_patch_counts": [
+        61,
+        128,
+        4,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54166400,
+      "name": "46e7dccd-521a-4d0f-80bd-10e960cd5905.svs",
+      "size": 1021548626,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166400",
+      "supplied_md5": "95c856af63ffec813461df388008a522",
+      "computed_md5": "95c856af63ffec813461df388008a522",
+      "mimetype": "image/tiff",
+      "slide_id": "46e7dccd-521a-4d0f-80bd-10e960cd5905",
+      "patient_id": "Patient27",
+      "split": "train",
+      "eligible_patch_counts": [
+        92,
+        128,
+        15,
+        28,
+        15
+      ]
+    },
+    {
+      "id": 54163256,
+      "name": "5ac0530a-b5b3-4022-b79f-ecef5728fcfa.svs",
+      "size": 632569434,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163256",
+      "supplied_md5": "4243e749d6ea76f396cb7b01aeb8af8d",
+      "computed_md5": "4243e749d6ea76f396cb7b01aeb8af8d",
+      "mimetype": "image/tiff",
+      "slide_id": "5ac0530a-b5b3-4022-b79f-ecef5728fcfa",
+      "patient_id": "Patient12",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        128,
+        5,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54167381,
+      "name": "d81140ca-8886-4b5f-95ec-bb7e539b5279.svs",
+      "size": 376858479,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167381",
+      "supplied_md5": "a3abd27c9387fe619deefff11d3a424b",
+      "computed_md5": "a3abd27c9387fe619deefff11d3a424b",
+      "mimetype": "image/tiff",
+      "slide_id": "d81140ca-8886-4b5f-95ec-bb7e539b5279",
+      "patient_id": "Patient18",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        70,
+        5,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54163214,
+      "name": "0a682165-55f9-4045-b550-b943291ad1b8.svs",
+      "size": 226473992,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163214",
+      "supplied_md5": "af56438bef89809ffaf53d3393724366",
+      "computed_md5": "af56438bef89809ffaf53d3393724366",
+      "mimetype": "image/tiff",
+      "slide_id": "0a682165-55f9-4045-b550-b943291ad1b8",
+      "patient_id": "Patient25",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        42,
+        12,
+        2,
+        5
+      ]
+    },
+    {
+      "id": 54167258,
+      "name": "b463dadb-e8d1-40c2-a339-4ef0a5a85b26.svs",
+      "size": 336746056,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167258",
+      "supplied_md5": "93b44622951e7b94aa5ef84478a80d71",
+      "computed_md5": "93b44622951e7b94aa5ef84478a80d71",
+      "mimetype": "image/tiff",
+      "slide_id": "b463dadb-e8d1-40c2-a339-4ef0a5a85b26",
+      "patient_id": "Patient22",
+      "split": "train",
+      "eligible_patch_counts": [
+        6,
+        128,
+        27,
+        2,
+        0
+      ]
+    },
+    {
+      "id": 54163271,
+      "name": "6f6c4841-e772-4043-ba7f-88245fa50500.svs",
+      "size": 524456237,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163271",
+      "supplied_md5": "5209d1986f28dd408a561a7b201cc048",
+      "computed_md5": "5209d1986f28dd408a561a7b201cc048",
+      "mimetype": "image/tiff",
+      "slide_id": "6f6c4841-e772-4043-ba7f-88245fa50500",
+      "patient_id": "Patient29",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        128,
+        45,
+        2,
+        128
+      ]
+    },
+    {
+      "id": 54167177,
+      "name": "27100e3a-1641-4c58-bdf8-ad34f1eaa3c6.svs",
+      "size": 388709930,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167177",
+      "supplied_md5": "f5852282be4e9c868a625c736ffec18f",
+      "computed_md5": "f5852282be4e9c868a625c736ffec18f",
+      "mimetype": "image/tiff",
+      "slide_id": "27100e3a-1641-4c58-bdf8-ad34f1eaa3c6",
+      "patient_id": "Patient22",
+      "split": "train",
+      "eligible_patch_counts": [
+        14,
+        128,
+        3,
+        1,
+        0
+      ]
+    },
+    {
+      "id": 54167336,
+      "name": "cd02a9df-4ef4-4b94-87ca-cf8f0aa16bde.svs",
+      "size": 421841022,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167336",
+      "supplied_md5": "f97261903dcc68b4eb51a558f83abd57",
+      "computed_md5": "f97261903dcc68b4eb51a558f83abd57",
+      "mimetype": "image/tiff",
+      "slide_id": "cd02a9df-4ef4-4b94-87ca-cf8f0aa16bde",
+      "patient_id": "Patient4",
+      "split": "train",
+      "eligible_patch_counts": [
+        0,
+        128,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": 54163253,
+      "name": "5aa7c0dc-494b-41b4-8257-94557dc774b9.svs",
+      "size": 488677396,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54163253",
+      "supplied_md5": "69ea4573005d599cf914a99386e6320e",
+      "computed_md5": "69ea4573005d599cf914a99386e6320e",
+      "mimetype": "image/tiff",
+      "slide_id": "5aa7c0dc-494b-41b4-8257-94557dc774b9",
+      "patient_id": "Patient12",
+      "split": "validation",
+      "eligible_patch_counts": [
+        1,
+        128,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54167267,
+      "name": "badcd77d-028d-4d6a-b3df-b8efd2139882.svs",
+      "size": 1271146468,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167267",
+      "supplied_md5": "ccad9af37b31fa40634171c2da525c9b",
+      "computed_md5": "ccad9af37b31fa40634171c2da525c9b",
+      "mimetype": "image/tiff",
+      "slide_id": "badcd77d-028d-4d6a-b3df-b8efd2139882",
+      "patient_id": "Patient2",
+      "split": "train",
+      "eligible_patch_counts": [
+        73,
+        128,
+        11,
+        2,
+        0
+      ]
+    }
+  ],
+  "existing": [
+    {
+      "id": 54167408,
+      "name": "e492f29a-a67b-4f16-8843-089487bf4bd9.svs",
+      "size": 112381350,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167408",
+      "supplied_md5": "d8840ca4fbf7f7be59d5c180b77eda11",
+      "computed_md5": "d8840ca4fbf7f7be59d5c180b77eda11",
+      "mimetype": "image/tiff",
+      "slide_id": "e492f29a-a67b-4f16-8843-089487bf4bd9",
+      "patient_id": "Patient22",
+      "split": "train"
+    },
+    {
+      "id": 54167273,
+      "name": "bfa02384-d59e-43d2-9acf-3849061668c7.svs",
+      "size": 119114817,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167273",
+      "supplied_md5": "ac3b203a5366c10d1950e765bb7c4313",
+      "computed_md5": "ac3b203a5366c10d1950e765bb7c4313",
+      "mimetype": "image/tiff",
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "patient_id": "Patient36",
+      "split": "train"
+    },
+    {
+      "id": 54167393,
+      "name": "de824048-e4f7-4fd9-aa81-6a44d57c1e51.svs",
+      "size": 190516811,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167393",
+      "supplied_md5": "976f7809908185ac2f3f150dfe07893e",
+      "computed_md5": "976f7809908185ac2f3f150dfe07893e",
+      "mimetype": "image/tiff",
+      "slide_id": "de824048-e4f7-4fd9-aa81-6a44d57c1e51",
+      "patient_id": "Patient19",
+      "split": "train"
+    },
+    {
+      "id": 54167150,
+      "name": "766e03a4-bdc5-4350-b427-4f6a7894c72a.svs",
+      "size": 202445593,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167150",
+      "supplied_md5": "1c6c6d077fe2919ec1e7c33ff7b3e29c",
+      "computed_md5": "1c6c6d077fe2919ec1e7c33ff7b3e29c",
+      "mimetype": "image/tiff",
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "patient_id": "Patient25",
+      "split": "train"
+    },
+    {
+      "id": 54167411,
+      "name": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6.svs",
+      "size": 139324209,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167411",
+      "supplied_md5": "8cc29d45e826fee3e2ee0dd49eb569ac",
+      "computed_md5": "8cc29d45e826fee3e2ee0dd49eb569ac",
+      "mimetype": "image/tiff",
+      "slide_id": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6",
+      "patient_id": "Patient18",
+      "split": "validation"
+    },
+    {
+      "id": 54166388,
+      "name": "31ba6050-472e-414f-bef5-fa7e0bd8a877.svs",
+      "size": 297283253,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166388",
+      "supplied_md5": "f43056ee31f7998784eed1ab65e26173",
+      "computed_md5": "f43056ee31f7998784eed1ab65e26173",
+      "mimetype": "image/tiff",
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "patient_id": "Patient34",
+      "split": "validation"
+    },
+    {
+      "id": 54167420,
+      "name": "e9055755-3238-4415-b90c-9d338a959d1b.svs",
+      "size": 310591725,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167420",
+      "supplied_md5": "f138f6238f6981a71872de7f05f630f3",
+      "computed_md5": "f138f6238f6981a71872de7f05f630f3",
+      "mimetype": "image/tiff",
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "patient_id": "Patient22",
+      "split": "train",
+      "eligible_patch_counts": [
+        37,
+        128,
+        11,
+        4,
+        4
+      ]
+    },
+    {
+      "id": 54167396,
+      "name": "df8d49f3-d2e6-4f97-8354-653b14dac41c.svs",
+      "size": 677374187,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167396",
+      "supplied_md5": "b5b1e085aa4d700e658587e88fd18503",
+      "computed_md5": "b5b1e085aa4d700e658587e88fd18503",
+      "mimetype": "image/tiff",
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "patient_id": "Patient30",
+      "split": "validation",
+      "eligible_patch_counts": [
+        8,
+        128,
+        128,
+        5,
+        27
+      ]
+    },
+    {
+      "id": 54166343,
+      "name": "8a34ec03-5b82-47a3-89c6-2efc2da8270c.svs",
+      "size": 290994969,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166343",
+      "supplied_md5": "a90c55ca68cb09ab38be407484afd2b5",
+      "computed_md5": "a90c55ca68cb09ab38be407484afd2b5",
+      "mimetype": "image/tiff",
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "patient_id": "Patient28",
+      "split": "train",
+      "eligible_patch_counts": [
+        18,
+        39,
+        80,
+        2,
+        0
+      ]
+    },
+    {
+      "id": 54166403,
+      "name": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96.svs",
+      "size": 602396220,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166403",
+      "supplied_md5": "5f1202977553f55cfcae39cc3bd8408c",
+      "computed_md5": "5f1202977553f55cfcae39cc3bd8408c",
+      "mimetype": "image/tiff",
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "patient_id": "Patient32",
+      "split": "validation",
+      "eligible_patch_counts": [
+        1,
+        128,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 54166340,
+      "name": "7e95e101-ff4d-4495-be94-8f47d35b57db.svs",
+      "size": 501236715,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54166340",
+      "supplied_md5": "9c10ad9361fb72a2ca07784cf04283aa",
+      "computed_md5": "9c10ad9361fb72a2ca07784cf04283aa",
+      "mimetype": "image/tiff",
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "patient_id": "Patient13",
+      "split": "train",
+      "eligible_patch_counts": [
+        25,
+        128,
+        0,
+        104,
+        23
+      ]
+    },
+    {
+      "id": 54167195,
+      "name": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb.svs",
+      "size": 815241551,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167195",
+      "supplied_md5": "2975b32da4f52e3e11f78e3d84e43557",
+      "computed_md5": "2975b32da4f52e3e11f78e3d84e43557",
+      "mimetype": "image/tiff",
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "patient_id": "Patient30",
+      "split": "validation",
+      "eligible_patch_counts": [
+        74,
+        128,
+        114,
+        6,
+        10
+      ]
+    },
+    {
+      "id": 54167435,
+      "name": "f38d32f4-b610-485e-a021-3be524a887ce.svs",
+      "size": 1221502090,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/54167435",
+      "supplied_md5": "a7d47b0352c532f1638b4b1d9bcc7cda",
+      "computed_md5": "a7d47b0352c532f1638b4b1d9bcc7cda",
+      "mimetype": "image/tiff",
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "patient_id": "Patient5",
+      "split": "validation",
+      "eligible_patch_counts": [
+        0,
+        128,
+        13,
+        1,
+        0
+      ]
+    }
+  ],
+  "raw_bytes": 11584131467,
+  "max_additional_bytes": 12884901888,
+  "selection": "Frozen metadata/annotation-based patient coverage, size-cost preference, no classifier predictions; selected cohort remains biased.",
+  "patient_coverage_targets": {
+    "train": [
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "validation": [
+      4,
+      7,
+      5,
+      2,
+      3
+    ]
+  },
+  "minimum_patches_for_coverage_target": 8,
+  "qc": {
+    "maximum_artifact_fraction": 0.05,
+    "maximum_unknown_fraction": 0.05,
+    "minimum_tissue_fraction": 0.8,
+    "minimum_annotation_group_purity": 0.9,
+    "max_patches_per_patient_class": 128,
+    "patch_span": 896,
+    "patch_output": 224,
+    "quality_coordinate_policy": "Normalized full-slide extent; reject aspect ratio disagreement above 0.5%; not landmark registration."
+  },
+  "sampling": "After consistent QC, retain up to 128 patches/patient/class by SHA256(seed42,slide,x,y) order.",
+  "test_policy": "Reserved-test slides and annotation/quality masks never opened.",
+  "training": "One fresh ImageNet-pretrained ResNet18 seed42, unweighted CE, max40 epochs, patience7; no augmentation campaign.",
+  "limitations": [
+    "Annotation-guided selected cohort",
+    "Validation lymphoid limited to two patients",
+    "Quality labels are automated proxies, not expert review"
+  ]
+}

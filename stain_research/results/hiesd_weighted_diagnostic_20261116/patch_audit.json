@@ -1,0 +1,681 @@
+{
+  "patch_manifest_sha256": "b50d7561ff002a0b59ff7c354962f8cc36627bb525d72c7c2e1d18061f1c1c38",
+  "patches_checked": 1811,
+  "all_manifest_class_ids_match_release_color_group_mapping": true,
+  "all_coarse_mask_purities_recomputed": true,
+  "source_pixel_checks": [
+    {
+      "slide_id": "e492f29a-a67b-4f16-8843-089487bf4bd9",
+      "class": "mucosa_inflammation",
+      "x": 15232,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e492f29a-a67b-4f16-8843-089487bf4bd9",
+      "class": "mucosa_inflammation",
+      "x": 18816,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "class": "other",
+      "x": 55552,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "class": "other",
+      "x": 56448,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "class": "mucosa_inflammation",
+      "x": 43904,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "class": "mucosa_inflammation",
+      "x": 44800,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "class": "intestinal_metaplasia",
+      "x": 30464,
+      "y": 1792,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "class": "intestinal_metaplasia",
+      "x": 31360,
+      "y": 1792,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "class": "mucosa_inflammation",
+      "x": 58240,
+      "y": 24192,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "class": "mucosa_inflammation",
+      "x": 59136,
+      "y": 24192,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6",
+      "class": "mucosa_inflammation",
+      "x": 2688,
+      "y": 7168,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6",
+      "class": "mucosa_inflammation",
+      "x": 3584,
+      "y": 7168,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "class": "mucosa_inflammation",
+      "x": 60928,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "class": "mucosa_inflammation",
+      "x": 60032,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "class": "other",
+      "x": 17024,
+      "y": 7168,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "class": "other",
+      "x": 17920,
+      "y": 7168,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "other",
+      "x": 60032,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "other",
+      "x": 60928,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "mucosa_inflammation",
+      "x": 63616,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "mucosa_inflammation",
+      "x": 64512,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "intestinal_metaplasia",
+      "x": 102144,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "intestinal_metaplasia",
+      "x": 105728,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "lymphoid",
+      "x": 79744,
+      "y": 8064,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "lymphoid",
+      "x": 83328,
+      "y": 8064,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "tumor",
+      "x": 86016,
+      "y": 8960,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "class": "tumor",
+      "x": 73472,
+      "y": 9856,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "intestinal_metaplasia",
+      "x": 66304,
+      "y": 1792,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "mucosa_inflammation",
+      "x": 69888,
+      "y": 1792,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "mucosa_inflammation",
+      "x": 58240,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "intestinal_metaplasia",
+      "x": 66304,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "other",
+      "x": 58240,
+      "y": 29568,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "other",
+      "x": 59136,
+      "y": 29568,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "lymphoid",
+      "x": 57344,
+      "y": 51072,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "lymphoid",
+      "x": 58240,
+      "y": 51072,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "tumor",
+      "x": 45696,
+      "y": 52864,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "class": "tumor",
+      "x": 47488,
+      "y": 52864,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "lymphoid",
+      "x": 19712,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "lymphoid",
+      "x": 20608,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "tumor",
+      "x": 34944,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "tumor",
+      "x": 35840,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "intestinal_metaplasia",
+      "x": 48384,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "intestinal_metaplasia",
+      "x": 51072,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "mucosa_inflammation",
+      "x": 13440,
+      "y": 4480,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "class": "mucosa_inflammation",
+      "x": 14336,
+      "y": 4480,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "class": "mucosa_inflammation",
+      "x": 74368,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "class": "mucosa_inflammation",
+      "x": 75264,
+      "y": 2688,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "class": "intestinal_metaplasia",
+      "x": 50176,
+      "y": 12544,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "class": "tumor",
+      "x": 31360,
+      "y": 19712,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "mucosa_inflammation",
+      "x": 43904,
+      "y": 1792,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "mucosa_inflammation",
+      "x": 44800,
+      "y": 1792,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "tumor",
+      "x": 41216,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "tumor",
+      "x": 42112,
+      "y": 3584,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "lymphoid",
+      "x": 6272,
+      "y": 4480,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "lymphoid",
+      "x": 7168,
+      "y": 4480,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "other",
+      "x": 34944,
+      "y": 52864,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "class": "other",
+      "x": 35840,
+      "y": 52864,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "other",
+      "x": 55552,
+      "y": 5376,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "tumor",
+      "x": 48384,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "tumor",
+      "x": 49280,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "mucosa_inflammation",
+      "x": 79744,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "mucosa_inflammation",
+      "x": 80640,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "intestinal_metaplasia",
+      "x": 94976,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "intestinal_metaplasia",
+      "x": 95872,
+      "y": 6272,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "lymphoid",
+      "x": 32256,
+      "y": 29568,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "lymphoid",
+      "x": 33152,
+      "y": 29568,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "class": "other",
+      "x": 84224,
+      "y": 31360,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "class": "mucosa_inflammation",
+      "x": 98560,
+      "y": 22400,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "class": "mucosa_inflammation",
+      "x": 99456,
+      "y": 22400,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "class": "intestinal_metaplasia",
+      "x": 51072,
+      "y": 29568,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "class": "intestinal_metaplasia",
+      "x": 83328,
+      "y": 30464,
+      "exact_source_reconstruction": true
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "class": "lymphoid",
+      "x": 63616,
+      "y": 65408,
+      "exact_source_reconstruction": true
+    }
+  ],
+  "mask_checks": [
+    {
+      "slide_id": "e492f29a-a67b-4f16-8843-089487bf4bd9",
+      "unmapped_mask_pixels": 1067524,
+      "mask_sha256": "4921a9c3ddc8872018189aee0f1f689d92356faa8045e469e0adc600bfc4a466"
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "unmapped_mask_pixels": 201922,
+      "mask_sha256": "83ba3537a41bf300a3ef6f2948e7957bbdb243005ecf323e7f8ad31b8ec6002a"
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "unmapped_mask_pixels": 549882,
+      "mask_sha256": "15fd038faf342eacf43fc6c5ffbb8e630d17d17496c8d86541f68eb767bbe201"
+    },
+    {
+      "slide_id": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6",
+      "unmapped_mask_pixels": 268454,
+      "mask_sha256": "9268babdbc09dfaab8acb8e91855fdaabbb38f2ced7b74774b2719f314e2fdde"
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "unmapped_mask_pixels": 598195,
+      "mask_sha256": "f5382ca8dc91fdbd1c1ac2760e68e5dbeabc6cdab163115a378c3894a60ce613"
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "unmapped_mask_pixels": 410734,
+      "mask_sha256": "cfb8ddf163a2fdf5ed1c3bdd1e4550d3ef5c0c1d6e409f217af305ad935bbc6e"
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "unmapped_mask_pixels": 1379007,
+      "mask_sha256": "91a252eae3b9ab559c60e8d25e04b66a63bb04a1db2496ff3061cac6ac650b09"
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "unmapped_mask_pixels": 528553,
+      "mask_sha256": "13f6e4b4cbc63bda3331a9b7848c98e3a6baecc8453cab39cadf527023eec429"
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "unmapped_mask_pixels": 1160014,
+      "mask_sha256": "cd9def89db7243dc3370d0de9b301f8f13bd07955d390172c263c90315ed37c2"
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "unmapped_mask_pixels": 718838,
+      "mask_sha256": "5a85a4dc4cecec0d3aaed6a65386e87b940e7bbe6f68d96fa84ad571477f1a38"
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "unmapped_mask_pixels": 1363943,
+      "mask_sha256": "15d603af39262f77f08e9a106bba6dd92b13faafd4f5f572ae1968af01aeb6eb"
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "unmapped_mask_pixels": 1890478,
+      "mask_sha256": "fd53fa5030ff99394302c4cd162f895992d4bc20232f47c870ad5e61f8d7b4d2"
+    }
+  ],
+  "minimum_group_purity": 0.9030612244897959,
+  "class_patient_counts": [
+    {
+      "split": "train",
+      "class": "tumor",
+      "patches": 80,
+      "by_patient": {
+        "Patient22": 37,
+        "Patient28": 18,
+        "Patient13": 25
+      }
+    },
+    {
+      "split": "train",
+      "class": "mucosa_inflammation",
+      "patches": 424,
+      "by_patient": {
+        "Patient22": 163,
+        "Patient36": 39,
+        "Patient25": 55,
+        "Patient28": 39,
+        "Patient13": 128
+      }
+    },
+    {
+      "split": "train",
+      "class": "intestinal_metaplasia",
+      "patches": 101,
+      "by_patient": {
+        "Patient25": 10,
+        "Patient22": 11,
+        "Patient28": 80
+      }
+    },
+    {
+      "split": "train",
+      "class": "lymphoid",
+      "patches": 110,
+      "by_patient": {
+        "Patient22": 4,
+        "Patient28": 2,
+        "Patient13": 104
+      }
+    },
+    {
+      "split": "train",
+      "class": "other",
+      "patches": 54,
+      "by_patient": {
+        "Patient36": 27,
+        "Patient22": 4,
+        "Patient13": 23
+      }
+    },
+    {
+      "split": "validation",
+      "class": "tumor",
+      "patches": 83,
+      "by_patient": {
+        "Patient30": 82,
+        "Patient32": 1
+      }
+    },
+    {
+      "split": "validation",
+      "class": "mucosa_inflammation",
+      "patches": 592,
+      "by_patient": {
+        "Patient18": 11,
+        "Patient34": 69,
+        "Patient30": 256,
+        "Patient32": 128,
+        "Patient5": 128
+      }
+    },
+    {
+      "split": "validation",
+      "class": "intestinal_metaplasia",
+      "patches": 256,
+      "by_patient": {
+        "Patient30": 242,
+        "Patient32": 1,
+        "Patient5": 13
+      }
+    },
+    {
+      "split": "validation",
+      "class": "lymphoid",
+      "patches": 12,
+      "by_patient": {
+        "Patient30": 11,
+        "Patient5": 1
+      }
+    },
+    {
+      "split": "validation",
+      "class": "other",
+      "patches": 99,
+      "by_patient": {
+        "Patient34": 62,
+        "Patient30": 37
+      }
+    }
+  ],
+  "exact_train_validation_patch_overlap": false,
+  "patient_overlap": false,
+  "reserved_test_accessed": false,
+  "verdict": "No extraction/label-index inconsistency detected on implemented checks. Small selected cohort and severe class/patient imbalance remain.",
+  "limits": [
+    "Nominal downsample64 coordinate check is not landmark registration",
+    "No expert verification of released tissue annotations",
+    "No GrandQC artifact filtering",
+    "Source RGB regenerated on a stratified sample, not all patches"
+  ]
+}

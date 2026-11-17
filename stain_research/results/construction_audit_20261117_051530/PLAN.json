@@ -1,0 +1,83 @@
+{
+  "policies": [
+    {
+      "name": "reference",
+      "purity": 0.9,
+      "artifact": 0.05,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "purity_0.6",
+      "purity": 0.6,
+      "artifact": 0.05,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "purity_0.75",
+      "purity": 0.75,
+      "artifact": 0.05,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "purity_0.95",
+      "purity": 0.95,
+      "artifact": 0.05,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "artifact_0.0",
+      "purity": 0.9,
+      "artifact": 0.0,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "artifact_0.1",
+      "purity": 0.9,
+      "artifact": 0.1,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "artifact_0.2",
+      "purity": 0.9,
+      "artifact": 0.2,
+      "qc": true,
+      "cap": 128
+    },
+    {
+      "name": "quality_block_off",
+      "purity": 0.9,
+      "artifact": 0.05,
+      "qc": false,
+      "cap": 128
+    },
+    {
+      "name": "cap64",
+      "purity": 0.9,
+      "artifact": 0.05,
+      "qc": true,
+      "cap": 64
+    },
+    {
+      "name": "uncapped",
+      "purity": 0.9,
+      "artifact": 0.05,
+      "qc": true,
+      "cap": null
+    }
+  ],
+  "manifest_sha256": "05840d3b64ac07e6a550bfcb3a5628e179c679ce0aa5421f47134303de2e2252",
+  "patient_manifest_sha256": "243cc41a2952930adfdaf178334d7213a858eee7839cae3004caef5a94e45b3c",
+  "scope": "Training masks only; fixed downloaded slide universe and geometry. Original alignment exclusions retained.",
+  "quality_policy": "When enabled: tissue>=.8, unknown<=.05, artifact cutoff as specified. quality_block_off disables all three QC tests together; other alternatives change one scalar rule.",
+  "sampling": "Original SHA256 coordinate order, cap per patient/class after selection.",
+  "engineering_gate": "Any non-reference alternative has >=10% Jaccard membership churn OR >=.05 class-distribution total variation relative to reference. Descriptive sensitivity threshold, not significance or clinical importance.",
+  "claim_limit": "Selection changes cannot establish annotation errors, model-ranking changes or classification benefits.",
+  "automatic_training": false,
+  "validation_test_masks_or_RGB_opened": false
+}

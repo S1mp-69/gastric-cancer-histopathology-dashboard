@@ -1,0 +1,336 @@
+"""Build the project report from the retained teacher template and verified evidence.
+
+No training, inference, database writes or model activation. Unedited template
+package parts are retained byte-for-byte; source placeholders are replaced.
+"""
+from copy import deepcopy
+import hashlib
+import io
+import json
+import subprocess
+from pathlib import Path
+import zipfile
+import re
+
+from docx import Document
+from docx.enum.section import WD_SECTION_START
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Inches, Pt, RGBColor
+
+ROOT = Path(__file__).resolve().parents[1]
+TITLE = 'Evaluating Decomposition-Guided Stain Augmentation in Gastric Histopathology'
+SHORT = 'Stain Augmentation in Gastric Histopathology'
+LABELS = {'standard':'Standard', 'residual_fixed':'Residual fixed',
+          'uniform_weaker':'Uniform weaker', 'adaptive':'Adaptive'}
+
+
+def field(paragraph, instruction, cached='Update field'):
+    r=paragraph.add_run(); begin=OxmlElement('w:fldChar');begin.set(qn('w:fldCharType'),'begin');r._r.append(begin)
+    r=paragraph.add_run(); code=OxmlElement('w:instrText');code.set(qn('xml:space'),'preserve');code.text=' '+instruction+' ';r._r.append(code)
+    r=paragraph.add_run();sep=OxmlElement('w:fldChar');sep.set(qn('w:fldCharType'),'separate');r._r.append(sep)
+    paragraph.add_run(cached)
+    r=paragraph.add_run();end=OxmlElement('w:fldChar');end.set(qn('w:fldCharType'),'end');r._r.append(end)
+
+
+def bookmark(p, name, number):
+    a=OxmlElement('w:bookmarkStart');a.set(qn('w:id'),str(number));a.set(qn('w:name'),name)
+    b=OxmlElement('w:bookmarkEnd');b.set(qn('w:id'),str(number));p._p.insert(0,a);p._p.append(b)
+
+
+def cache_pagination(docx_path, pagination_path):
+    """Cache Word's actual page references without rewriting template parts."""
+    from lxml import etree
+    pages=json.loads(Path(pagination_path).read_text(encoding='utf-8-sig'))
+    path=Path(docx_path)
+    with zipfile.ZipFile(path) as z:parts={n:z.read(n) for n in z.namelist()}
+    root=etree.fromstring(parts['word/document.xml']);ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
+    for p in root.findall('.//w:p',ns):
+        for instruction in p.findall('.//w:instrText',ns):
+            match=re.search(r'PAGEREF\s+(\w+)',instruction.text or '')
+            if match and match.group(1) in pages:
+                run=instruction.getparent();following=run.getnext();separated=False
+                while following is not None:
+                    marker=following.find('w:fldChar',ns)
+                    if marker is not None:
+                        value=marker.get(qn('w:fldCharType'))
+                        if value=='end':break
+                        if value=='separate':separated=True
+                    if separated:
+                        text=following.find('w:t',ns)
+                        if text is not None:text.text=str(pages[match.group(1)]);break
+                    following=following.getnext()
+    parts['word/document.xml']=etree.tostring(root,xml_declaration=True,encoding='UTF-8',standalone=True)
+    tmp=path.with_suffix('.cached.docx')
+    with zipfile.ZipFile(tmp,'w',zipfile.ZIP_DEFLATED) as z:
+        for name,content in parts.items():z.writestr(name,content)
+    tmp.replace(path)
+
+
+def font(p, size=12, bold=False):
+    for r in p.runs:
+        r.font.name='Times New Roman';r.font.size=Pt(size);r.bold=bold;r.font.color.rgb=RGBColor(0,0,0)
+
+
+def build(data, build_dir, template=None):
+    build_dir=Path(build_dir);build_dir.mkdir(parents=True,exist_ok=True)
+    (build_dir/'report_snapshot.json').write_text(json.dumps(data,indent=2),encoding='utf-8')
+    template=Path(template or ROOT/'evaluation_package/templates/Project_Report_Format.docx')
+    identity=json.loads((ROOT/'stain_research/report_identity.json').read_text())
+    digest=hashlib.sha256(template.read_bytes()).hexdigest()
+    if digest!=identity['template_sha256']:raise RuntimeError('Retained template hash changed')
+    source_zip=zipfile.ZipFile(template);d=Document(template)
+    final=data.get('final_analysis')
+    # The copied template supplies styles, fonts, relationships and logo assets.
+    for element in list(d._element.body):d._element.body.remove(element)
+    first=deepcopy(Document(template).sections[0]._sectPr)
+    for tag in ['headerReference','footerReference','pgNumType','type']:
+        for item in first.findall(qn('w:'+tag)):first.remove(item)
+    d._element.body.append(first)
+    markers=[];figures=[];tables=[];number=100;pending_page=False
+
+    def para(text='',size=12,bold=False,align=None,before=0,after=7,keep=False):
+        nonlocal pending_page
+        p=d.add_paragraph(text);p.paragraph_format.space_before=Pt(before);p.paragraph_format.space_after=Pt(after)
+        if pending_page:p.paragraph_format.page_break_before=True;pending_page=False
+        p.paragraph_format.line_spacing=1.15;p.paragraph_format.keep_with_next=keep
+        p.paragraph_format.widow_control=True
+        p.alignment=align if align is not None else WD_ALIGN_PARAGRAPH.JUSTIFY
+        font(p,size,bold);return p
+
+    def center(text,size=13.5,bold=False,before=0,after=10):
+        return para(text,size,bold,WD_ALIGN_PARAGRAPH.CENTER,before,after)
+
+    def heading(text,level=1,mark=None):
+        nonlocal number
+        p=para(text,23.5 if level==1 else 14,False,WD_ALIGN_PARAGRAPH.LEFT,12,12,True)
+        outline=OxmlElement('w:outlineLvl');outline.set(qn('w:val'),str(level-1));p._p.get_or_add_pPr().append(outline)
+        if mark:
+            bookmark(p,mark,number);number+=1;markers.append((text,mark))
+        return p
+
+    def page():
+        nonlocal pending_page
+        pending_page=True
+
+    def caption(text,kind,mark):
+        nonlocal number
+        p=para(text,10.5,False,WD_ALIGN_PARAGRAPH.CENTER,4,10)
+        bookmark(p,mark,number);number+=1
+        (figures if kind=='figure' else tables).append((text,mark))
+        return p
+
+    def table(headers,rows,widths=None):
+        t=d.add_table(rows=1,cols=len(headers));t.autofit=False
+        for c,s in zip(t.rows[0].cells,headers):c.text=str(s)
+        for row in rows:
+            for c,s in zip(t.add_row().cells,row):c.text=str(s)
+        widths=widths or [6.3/len(headers)]*len(headers)
+        for row_i,row in enumerate(t.rows):
+            prop=row._tr.get_or_add_trPr();cant=OxmlElement('w:cantSplit');prop.append(cant)
+            for i,c in enumerate(row.cells):
+                c.width=Inches(widths[i]);m=OxmlElement('w:tcMar')
+                for edge in ['top','left','bottom','right']:
+                    v=OxmlElement('w:'+edge);v.set(qn('w:w'),'80');v.set(qn('w:type'),'dxa');m.append(v)
+                c._tc.get_or_add_tcPr().append(m)
+                for p in c.paragraphs:
+                    p.paragraph_format.space_after=Pt(3);p.paragraph_format.line_spacing=1.05
+                    font(p,11,row_i==0)
+        borders=OxmlElement('w:tblBorders')
+        for edge in ['top','left','bottom','right','insideH','insideV']:
+            v=OxmlElement('w:'+edge);v.set(qn('w:val'),'single');v.set(qn('w:sz'),'4');v.set(qn('w:color'),'000000');borders.append(v)
+        t._tbl.tblPr.append(borders);repeat=OxmlElement('w:tblHeader');t.rows[0]._tr.get_or_add_trPr().append(repeat)
+        para('',after=2);return t
+
+    def geometry(s,front=False):
+        s.page_width=11900*635;s.page_height=16838*635
+        s.left_margin=1440*635 if front else 1400*635;s.right_margin=1440*635 if front else 1386*635
+        s.top_margin=1292*635 if front else 1440*635;s.bottom_margin=807*635 if front else 1440*635
+        s.header_distance=Inches(.5);s.footer_distance=Inches(.5)
+        cols=s._sectPr.find(qn('w:cols'))
+        if cols is not None:cols.attrib.clear();cols.set(qn('w:space'),'720')
+        borders=OxmlElement('w:pgBorders');borders.set(qn('w:offsetFrom'),'page')
+        for edge in ['top','left','bottom','right']:
+            e=OxmlElement('w:'+edge);e.set(qn('w:val'),'single');e.set(qn('w:sz'),'6');e.set(qn('w:space'),'24');e.set(qn('w:color'),'000000');borders.append(e)
+        old=s._sectPr.find(qn('w:pgBorders'))
+        if old is not None:s._sectPr.remove(old)
+        s._sectPr.append(borders)
+
+    geometry(d.sections[0],True)
+    for cover in range(2):
+        if cover:page()
+        center('A PROJECT REPORT',16.5,True,10,12);center('on',13.5,True)
+        p=center(TITLE,19.5,True,after=14)
+        # Title paragraph role remains directly formatted from the reference.
+        center('Submitted to',16.5,True);center('KIIT Deemed to be University',19.5,True)
+        center('In Partial Fulfilment of the Requirement for the Award of',13.5,False,after=12)
+        center('BACHELOR OF TECHNOLOGY IN',16.5,True)
+        center('COMPUTER SCIENCE AND ENGINEERING',16.5,True)
+        center('BY',16.5,True,before=5)
+        center(identity['name'].upper(),14.5,True,after=3);center('Roll Number '+identity['roll_number'],14.5,after=12)
+        center('UNDER THE GUIDANCE OF',13.5,True);center(identity['guide'],13.5,True)
+        p=center('',after=8);p.add_run().add_picture(io.BytesIO(source_zip.read('word/media/image2.jpeg')),width=Inches(.8))
+        center('SCHOOL OF COMPUTER SCIENCE AND ENGINEERING',12.5,True,after=5)
+        center('KALINGA INSTITUTE OF INDUSTRIAL TECHNOLOGY',15.5,True,after=5)
+        center('BHUBANESWAR, ODISHA 751024',12.5,True,after=6)
+        center('November 2026',12.5,True,after=3)
+        center('Programme year as supplied: '+identity['year_as_supplied'],11,after=3)
+        center('Research evaluation report',11,after=0)
+
+    page();center('KIIT Deemed to be University',19.5)
+    center('School of Computer Science and Engineering',13.5);center('Bhubaneswar, Odisha 751024',13.5)
+    p=center('');p.add_run().add_picture(io.BytesIO(source_zip.read('word/media/image2.jpeg')),width=Inches(.8))
+    center('CERTIFICATE',23.5,before=12)
+    center('DRAFT FOR GUIDE REVIEW — UNSIGNED',12,True)
+    para('The certificate page is retained in the prescribed report format. Certification of the work, academic-year range and signatures must be confirmed by the project guide; this draft does not assert that certification has occurred.')
+    center(TITLE,16.5);center('Submitted by',13.5)
+    center(identity['name']+' — Roll Number '+identity['roll_number'],14.5,True)
+    para('Programme: '+identity['programme']+'. Project guide: '+identity['guide']+'. Year supplied by the student: '+identity['year_as_supplied']+'. Report updated for guide review on 17 November 2026.')
+    para('Date of certification: ____________________',before=20)
+    para('Signature of project guide: ____________________',before=30)
+    para(identity['guide']+'\nProject Guide',align=WD_ALIGN_PARAGRAPH.RIGHT)
+
+    page();center('Acknowledgements',19.5,True,before=18,after=24)
+    para('I acknowledge '+identity['guide']+' as my project guide and the School of Computer Science and Engineering, KIIT Deemed to be University, as the academic setting for this project. I thank the authors who released the gastric histopathology dataset and the stain augmentation research used as the basis of the implementation.')
+    para('The report distinguishes my project implementation, externally sourced algorithms and datasets, and experiments assisted by software tools. Stain SAN-derived extraction is attributed in the source notices. I remain responsible for reviewing the experimental claims, references and final submission, including any disclosure required by the institution.')
+    para('Student signature: ____________________\n'+identity['name']+'\nRoll Number '+identity['roll_number'],align=WD_ALIGN_PARAGRAPH.RIGHT,before=24)
+
+    page();center('ABSTRACT',19.5,True,before=18,after=24)
+    para(data['abstract'])
+    para('Keywords: gastric histopathology; stain augmentation; controlled ablation; patient grouping; reproducibility; class imbalance.',bold=True)
+    para('Verified evidence snapshot: '+data['as_of']+'. This is a submission draft for guide review. No clinical use is proposed.',size=11)
+    page();heading('Contents');contents_anchor=d.paragraphs[-1]
+    page();heading('List of Figures');fig_anchor=d.paragraphs[-1]
+    page();heading('List of Tables');table_anchor=d.paragraphs[-1]
+    s=d.add_section(WD_SECTION_START.NEW_PAGE);geometry(s)
+    s.header.is_linked_to_previous=False;s.footer.is_linked_to_previous=False
+    h=s.header.paragraphs[0];h.text=SHORT;h.alignment=WD_ALIGN_PARAGRAPH.RIGHT;font(h,9)
+    f=s.footer.paragraphs[0];f.text='School of Computer Science and Engineering, KIIT, BBSR\t';font(f,9)
+    f.paragraph_format.tab_stops.add_tab_stop(Inches(6.2),2);field(f,'PAGE','1');font(f,9)
+    pn=OxmlElement('w:pgNumType');pn.set(qn('w:start'),'1');s._sectPr.append(pn)
+    def chapter(n,title,mark):
+        if n>1:page()
+        para('Chapter '+str(n),23.5,False,WD_ALIGN_PARAGRAPH.LEFT,8,10,True);heading(title,1,mark)
+    chapter(1,'Introduction','chapter1')
+    para('Hematoxylin and eosin stained gastric tissue images vary in color as well as morphology. Stain augmentation is intended to expose a classifier to plausible color changes. It can also distort useful tissue information. A numerically well-behaved decomposition therefore cannot be assumed to improve classification.')
+    para('The research question is whether assigning stain strength from source-image decomposition diagnostics improves prediction beyond fixed, uniformly weaker and shuffled assignments. The project separates an implemented eight-class dashboard from isolated research experiments. The first study uses the HMU image release; the second uses a patient-grouped, quality-screened subset of HiESD with a pretrained ResNet18 classifier.')
+    para('The completed results do not demonstrate an accuracy advantage for the adaptive controller. The contribution being investigated is an auditable evaluation of diagnostic-to-strength assignment, including counterfactual shuffled controls, leakage analysis and class-level failures. It is not a claim that residual preservation, adaptive augmentation or macro-F1 sensitivity is newly invented.')
+    para('The objectives are to preserve the original application and artifacts, control exact duplicates and patient grouping where available, compare matched augmentation arms with repeated seeds, quantify uncertainty and failures, and prepare a reproducible account that includes negative outcomes. An untouched reserved patient set is governed by a frozen final-test protocol; its current status is stated explicitly in Chapter 4.')
+    chapter(2,'Basic Concepts and Literature Review','chapter2')
+    heading('2.1 Tissue data and labels',2,'sec21')
+    para('HMU-GC-HE-30K [1] contains 31,096 224 by 224 PNG patches in eight classes: ADI, DEB, LYM, MUC, MUS, NOR, STR and TUM. Clinical support tables do not establish an image-to-patient mapping. HiESD [2] contains 104 gastric ESD slides from 44 patients. The local five-group mapping is tumor, mucosa/inflammation, intestinal metaplasia, lymphoid and other; it follows the released annotation definitions. The masks have coarse boundaries, and other is heterogeneous. These datasets and tasks are not directly interchangeable.')
+    heading('2.2 Stain augmentation and prior work',2,'sec22')
+    para('Stain SAN [3] samples training-distribution stain properties, and data-driven color augmentation [4] studies suitable H&E perturbations. Residual preservation and adaptive augmentation have prior art. The implementation adds the original optical-density reconstruction residual to a perturbed stain component. Training-fitted decomposition diagnostics determine a strength between zero and one. Failed extraction uses an unchanged-image fallback.')
+    para('The substantive question concerns the assignment of strengths to source images. A global shuffle preserves the overall strength bank but may alter its class association. A within-class shuffle preserves each tissue class strength bank while breaking source-specific assignment. This stronger control was added after inspecting earlier validation results; it is a post-hoc falsification experiment, not a preregistered discovery.')
+    heading('2.3 Architectures and evaluation',2,'sec23')
+    para('The original dashboard/HMU classifier is a CNN, bidirectional LSTM and attention network. Sixteen spatial 56 by 56 patches per image are encoded by convolutional stages with 32, 64 and 128 channels, then projected to 128 features. A two-layer bidirectional LSTM and additive attention feed an eight-class head. The constructed spatial sequence is not a patient time series. The later HiESD study instead fine-tunes torchvision ResNet18 initialized from ImageNet-1K V1; it does not use the LSTM or attention.')
+    para('Macro-F1 is the arithmetic mean of per-class F1. Accuracy, per-class precision/recall, balanced accuracy and calibration provide complementary information. Brabec et al. [5] and Opitz [6] explain why F1 and model rankings can change with class prevalence. Our reweighting analysis illustrates that known property on saved predictions; it is not a new metric or an intervention experiment.')
+    chapter(3,'Problem Statement and Requirement Specifications','chapter3')
+    para('The problem is to test a diagnostic-guided stain augmentation hypothesis under matched conditions, while retaining a demonstrable application and a complete experimental record. This research prototype is not a medical device or a clinically validated diagnostic system.')
+    heading('3.1 Project Planning',2,'sec31')
+    para('The workflow comprises provenance and duplicate audits, versioned preprocessing caches, standard baselines, bounded matched comparisons, a stronger assignment control, a frozen reserved-test evaluation and preparation of the institutional report, IEEE source and presentation. The notice lists progress evaluation on 13 November 2026 at 11:00 AM in B-305 and final evaluation on 19 November at 11:00 AM; all project timestamps use Asia/Calcutta. A morning status deadline is a reporting milestone rather than a training stop time.')
+    heading('3.2 Project Analysis',2,'sec32')
+    table(['Requirement','Implementation'],[['Preservation','Original application, database, raw images and old checkpoints remain unchanged.'],['Matched comparisons','Identical split, seed-specific initialization, geometry, optimizer and stopping rule.'],['Data isolation','Train-fitted diagnostics; validation selects checkpoints; reserved test is locked until final evaluation.'],['Restartability','Best and last state include model, optimizer, scheduler, scaler and RNG.'],['Honest reporting','Separate numerical diagnostics, validation, historical notebook scores and frozen final test.']],[1.5,4.7])
+    caption('Table 3.1 Requirements and implementation','table','tab31')
+    para('The exact-file HMU audit found 932 duplicate groups containing 2,118 images. There were 334 cross-split groups, including 165 linking historical training and test. There were no cross-class exact-duplicate label conflicts. Removing 1,186 redundant copies leaves 23,761 training, 3,059 validation and 3,090 test images. This controls exact bytes only; patient independence and near-duplicate independence remain unverified.')
+    para('HiESD patient assignments were frozen before slide acquisition: 30 training, seven validation and seven reserved-test patients. The v3 selected subset actually contains 16 training patients with 2,543 patches and seven validation patients with 1,251 patches. Selection follows available annotation and quality criteria, so this is not the entire release or a representative clinical cohort. Reserved-test acquisition follows the already fixed 13 slides from seven patients.')
+    heading('3.3 System Design',2,'sec33')
+    heading('3.3.1 Design Constraints',2,'sec331')
+    para('The working environment uses a fresh local Python 3.12 environment, PyTorch 2.7 with CUDA 12.8, an RTX 3050 Laptop GPU with 4 GB VRAM and 16 GB system RAM. HiESD training uses batch 16, zero loader workers, two main CPU threads and FP16 where stable. Earlier HMU throughput tests selected batch 64 and four workers. Settings differ by workload and are not claimed to provide a universal optimum. No clock rates or thermal protections are changed.')
+    heading('3.3.2 System Architecture and Block Diagram',2,'sec332')
+    para('Application path: browser upload to FastAPI; image preprocessing and the configured original predictor; eight output probabilities; SQLAlchemy persistence in SQLite; browser history and analytics. Research path: pinned manifests and source checksums; deterministic decomposition and quality caches; stochastic augmentation; isolated classifier training; best/last checkpoints and saved predictions; independent audit and publication materials. Research checkpoints are not activated in the dashboard.')
+    p=para('',align=WD_ALIGN_PARAGRAPH.CENTER);p.add_run().add_picture(str(build_dir/'publication_architecture.png'),width=Inches(6.1))
+    caption('Figure 3.1 Preserved application and isolated study workflow','figure','fig31')
+    chapter(4,'Implementation','chapter4')
+    heading('4.1 Methodology and Algorithms',2,'sec41')
+    para('HiESD extraction uses released tissue and quality masks pinned to a recorded repository revision. Nominal annotation downsampling must match slide dimensions within two mask pixels; quality-mask aspect ratio must agree within 0.5%. Eligible patches have annotation purity at least 0.90, artifact fraction at most 0.05, unknown fraction at most 0.05 and tissue fraction at least 0.80. A level-zero 896 by 896 region is resized to 224 by 224. A deterministic SHA-based order caps sampling at 128 patches per patient and class. An irregular annotation pyramid is excluded rather than stretched. These checks do not replace expert registration or pathology review.')
+    para('The versioned float64 cache keeps source stain bases, concentrations, residual diagnostics and validity attached to each image. Keys include source versions, manifest, representation and image hashes. Training data alone fit diagnostic limits and the target stain bank. All 3,794 HiESD train/validation decompositions were valid. Stochastic target stains, intensity changes and geometry remain random with separate seeded streams. Forty cached/uncached output checks and shared augmentation checks passed.')
+    table(['Arm','Strength assignment before shared geometry/RGB augmentation'],[['Standard','No additional decomposition-based stain perturbation.'],['Residual fixed','Residual-preserving stain perturbation at fixed full strength.'],['Uniform weaker','All valid training images use the mean adaptive strength (about 0.6135).'],['Global shuffled','Permute adaptive strengths across all valid training images each epoch.'],['Adaptive','Use each source image diagnostic-derived strength.'],['Within-class shuffled','Permute strengths within each training class each epoch.']],[1.45,4.75])
+    caption('Table 4.1 Matched HiESD augmentation arms','table','tab41')
+    para('For HiESD, each arm shares ImageNet initialization and the seed-specific classifier head, image order, horizontal/vertical flips, right-angle rotation and color jitter. AdamW uses learning rate 0.0001, weight decay 0.0001 and label smoothing 0.05. Gradient clipping is five. ReduceLROnPlateau uses validation negative log-likelihood with patience two and factor 0.5. Validation macro-F1 selects best checkpoints using a 0.0001 improvement threshold; early stopping patience is seven and the ceiling is 40 epochs. The study uses seeds 42, 43 and 44. The earlier HMU network uses its own recorded settings; scores across studies do not isolate a model or data effect.')
+    heading('4.2 Testing and Verification Plan',2,'sec42')
+    para('The publication audit independently checked all 15 completed original HiESD runs: configuration alignment, identical initial weights within each seed, cache/source hashes, finite model tensors, required resumable state, history-based best selection and stopping, saved probabilities, confusion matrices and metrics. The original baseline remained unchanged. The added control checks preserve each class strength multiset for all 40 epochs and three seeds. Final-test model checkpoints are frozen before reserved pixels are acquired.')
+    para('A separate preservation audit checked 69 protected artifacts and all 31,096 HMU images without changes. The legacy dashboard prototype constructor historically read from all_image; 41 of its reference paths overlapped the provisional HMU test partition. This is a demo contamination issue and does not involve the isolated research trainer. The isolated demo wrapper now uses a training-only reference directory. Historical notebook and application outputs must not be relabeled as untouched research test evidence.')
+    heading('4.3 Result Analysis',2,'sec43')
+    para('Numerical preprocessing evidence is mixed: the first 160-image check suggested lower synthetic-noise amplification, while an 80-image matched follow-up had descriptive intervals including no improvement. The three-epoch classifier pilot was negative relative to weaker or shuffled controls and cannot establish convergence. Historical notebook validation accuracy 0.5810 and test accuracy 0.5682 remain legacy outputs, not current experiment results.')
+    table(['Arm','HMU validation mean macro-F1'],[[r['label'],f"{r['mean']:.4f}"] for r in data['hmu']],[3.5,2.7])
+    caption('Table 4.2 HMU exact-duplicate-controlled validation, three seeds per arm','table','tab42')
+    para('HMU adaptive minus global shuffled mean macro-F1 is -0.0054; an exploratory three-seed t interval includes zero. Adaptive mean tumor recall is lower than standard. Exact-file control does not provide patient grouping. These results do not support a diagnostic-assignment benefit.')
+    table(['Arm','Seeds complete','HiESD validation macro-F1 mean ± SD'],[[r['label'],r['n'],f"{r['macro_f1_mean']:.4f} ± {r['macro_f1_sd']:.4f}" if r['n']==3 else 'Pending replication'] for r in data['hiesd']],[1.75,1.0,3.45])
+    caption('Table 4.3 HiESD patient-grouped selected-subset validation','table','tab43')
+    para('The original five-arm HiESD comparison has 15 complete runs. Adaptive mean macro-F1 is 0.7131, below standard 0.7270 and global shuffled 0.7350. Adaptive-minus-global-shuffled differences are -0.0273, +0.0008 and -0.0391 for seeds 42, 43 and 44. Seven validation lymphoid patches are too few for a stable rare-class estimate, and other has poor recall. The added within-class control status is '+data['within_status']+'. Incomplete controls are not pooled into a three-seed conclusion.')
+    p=para('',align=WD_ALIGN_PARAGRAPH.CENTER);p.add_run().add_picture(str(build_dir/'publication_validation.png'),width=Inches(6.1))
+    caption('Figure 4.1 Completed HiESD validation mean and between-seed SD','figure','fig41')
+    para('A train-mask construction audit found substantial selection changes under alternative purity or patient-class caps; it did not retrain classifiers. Reweighting the same 1,251 saved validation predictions under 24 correlated, explicitly hypothetical weighting recipes changed 22 of 23 alternative winners and 21 of 23 adaptive-minus-shuffled contrast signs. Lymphoid accounted for about 69.4% of the natural-to-equal-class contrast shift. All 360 weighted confusion matrices and scores were independently reproduced within numerical tolerance. This demonstrates sensitivity to the evaluation mixture, not a new property of F1, a clinical prevalence estimate or a measured effect of changing image QC.')
+    para('A train-only exploratory rank-assignment proposal showed local response continuity, but an exact finite loss-grid comparison did not distinguish its ranked assignment from random assignments. Its uncertainty intervals included zero and its independent-direction effect was slightly negative. No new training campaign is launched for that unsupported proposal.')
+    heading('4.3.1 Frozen Final Test',2,'sec431')
+    para(data['test_text'])
+    if data['test_complete']:
+        table(['Arm','Reserved-test mean macro-F1'],[[data['labels'][a],f"{v['macro_f1']:.4f}"] for a,v in data['test']['arm_means'].items()],[3.3,2.9])
+        caption('Table 4.4 Frozen reserved-patient test, three seeds per arm','table','tab44')
+    heading('4.4 Quality Assurance and SQL Storage',2,'sec44')
+    para('The implementation stores run configuration, histories, probability files, per-class metrics, calibration summaries, checkpoint checksums and machine-readable audit receipts. The final test reports all six arms and three seeds; it cannot be used to tune the controller. Patient-cluster uncertainty is descriptive because only seven reserved patients are available. Image annotations have not been expert-adjudicated locally. Public-release held-out patients do not constitute an independent cross-hospital clinical validation.')
+    para('The prediction_records table stores record ID, image filename, predicted class, confidence, class probabilities and creation time. SQLAlchemy maps Python records to SQLite. SELECT predicted_class, COUNT(*) FROM prediction_records GROUP BY predicted_class summarizes application history; it is not a patient registry or disease prevalence estimate. Rehearsal uses an isolated database and CPU so research GPU work can continue. The dashboard weighted score is a heuristic, not a calibrated clinical probability or tumor-area measurement.')
+    chapter(5,'Standards Adopted','chapter5')
+    heading('5.1 Design Standards',2,'sec51')
+    para('Application, storage, model definition, preprocessing and research scripts have separate responsibilities. Dataset provenance, mappings, source hashes and experiment configuration are recorded. The paper uses IEEE conference formatting; this does not imply IEEE acceptance or engineering certification. The prescribed institutional report supplies the cover, certificate, chapter sequence and contribution/Turnitin appendices.')
+    heading('5.2 Coding and Testing Practices',2,'sec52')
+    para('Python research functions use explicit source/split checks, deterministic keys and safe checkpoint writes. Numeric assertions cover finite values, decomposition equivalence and matched initial states. Independent metric recomputation tests the result rather than merely repeating implementation structure. Logs and a local supervisor allow training and final evaluation to continue without repeated ChatGPT requests. Original checkpoints and dashboard configuration are not overwritten.')
+    heading('5.3 Cost and Resource Assessment',2,'sec53')
+    para('No new hardware, paid dataset, publication submission or fee payment has been authorized. GPU memory is constrained to 4 GB. The earlier HMU warm-cache benchmark measured 238.7 training images per second; observed stain epochs were about 117–119 seconds. The original HiESD five-arm campaign used approximately 2 hours 48 minutes, with different geometry and model. New controls reuse measured settings. Thirteen reserved slides require about 7.53 GiB of source storage, plus masks and derived patches; acquisition requires an additional 20 GiB free-space margin.')
+    chapter(6,'Conclusion and Future Scope','chapter6')
+    heading('6.1 Conclusion',2,'sec61')
+    para('The project provides a working dashboard and an isolated, auditable comparison of decomposition-guided stain augmentation. The strongest completed evidence is negative for classifier superiority: the adaptive controller does not outperform shuffled assignment on average in either original three-seed study. Numerical stability and local assignment continuity do not establish task benefit. Duplicate control, patient grouping where available, a stronger conditional control and transparent failure analysis improve the evaluation; they do not guarantee novelty, clinical benefit or publication.')
+    para(data['test_text'])
+    heading('6.2 Future Scope',2,'sec62')
+    para('The immediate publication decision should follow the frozen test and mentor review. A defensible manuscript can report this controlled negative finding and its limitations. Stronger generalization evidence would require expert-verified annotations, broader patient coverage and an independently collected cohort. Any future algorithm search must use a new development protocol and preserve the now-used test as evaluation history. No promise of acceptance is made.')
+    para('A real authenticated Overleaf project link, genuine institutional Turnitin reports and guide approval/signatures remain external requirements. The teacher requires similarity below 10% and AI-generated-content score below 20%; no score is asserted or guaranteed. AI assistance in code, analysis and writing must be disclosed according to institutional and target-venue rules, and the student must verify and understand the final content.')
+    page();heading('References',1,'references')
+    for item in data['references']:para(item,after=10)
+    s=d.add_section(WD_SECTION_START.NEW_PAGE);geometry(s);s.left_margin=s.right_margin=s.top_margin=s.bottom_margin=Inches(1)
+    for old in list(s._sectPr.findall(qn('w:pgNumType'))):s._sectPr.remove(old)
+    heading('Individual Contribution Report',1,'contribution')
+    center(TITLE,14,True);center(identity['name'].upper(),12);center('Roll Number '+identity['roll_number'],12)
+    para('Abstract: This solo project combines a gastric tissue-classification dashboard with controlled stain-augmentation experiments. The work distinguishes a demonstrable application from evidence for a research hypothesis. The completed replicated comparisons do not establish an adaptive accuracy advantage.')
+    heading('Implementation and experimental contribution',2)
+    para('The project scope includes the FastAPI application, image-prediction integration, SQLAlchemy/SQLite history, research orchestration and evaluation materials. The research record covers duplicate auditing, patient-grouped subset construction, versioned stain caches, shared-initialization comparisons, saved predictions and independent verification. Software assistance was used to write and audit code, run analyses and prepare text and slides. This does not establish my unaided authorship of every line; I remain responsible for the content submitted under my name.')
+    para('My responsibility before submission is to inspect the evidence and understand the data split, residual-preserving transformation, strength-assignment controls, validation-based stopping and reserved-test limits. I must explain why a negative controller result is retained, why numerical stability is not accuracy, and why hypothetical reweighting is not a clinical prevalence finding. The guide should review the individual contribution statement before signature.')
+    heading('Report, presentation and demonstration',2)
+    para('The report follows the supplied institutional chapter sequence and includes actual positive and negative findings, data leakage limitations, architecture, algorithms, SQL storage and verification. The editable presentation and solo script distinguish the legacy CNN/LSTM dashboard from the later ResNet18 study. Demonstration uses isolated storage, training-only prototype references and an honestly identified model source; no research checkpoint is activated for appearance. I must verify references, formatting and any required AI-use disclosure before final submission.')
+    para('Full signature of supervisor: ____________________\n\nFull signature of student: ____________________',before=18)
+    contribution_start=next(i for i,p in enumerate(d.paragraphs) if p.text=='Individual Contribution Report')
+    for p in d.paragraphs[contribution_start:]:p.paragraph_format.line_spacing=1.5
+    page();heading('Turnitin Plagiarism Report',1,'plagiarism')
+    para('Genuine institutional reports pending attachment',bold=True)
+    para('No Turnitin submission or score has been produced by this workflow. The teacher notice requires similarity below 10% and AI-generated-content score below 20%. The illustrative screenshot in the supplied template is not project evidence and is not reused. Submit the reviewed final manuscript/report through the institutional process and attach authentic results. No guaranteed score or detector-evasion claim is made.')
+    para('Submission identifier: ____________________\nSubmission date: ____________________\nVerified similarity result: ____________________\nVerified AI-generated-content result: ____________________\nGuide review: ____________________')
+
+    def list_entries(anchor,items):
+        previous=anchor
+        for text,mark in items:
+            p=para(text+'\t',11,False,WD_ALIGN_PARAGRAPH.LEFT,after=6)
+            p.paragraph_format.tab_stops.add_tab_stop(Inches(6.05),2,1)
+            field(p,'PAGEREF '+mark+' \\h','1');font(p,11)
+            previous._p.addnext(p._p);previous=p
+    list_entries(contents_anchor,markers)
+    list_entries(fig_anchor,figures);list_entries(table_anchor,tables)
+    update=OxmlElement('w:updateFields');update.set(qn('w:val'),'true');d.settings.element.append(update)
+    target=build_dir/'Progress_Report.docx';generated=build_dir/'report_generated.docx';d.save(generated)
+    # Retain all source opaque parts byte-for-byte. Only document structure,
+    # related added media/header/footer parts and updateFields are editable.
+    original={n:source_zip.read(n) for n in source_zip.namelist()}
+    candidate=zipfile.ZipFile(generated)
+    editable={'word/document.xml','word/_rels/document.xml.rels','[Content_Types].xml','word/settings.xml'}
+    with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as z:
+        for name in candidate.namelist():
+            z.writestr(name,original[name] if name in original and name not in editable else candidate.read(name))
+        for name,content in original.items():
+            if name not in candidate.namelist():z.writestr(name,content)
+    final=zipfile.ZipFile(target)
+    changed=[n for n in original if n not in editable and original[n]!=final.read(n)]
+    if changed:raise RuntimeError('Preserve-only template parts changed: '+str(changed))
+    (build_dir/'template_fidelity.json').write_text(json.dumps({'template_sha256':digest,'preserve_only_parts_unchanged':True,
+         'preserved_part_count':len(original)-len(editable),'intentional_changes':'See .sync-backups/template_report/artifact.md',
+         'as_of':data['as_of'],'identity_source':identity['source']},indent=2))
+    return target

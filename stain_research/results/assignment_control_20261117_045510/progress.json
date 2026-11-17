@@ -1,0 +1,115 @@
+{
+  "stage": "complete",
+  "summaries": {
+    "0": {
+      "policy_mean_actual_ce": {
+        "ranked": 0.04506194928726472,
+        "reverse_ranked": 0.04453303523750947,
+        "original": 0.04396107667016622,
+        "random_00": 0.04513280284809298,
+        "random_01": 0.04472712445640355,
+        "random_02": 0.045157917557844485,
+        "random_03": 0.0431209357071566,
+        "random_04": 0.04496073329792125,
+        "random_05": 0.04556367440891336,
+        "random_06": 0.044762703234118816,
+        "random_07": 0.04510097765996761,
+        "random_08": 0.043350425429343885,
+        "random_09": 0.04479039410944097,
+        "random_10": 0.045562083131517286,
+        "random_11": 0.04562187760711822,
+        "random_12": 0.04590217078512069,
+        "random_13": 0.04291990410274593,
+        "random_14": 0.044829590651170294,
+        "random_15": 0.04424032152601285,
+        "random_16": 0.04468586192997463,
+        "random_17": 0.04644786546123214,
+        "random_18": 0.04439576010881865,
+        "random_19": 0.043985292189609025
+      },
+      "random_mean_ce": 0.04476292081012616,
+      "random_assignment_sd": 0.0009094203227253721,
+      "ranked_minus_random_mean_ce": 0.00029902847713856326,
+      "patient_cluster_descriptive_interval": [
+        -0.0013208773445860722,
+        0.0016484586294362293
+      ],
+      "random_assignments_at_least_as_high_as_ranked": 8,
+      "ranked_minus_random_by_class": {
+        "tumor": 0.0012755974992614942,
+        "mucosa_inflammation": 0.001390218583401293,
+        "intestinal_metaplasia": -0.0008240095125074722,
+        "lymphoid": -0.0021809106823639014,
+        "other": 0.0018342464979014036
+      }
+    },
+    "1": {
+      "policy_mean_actual_ce": {
+        "ranked": 0.04718325567264401,
+        "reverse_ranked": 0.04695097298881592,
+        "original": 0.04711801615230797,
+        "random_00": 0.04724407513404003,
+        "random_01": 0.04860218675403303,
+        "random_02": 0.04719537507480709,
+        "random_03": 0.04848187730603968,
+        "random_04": 0.04567329981746297,
+        "random_05": 0.04688627156774601,
+        "random_06": 0.050051376496594455,
+        "random_07": 0.0467623905675282,
+        "random_08": 0.04720059356895945,
+        "random_09": 0.04780813462984952,
+        "random_10": 0.044659308687732845,
+        "random_11": 0.048159139880590375,
+        "random_12": 0.045974893476341094,
+        "random_13": 0.04605228339150926,
+        "random_14": 0.048695653509093974,
+        "random_15": 0.04711511819095904,
+        "random_16": 0.04721227064583218,
+        "random_17": 0.046634883630576954,
+        "random_18": 0.047817110613686965,
+        "random_19": 0.04594168228231865
+      },
+      "random_mean_ce": 0.0472083962612851,
+      "random_assignment_sd": 0.0012450299014166288,
+      "ranked_minus_random_mean_ce": -2.514058864107943e-05,
+      "patient_cluster_descriptive_interval": [
+        -0.0013407212536537334,
+        0.0015459419941415142
+      ],
+      "random_assignments_at_least_as_high_as_ranked": 11,
+      "ranked_minus_random_by_class": {
+        "tumor": -0.0010565923234025832,
+        "mucosa_inflammation": 0.001645085503696464,
+        "intestinal_metaplasia": -0.0004916952711937481,
+        "lymphoid": -0.0008223681346862579,
+        "other": 0.0005998672823807284
+      }
+    }
+  },
+  "timings": {
+    "0": {
+      "candidate_evaluations": 600,
+      "forward_batches": 38,
+      "transform_and_tensor_seconds": 5.799369399937859,
+      "inference_and_transfer_seconds": 1.3986034000045038,
+      "total_seconds": 7.229713900000206
+    },
+    "1": {
+      "candidate_evaluations": 600,
+      "forward_batches": 38,
+      "transform_and_tensor_seconds": 5.794729100052791,
+      "inference_and_transfer_seconds": 1.1652507999824593,
+      "total_seconds": 6.971673200001533
+    }
+  },
+  "elapsed_seconds": 14.611924699995143,
+  "all_class_batch_strength_multisets_exact": true,
+  "singleton_groups": 5,
+  "total_groups": 50,
+  "reassignable_image_fraction": 0.96875,
+  "primary_engineering_gate_passed": true,
+  "checkpoint_unchanged": true,
+  "training_started": false,
+  "validation_or_test_pixels_read": false,
+  "interpretation": "Higher CE indicates a harder adversarial challenge on this frozen model, not improved classifier accuracy or clinical benefit. Rank assignment is exact for its linear surrogate, not guaranteed optimal for nonlinear CE."
+}

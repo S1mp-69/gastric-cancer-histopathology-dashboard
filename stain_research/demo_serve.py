@@ -31,6 +31,29 @@ def main():
             source.backup(target)
     os.environ['DATABASE_URL']='sqlite:///'+database.as_posix()
     os.environ['UPLOAD_DIR']=str(uploads)
+    # The original constructor reads prototype references even if a checkpoint
+    # later loads. Restrict the isolated demo to frozen TRAIN references, without
+    # changing original application code or its historical all_image directory.
+    import csv
+    import shutil
+    references=folder/'train_prototypes';references.mkdir(exist_ok=True)
+    with (ROOT/'stain_research/runs/split_audit_20261113/manifest_exact_dedup.csv').open(newline='') as stream:
+        manifest=list(csv.DictReader(stream))
+    classes=sorted({r['class_code'] for r in manifest})
+    selected=[]
+    for code in classes:
+        items=sorted([r for r in manifest if r['split']=='train' and r['class_code']==code],key=lambda r:r['image_path'])[:60]
+        assert len(items)==60
+        destination=references/code;destination.mkdir(exist_ok=True)
+        for row in items:
+            source=Path(row['image_path']);source=source if source.is_absolute() else ROOT/source
+            target=destination/source.name
+            if not target.exists():shutil.copy2(source,target)
+            assert digest(source)==digest(target)
+            selected.append({'source':str(source),'split':'train','class_code':code,'sha256':digest(target)})
+        assert {p.name for p in destination.glob('*.png')}=={Path(r['image_path']).name for r in items}
+    (folder/'prototype_references.json').write_text(json.dumps(selected,indent=2),encoding='utf-8')
+    os.environ['HISTOLOGY_DATASET_DIR']=str(references)
     if not args.gpu:os.environ['CUDA_VISIBLE_DEVICES']=''
     import uvicorn
     config=uvicorn.Config('app.main:app',host='127.0.0.1',port=args.port,log_level='warning')
@@ -62,6 +85,8 @@ def main():
                 'source_partition':'train','original_database_sha256_unchanged':True,
                 'demo_database':str(database.relative_to(ROOT)),'device_policy':'CPU rehearsal leaves GPU for research',
                 'test_images_used':False,'research_checkpoint_activated':False}
+        result['prototype_references_train_only']=True
+        result['prototype_reference_count']=len(selected)
         (folder/'rehearsal.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
     finally:
         server.should_exit=True;thread.join(timeout=15)

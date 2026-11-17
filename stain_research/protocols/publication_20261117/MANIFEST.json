@@ -1,0 +1,15 @@
+{
+  "scope": "Public data identifiers, metadata and numeric results; no raw slides, patch pixels, database, credentials, environment or weights.",
+  "files": {
+    "demo_rehearsal.json": "a351a45fdbd445f9b0d60a3e52c2296b427e3768d3937c394979774943249916",
+    "development_patch_manifest.csv": "05840d3b64ac07e6a550bfcb3a5628e179c679ce0aa5421f47134303de2e2252",
+    "ENVIRONMENT_FREEZE.txt": "33dfa66feffe69eb10cdc630a41595463a0d5289c25074e9078fd776cdc769eb",
+    "final_test_protocol.json": "dc7e4b0d923fcd56dda6b5c71e8eb7453a0eaae5f4df18f4c9e3a064641374bc",
+    "final_test_protocol.sha256": "8a8f170935bb3c151c404c1c712d58264fbe826dbbda160380a6022f75f0f323",
+    "HiESD_campaign_config.json": "964bbded398b6a457c2fe518fc0d863bfa4a71201a27d6acdf0a201c9e92025c",
+    "OBSERVED_TIMING.json": "3df94e978ed9dfb8c6baa337185d4961acc5e27abeb26f0f63842daea2c42424",
+    "patient_allocation.csv": "243cc41a2952930adfdaf178334d7213a858eee7839cae3004caef5a94e45b3c",
+    "preservation.json": "2a997b64ecfb55c98f255e2dffdbad55b7db75cbe31aaf3d025751d84abc40a1",
+    "within_class_protocol.json": "dd8d8f0bd20edabb9d7cb8b4940f4b3f6c9752bab6700eb603eaafd3edbc0842"
+  }
+}

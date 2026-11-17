@@ -1,0 +1,42 @@
+{
+  "purpose": "CUDA execution, data loading and checkpoint reload smoke only; not convergence or classifier validation",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "torch": "2.7.0+cu128",
+  "cuda": "12.8",
+  "device": "cuda:0",
+  "mixed_precision": "FP16 AMP",
+  "batch_size": 32,
+  "cpu_threads": 2,
+  "loader_workers": 0,
+  "train_only_source_patches": 40,
+  "warmup_steps": 2,
+  "measured_steps": 4,
+  "successful_optimizer_updates": 6,
+  "amp_backoffs": 0,
+  "losses": [
+    1.6128450632095337,
+    1.5970922708511353,
+    1.5657519102096558,
+    1.535394549369812,
+    1.4817156791687012,
+    1.4265599250793457
+  ],
+  "step_seconds": [
+    1.343522800001665,
+    0.13169029999698978,
+    0.1314942000026349,
+    0.13012300000264077,
+    0.13283149999915622,
+    0.12496390000160318
+  ],
+  "measured_images_per_second": 246.4322197777119,
+  "peak_allocated_MiB": 636.40185546875,
+  "free_MiB_at_end": 2319.7000007629395,
+  "checkpoint": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_smoke_20261116_224613\\smoke_checkpoint.pt",
+  "checkpoint_sha256": "74cd5bb2e3a3f36cb89bac9d04d716d01c84d0ff85883ae2cf6806d5b3106d00",
+  "reload_predictions_match": true,
+  "rough_train_epoch_seconds_from_short_smoke": 3.1205335109737575,
+  "estimate_limitations": "Short warm-cache sample, no validation or stain augmentation time; not a full-campaign runtime estimate.",
+  "full_training_started": false,
+  "reserved_test_used": false
+}

@@ -1,0 +1,105 @@
+{
+  "stage": "complete",
+  "updated": "2026-11-17T03:15:38+05:30",
+  "completed_epochs": 9,
+  "best_epoch": 2,
+  "stop_reason": "early_stopping",
+  "validation": {
+    "accuracy": 0.8009592326139089,
+    "macro_f1": 0.7165878297829253,
+    "nll": 0.7819815801201965,
+    "classification_report": {
+      "tumor": {
+        "precision": 0.9263157894736842,
+        "recall": 0.8888888888888888,
+        "f1-score": 0.9072164948453608,
+        "support": 99.0
+      },
+      "mucosa_inflammation": {
+        "precision": 0.8041884816753927,
+        "recall": 0.9331713244228432,
+        "f1-score": 0.8638920134983127,
+        "support": 823.0
+      },
+      "intestinal_metaplasia": {
+        "precision": 0.793939393939394,
+        "recall": 0.7891566265060241,
+        "f1-score": 0.7915407854984894,
+        "support": 166.0
+      },
+      "lymphoid": {
+        "precision": 0.875,
+        "recall": 1.0,
+        "f1-score": 0.9333333333333333,
+        "support": 7.0
+      },
+      "other": {
+        "precision": 0.2857142857142857,
+        "recall": 0.05128205128205128,
+        "f1-score": 0.08695652173913043,
+        "support": 156.0
+      },
+      "accuracy": 0.8009592326139089,
+      "macro avg": {
+        "precision": 0.7370315901605513,
+        "recall": 0.7324997782199615,
+        "f1-score": 0.7165878297829253,
+        "support": 1251.0
+      },
+      "weighted avg": {
+        "precision": 0.7482356127434938,
+        "recall": 0.8009592326139089,
+        "f1-score": 0.761224525352669,
+        "support": 1251.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        88,
+        10,
+        1,
+        0,
+        0
+      ],
+      [
+        5,
+        768,
+        30,
+        0,
+        20
+      ],
+      [
+        2,
+        32,
+        131,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        7,
+        0
+      ],
+      [
+        0,
+        145,
+        3,
+        0,
+        8
+      ]
+    ]
+  },
+  "best_checkpoint_sha256": "036afa85543c087be2c04b56140b7d0af9be0bb6ad3a25a0febd52c8b902b20b",
+  "reload_predictions_match": true,
+  "elapsed_this_process_seconds": 203.6373367999986,
+  "reserved_test_used": false,
+  "limitations": [
+    "Annotation-guided selected subset",
+    "Limited patient coverage; consult v3 QC_REPORT.json for actual per-class counts",
+    "Coarse mask boundaries; released automated artifact screening applied, no expert review",
+    "Five-group semantics verified against HiESD Figure 1/Table 2; geometry/model/protocol differ from published benchmark"
+  ],
+  "run_directory": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_standard"
+}

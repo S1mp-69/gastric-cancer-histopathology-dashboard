@@ -1,0 +1,17 @@
+{
+  "snapshot": "2026-11-17T06:17:12+05:30",
+  "completed_hiesd_runs": 16,
+  "test_complete": false,
+  "files": {
+    "Progress_Report.docx": "727c2b4954cedbcc924a8418588ec3f27a9ba191fb904e609b3226c69ba1231b",
+    "Progress_Report.pdf": "4cf396552f37dadaa384f4a0795d78b336d5415f4de950d96bd66c3fbcd08e8b",
+    "Progress_Presentation.pptx": "654275d914200f7415917e61a835335bd577c8591cce289398bb0c3aaf4cc134",
+    "Progress_Presentation.pdf": "7945ab714b3365192ff361dbaa7a162212ff3fc1b71e9f6980dceffe6bc14d36",
+    "IEEE_Paper_Draft.pdf": "c89b1c62a6e6b9e5fb4ea13e1b74bd08848f06e94414a9237b44d9e4ad9f0f08",
+    "Overleaf_Paper_Source.zip": "6f25036482f34301fe7beeb3b9bd282c138e533dc41f88d7cfd074b707217f8e"
+  },
+  "build_log": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\.sync-backups\\publication_build_20261117\\build.log",
+  "status": "generated; final visual inspection required after each changed export",
+  "overleaf_authenticated_project": "pending",
+  "turnitin": "pending genuine institutional reports"
+}

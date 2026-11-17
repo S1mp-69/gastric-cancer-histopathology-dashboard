@@ -1,0 +1,11 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs_per_seed_checked": 40,
+  "exact_strength_multiset_cases": 120,
+  "source_basis_and_concentrations": "Read-only source cache; only diagnostic rows copied and permuted",
+  "test_pixels_decoded": false
+}

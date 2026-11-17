@@ -1,0 +1,50 @@
+{
+  "seed": 43,
+  "arm": "adaptive",
+  "stain_addition": "None for standard; residual-preserving cached SAN before unchanged standard augmentation for other arms",
+  "max_epochs": 40,
+  "early_stopping_patience": 7,
+  "minimum_f1_improvement": 0.0001,
+  "batch_size": 16,
+  "loader_workers": 0,
+  "cpu_threads": 2,
+  "amp": "FP16",
+  "optimizer": "AdamW",
+  "learning_rate": 0.0001,
+  "weight_decay": 0.0001,
+  "label_smoothing": 0.05,
+  "gradient_clip": 5,
+  "scheduler": "ReduceLROnPlateau validation NLL, factor .5, patience 2",
+  "class_order": [
+    "tumor",
+    "mucosa_inflammation",
+    "intestinal_metaplasia",
+    "lymphoid",
+    "other"
+  ],
+  "model": "ImageNet1K V1 pretrained ResNet18, fresh five-output head, all layers fine-tuned; not directly comparable to prior subset CNN-BiLSTM runs",
+  "normalization_mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "normalization_std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "normalization_fit_split": "fixed ImageNet pretrained constants; no dataset fit",
+  "augmentation": "train H/V flips p=.5, right-angle rotation, brightness/contrast/saturation .9-1.1, hue +/-.02, shuffled operation order",
+  "manifest_sha256": "05840d3b64ac07e6a550bfcb3a5628e179c679ce0aa5421f47134303de2e2252",
+  "train_n": 2543,
+  "validation_n": 1251,
+  "source_sha256": "fcd64e9d79ed5cd647beb3b17c39a4d2b323836f71fa580e6a71047a048e2ac6",
+  "model_source_sha256": "5fbcddb84f747e47a4f038ee933c8434e719d22a29d374742c8c42fc5b806b39",
+  "limitations": [
+    "Annotation-guided selected subset",
+    "Limited patient coverage; consult v3 QC_REPORT.json for actual per-class counts",
+    "Coarse mask boundaries; released automated artifact screening applied, no expert review",
+    "Five-group semantics verified against HiESD Figure 1/Table 2; geometry/model/protocol differ from published benchmark"
+  ],
+  "test_policy": "Reserved-test images, annotations and predictions are not accessed."
+}

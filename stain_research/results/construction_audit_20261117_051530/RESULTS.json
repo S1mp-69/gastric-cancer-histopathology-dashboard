@@ -1,0 +1,1290 @@
+{
+  "stage": "complete",
+  "reference_exactly_reconstructed": true,
+  "reference_training_n": 2543,
+  "candidate_universe_n": 7236,
+  "policy_summary": [
+    {
+      "policy": "reference",
+      "patches": 2543,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 0,
+      "removed_vs_reference": 0,
+      "membership_churn": 0.0,
+      "class_mix_total_variation": 0.0,
+      "largest_patient_fraction": 0.11561148250098309
+    },
+    {
+      "policy": "purity_0.6",
+      "patches": 3594,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 1469,
+      "removed_vs_reference": 418,
+      "membership_churn": 0.4703389830508474,
+      "class_mix_total_variation": 0.09658919451324809,
+      "largest_patient_fraction": 0.10656649972175848
+    },
+    {
+      "policy": "purity_0.75",
+      "patches": 3125,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 806,
+      "removed_vs_reference": 224,
+      "membership_churn": 0.30755449387876976,
+      "class_mix_total_variation": 0.06130736924891864,
+      "largest_patient_fraction": 0.11072
+    },
+    {
+      "policy": "purity_0.95",
+      "patches": 2266,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 91,
+      "removed_vs_reference": 368,
+      "membership_churn": 0.17425968109339407,
+      "class_mix_total_variation": 0.04120617002733913,
+      "largest_patient_fraction": 0.12753751103265668
+    },
+    {
+      "policy": "artifact_0.0",
+      "patches": 2500,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 31,
+      "removed_vs_reference": 74,
+      "membership_churn": 0.0407925407925408,
+      "class_mix_total_variation": 0.0037601258356272163,
+      "largest_patient_fraction": 0.1172
+    },
+    {
+      "policy": "artifact_0.1",
+      "patches": 2552,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 13,
+      "removed_vs_reference": 4,
+      "membership_churn": 0.006651017214397537,
+      "class_mix_total_variation": 0.0007259155071947243,
+      "largest_patient_fraction": 0.11559561128526646
+    },
+    {
+      "policy": "artifact_0.2",
+      "patches": 2560,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 26,
+      "removed_vs_reference": 9,
+      "membership_churn": 0.013623978201634857,
+      "class_mix_total_variation": 0.0011451472178529293,
+      "largest_patient_fraction": 0.115625
+    },
+    {
+      "policy": "quality_block_off",
+      "patches": 2762,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 323,
+      "removed_vs_reference": 104,
+      "membership_churn": 0.14898813677599443,
+      "class_mix_total_variation": 0.016170527321098124,
+      "largest_patient_fraction": 0.10970311368573497
+    },
+    {
+      "policy": "cap64",
+      "patches": 1789,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 0,
+      "removed_vs_reference": 754,
+      "membership_churn": 0.2965001966181675,
+      "class_mix_total_variation": 0.07601660604731106,
+      "largest_patient_fraction": 0.10396869759642258
+    },
+    {
+      "policy": "uncapped",
+      "patches": 3996,
+      "patients": 16,
+      "slides": 20,
+      "added_vs_reference": 1453,
+      "removed_vs_reference": 0,
+      "membership_churn": 0.36361361361361366,
+      "class_mix_total_variation": 0.1454162577835405,
+      "largest_patient_fraction": 0.17717717717717718
+    }
+  ],
+  "class_patient_composition": [
+    {
+      "policy": "reference",
+      "class": "tumor",
+      "patches": 253,
+      "share": 0.09948879276445144,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.33201581027667987,
+      "patient_counts": {
+        "Patient22": 38,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 5,
+        "Patient3": 13,
+        "Patient7": 1,
+        "Patient27": 84,
+        "Patient2": 69
+      }
+    },
+    {
+      "policy": "reference",
+      "class": "mucosa_inflammation",
+      "patches": 1484,
+      "share": 0.5835627211954385,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.0862533692722372,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 1,
+        "Patient25": 72,
+        "Patient28": 39,
+        "Patient13": 119,
+        "Patient20": 77,
+        "Patient3": 82,
+        "Patient8": 98,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 62,
+        "Patient37": 38,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "reference",
+      "class": "intestinal_metaplasia",
+      "patches": 373,
+      "share": 0.14667715296893433,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.28150134048257375,
+      "patient_counts": {
+        "Patient25": 20,
+        "Patient22": 40,
+        "Patient28": 76,
+        "Patient20": 1,
+        "Patient3": 105,
+        "Patient8": 54,
+        "Patient7": 3,
+        "Patient37": 12,
+        "Patient27": 15,
+        "Patient29": 36,
+        "Patient2": 11
+      }
+    },
+    {
+      "policy": "reference",
+      "class": "lymphoid",
+      "patches": 206,
+      "share": 0.08100668501769563,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4854368932038835,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 100,
+        "Patient20": 11,
+        "Patient3": 37,
+        "Patient8": 6,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 28,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "reference",
+      "class": "other",
+      "patches": 227,
+      "share": 0.08926464805348014,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.5638766519823789,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 19,
+        "Patient3": 8,
+        "Patient17": 31,
+        "Patient0": 23,
+        "Patient27": 13,
+        "Patient25": 4,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "purity_0.6",
+      "class": "tumor",
+      "patches": 499,
+      "share": 0.13884251530328326,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.2565130260521042,
+      "patient_counts": {
+        "Patient22": 76,
+        "Patient28": 32,
+        "Patient13": 72,
+        "Patient20": 22,
+        "Patient3": 39,
+        "Patient7": 2,
+        "Patient27": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "purity_0.6",
+      "class": "mucosa_inflammation",
+      "patches": 1811,
+      "share": 0.5038953811908736,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.0706791827719492,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 3,
+        "Patient25": 120,
+        "Patient28": 74,
+        "Patient13": 128,
+        "Patient20": 127,
+        "Patient3": 128,
+        "Patient8": 128,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 125,
+        "Patient37": 82,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "purity_0.6",
+      "class": "intestinal_metaplasia",
+      "patches": 657,
+      "share": 0.18280467445742904,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.1948249619482496,
+      "patient_counts": {
+        "Patient22": 121,
+        "Patient25": 33,
+        "Patient28": 120,
+        "Patient20": 3,
+        "Patient3": 128,
+        "Patient8": 89,
+        "Patient7": 9,
+        "Patient37": 35,
+        "Patient27": 37,
+        "Patient29": 49,
+        "Patient2": 33
+      }
+    },
+    {
+      "policy": "purity_0.6",
+      "class": "lymphoid",
+      "patches": 367,
+      "share": 0.10211463550361714,
+      "patients": 15,
+      "largest_patient_share_within_class": 0.34877384196185285,
+      "patient_counts": {
+        "Patient22": 13,
+        "Patient28": 7,
+        "Patient13": 128,
+        "Patient20": 25,
+        "Patient3": 65,
+        "Patient8": 15,
+        "Patient17": 1,
+        "Patient0": 6,
+        "Patient7": 10,
+        "Patient37": 7,
+        "Patient27": 71,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 3,
+        "Patient2": 12
+      }
+    },
+    {
+      "policy": "purity_0.6",
+      "class": "other",
+      "patches": 260,
+      "share": 0.07234279354479689,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.49230769230769234,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 29,
+        "Patient3": 11,
+        "Patient17": 35,
+        "Patient0": 29,
+        "Patient27": 19,
+        "Patient25": 8,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "purity_0.75",
+      "class": "tumor",
+      "patches": 407,
+      "share": 0.13024,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.3144963144963145,
+      "patient_counts": {
+        "Patient22": 54,
+        "Patient28": 26,
+        "Patient13": 47,
+        "Patient20": 17,
+        "Patient3": 31,
+        "Patient7": 1,
+        "Patient27": 128,
+        "Patient2": 103
+      }
+    },
+    {
+      "policy": "purity_0.75",
+      "class": "mucosa_inflammation",
+      "patches": 1664,
+      "share": 0.53248,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.07692307692307693,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 1,
+        "Patient25": 100,
+        "Patient28": 59,
+        "Patient13": 128,
+        "Patient20": 97,
+        "Patient3": 110,
+        "Patient8": 128,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 93,
+        "Patient37": 52,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "purity_0.75",
+      "class": "intestinal_metaplasia",
+      "patches": 526,
+      "share": 0.16832,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.24334600760456274,
+      "patient_counts": {
+        "Patient22": 82,
+        "Patient25": 26,
+        "Patient28": 100,
+        "Patient20": 2,
+        "Patient3": 128,
+        "Patient8": 72,
+        "Patient7": 7,
+        "Patient37": 20,
+        "Patient27": 27,
+        "Patient29": 44,
+        "Patient2": 18
+      }
+    },
+    {
+      "policy": "purity_0.75",
+      "class": "lymphoid",
+      "patches": 281,
+      "share": 0.08992,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4199288256227758,
+      "patient_counts": {
+        "Patient22": 8,
+        "Patient28": 4,
+        "Patient13": 118,
+        "Patient20": 15,
+        "Patient3": 49,
+        "Patient8": 12,
+        "Patient0": 5,
+        "Patient7": 5,
+        "Patient37": 6,
+        "Patient27": 46,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 2,
+        "Patient2": 7
+      }
+    },
+    {
+      "policy": "purity_0.75",
+      "class": "other",
+      "patches": 247,
+      "share": 0.07904,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.5182186234817814,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 27,
+        "Patient3": 10,
+        "Patient17": 34,
+        "Patient0": 25,
+        "Patient27": 17,
+        "Patient25": 5,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "purity_0.95",
+      "class": "tumor",
+      "patches": 181,
+      "share": 0.07987643424536628,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.32044198895027626,
+      "patient_counts": {
+        "Patient22": 24,
+        "Patient28": 9,
+        "Patient13": 21,
+        "Patient20": 5,
+        "Patient3": 7,
+        "Patient7": 1,
+        "Patient27": 58,
+        "Patient2": 56
+      }
+    },
+    {
+      "policy": "purity_0.95",
+      "class": "mucosa_inflammation",
+      "patches": 1399,
+      "share": 0.6173874669020301,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.091493924231594,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 1,
+        "Patient25": 62,
+        "Patient28": 33,
+        "Patient13": 104,
+        "Patient20": 67,
+        "Patient3": 72,
+        "Patient8": 83,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 53,
+        "Patient37": 28,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "purity_0.95",
+      "class": "intestinal_metaplasia",
+      "patches": 298,
+      "share": 0.13150926743159752,
+      "patients": 10,
+      "largest_patient_share_within_class": 0.3087248322147651,
+      "patient_counts": {
+        "Patient25": 18,
+        "Patient22": 25,
+        "Patient28": 57,
+        "Patient3": 92,
+        "Patient8": 45,
+        "Patient7": 2,
+        "Patient37": 10,
+        "Patient27": 10,
+        "Patient29": 32,
+        "Patient2": 7
+      }
+    },
+    {
+      "policy": "purity_0.95",
+      "class": "lymphoid",
+      "patches": 169,
+      "share": 0.07458075904677847,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.5207100591715976,
+      "patient_counts": {
+        "Patient22": 5,
+        "Patient28": 2,
+        "Patient13": 88,
+        "Patient20": 11,
+        "Patient3": 32,
+        "Patient8": 3,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 19,
+        "Patient29": 1
+      }
+    },
+    {
+      "policy": "purity_0.95",
+      "class": "other",
+      "patches": 219,
+      "share": 0.09664607237422772,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.5844748858447488,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 15,
+        "Patient3": 8,
+        "Patient17": 28,
+        "Patient0": 23,
+        "Patient27": 13,
+        "Patient25": 3,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "artifact_0.0",
+      "class": "tumor",
+      "patches": 245,
+      "share": 0.098,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.3306122448979592,
+      "patient_counts": {
+        "Patient22": 38,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 2,
+        "Patient3": 13,
+        "Patient7": 1,
+        "Patient27": 81,
+        "Patient2": 67
+      }
+    },
+    {
+      "policy": "artifact_0.0",
+      "class": "mucosa_inflammation",
+      "patches": 1468,
+      "share": 0.5872,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.08719346049046321,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 1,
+        "Patient25": 68,
+        "Patient28": 39,
+        "Patient13": 114,
+        "Patient20": 75,
+        "Patient3": 79,
+        "Patient8": 98,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 61,
+        "Patient37": 37,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "artifact_0.0",
+      "class": "intestinal_metaplasia",
+      "patches": 367,
+      "share": 0.1468,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.28610354223433243,
+      "patient_counts": {
+        "Patient25": 20,
+        "Patient22": 39,
+        "Patient28": 73,
+        "Patient20": 1,
+        "Patient3": 105,
+        "Patient8": 54,
+        "Patient7": 3,
+        "Patient37": 12,
+        "Patient27": 15,
+        "Patient29": 35,
+        "Patient2": 10
+      }
+    },
+    {
+      "policy": "artifact_0.0",
+      "class": "lymphoid",
+      "patches": 198,
+      "share": 0.0792,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4797979797979798,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 95,
+        "Patient20": 9,
+        "Patient3": 37,
+        "Patient8": 6,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 27,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "artifact_0.0",
+      "class": "other",
+      "patches": 222,
+      "share": 0.0888,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.5765765765765766,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 18,
+        "Patient3": 8,
+        "Patient17": 31,
+        "Patient0": 21,
+        "Patient27": 12,
+        "Patient25": 3,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "artifact_0.1",
+      "class": "tumor",
+      "patches": 255,
+      "share": 0.09992163009404388,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.3333333333333333,
+      "patient_counts": {
+        "Patient22": 39,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 5,
+        "Patient3": 13,
+        "Patient7": 1,
+        "Patient27": 85,
+        "Patient2": 69
+      }
+    },
+    {
+      "policy": "artifact_0.1",
+      "class": "mucosa_inflammation",
+      "patches": 1490,
+      "share": 0.5838557993730408,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.08590604026845637,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 1,
+        "Patient25": 73,
+        "Patient28": 39,
+        "Patient13": 120,
+        "Patient20": 79,
+        "Patient3": 84,
+        "Patient8": 98,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 62,
+        "Patient37": 38,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "artifact_0.1",
+      "class": "intestinal_metaplasia",
+      "patches": 374,
+      "share": 0.14655172413793102,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.2807486631016043,
+      "patient_counts": {
+        "Patient25": 20,
+        "Patient22": 40,
+        "Patient28": 76,
+        "Patient20": 1,
+        "Patient3": 105,
+        "Patient8": 54,
+        "Patient7": 3,
+        "Patient37": 12,
+        "Patient27": 15,
+        "Patient29": 37,
+        "Patient2": 11
+      }
+    },
+    {
+      "policy": "artifact_0.1",
+      "class": "lymphoid",
+      "patches": 206,
+      "share": 0.08072100313479624,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4854368932038835,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 100,
+        "Patient20": 11,
+        "Patient3": 37,
+        "Patient8": 6,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 28,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "artifact_0.1",
+      "class": "other",
+      "patches": 227,
+      "share": 0.0889498432601881,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.5638766519823789,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 19,
+        "Patient3": 8,
+        "Patient17": 31,
+        "Patient0": 23,
+        "Patient27": 13,
+        "Patient25": 4,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "artifact_0.2",
+      "class": "tumor",
+      "patches": 256,
+      "share": 0.1,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.33203125,
+      "patient_counts": {
+        "Patient22": 40,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 5,
+        "Patient3": 13,
+        "Patient7": 1,
+        "Patient27": 85,
+        "Patient2": 69
+      }
+    },
+    {
+      "policy": "artifact_0.2",
+      "class": "mucosa_inflammation",
+      "patches": 1493,
+      "share": 0.583203125,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.08573342263898191,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 1,
+        "Patient25": 76,
+        "Patient28": 39,
+        "Patient13": 120,
+        "Patient20": 79,
+        "Patient3": 84,
+        "Patient8": 98,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 62,
+        "Patient37": 38,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "artifact_0.2",
+      "class": "intestinal_metaplasia",
+      "patches": 375,
+      "share": 0.146484375,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.28,
+      "patient_counts": {
+        "Patient25": 20,
+        "Patient22": 40,
+        "Patient28": 76,
+        "Patient20": 1,
+        "Patient3": 105,
+        "Patient8": 54,
+        "Patient7": 3,
+        "Patient37": 12,
+        "Patient27": 15,
+        "Patient29": 38,
+        "Patient2": 11
+      }
+    },
+    {
+      "policy": "artifact_0.2",
+      "class": "lymphoid",
+      "patches": 209,
+      "share": 0.081640625,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4880382775119617,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 102,
+        "Patient20": 12,
+        "Patient3": 37,
+        "Patient8": 6,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 28,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "artifact_0.2",
+      "class": "other",
+      "patches": 227,
+      "share": 0.088671875,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.5638766519823789,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 19,
+        "Patient3": 8,
+        "Patient17": 31,
+        "Patient0": 23,
+        "Patient27": 13,
+        "Patient25": 4,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "quality_block_off",
+      "class": "tumor",
+      "patches": 290,
+      "share": 0.10499637943519188,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.31724137931034485,
+      "patient_counts": {
+        "Patient22": 57,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 9,
+        "Patient3": 15,
+        "Patient7": 1,
+        "Patient27": 92,
+        "Patient2": 73
+      }
+    },
+    {
+      "policy": "quality_block_off",
+      "class": "mucosa_inflammation",
+      "patches": 1581,
+      "share": 0.5724112961622013,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.08096141682479444,
+      "patient_counts": {
+        "Patient22": 128,
+        "Patient36": 39,
+        "Patient25": 97,
+        "Patient28": 39,
+        "Patient13": 128,
+        "Patient20": 86,
+        "Patient3": 88,
+        "Patient8": 98,
+        "Patient17": 128,
+        "Patient0": 128,
+        "Patient7": 70,
+        "Patient37": 40,
+        "Patient27": 128,
+        "Patient29": 128,
+        "Patient4": 128,
+        "Patient2": 128
+      }
+    },
+    {
+      "policy": "quality_block_off",
+      "class": "intestinal_metaplasia",
+      "patches": 396,
+      "share": 0.14337436640115858,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.26515151515151514,
+      "patient_counts": {
+        "Patient25": 22,
+        "Patient22": 41,
+        "Patient28": 80,
+        "Patient20": 1,
+        "Patient3": 105,
+        "Patient8": 60,
+        "Patient7": 3,
+        "Patient37": 13,
+        "Patient27": 15,
+        "Patient29": 45,
+        "Patient2": 11
+      }
+    },
+    {
+      "policy": "quality_block_off",
+      "class": "lymphoid",
+      "patches": 219,
+      "share": 0.07929036929761042,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4748858447488584,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 104,
+        "Patient20": 14,
+        "Patient3": 37,
+        "Patient8": 7,
+        "Patient0": 2,
+        "Patient7": 7,
+        "Patient37": 4,
+        "Patient27": 28,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "quality_block_off",
+      "class": "other",
+      "patches": 276,
+      "share": 0.0999275887038378,
+      "patients": 9,
+      "largest_patient_share_within_class": 0.463768115942029,
+      "patient_counts": {
+        "Patient36": 27,
+        "Patient22": 4,
+        "Patient13": 23,
+        "Patient3": 8,
+        "Patient17": 41,
+        "Patient0": 25,
+        "Patient27": 15,
+        "Patient25": 5,
+        "Patient29": 128
+      }
+    },
+    {
+      "policy": "cap64",
+      "class": "tumor",
+      "patches": 228,
+      "share": 0.12744550027948576,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.2807017543859649,
+      "patient_counts": {
+        "Patient22": 38,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 5,
+        "Patient3": 13,
+        "Patient7": 1,
+        "Patient27": 64,
+        "Patient2": 64
+      }
+    },
+    {
+      "policy": "cap64",
+      "class": "mucosa_inflammation",
+      "patches": 908,
+      "share": 0.5075461151481274,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.07048458149779736,
+      "patient_counts": {
+        "Patient22": 64,
+        "Patient36": 1,
+        "Patient25": 64,
+        "Patient28": 39,
+        "Patient13": 64,
+        "Patient20": 64,
+        "Patient3": 64,
+        "Patient8": 64,
+        "Patient17": 64,
+        "Patient0": 64,
+        "Patient7": 62,
+        "Patient37": 38,
+        "Patient27": 64,
+        "Patient29": 64,
+        "Patient4": 64,
+        "Patient2": 64
+      }
+    },
+    {
+      "policy": "cap64",
+      "class": "intestinal_metaplasia",
+      "patches": 320,
+      "share": 0.17887087758524314,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.2,
+      "patient_counts": {
+        "Patient25": 20,
+        "Patient22": 40,
+        "Patient28": 64,
+        "Patient20": 1,
+        "Patient3": 64,
+        "Patient8": 54,
+        "Patient7": 3,
+        "Patient37": 12,
+        "Patient27": 15,
+        "Patient29": 36,
+        "Patient2": 11
+      }
+    },
+    {
+      "policy": "cap64",
+      "class": "lymphoid",
+      "patches": 170,
+      "share": 0.09502515371716043,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.3764705882352941,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 64,
+        "Patient20": 11,
+        "Patient3": 37,
+        "Patient8": 6,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 28,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "cap64",
+      "class": "other",
+      "patches": 163,
+      "share": 0.09111235326998324,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.39263803680981596,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 19,
+        "Patient3": 8,
+        "Patient17": 31,
+        "Patient0": 23,
+        "Patient27": 13,
+        "Patient25": 4,
+        "Patient29": 64
+      }
+    },
+    {
+      "policy": "uncapped",
+      "class": "tumor",
+      "patches": 253,
+      "share": 0.06331331331331332,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.33201581027667987,
+      "patient_counts": {
+        "Patient22": 38,
+        "Patient28": 18,
+        "Patient13": 25,
+        "Patient20": 5,
+        "Patient3": 13,
+        "Patient7": 1,
+        "Patient27": 84,
+        "Patient2": 69
+      }
+    },
+    {
+      "policy": "uncapped",
+      "class": "mucosa_inflammation",
+      "patches": 2913,
+      "share": 0.728978978978979,
+      "patients": 16,
+      "largest_patient_share_within_class": 0.21489872983178854,
+      "patient_counts": {
+        "Patient22": 593,
+        "Patient36": 1,
+        "Patient25": 72,
+        "Patient28": 39,
+        "Patient13": 119,
+        "Patient20": 77,
+        "Patient3": 82,
+        "Patient8": 98,
+        "Patient17": 193,
+        "Patient0": 164,
+        "Patient7": 62,
+        "Patient37": 38,
+        "Patient27": 192,
+        "Patient29": 344,
+        "Patient4": 213,
+        "Patient2": 626
+      }
+    },
+    {
+      "policy": "uncapped",
+      "class": "intestinal_metaplasia",
+      "patches": 373,
+      "share": 0.09334334334334335,
+      "patients": 11,
+      "largest_patient_share_within_class": 0.28150134048257375,
+      "patient_counts": {
+        "Patient25": 20,
+        "Patient22": 40,
+        "Patient28": 76,
+        "Patient20": 1,
+        "Patient3": 105,
+        "Patient8": 54,
+        "Patient7": 3,
+        "Patient37": 12,
+        "Patient27": 15,
+        "Patient29": 36,
+        "Patient2": 11
+      }
+    },
+    {
+      "policy": "uncapped",
+      "class": "lymphoid",
+      "patches": 206,
+      "share": 0.05155155155155155,
+      "patients": 14,
+      "largest_patient_share_within_class": 0.4854368932038835,
+      "patient_counts": {
+        "Patient22": 7,
+        "Patient28": 2,
+        "Patient13": 100,
+        "Patient20": 11,
+        "Patient3": 37,
+        "Patient8": 6,
+        "Patient0": 2,
+        "Patient7": 2,
+        "Patient37": 4,
+        "Patient27": 28,
+        "Patient25": 2,
+        "Patient29": 2,
+        "Patient4": 1,
+        "Patient2": 2
+      }
+    },
+    {
+      "policy": "uncapped",
+      "class": "other",
+      "patches": 251,
+      "share": 0.06281281281281281,
+      "patients": 8,
+      "largest_patient_share_within_class": 0.6055776892430279,
+      "patient_counts": {
+        "Patient22": 1,
+        "Patient13": 19,
+        "Patient3": 8,
+        "Patient17": 31,
+        "Patient0": 23,
+        "Patient27": 13,
+        "Patient25": 4,
+        "Patient29": 152
+      }
+    }
+  ],
+  "excluded_training_slides": [
+    {
+      "slide_id": "de824048-e4f7-4fd9-aa81-6a44d57c1e51",
+      "reason": "excluded_annotation_alignment"
+    },
+    {
+      "slide_id": "09e6163a-30aa-4b03-828f-48c10b718703",
+      "reason": "excluded_annotation_alignment"
+    },
+    {
+      "slide_id": "335e9762-e6ed-40ec-973e-47ccfc25a6eb",
+      "reason": "excluded_annotation_alignment"
+    }
+  ],
+  "source_mask_hashes": {
+    "e492f29a-a67b-4f16-8843-089487bf4bd9": {
+      "annotation_sha256": "4921a9c3ddc8872018189aee0f1f689d92356faa8045e469e0adc600bfc4a466",
+      "quality_sha256": "d482e8d3f817a6f9017b782482a5cfe55c75f2934986641ac7863ce1702a56f4"
+    },
+    "bfa02384-d59e-43d2-9acf-3849061668c7": {
+      "annotation_sha256": "83ba3537a41bf300a3ef6f2948e7957bbdb243005ecf323e7f8ad31b8ec6002a",
+      "quality_sha256": "2fdaea8a730f80960df9245803f7a2948ae34d346b951e5a6d23cb20dc1bc6a8"
+    },
+    "766e03a4-bdc5-4350-b427-4f6a7894c72a": {
+      "annotation_sha256": "15fd038faf342eacf43fc6c5ffbb8e630d17d17496c8d86541f68eb767bbe201",
+      "quality_sha256": "ea9f1cf94f6cac85a07d4eecb41ac59bdae657b88f14a88d6c3c9481890a6817"
+    },
+    "e9055755-3238-4415-b90c-9d338a959d1b": {
+      "annotation_sha256": "cfb8ddf163a2fdf5ed1c3bdd1e4550d3ef5c0c1d6e409f217af305ad935bbc6e",
+      "quality_sha256": "100ac1437429381431541f8947ab28253d452401ce0a021c3d68c7b0de80b487"
+    },
+    "8a34ec03-5b82-47a3-89c6-2efc2da8270c": {
+      "annotation_sha256": "13f6e4b4cbc63bda3331a9b7848c98e3a6baecc8453cab39cadf527023eec429",
+      "quality_sha256": "366e263c958e64d4e8edc28015e1ff617e0efc44b706452245749b2f628849b5"
+    },
+    "7e95e101-ff4d-4495-be94-8f47d35b57db": {
+      "annotation_sha256": "5a85a4dc4cecec0d3aaed6a65386e87b940e7bbe6f68d96fa84ad571477f1a38",
+      "quality_sha256": "3769a926e14c75834fe13bf280e568544f5cc787ed011c0bd81a03971d990aae"
+    },
+    "dd621e0b-7c68-46b7-a8d3-d5ae58414ea4": {
+      "annotation_sha256": "3bb0bcacef753f5cd3d15a560044663749316ce0687c52de1f2c097bd0f8231e",
+      "quality_sha256": "162f9bfbda759ea9327faf373cc91a34393575bdff1fdd11fc6a05526fbc2cb0"
+    },
+    "0dddc3e2-b189-43fb-81c1-d0cac38f3cbd": {
+      "annotation_sha256": "bc87a4866d057372a40eaa3111c1f775494a9df48417c7fe5c61d44a3cef0241",
+      "quality_sha256": "0647fa78b47b8ca0b35f07eaf092113b11fca42e70dab7e1cca0a9c60de3dbb6"
+    },
+    "4d9b4a03-38dd-437f-9e5a-cd39b11f4f68": {
+      "annotation_sha256": "64929da67bf971c867100ff455669501324126479ce2dd318db0f7e7a97c76d3",
+      "quality_sha256": "7b39f971b58b9da56121305579501bce949f859035b5e30bebd5933679ee48c1"
+    },
+    "bc0df5cb-8fa6-4230-9c9d-81e33a1c835b": {
+      "annotation_sha256": "e1d1aff43f8a4a48b54af3048a34637112ca19ade466c9dd47a7b3d3f380a56d",
+      "quality_sha256": "1fafb3d7375b5b8e4a6e28e43689f8820aa8487b9ee6528b04875411b93b58eb"
+    },
+    "5f016de5-c205-4159-88de-9bf2ae7a5bfe": {
+      "annotation_sha256": "4f3e8d6799c0a3c0f66689a3fe451be933d37501754c513f4d9654280fe9c70a",
+      "quality_sha256": "760ab7056bc852f70ab0fd0344792a35a940fe90443b9efd5177a755f10bdf3b"
+    },
+    "97f6e6fd-ecb0-47e7-a5ca-0807d02e7126": {
+      "annotation_sha256": "cb1835d75a42ca3be8d2caf50579dd217b2b3882562b57ac1596dc33a6ce21e0",
+      "quality_sha256": "ca7928a6d7774f11b12e3d7745bb238fc20fda190a8cec1d8092a86814ff6663"
+    },
+    "1b1fbfd6-3de1-42c6-8305-d4ab74f93711": {
+      "annotation_sha256": "cb5056d05f152c9466280aa7e3ce7e4e91a2b3135e53e7b4ad90540502fb7ffb",
+      "quality_sha256": "daf13353e64b7931d02629df776bb76d9556261c365288dc0daab4614c5146ad"
+    },
+    "46e7dccd-521a-4d0f-80bd-10e960cd5905": {
+      "annotation_sha256": "30b82a5814e0c5ed7d557cdf9868cb09445b68debad0e377dbe671843397b4d3",
+      "quality_sha256": "9e3db7458fe53b3884140a7dc48ba7ce519c41a2e351a9f763921f75c09e0af2"
+    },
+    "0a682165-55f9-4045-b550-b943291ad1b8": {
+      "annotation_sha256": "c3bc517d3671baf8b0b9845163f350c2aa9cf02c4fe0868fee4e8950fccf60f4",
+      "quality_sha256": "2cd82fb17dfefacdcced23f69d13fc100dd41e506be083a6765f3fc46de3127e"
+    },
+    "b463dadb-e8d1-40c2-a339-4ef0a5a85b26": {
+      "annotation_sha256": "2d2b9abd8d4773772c5279ec34ef46ebf3768715678f74bc2fdace9825342880",
+      "quality_sha256": "b067cdcc736b0d72d6bd3c354b7f0a17d9b6a20532bb80e00f3bad936a176885"
+    },
+    "6f6c4841-e772-4043-ba7f-88245fa50500": {
+      "annotation_sha256": "f7ddcb6d2808c49d82b6c95db1e63f328dffdabb087e30457e2c27187a8862b6",
+      "quality_sha256": "688f42316c8f18f07224657b51f15587dbf79fad347e440f90374cd4c6801ced"
+    },
+    "27100e3a-1641-4c58-bdf8-ad34f1eaa3c6": {
+      "annotation_sha256": "94d43899cd799d80753885a347ae75982f276b0d59f25afb252e6e3b95b8e710",
+      "quality_sha256": "7e0dc51c0321e48e7548ffa6ff2c2fb58d7809a64e000d4fa79c36bfc7716a82"
+    },
+    "cd02a9df-4ef4-4b94-87ca-cf8f0aa16bde": {
+      "annotation_sha256": "4b66cb62b33a703770fc4583218523572ae03ab9153c3efbec0ebfbf803c73d9",
+      "quality_sha256": "31634bdc9b71fe7708f5c040970a4c6f1b04fa47c4e15ba8a1dcd724ed31afc8"
+    },
+    "badcd77d-028d-4d6a-b3df-b8efd2139882": {
+      "annotation_sha256": "ef6c2c94e8e241d22da27772b5fd17bdfdd6e1c69134e55067cf44c59111eb91",
+      "quality_sha256": "1c24ca7981fa24be8da34f74a5e6b15846e5b6f25dfa7861eb654e4f897e834c"
+    }
+  },
+  "engineering_selection_sensitivity_gate_passed": true,
+  "elapsed_seconds": 14.666201699998055,
+  "original_manifests_unchanged": true,
+  "model_inference_or_training_performed": false,
+  "new_validation_test_pixel_access": false,
+  "interpretation": "Descriptive change in the selected training cohort; not proof of mislabeled tissue, clinical relevance, changed model rankings, or novelty."
+}

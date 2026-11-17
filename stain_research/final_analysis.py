@@ -30,7 +30,7 @@ def main():
    assert abs(f1_score(frame.class_code,frame.predicted_class,average='macro')-m['validation']['macro_f1'])<1e-12
    probabilities=frame[['p_'+x for x in CLASSES]].to_numpy();assert np.isfinite(probabilities).all() and np.allclose(probabilities.sum(1),1,atol=1e-5)
    state=torch.load(folder/'best.pt',map_location='cpu',weights_only=False)
-   model=state.get('model',state);assert all(torch.isfinite(v).all() for v in model.values() if torch.is_tensor(v))
+   model=state['model_state_dict'];assert model and all(torch.is_tensor(v) and torch.isfinite(v).all() for v in model.values())
    last=torch.load(folder/'last.pt',map_location='cpu',weights_only=False)
    assert all(k in last for k in ['optimizer','scheduler','scaler','rng','epoch','offset'])
    checks.append({'run':folder.name,'config_matches':True,'initial_hash_matches':True,'prediction_metrics_recomputed':True,'best_hash_matches':True,'best_tensors_finite':True,'resumable_state_present':True,'validation_identity_sha256':hashlib.sha256(identity.encode()).hexdigest()})

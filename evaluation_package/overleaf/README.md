@@ -1,1 +1,3 @@
-Private Overleaf import pending. Upload the ZIP, choose main.tex, use pdfLaTeX, and compile. No project link exists. Local Tectonic build is verified separately. Author details supplied by the student; guide is not listed as a coauthor without authorization.
+Compile main.tex with IEEEtran.cls in this folder. This is a guide-review draft, not an accepted paper.
+
+Overleaf: New Project → Upload Project → select Overleaf_Paper_Source.zip → keep private → set main.tex as main document → compile → record the actual project URL. No authenticated project link has been created by this workflow.
