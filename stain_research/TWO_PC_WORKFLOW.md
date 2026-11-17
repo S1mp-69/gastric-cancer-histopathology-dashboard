@@ -1,5 +1,11 @@
 # Two computer workflow
 
+Current handoff: read `../OTHER_PC_HANDOFF.md` first. As of 17 November 2026,
+all 33 matched training runs and 18 frozen final-test evaluations are complete.
+The historical acquisition/12-run status below is superseded by that handoff.
+Drive checkpoint backup is partial because storage quota was exceeded; see
+`evaluation_package/OTHER_PC_TRANSFER.json` for the exact uploaded/missing pieces.
+
 Use GitHub branch `research/local-backup-2026-11-13` for source and portable reports.
 Run `python stain_research/pc_sync_check.py` on each computer. A true
 `source_synced` means the branch matches the live remote and there are no visible
