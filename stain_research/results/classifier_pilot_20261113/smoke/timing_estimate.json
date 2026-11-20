@@ -1,0 +1,14 @@
+{
+  "measured_complete_epoch_seconds_by_arm": {
+    "standard": 5.284560300000521,
+    "original_san": 9.430128599999989,
+    "residual_fixed": 11.242346500000167,
+    "uniform_weaker": 11.287210999999843,
+    "shuffled": 11.3181725000004,
+    "adaptive": 11.371092199999566
+  },
+  "limited_3_epochs_all_6_arms_minutes": 2.9966755550000244,
+  "limited_3_epochs_with_50pct_overhead_minutes": 4.4950133325000365,
+  "hypothetical_full_data_40_epochs_6_arms_3_seeds_hours": 97.06419414867267,
+  "full_estimate_caveat": "Rough linear extrapolation only; larger validation, I/O, thermal changes and checkpoint overhead can alter it. NOT authorized or launched."
+}

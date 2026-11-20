@@ -25,32 +25,15 @@ def _as_chart_items(mapping: dict[str, int | float], use_labels: bool = False) -
 @lru_cache(maxsize=1)
 def dataset_summary() -> dict:
     counts = {}
-    dataset_available = settings.histology_dataset_dir.exists()
     total_images = 0
-    snapshot = {}
-
-    if not dataset_available and settings.dataset_snapshot_json.exists():
-        snapshot = json.loads(settings.dataset_snapshot_json.read_text(encoding="utf-8"))
-
-    snapshot_counts = snapshot.get("class_distribution", {})
-    snapshot_total = int(snapshot.get("total_images", 0))
-
     for class_name in TISSUE_CLASSES:
         class_dir = settings.histology_dataset_dir / class_name
-        if dataset_available and class_dir.exists():
-            count = len(list(class_dir.glob("*.png")))
-        else:
-            count = int(snapshot_counts.get(class_name, 0))
+        count = len(list(class_dir.glob("*.png"))) if class_dir.exists() else 0
         counts[class_name] = count
         total_images += count
 
-    if not total_images:
-        total_images = snapshot_total
-
     return {
         "dataset_path": str(settings.histology_dataset_dir),
-        "dataset_available": dataset_available,
-        "using_snapshot": (not dataset_available) and bool(snapshot_counts),
         "total_images": total_images,
         "image_size": settings.image_size,
         "sequence_length": settings.sequence_length,

@@ -1,0 +1,110 @@
+{
+  "source_slides_verified": [
+    {
+      "slide_id": "e492f29a-a67b-4f16-8843-089487bf4bd9",
+      "bytes": 112381350,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "bytes": 119114817,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "de824048-e4f7-4fd9-aa81-6a44d57c1e51",
+      "bytes": 190516811,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "bytes": 202445593,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6",
+      "bytes": 139324209,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "bytes": 297283253,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "bytes": 310591725,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "bytes": 677374187,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "bytes": 290994969,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "bytes": 602396220,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "bytes": 501236715,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "bytes": 815241551,
+      "md5_verified": true
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "bytes": 1221502090,
+      "md5_verified": true
+    }
+  ],
+  "patches_verified": 1811,
+  "counts": {
+    "train": {
+      "mucosa_inflammation": 424,
+      "other": 54,
+      "intestinal_metaplasia": 101,
+      "lymphoid": 110,
+      "tumor": 80
+    },
+    "validation": {
+      "mucosa_inflammation": 592,
+      "other": 99,
+      "intestinal_metaplasia": 256,
+      "lymphoid": 12,
+      "tumor": 83
+    }
+  },
+  "train_patients": [
+    "Patient13",
+    "Patient22",
+    "Patient25",
+    "Patient28",
+    "Patient36"
+  ],
+  "validation_patients": [
+    "Patient18",
+    "Patient30",
+    "Patient32",
+    "Patient34",
+    "Patient5"
+  ],
+  "patient_overlap": false,
+  "exact_patch_overlap": false,
+  "reserved_test_acquired": false,
+  "patch_manifest_sha256": "b50d7561ff002a0b59ff7c354962f8cc36627bb525d72c7c2e1d18061f1c1c38",
+  "limitations": [
+    "Annotation-guided selected subset",
+    "12 validation lymphoid patches",
+    "Coarse annotation mapping without expert review",
+    "Provisional five-class grouping"
+  ]
+}

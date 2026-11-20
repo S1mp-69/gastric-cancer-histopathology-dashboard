@@ -1,0 +1,42 @@
+{
+  "completed_at": "2026-11-16T19:38:03+05:30",
+  "rows": [
+    {
+      "seed": 42,
+      "adaptive_f1": 0.6887776697600196,
+      "shuffled_f1": 0.6901265512465271,
+      "adaptive_minus_shuffled_f1": -0.0013488814865074694,
+      "adaptive_tum_recall": 0.7487046632124352,
+      "shuffled_tum_recall": 0.7487046632124352,
+      "epochs": 40,
+      "stop_reason": "maximum_epoch_budget"
+    },
+    {
+      "seed": 43,
+      "adaptive_f1": 0.6823071344625093,
+      "shuffled_f1": 0.6912458433200503,
+      "adaptive_minus_shuffled_f1": -0.008938708857541,
+      "adaptive_tum_recall": 0.7435233160621761,
+      "shuffled_tum_recall": 0.7564766839378239,
+      "epochs": 40,
+      "stop_reason": "maximum_epoch_budget"
+    },
+    {
+      "seed": 44,
+      "adaptive_f1": 0.679707821661909,
+      "shuffled_f1": 0.6857512072578631,
+      "adaptive_minus_shuffled_f1": -0.006043385595954076,
+      "adaptive_tum_recall": 0.7746113989637305,
+      "shuffled_tum_recall": 0.7305699481865285,
+      "epochs": 36,
+      "stop_reason": "early_stopping"
+    }
+  ],
+  "mean_paired_f1_difference": -0.005443658646667515,
+  "paired_sd": 0.0038302903533280427,
+  "exploratory_95_t_interval": [
+    -0.014958627360681038,
+    0.004071310067346007
+  ],
+  "limitations": "Post-hoc follow-up; n=3 seeds; repeated validation-selected checkpoints; image-level split; patient independence unverified. No novelty or clinical benefit established. Interval assumes approximately normal independent seed differences."
+}

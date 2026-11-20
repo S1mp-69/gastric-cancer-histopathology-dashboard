@@ -1,0 +1,10 @@
+{
+  "validation_rng_independent": true,
+  "patch_sequence_shape": [
+    16,
+    3,
+    56,
+    56
+  ],
+  "test_loader_rejected_before_file_access": true
+}

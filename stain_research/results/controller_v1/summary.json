@@ -1,0 +1,112 @@
+{
+  "status": "exploratory numerical stability study; no classification or clinical benefit established",
+  "training_images": 160,
+  "validation_images": 160,
+  "controller_parameters": {
+    "low": [
+      1.3252162680021031,
+      0.03295149095272708
+    ],
+    "high": [
+      1.7642903362928617,
+      0.09082153548236191
+    ],
+    "minimum_strength": 0.1,
+    "fit_successes": 160,
+    "fit_failures": 0
+  },
+  "training_mean_strength": 0.6543426320926466,
+  "validation_mean_strength": 0.6617231007230855,
+  "noise": "independent RGB Gaussian sigma=1/255, rounded/clipped to uint8",
+  "repeats_per_image": 6,
+  "spearman_quality_vs_fixed_gain": 0.5570493704174501,
+  "within_class_permutation_one_sided_p": 0.000999000999000999,
+  "mode_results": {
+    "fixed": {
+      "mean_gain": 1.3829895855628132,
+      "median_gain": 1.1462845270623865,
+      "mean_augmentation_rms": 10.518557573817432,
+      "mean_gain_difference_vs_uniform": 0.1421323068566868,
+      "descriptive_image_bootstrap_95_interval": [
+        0.11220912175794588,
+        0.1750565053309091
+      ],
+      "fallback_repeats": 0
+    },
+    "uniform_weaker": {
+      "mean_gain": 1.2408572787061265,
+      "median_gain": 1.0785155774600734,
+      "mean_augmentation_rms": 6.909069232823986,
+      "mean_gain_difference_vs_uniform": 0.0,
+      "descriptive_image_bootstrap_95_interval": [
+        0.0,
+        0.0
+      ],
+      "fallback_repeats": 0
+    },
+    "shuffled_strength": {
+      "mean_gain": 1.2299445595250493,
+      "median_gain": 1.0800919372804898,
+      "mean_augmentation_rms": 6.833616418138111,
+      "mean_gain_difference_vs_uniform": -0.010912719181077338,
+      "descriptive_image_bootstrap_95_interval": [
+        -0.03403088170808113,
+        0.008174467160187085
+      ],
+      "fallback_repeats": 0
+    },
+    "adaptive": {
+      "mean_gain": 1.1843219995790668,
+      "median_gain": 1.088151920903773,
+      "mean_augmentation_rms": 6.606283623495353,
+      "mean_gain_difference_vs_uniform": -0.05653527912705978,
+      "descriptive_image_bootstrap_95_interval": [
+        -0.11184807878930524,
+        -0.008437373127055474
+      ],
+      "fallback_repeats": 0
+    }
+  },
+  "per_class": {
+    "ADI": {
+      "mean_strength": 0.7545026732071254,
+      "quality_vs_fixed_gain_spearman": 0.41293722363631924
+    },
+    "DEB": {
+      "mean_strength": 0.6552894613384194,
+      "quality_vs_fixed_gain_spearman": 0.6829635684185389
+    },
+    "LYM": {
+      "mean_strength": 0.6253500531747099,
+      "quality_vs_fixed_gain_spearman": 0.7233082706766917
+    },
+    "MUC": {
+      "mean_strength": 0.6797841375133725,
+      "quality_vs_fixed_gain_spearman": 0.04588191373736881
+    },
+    "MUS": {
+      "mean_strength": 0.7774769239852536,
+      "quality_vs_fixed_gain_spearman": 0.2556390977443609
+    },
+    "NOR": {
+      "mean_strength": 0.6249135980031,
+      "quality_vs_fixed_gain_spearman": 0.4917293233082706
+    },
+    "STR": {
+      "mean_strength": 0.7029942209947819,
+      "quality_vs_fixed_gain_spearman": 0.26315789473684204
+    },
+    "TUM": {
+      "mean_strength": 0.4734737375679213,
+      "quality_vs_fixed_gain_spearman": 0.8379090475971942
+    }
+  },
+  "limitations": [
+    "All diagnostics are proxies, not expert image-quality labels.",
+    "Noise is synthetic; no evidence of real scanner robustness.",
+    "Residual preservation is used in ALL four arms to isolate controller effect.",
+    "Shuffled-strength arm matches the validation strength multiset as an offline control, not a deployable policy.",
+    "Pilot uses one training fit and one validation sample; patient identities unverified.",
+    "No classification training, accuracy comparison, or confirmed novelty."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "health": {
+    "status": "ok",
+    "app": "Gastric Cancer Histopathology Analysis Dashboard"
+  },
+  "eight_class_probabilities": true,
+  "sql_history_increment": 1,
+  "model_source": "prototype-baseline",
+  "predicted_class": "ADI",
+  "source_partition": "train",
+  "original_database_sha256_unchanged": true,
+  "demo_database": "stain_research\\runs\\demo_20261113\\demo.db",
+  "device_policy": "CPU rehearsal leaves GPU for research",
+  "test_images_used": false,
+  "research_checkpoint_activated": false
+}

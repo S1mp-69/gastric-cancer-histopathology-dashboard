@@ -1,0 +1,59 @@
+% Insertable IEEE manuscript subsection; not a complete or compiled paper.
+% Merge references.bib and include all_weightings_table.tex where appropriate.
+\subsection{Evaluation-distribution sensitivity}
+We performed an exploratory sensitivity analysis of the saved validation
+predictions from five stain-augmentation arms and three matched training seeds.
+All models were evaluated on the same ordered 1,251 patches from seven patients.
+The validation cohort had already informed early stopping and was selected using
+annotations; these analyses are not independent test evaluations.
+
+For target class masses $q_c$, patch-uniform weights were
+$w_i=q_{y_i}/n_{y_i}$. For equal patient weighting within each class, we used
+$w_i=q_{y_i}/(P_{y_i}n_{p_i,y_i})$, where $P_c$ is the number of represented
+patients in class $c$ and $n_{p,c}$ counts their class-specific patches.
+Global equal-patient weighting was analyzed separately. Ten class-mass scenarios
+were derived from the training-only construction audit, alongside the observed
+validation distribution and explicit uniform-class/patient scenarios, yielding
+24 specified weightings. None was selected as a replacement primary endpoint.
+No images were decoded or classifiers refitted for this analysis.
+
+For weights summing to one, the weighted confusion matrix was
+\begin{equation}
+ C_{ab}=\sum_i w_i\mathbf{1}(y_i=a,\hat y_i=b),\qquad
+ F_{1,\mathrm{macro}}=\frac{1}{5}\sum_{c=1}^5
+ \frac{2C_{cc}}{\sum_b C_{cb}+\sum_a C_{ac}}.
+\end{equation}
+This is the mean of class-wise F1 scores, rather than the harmonic mean of
+macro-precision and macro-recall~\cite{opitz2019macrof1}.
+An independent sklearn implementation regenerated weights from per-record
+denominators and class masses from the training-membership CSV, reproducing all
+360 weighted confusion matrices and scalar scores within $2.8\times10^{-15}$.
+
+Under observed validation frequencies, mean macro-F1 was 0.7131 for adaptive and
+0.7350 for shuffled assignment, a difference of $-0.0219$.
+Under equal class masses, the values were 0.7024 and 0.6920, respectively
+(difference $+0.0104$). Fixed augmentation had the highest mean macro-F1 under
+equal class masses. In contrast, equal global patient weighting retained the
+original ordering and increased the adaptive-minus-shuffled deficit to
+$-0.0575$. Every predefined scenario is reported in the accompanying table.
+These correlated scenarios are not independent cohorts or hypothesis tests.
+
+The observed-to-equal-class contrast shift was 0.03230 macro-F1, of which the
+lymphoid class contributed 0.02243 (approximately 69.4\%). Both adaptive and
+shuffled models recalled all seven lymphoid validation patches in each seed.
+Their mean lymphoid precision nevertheless differed: 0.7583 versus 0.9583
+under observed frequencies, and 0.9870 versus 0.9979 under equal class masses.
+The changing false-positive mass explains the different F1 penalty; no additional
+lymphoid cases were classified correctly by reweighting. Pure class-mass changes
+preserved every class recall and balanced accuracy numerically.
+
+Prevalence sensitivity and ranking changes are established properties of
+classification evaluation~\cite{brabec2020imbalance,opitz2024metrics}.
+Our result is a gastric, stain-augmentation-specific illustration and class-wise
+decomposition, not a new metric or evidence of adaptive-controller superiority.
+Equal class masses upweight the seven lymphoid cases from approximately 0.56\%
+to 20\% of total evaluation mass; this is a hypothetical distribution, not an
+estimate of clinical prevalence. The small, clustered, selected cohort and
+validation-based model selection limit generalization. Reweighting does not
+identify the effect of retraining with different purity, artifact or patient-cap
+policies, which remains untested.

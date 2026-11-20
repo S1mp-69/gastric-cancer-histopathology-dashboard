@@ -1,0 +1,7 @@
+{
+  "wrapper_sha256": "001716cef4ca6d66e1aaa690bed1aff9211fbe00ec03e142deed9dfc2a48cef6",
+  "trainer_sha256": "fcd64e9d79ed5cd647beb3b17c39a4d2b323836f71fa580e6a71047a048e2ac6",
+  "data_sha256": "fde0438e830257e91149e9f169243fc00e9c0eeda5a9d7e40f8e560fe2f6690d",
+  "assignment": "Epoch-wise permutation within training tissue classes; source RGB/basis/H stay attached; validation unchanged",
+  "seed": 42
+}

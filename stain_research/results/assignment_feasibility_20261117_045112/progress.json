@@ -1,0 +1,56 @@
+{
+  "stage": "complete",
+  "summaries": {
+    "initial": {
+      "same_direction_within_class_standardized_rank_correlation": 0.7638311463209841,
+      "per_class_same_direction_spearman": {
+        "tumor": 0.811231687466088,
+        "mucosa_inflammation": 0.7712832338578405,
+        "intestinal_metaplasia": 0.760363537710255,
+        "lymphoid": 0.8341427021161151,
+        "other": 0.6421345704546231
+      },
+      "patient_cluster_bootstrap_interval": [
+        0.7161017368047277,
+        0.8027058359695443
+      ],
+      "bootstrap_scope": "Ranks fixed before patient resampling; descriptive, conditional on selected patches and existing checkpoint; not a patient-independent confirmatory test.",
+      "cross_direction_within_class_rank_correlation": 0.2537390029325514,
+      "mean_probe_rgb_rms": 0.5466792314846328,
+      "zero_probe_fraction": 0.004166666666666667,
+      "secondary_target_correlations": {
+        "0.25": 0.8160761010268086,
+        "1.0": 0.7225370640317741
+      },
+      "engineering_gate_passed": true
+    },
+    "trained_last": {
+      "same_direction_within_class_standardized_rank_correlation": 0.6880865490315138,
+      "per_class_same_direction_spearman": {
+        "tumor": 0.5535539880629409,
+        "mucosa_inflammation": 0.7240911557243624,
+        "intestinal_metaplasia": 0.6068502441671189,
+        "lymphoid": 0.7480466630493761,
+        "other": 0.8078906941537711
+      },
+      "patient_cluster_bootstrap_interval": [
+        0.6171134131088714,
+        0.7489078589650348
+      ],
+      "bootstrap_scope": "Ranks fixed before patient resampling; descriptive, conditional on selected patches and existing checkpoint; not a patient-independent confirmatory test.",
+      "cross_direction_within_class_rank_correlation": 0.2345307917888563,
+      "mean_probe_rgb_rms": 0.5466792314846328,
+      "zero_probe_fraction": 0.004166666666666667,
+      "secondary_target_correlations": {
+        "0.25": 0.7810170286388244,
+        "1.0": 0.48809691253263143
+      },
+      "engineering_gate_passed": true
+    }
+  },
+  "elapsed_seconds": 41.661274300000514,
+  "original_checkpoints_unchanged": true,
+  "training_started": false,
+  "new_validation_or_test_pixels_read": false,
+  "interpretation": "This measures loss-response prediction only. Even a passed gate does not establish classification improvement, beneficial assignment, true morphology preservation, novelty, or publication readiness."
+}

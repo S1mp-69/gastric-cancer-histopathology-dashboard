@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "batch_size": 16,
+  "amp": "FP16",
+  "successful_updates": 3,
+  "loss": 0.2612560987472534,
+  "step_seconds": [
+    0.5305637999990722,
+    0.045402899995679036,
+    0.04527819999930216
+  ],
+  "free_vram_MiB": 2837.7000007629395,
+  "peak_allocated_MiB": 380.658203125,
+  "pretrained_weight_path": "C:\\Users\\gxhyp\\.cache\\torch\\hub\\checkpoints\\resnet18-f37072fd.pth",
+  "pretrained_weight_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "source": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+  "scope": "Engineering smoke using old training patches only, no performance inference or v3 training."
+}

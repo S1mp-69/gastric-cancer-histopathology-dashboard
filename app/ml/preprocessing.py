@@ -15,7 +15,13 @@ def load_rgb_image(image_path: Path, image_size: int | tuple[int, int]) -> Image
     return image.resize(target_size)
 
 
-def image_to_patch_sequence(image: Image.Image, patch_size: int, sequence_length: int) -> torch.Tensor:
+def image_to_patch_sequence(
+    image: Image.Image,
+    patch_size: int,
+    sequence_length: int,
+    mean: tuple[float, float, float] | None = None,
+    std: tuple[float, float, float] | None = None,
+) -> torch.Tensor:
     image_array = np.asarray(image, dtype=np.float32) / 255.0
     patches: list[torch.Tensor] = []
 
@@ -35,7 +41,14 @@ def image_to_patch_sequence(image: Image.Image, patch_size: int, sequence_length
         while len(patches) < sequence_length:
             patches.append(patches[-1].clone())
 
-    return torch.stack(patches)
+    sequence = torch.stack(patches)
+    if mean is not None or std is not None:
+        if mean is None or std is None:
+            raise ValueError("Both mean and std are required when normalizing patch sequences.")
+        mean_tensor = torch.tensor(mean, dtype=sequence.dtype).view(1, 3, 1, 1)
+        std_tensor = torch.tensor(std, dtype=sequence.dtype).clamp_min(1e-6).view(1, 3, 1, 1)
+        sequence = (sequence - mean_tensor) / std_tensor
+    return sequence
 
 
 def image_signature(image: Image.Image, signature_size: int = 24) -> np.ndarray:

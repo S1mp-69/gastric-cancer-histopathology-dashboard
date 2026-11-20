@@ -1,0 +1,21 @@
+{
+  "warmup": {
+    "loss": 1.5566424131393433,
+    "images_per_second": 52.132750836541994,
+    "seconds": 1.2276361999975052,
+    "amp_backoffs": 0
+  },
+  "measured": {
+    "loss": 1.3569043080012004,
+    "images_per_second": 122.23797097217955,
+    "seconds": 1.5707073000012315,
+    "amp_backoffs": 0
+  },
+  "validation_seconds": 1.2671333000034792,
+  "estimated_epoch_seconds": 7.558140864052612,
+  "estimated_40_epoch_minutes": 5.038760576035075,
+  "free_vram_MiB": 2325.7000007629395,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "initial_checkpoint_sha256": "b8ff5f5e6d8e25ddaa8319c1f32a002062809182bf91c95547c4a6c75f028553",
+  "scope": "Dry-run timings only; model/optimizer discarded before actual training. Checkpoint/report overhead and thermal changes may increase runtime."
+}

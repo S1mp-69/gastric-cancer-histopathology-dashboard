@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, File, HTTPException, Request, UploadFile
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
@@ -26,6 +26,11 @@ def on_startup() -> None:
 @app.get("/", response_class=HTMLResponse)
 def dashboard(request: Request) -> HTMLResponse:
     return templates.TemplateResponse("index.html", {"request": request, "app_name": settings.app_name})
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+def favicon() -> FileResponse:
+    return FileResponse(Path(__file__).resolve().parent / "static" / "assets" / "favicon.svg", media_type="image/svg+xml")
 
 
 @app.get("/api/health")

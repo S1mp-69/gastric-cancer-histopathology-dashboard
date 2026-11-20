@@ -1,0 +1,288 @@
+{
+  "source_audit_sha256": "0db810d44f89753de73116ad0ccd39c28fb7dda4338699791da1da37fb7c4036",
+  "source_prediction_sha256": {
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet18_seed42_v3\\validation_predictions.csv": "ad7958a4fe8aca60c67ea0c24b2682281f084de32bf82c0c67ec9ae21a7133db",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_residual_fixed\\validation_predictions.csv": "d1a00872f015a21c683766a3e2d864ce4989f230d57f12f30fa840b9a34d8d2d",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_uniform_weaker\\validation_predictions.csv": "3fdb1236419e94f590609fc1da116051309d4e2f47ecc42b5cdb26aabe746afc",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_shuffled\\validation_predictions.csv": "5a777f568fa2e13f540b248e65bc75f8dc25656cdcbd49c66ccd3edef8e55ab9",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_adaptive\\validation_predictions.csv": "af11387729d97515d9d5d620e307ebe538f72f09e8496b119f0d460e5b14d811",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_standard\\validation_predictions.csv": "e5d166c9668bc65b74eb38327f274abf261d86a5ed2f389bb5c1db2788968459",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_residual_fixed\\validation_predictions.csv": "95a1992d4780388f00bf0076a52fea7067822b1af5e6c44193bce538c175de38",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_uniform_weaker\\validation_predictions.csv": "4554f2cf11cacdf3aefa7a53e689868db7788fff6758d2ada3ffbb52fa05ea61",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_shuffled\\validation_predictions.csv": "afe6d6c2effe49c24aeff1297b148f4806d8d45ddac6075d17888657cead45ab",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_adaptive\\validation_predictions.csv": "d09d08e97b0297062cb64d4c3bf5ca5736de5f88bf7f752e4dcfedd170c9167a",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_standard\\validation_predictions.csv": "70814384564dfce55df3be1e7d265f14727da787d3cbe9edb15dd6c95150f4d8",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_residual_fixed\\validation_predictions.csv": "19bb8f6bdaf90ff1054c737bdf6b43c6d409d3b430b9ed32b52428c8330ec44e",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_uniform_weaker\\validation_predictions.csv": "b59d4d43a9476b9678d3576d9fe32c13ed1e3959e5c7f0c58997619fe7718533",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_shuffled\\validation_predictions.csv": "9c79d902c72864243f2bb349e467618eed12556fd44cb514b3c2875bfd3f617e",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_adaptive\\validation_predictions.csv": "ccd24c1e3e8ae3c4c147d6ce90756482e9bd6c0b4564dbfa5378b69233b6b3f3"
+  },
+  "specifications": [
+    {
+      "name": "observed_validation",
+      "within": "observed",
+      "mixture": null
+    },
+    {
+      "name": "uniform_patients",
+      "within": "patient_global",
+      "mixture": null
+    },
+    {
+      "name": "uniform_classes",
+      "within": "patch",
+      "mixture": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "name": "uniform_classes_and_patients",
+      "within": "patient_class",
+      "mixture": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ]
+    },
+    {
+      "name": "trainmix_reference__patch",
+      "within": "patch",
+      "mixture": [
+        0.09948879276445144,
+        0.5835627211954385,
+        0.14667715296893433,
+        0.08100668501769563,
+        0.08926464805348014
+      ]
+    },
+    {
+      "name": "trainmix_reference__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.09948879276445144,
+        0.5835627211954385,
+        0.14667715296893433,
+        0.08100668501769563,
+        0.08926464805348014
+      ]
+    },
+    {
+      "name": "trainmix_purity_0.6__patch",
+      "within": "patch",
+      "mixture": [
+        0.13884251530328326,
+        0.5038953811908736,
+        0.18280467445742904,
+        0.10211463550361714,
+        0.07234279354479689
+      ]
+    },
+    {
+      "name": "trainmix_purity_0.6__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.13884251530328326,
+        0.5038953811908736,
+        0.18280467445742904,
+        0.10211463550361714,
+        0.07234279354479689
+      ]
+    },
+    {
+      "name": "trainmix_purity_0.75__patch",
+      "within": "patch",
+      "mixture": [
+        0.13024,
+        0.53248,
+        0.16832,
+        0.08992,
+        0.07904
+      ]
+    },
+    {
+      "name": "trainmix_purity_0.75__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.13024,
+        0.53248,
+        0.16832,
+        0.08992,
+        0.07904
+      ]
+    },
+    {
+      "name": "trainmix_purity_0.95__patch",
+      "within": "patch",
+      "mixture": [
+        0.07987643424536628,
+        0.6173874669020301,
+        0.13150926743159752,
+        0.07458075904677847,
+        0.09664607237422772
+      ]
+    },
+    {
+      "name": "trainmix_purity_0.95__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.07987643424536628,
+        0.6173874669020301,
+        0.13150926743159752,
+        0.07458075904677847,
+        0.09664607237422772
+      ]
+    },
+    {
+      "name": "trainmix_artifact_0.0__patch",
+      "within": "patch",
+      "mixture": [
+        0.098,
+        0.5872,
+        0.1468,
+        0.0792,
+        0.0888
+      ]
+    },
+    {
+      "name": "trainmix_artifact_0.0__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.098,
+        0.5872,
+        0.1468,
+        0.0792,
+        0.0888
+      ]
+    },
+    {
+      "name": "trainmix_artifact_0.1__patch",
+      "within": "patch",
+      "mixture": [
+        0.09992163009404388,
+        0.5838557993730408,
+        0.14655172413793102,
+        0.08072100313479624,
+        0.0889498432601881
+      ]
+    },
+    {
+      "name": "trainmix_artifact_0.1__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.09992163009404388,
+        0.5838557993730408,
+        0.14655172413793102,
+        0.08072100313479624,
+        0.0889498432601881
+      ]
+    },
+    {
+      "name": "trainmix_artifact_0.2__patch",
+      "within": "patch",
+      "mixture": [
+        0.1,
+        0.583203125,
+        0.146484375,
+        0.081640625,
+        0.088671875
+      ]
+    },
+    {
+      "name": "trainmix_artifact_0.2__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.1,
+        0.583203125,
+        0.146484375,
+        0.081640625,
+        0.088671875
+      ]
+    },
+    {
+      "name": "trainmix_quality_block_off__patch",
+      "within": "patch",
+      "mixture": [
+        0.10499637943519188,
+        0.5724112961622013,
+        0.14337436640115858,
+        0.07929036929761042,
+        0.0999275887038378
+      ]
+    },
+    {
+      "name": "trainmix_quality_block_off__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.10499637943519188,
+        0.5724112961622013,
+        0.14337436640115858,
+        0.07929036929761042,
+        0.0999275887038378
+      ]
+    },
+    {
+      "name": "trainmix_cap64__patch",
+      "within": "patch",
+      "mixture": [
+        0.12744550027948576,
+        0.5075461151481274,
+        0.17887087758524314,
+        0.09502515371716043,
+        0.09111235326998324
+      ]
+    },
+    {
+      "name": "trainmix_cap64__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.12744550027948576,
+        0.5075461151481274,
+        0.17887087758524314,
+        0.09502515371716043,
+        0.09111235326998324
+      ]
+    },
+    {
+      "name": "trainmix_uncapped__patch",
+      "within": "patch",
+      "mixture": [
+        0.06331331331331332,
+        0.728978978978979,
+        0.09334334334334335,
+        0.05155155155155155,
+        0.06281281281281281
+      ]
+    },
+    {
+      "name": "trainmix_uncapped__patient_class",
+      "within": "patient_class",
+      "mixture": [
+        0.06331331331331332,
+        0.728978978978979,
+        0.09334334334334335,
+        0.05155155155155155,
+        0.06281281281281281
+      ]
+    }
+  ],
+  "primary_contrast": "Adaptive minus shuffled macro-F1; inspect all specified mixtures, no favorable selection.",
+  "primary_summary": "Mean across the three matched seeds; individual-seed results retained.",
+  "interpretation": "Reweight fixed validation cases by specified class/patient distributions. Does NOT apply new purity rules to validation images, retrain on alternative training sets, change labels, or identify causal effects.",
+  "population_assumption": "Class-only reweighting treats observed within-class predictions as fixed. It is a sensitivity scenario, not an estimated real target population.",
+  "known_limitations": [
+    "Validation already used for model selection",
+    "Annotation-selected small cohort",
+    "Only seven lymphoid validation cases",
+    "No independent test confirmation",
+    "No patient-level inferential claims"
+  ],
+  "pixel_access": false,
+  "gpu_use": false,
+  "training": false
+}

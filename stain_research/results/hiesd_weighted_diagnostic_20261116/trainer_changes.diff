@@ -1,0 +1,45 @@
+--- hiesd_baseline.py
++++ hiesd_weighted_baseline.py
+@@ -1,4 +1,4 @@
+-"""Single-seed, bounded HiESD feasibility baseline. No reserved-test access."""
++"""Training-count-weighted follow-up of frozen HiESD baseline; no test access."""
+ import os
+ for k in ['OMP_NUM_THREADS','MKL_NUM_THREADS','OPENBLAS_NUM_THREADS']:
+     os.environ[k]='1'
+@@ -97,7 +97,11 @@
+         with Image.open(ROOT/r['image_path']) as im:a=np.asarray(im,dtype=np.float64)/255
+         sums+=a.sum((0,1));squares+=(a*a).sum((0,1));pixels+=a.shape[0]*a.shape[1]
+     mean=sums/pixels;std=np.sqrt(np.maximum(squares/pixels-mean*mean,1e-8))
+-    config={'seed':42,'arm':'standard','max_epochs':40,'early_stopping_patience':7,'minimum_f1_improvement':.0001,
++    class_counts=np.bincount([int(r['class_id']) for r in train],minlength=5)
++    assert np.all(class_counts>0)
++    class_weights=len(train)/(5*class_counts.astype(np.float64))
++    class_weights_tensor=torch.tensor(class_weights,dtype=torch.float32,device='cuda')
++    config={'seed':42,'arm':'standard_class_weighted','class_counts_train':class_counts.tolist(),'class_weights':class_weights.tolist(),'weight_rule':'N_train/(5*n_class); training labels only; PyTorch weighted label-smoothed CE','max_epochs':40,'early_stopping_patience':7,'minimum_f1_improvement':.0001,
+             'batch_size':32,'loader_workers':0,'cpu_threads':2,'amp':'FP16','optimizer':'AdamW','learning_rate':.001,
+             'weight_decay':.0001,'label_smoothing':.05,'gradient_clip':5,'scheduler':'ReduceLROnPlateau validation NLL, factor .5, patience 2',
+             'class_order':NAMES,'model':'fresh CNN-BiLSTM-attention with five outputs; no HMU checkpoint transfer',
+@@ -119,7 +123,13 @@
+         return DataLoader(trainset,batch_size=32,shuffle=True,generator=torch.Generator().manual_seed(42+epoch*100003),num_workers=0,pin_memory=True)
+     val_loader=DataLoader(valset,batch_size=32,shuffle=False,num_workers=0,pin_memory=True)
+     model=GastricCancerRNN(num_classes=5).cuda()
+-    if not (run/'initial.pt').exists():checkpoint(run/'initial.pt',{'model_state_dict':model.state_dict()})
++    baseline=ROOT/'stain_research/runs/hiesd_baseline_seed42_20261116'
++    baseline_config=json.loads((baseline/'config.json').read_text())
++    for key in baseline_config:
++        if key not in ['arm','source_sha256']:
++            assert config[key]==baseline_config[key],f'Unmatched configuration: {key}'
++    if not (run/'initial.pt').exists():(run/'initial.pt').write_bytes((baseline/'initial.pt').read_bytes())
++    assert digest(run/'initial.pt')==digest(baseline/'initial.pt')
+     initial=torch.load(run/'initial.pt',map_location='cpu',weights_only=False)
+     model.load_state_dict(initial['model_state_dict'])
+     optimizer=torch.optim.AdamW(model.parameters(),lr=.001,weight_decay=.0001)
+@@ -131,7 +141,7 @@
+             if limit is not None and batch_index>=limit:break
+             x=x.cuda(non_blocking=True);y=y.cuda(non_blocking=True);optimizer.zero_grad(set_to_none=True)
+             with torch.autocast('cuda',dtype=torch.float16):
+-                logits,_=model(x);loss=torch.nn.functional.cross_entropy(logits,y,label_smoothing=.05)
++                logits,_=model(x);loss=torch.nn.functional.cross_entropy(logits,y,weight=class_weights_tensor,label_smoothing=.05)
+             if not torch.isfinite(loss):raise RuntimeError('Nonfinite loss')
+             scaler.scale(loss).backward();scaler.unscale_(optimizer);torch.nn.utils.clip_grad_norm_(model.parameters(),5)
+             previous=scaler.get_scale();scaler.step(optimizer);scaler.update();backoffs+=int(scaler.get_scale()<previous)

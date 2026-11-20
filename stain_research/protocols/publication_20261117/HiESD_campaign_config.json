@@ -1,0 +1,35 @@
+{
+  "arms": [
+    "standard",
+    "residual_fixed",
+    "uniform_weaker",
+    "shuffled",
+    "adaptive"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "max_epochs": 40,
+  "early_stopping_patience": 7,
+  "start_budget_hours": 6,
+  "primary_comparison": "Adaptive minus global shuffled assignment; exact valid-training alpha multiset each epoch.",
+  "seed42_standard": "Reuse completed frozen baseline. Four missing seed42 arms first; then whole five-arm seed43/44 blocks where start budget permits.",
+  "source_hashes": {
+    "hiesd_ablation_data.py": "fde0438e830257e91149e9f169243fc00e9c0eeda5a9d7e40f8e560fe2f6690d",
+    "hiesd_ablation_train.py": "fcd64e9d79ed5cd647beb3b17c39a4d2b323836f71fa580e6a71047a048e2ac6",
+    "hiesd_ablation_report.py": "dd0bdd127c136c0d077a57a6c2b6bdd1556d4bbd0ec25f95eed3efd7d84db67b",
+    "hiesd_ablation_supervisor.py": "a79f0c9f97b1df8e6adb4dbbd22a34cee5260088d1f79c9ebb963b738364b019",
+    "efficient_cache.py": "4b6ba1ff14cd0ab078fe8510a5350bd81b55cbec31fbb42fe1ad6af2a1ce89ba",
+    "controller.py": "d611157d8eb8d8eab3c57f4f6dee765d6c3bab5078faba424e7807d403697e46",
+    "transforms.py": "989c53992e39e4356092f34b536c44ae6f8da13c1290a215115e6ef98e8f28f9",
+    "publication_controls.py": "2dac12ed895fe0f7270c56a424887e52c845ce5ac3558e6990b30bbf3a69237f"
+  },
+  "manifest_sha256": "05840d3b64ac07e6a550bfcb3a5628e179c679ce0aa5421f47134303de2e2252",
+  "initial_seed42_sha256": "60bc667f9f66dd9a53b3ab69205538dd9e3b2051f6b1353390f804a94ec256d2",
+  "gpu_policy": "Reuse verified CUDA environment; no routine GPU probes or smoke reruns.",
+  "fallbacks": 0,
+  "uniform_strength": 0.6135378768515287,
+  "scope": "Exploratory follow-up with validation early stopping; no test inference, data re-selection or dashboard activation."
+}

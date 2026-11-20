@@ -1,0 +1,166 @@
+{
+  "status": "complete",
+  "updated_at": "2026-11-13T13:48:40+05:30",
+  "arm": "standard",
+  "seed": 44,
+  "best_epoch": 32,
+  "completed_epochs": 39,
+  "stop_reason": "early_stopping",
+  "validation": {
+    "accuracy": 0.6642693690748611,
+    "macro_f1": 0.6660156126136045,
+    "loss": 0.8740991133310905,
+    "per_class": {
+      "ADI": {
+        "precision": 0.8409090909090909,
+        "recall": 0.6744791666666666,
+        "f1-score": 0.7485549132947977,
+        "support": 384.0
+      },
+      "DEB": {
+        "precision": 0.6826347305389222,
+        "recall": 0.5876288659793815,
+        "f1-score": 0.631578947368421,
+        "support": 388.0
+      },
+      "LYM": {
+        "precision": 0.8429319371727748,
+        "recall": 0.8586666666666667,
+        "f1-score": 0.8507265521796565,
+        "support": 375.0
+      },
+      "MUC": {
+        "precision": 0.6327077747989276,
+        "recall": 0.6293333333333333,
+        "f1-score": 0.6310160427807486,
+        "support": 375.0
+      },
+      "MUS": {
+        "precision": 0.7562326869806094,
+        "recall": 0.7036082474226805,
+        "f1-score": 0.7289719626168224,
+        "support": 388.0
+      },
+      "NOR": {
+        "precision": 0.49878934624697335,
+        "recall": 0.5508021390374331,
+        "f1-score": 0.5235069885641678,
+        "support": 374.0
+      },
+      "STR": {
+        "precision": 0.6310975609756098,
+        "recall": 0.532133676092545,
+        "f1-score": 0.5774058577405857,
+        "support": 389.0
+      },
+      "TUM": {
+        "precision": 0.5375,
+        "recall": 0.7797927461139896,
+        "f1-score": 0.6363636363636364,
+        "support": 386.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        259,
+        4,
+        0,
+        75,
+        19,
+        19,
+        0,
+        8
+      ],
+      [
+        5,
+        228,
+        17,
+        17,
+        19,
+        23,
+        28,
+        51
+      ],
+      [
+        0,
+        10,
+        322,
+        0,
+        0,
+        14,
+        10,
+        19
+      ],
+      [
+        29,
+        19,
+        1,
+        236,
+        12,
+        43,
+        13,
+        22
+      ],
+      [
+        7,
+        27,
+        1,
+        7,
+        273,
+        23,
+        42,
+        8
+      ],
+      [
+        8,
+        15,
+        24,
+        29,
+        6,
+        206,
+        16,
+        70
+      ],
+      [
+        0,
+        19,
+        11,
+        4,
+        31,
+        36,
+        207,
+        81
+      ],
+      [
+        0,
+        12,
+        6,
+        5,
+        1,
+        49,
+        12,
+        301
+      ]
+    ],
+    "ece_10_bins": 0.01883164490991734,
+    "multiclass_brier": 0.4465552724012068
+  },
+  "checkpoint_reload_verified": true,
+  "best_checkpoint_sha256": "4446b1195924f0b2be9c2d385f4ee190aa0bd91a31fc65f275ea0164fa0a2ca2",
+  "mean_epoch_seconds": 61.88482582307673,
+  "total_epoch_seconds": 2413.5082070999924,
+  "failures_by_class": {
+    "ADI": 0,
+    "DEB": 0,
+    "LYM": 0,
+    "MUC": 0,
+    "MUS": 0,
+    "NOR": 0,
+    "STR": 0,
+    "TUM": 0
+  },
+  "initial_sha256": "39f9cabdafd13917b04c201fc2924d753777c6acbde0a5e7b0c0f6aa6735722b",
+  "finished_at": "2026-11-13T13:48:40+05:30",
+  "test_evaluated": false,
+  "patient_independence": "UNVERIFIED; provisional exact-file-controlled image split"
+}

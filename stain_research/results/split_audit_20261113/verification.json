@@ -1,0 +1,9 @@
+{
+  "cross_split_exact_hash_overlap": 0,
+  "all_classes_present_in_all_splits": true,
+  "test_priority_policy_passed": true,
+  "conflicting_labels_quarantined": true,
+  "selection_input_order_independent": true,
+  "images": 29910,
+  "patient_independence_verified": false
+}

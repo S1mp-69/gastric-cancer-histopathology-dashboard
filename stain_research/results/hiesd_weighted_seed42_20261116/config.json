@@ -1,0 +1,64 @@
+{
+  "seed": 42,
+  "arm": "standard_class_weighted",
+  "class_counts_train": [
+    80,
+    424,
+    101,
+    110,
+    54
+  ],
+  "class_weights": [
+    1.9225,
+    0.3627358490566038,
+    1.5227722772277228,
+    1.3981818181818182,
+    2.848148148148148
+  ],
+  "weight_rule": "N_train/(5*n_class); training labels only; PyTorch weighted label-smoothed CE",
+  "max_epochs": 40,
+  "early_stopping_patience": 7,
+  "minimum_f1_improvement": 0.0001,
+  "batch_size": 32,
+  "loader_workers": 0,
+  "cpu_threads": 2,
+  "amp": "FP16",
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "label_smoothing": 0.05,
+  "gradient_clip": 5,
+  "scheduler": "ReduceLROnPlateau validation NLL, factor .5, patience 2",
+  "class_order": [
+    "tumor",
+    "mucosa_inflammation",
+    "intestinal_metaplasia",
+    "lymphoid",
+    "other"
+  ],
+  "model": "fresh CNN-BiLSTM-attention with five outputs; no HMU checkpoint transfer",
+  "normalization_mean": [
+    0.8274077266429387,
+    0.5979973472036139,
+    0.800293604315726
+  ],
+  "normalization_std": [
+    0.1622864378960119,
+    0.21543255905936096,
+    0.10597600097921248
+  ],
+  "normalization_fit_split": "train only",
+  "augmentation": "train H/V flips p=.5, right-angle rotation, brightness/contrast/saturation .9-1.1, hue +/-.02, shuffled operation order",
+  "manifest_sha256": "b50d7561ff002a0b59ff7c354962f8cc36627bb525d72c7c2e1d18061f1c1c38",
+  "train_n": 769,
+  "validation_n": 1042,
+  "source_sha256": "dada848ba6cac60f2a236eef4422c15ec48db032253f936c573e4ab0c3fc6b3d",
+  "model_source_sha256": "2394d2238879cc09a86fb7787cec5e0d9c66c4684b4fa9c18123a0d0a7ad31f3",
+  "limitations": [
+    "Annotation-guided selected subset",
+    "Small patient counts; 12 validation lymphoid patches",
+    "Coarse mask boundaries without expert review",
+    "Five-group semantics verified against HiESD Figure 1/Table 2; geometry/model/protocol differ from published benchmark"
+  ],
+  "test_policy": "Reserved-test images, annotations and predictions are not accessed."
+}

@@ -1,0 +1,21 @@
+{
+  "warmup": {
+    "loss": 1.531141221523285,
+    "images_per_second": 18.993483098511106,
+    "seconds": 1.684789400002046,
+    "amp_backoffs": 0
+  },
+  "measured": {
+    "loss": 1.238381877541542,
+    "images_per_second": 108.1271399456577,
+    "seconds": 0.8878442999994149,
+    "amp_backoffs": 0
+  },
+  "validation_seconds": 1.791942800002289,
+  "estimated_epoch_seconds": 25.310552478183507,
+  "estimated_40_epoch_minutes": 16.87370165212234,
+  "free_vram_MiB": 2837.7000007629395,
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "initial_checkpoint_sha256": "60bc667f9f66dd9a53b3ab69205538dd9e3b2051f6b1353390f804a94ec256d2",
+  "scope": "Inherited reference timing from frozen baseline; no new GPU benchmark; actual stain-arm throughput saved in history.json."
+}

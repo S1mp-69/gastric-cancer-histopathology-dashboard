@@ -23,7 +23,7 @@ def build_records(limit_per_class: int) -> pd.DataFrame:
         if limit_per_class > 0:
             image_paths = image_paths[:limit_per_class]
         for image_path in image_paths:
-            records.append({"image_path": str(image_path), "class_code": class_name})
+            records.append({"image_path": str(image_path.resolve()), "class_code": class_name})
     return pd.DataFrame(records)
 
 
@@ -55,6 +55,7 @@ def main() -> None:
     output.to_csv(args.output, index=False)
     print(f"Saved manifest to {args.output}")
     print(output["split"].value_counts().to_string())
+    print(output.groupby("class_code").size().sort_index().to_string())
 
 
 if __name__ == "__main__":

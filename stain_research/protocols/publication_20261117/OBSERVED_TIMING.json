@@ -1,0 +1,128 @@
+[
+  {
+    "run": "hiesd_resnet18_seed42_v3",
+    "epochs": 22,
+    "mean_train_plus_validation_epoch_seconds": 22.398166795454017,
+    "training_images_per_epoch_second_proxy": 113.53607744880858,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed42_adaptive",
+    "epochs": 26,
+    "mean_train_plus_validation_epoch_seconds": 41.34184295384666,
+    "training_images_per_epoch_second_proxy": 61.51152968286785,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed42_residual_fixed",
+    "epochs": 32,
+    "mean_train_plus_validation_epoch_seconds": 40.85267840312554,
+    "training_images_per_epoch_second_proxy": 62.24806057772313,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed42_shuffled",
+    "epochs": 22,
+    "mean_train_plus_validation_epoch_seconds": 40.79372440454642,
+    "training_images_per_epoch_second_proxy": 62.33801980866904,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed42_uniform_weaker",
+    "epochs": 25,
+    "mean_train_plus_validation_epoch_seconds": 40.95319534399954,
+    "training_images_per_epoch_second_proxy": 62.09527678217178,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed43_adaptive",
+    "epochs": 11,
+    "mean_train_plus_validation_epoch_seconds": 41.451453772726715,
+    "training_images_per_epoch_second_proxy": 61.34887364730221,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed43_residual_fixed",
+    "epochs": 11,
+    "mean_train_plus_validation_epoch_seconds": 41.225863081817806,
+    "training_images_per_epoch_second_proxy": 61.68457880319214,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed43_shuffled",
+    "epochs": 8,
+    "mean_train_plus_validation_epoch_seconds": 41.27720993749972,
+    "training_images_per_epoch_second_proxy": 61.60784616621394,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed43_standard",
+    "epochs": 11,
+    "mean_train_plus_validation_epoch_seconds": 22.270491890909565,
+    "training_images_per_epoch_second_proxy": 114.18697047450529,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed43_uniform_weaker",
+    "epochs": 18,
+    "mean_train_plus_validation_epoch_seconds": 40.83532480000132,
+    "training_images_per_epoch_second_proxy": 62.27451385423823,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed44_adaptive",
+    "epochs": 25,
+    "mean_train_plus_validation_epoch_seconds": 40.72635622400005,
+    "training_images_per_epoch_second_proxy": 62.44113728252982,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed44_residual_fixed",
+    "epochs": 19,
+    "mean_train_plus_validation_epoch_seconds": 41.130457063158055,
+    "training_images_per_epoch_second_proxy": 61.827662067919285,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed44_shuffled",
+    "epochs": 22,
+    "mean_train_plus_validation_epoch_seconds": 40.79309976818133,
+    "training_images_per_epoch_second_proxy": 62.33897434741018,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed44_standard",
+    "epochs": 9,
+    "mean_train_plus_validation_epoch_seconds": 22.241062955554906,
+    "training_images_per_epoch_second_proxy": 114.33806041922394,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "seed44_uniform_weaker",
+    "epochs": 9,
+    "mean_train_plus_validation_epoch_seconds": 41.37264053333396,
+    "training_images_per_epoch_second_proxy": 61.46574081852725,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "within_seed42",
+    "epochs": 22,
+    "mean_train_plus_validation_epoch_seconds": 42.78488905909001,
+    "training_images_per_epoch_second_proxy": 59.43687259508548,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "within_seed43",
+    "epochs": 22,
+    "mean_train_plus_validation_epoch_seconds": 42.34055499090953,
+    "training_images_per_epoch_second_proxy": 60.06062038029447,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  },
+  {
+    "run": "within_seed44",
+    "epochs": 27,
+    "mean_train_plus_validation_epoch_seconds": 41.71492504074073,
+    "training_images_per_epoch_second_proxy": 60.96139445333746,
+    "definition": "2543 training images divided by total train+validation epoch wall time, not pure GPU/loader throughput"
+  }
+]

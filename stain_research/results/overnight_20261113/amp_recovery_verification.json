@@ -1,0 +1,8 @@
+{
+  "synthetic_cpu_scaler_overflow_check": true,
+  "optimizer_update_skipped": true,
+  "scale_before": 4096.0,
+  "scale_after": 2048.0,
+  "model_parameter_preserved": true,
+  "scientific_training_result": false
+}

@@ -1,0 +1,464 @@
+{
+  "created_at": "2026-11-17T21:24:23.524451+05:30",
+  "branch": "research/local-backup-2026-11-13",
+  "source_snapshot_before_handoff": "60f0118a8aa48085aecbfc3d84e8db0d41b60ca1",
+  "training_complete": true,
+  "extra_bundle": {
+    "drive_id": "124p_vWLVJ1dTjKUPnHHEXGy7WBB2Y0hY",
+    "url": "https://drive.google.com/file/d/124p_vWLVJ1dTjKUPnHHEXGy7WBB2Y0hY/view",
+    "bytes": 31984712,
+    "sha256": "828369c42e71697fa2a1cf2a3ff34606e3fd4715f8a0fdbbc8aa80e859c63110",
+    "size_verified": true
+  },
+  "checkpoint_folder_url": "https://drive.google.com/drive/folders/1CE8IpFcy4JxIRdwT4EQAhLG2QF03B0H8",
+  "checkpoint_backup_complete": false,
+  "blocker": "Google Drive storageQuotaExceeded; uploads stopped without deleting existing files",
+  "uploaded_checkpoint_bytes": 3096066871,
+  "uploaded_checkpoint_pieces": [
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part01_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "a3ecae449afad7f3b2aadbf840c49d95e90bff08999d6e147bb65f421e98fd58",
+      "drive_id": "1AQCWKORpXLVNTfoat72qcjOLkMaydXeY",
+      "drive_url": "https://drive.google.com/file/d/1AQCWKORpXLVNTfoat72qcjOLkMaydXeY/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part01_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "7e4d4d5a7c095c2b2cf7aac4e55c11432a4d2c7898d9297f1934fb3c4e220c90",
+      "drive_id": "1Vcfu1DTeSeN7Gnqben7KPvqOvAnhcaRs",
+      "drive_url": "https://drive.google.com/file/d/1Vcfu1DTeSeN7Gnqben7KPvqOvAnhcaRs/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part01_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "b6fd164c9b711868dcf682f600493d3c0cbfa89d62c1e60262f77660f0d8d73d",
+      "drive_id": "1pB940pneFEypbZgiDMTqsTlzSVfb2_im",
+      "drive_url": "https://drive.google.com/file/d/1pB940pneFEypbZgiDMTqsTlzSVfb2_im/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part01_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "fcd81414f354bc37c0c6a695f7e6973f2cb2e1b7a322270a864bbefc34a62e7c",
+      "drive_id": "1Ri59WcbSOlV-W835dgafXnN6RnnAiCjj",
+      "drive_url": "https://drive.google.com/file/d/1Ri59WcbSOlV-W835dgafXnN6RnnAiCjj/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part01_of13.zip.005",
+      "bytes": 81516058,
+      "sha256": "1096c4f0b9f7fbbf8fb8bf2d11348d31a7dc0c069d0a61b02addf4190562e963",
+      "drive_id": "1EdfzO1oq_yozzVC6dFpjrGzKZvjXdnf4",
+      "drive_url": "https://drive.google.com/file/d/1EdfzO1oq_yozzVC6dFpjrGzKZvjXdnf4/view?usp=drivesdk",
+      "verified_size": 81516058
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part02_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "38df5eb263869e5c0d929496e7dbfab9a133670fe73094ead44424ecd8e0ae57",
+      "drive_id": "1oY0Hm3WuPubMWRoGN3PLCCZqmqNgQyz8",
+      "drive_url": "https://drive.google.com/file/d/1oY0Hm3WuPubMWRoGN3PLCCZqmqNgQyz8/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part02_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "40989212957fc961105eebaffe29bdea5accf330d29b61af98c4c1f0d9bdb5b4",
+      "drive_id": "1BFJoBCEm0x91z065sjsRO1N9r-TcPeOa",
+      "drive_url": "https://drive.google.com/file/d/1BFJoBCEm0x91z065sjsRO1N9r-TcPeOa/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part02_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "24e8536cee4adfb8e91ca19c81188bf3034358426fc08b2e6dae548be7a03eaf",
+      "drive_id": "1xuferL8scno_9dPaXdLlVwK9zsOOnWYN",
+      "drive_url": "https://drive.google.com/file/d/1xuferL8scno_9dPaXdLlVwK9zsOOnWYN/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part02_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "8a1a05db5f6056f0187a1016c42cc25c34ab51cb47f07090ada98fa89d0a8fa5",
+      "drive_id": "1LYhxkHSrMuhFS1QLW4xDhi22LvBR0mLq",
+      "drive_url": "https://drive.google.com/file/d/1LYhxkHSrMuhFS1QLW4xDhi22LvBR0mLq/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part02_of13.zip.005",
+      "bytes": 76020961,
+      "sha256": "69f096c979a74cf00fdad98b529bb815ccd07663efa1bc4f232a9e2eaeacfb7c",
+      "drive_id": "1C-LUMC9gajAlr7M8IiEwcTFQFFCGHLuF",
+      "drive_url": "https://drive.google.com/file/d/1C-LUMC9gajAlr7M8IiEwcTFQFFCGHLuF/view?usp=drivesdk",
+      "verified_size": 76020961
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part03_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "3448e30d0d9832a4d927011edb0afa8d4955af0b4e290ee0da2471c281dff051",
+      "drive_id": "1MRMNIui_iFFk8UAH5T383p1ebSqT2X8c",
+      "drive_url": "https://drive.google.com/file/d/1MRMNIui_iFFk8UAH5T383p1ebSqT2X8c/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part03_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "85bb5772208cc9ee2becbf973ec85ac90577e997eca1936987a076aff76e8afb",
+      "drive_id": "1Rgg1VA6E8XFzBpArXxTVJsVnKOHteTJU",
+      "drive_url": "https://drive.google.com/file/d/1Rgg1VA6E8XFzBpArXxTVJsVnKOHteTJU/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part03_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "739c41bfb7009d81793e69f6be6def1a42ac69fa8af61e24f992c4fb29c1c50b",
+      "drive_id": "1LH6wh7D0Y2a74KQeJemZ1hW0eeaPuEog",
+      "drive_url": "https://drive.google.com/file/d/1LH6wh7D0Y2a74KQeJemZ1hW0eeaPuEog/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part03_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "523e2881d42ca72178614b4a96b521c065d520a2da1a5b71fd3a738c3fbd2a97",
+      "drive_id": "1DbIkYRm31TEU81gDYMPDaFZiYYEhx3g1",
+      "drive_url": "https://drive.google.com/file/d/1DbIkYRm31TEU81gDYMPDaFZiYYEhx3g1/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part03_of13.zip.005",
+      "bytes": 75997985,
+      "sha256": "8ee1a1550e570455aa78f67bf2e321ce129bbb7b1da2ea0136ed6da444adee65",
+      "drive_id": "1FirXtu1XCZIBLY44HUc2kNhKiJH-Wo8N",
+      "drive_url": "https://drive.google.com/file/d/1FirXtu1XCZIBLY44HUc2kNhKiJH-Wo8N/view?usp=drivesdk",
+      "verified_size": 75997985
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part04_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "9f9dadce305faa8d46cca4558ea3b784c8951bb513deaed6842a625fdb21c10c",
+      "drive_id": "1I-gcjTPHJ-bD20B7ItFeHv87X9fP8XWM",
+      "drive_url": "https://drive.google.com/file/d/1I-gcjTPHJ-bD20B7ItFeHv87X9fP8XWM/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part04_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "e24e202f51417136e406513f71995498166290bb4c0c7fdba12aaccc5b3d8f39",
+      "drive_id": "1qR0oBiZfwaNOs04oZQoc8t75ROzkgwjO",
+      "drive_url": "https://drive.google.com/file/d/1qR0oBiZfwaNOs04oZQoc8t75ROzkgwjO/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part04_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "03f50ac5a45a71613be11aa6e6b276efe044cde197cec7ebc1f9ed24be08c24d",
+      "drive_id": "1qZWyU28r0WMjFE5V53VkGnvF8cE-0P-4",
+      "drive_url": "https://drive.google.com/file/d/1qZWyU28r0WMjFE5V53VkGnvF8cE-0P-4/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part04_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "f480092997300a6f346a629fc3dfee41fa6da5ccafc609325a3f9135de874982",
+      "drive_id": "1sW9yQjV3h0234CjonXTUO5N7JuE55AFD",
+      "drive_url": "https://drive.google.com/file/d/1sW9yQjV3h0234CjonXTUO5N7JuE55AFD/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part04_of13.zip.005",
+      "bytes": 75917087,
+      "sha256": "9dfd0c5bd0aa1fd16f7577a4148c70f333b9a192d0c57e4f51f63fe767f07428",
+      "drive_id": "1a3OQ1spEqpUpYFbPvehUqLu7MfJ-jWQu",
+      "drive_url": "https://drive.google.com/file/d/1a3OQ1spEqpUpYFbPvehUqLu7MfJ-jWQu/view?usp=drivesdk",
+      "verified_size": 75917087
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part05_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "b8e37cd2c8b895e00af70d5ab5de6cfdfabc14982e5e0a16acb2f89d9f62295c",
+      "drive_id": "15J22ZfC6fZMeFLMIH6HL1k0iyI0_SQ90",
+      "drive_url": "https://drive.google.com/file/d/15J22ZfC6fZMeFLMIH6HL1k0iyI0_SQ90/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part05_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "3699d3817c608022da6ff00197c6a040b493705c1f519b0f2eac5141e0c83c55",
+      "drive_id": "1wcMrrGYZJloFKaKcF0pQ2u3S-odzww28",
+      "drive_url": "https://drive.google.com/file/d/1wcMrrGYZJloFKaKcF0pQ2u3S-odzww28/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part05_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "58c0e2f61389932a1170ac648b0b664e09d691fcf8be99b98c7b81de28b31707",
+      "drive_id": "1GIQdJMKfJdEhFEsEll0UH4duUk701Cr7",
+      "drive_url": "https://drive.google.com/file/d/1GIQdJMKfJdEhFEsEll0UH4duUk701Cr7/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part05_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "9404431e7b5b19d46fb66762584a81dc8d1db15f267fee77d34f9a79deb22dc5",
+      "drive_id": "1kYtvczmcSOH-AiTFJftWTsO8V7pE5OCl",
+      "drive_url": "https://drive.google.com/file/d/1kYtvczmcSOH-AiTFJftWTsO8V7pE5OCl/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part05_of13.zip.005",
+      "bytes": 34180682,
+      "sha256": "e4c73e8670c7d8460afc2069cc08d9df0a9624456fd71b4d08ee71aa7c6935f6",
+      "drive_id": "1ycyeePi__sDdryJGFQ0BRejWp5ztr2GH",
+      "drive_url": "https://drive.google.com/file/d/1ycyeePi__sDdryJGFQ0BRejWp5ztr2GH/view?usp=drivesdk",
+      "verified_size": 34180682
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part06_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "62324f5901148fe1abc18c69adfb5fa612e53299ce6cc68de25d2e793cf21ec7",
+      "drive_id": "1BLT2m9D7pkgno2aaI1kE6im6VjN7vYW0",
+      "drive_url": "https://drive.google.com/file/d/1BLT2m9D7pkgno2aaI1kE6im6VjN7vYW0/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part06_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "a7550e5ac3898ac53dc82b19722eadc121ecee4bf2ca19c5ab51eb528a8d7098",
+      "drive_id": "1uqdA_1vIEZVMgIm46m_msBFCNa6V9ynH",
+      "drive_url": "https://drive.google.com/file/d/1uqdA_1vIEZVMgIm46m_msBFCNa6V9ynH/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part06_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "de7a6238248c29e294c7950aa9359031d5f19621b845475985019a6983995389",
+      "drive_id": "1_BXBzMlLTca300Ru62sBSnpUInZ7yrtc",
+      "drive_url": "https://drive.google.com/file/d/1_BXBzMlLTca300Ru62sBSnpUInZ7yrtc/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part06_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "d14ac7f74d4ac706474e1fbba2e8d95f44103447fef4d2a01748bd00cba1274e",
+      "drive_id": "1fI-lHvL1CM3Q0JEl3aSDQvDOIbYIwADo",
+      "drive_url": "https://drive.google.com/file/d/1fI-lHvL1CM3Q0JEl3aSDQvDOIbYIwADo/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part06_of13.zip.005",
+      "bytes": 75737983,
+      "sha256": "ce6fe13a3c01af6d81a3e0b725524b946475a6a538f75ff873ebbac7528c9620",
+      "drive_id": "1opoMCsOq8BSQ1f5IiAnrvrw6XCzFAHZj",
+      "drive_url": "https://drive.google.com/file/d/1opoMCsOq8BSQ1f5IiAnrvrw6XCzFAHZj/view?usp=drivesdk",
+      "verified_size": 75737983
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part07_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "a8aeb6ca634140bd2c27e9cda053f8832c79dcc0ea24f76013d69df8738b106b",
+      "drive_id": "11nw0AqVRBBvwWDIyhsPzKImUqlW5WgYb",
+      "drive_url": "https://drive.google.com/file/d/11nw0AqVRBBvwWDIyhsPzKImUqlW5WgYb/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part07_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "a2fbf35dcc6d70e513ec6a6720776536def604ff0e61071e64f8818d2254c597",
+      "drive_id": "1qblCaOL5cdg0F5sxvqclPporxTsk9XHn",
+      "drive_url": "https://drive.google.com/file/d/1qblCaOL5cdg0F5sxvqclPporxTsk9XHn/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part07_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "6e31c2813a647f934e748fa05c037284c8ecfb62a11aa27693f40aca65536e57",
+      "drive_id": "10gZzOELcZQYe8cUm3hS4nocTuIkTLs4F",
+      "drive_url": "https://drive.google.com/file/d/10gZzOELcZQYe8cUm3hS4nocTuIkTLs4F/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part07_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "bfe94ad88d50c4e97c58ff01425230d4c0547be082e49e08fbb8bea963e676cc",
+      "drive_id": "1ImTqAJjfuE18FzE1ekJe2Jc_jGOt3Z9g",
+      "drive_url": "https://drive.google.com/file/d/1ImTqAJjfuE18FzE1ekJe2Jc_jGOt3Z9g/view?usp=drivesdk",
+      "verified_size": 94371840
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part07_of13.zip.005",
+      "bytes": 34284595,
+      "sha256": "e154e6ee5d2e4e1cbedff76e4f8c9192dce144cdb7904d28c44a8ea98d68e753",
+      "drive_id": "1llMLzgqCZO6FNcwqqfD42ASFR5USPzJM",
+      "drive_url": "https://drive.google.com/file/d/1llMLzgqCZO6FNcwqqfD42ASFR5USPzJM/view?usp=drivesdk",
+      "verified_size": 34284595
+    }
+  ],
+  "missing_checkpoint_pieces": [
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part08_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "2a3431187a284d53ff83d1a29245c8e63a9845df031ba6fe87fca1f987890560"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part08_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "8ab7f283203937bed30f9fdff234042b5840aff60eadaceea1be2f03ed35e9d6"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part08_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "2c21797510fcb3c03fb893373e1d4f5af2a75cfe024555b339453a46e6b4c241"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part08_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "82334edd19a2379a3dda9ba8cb402170595189429e46a2cdbf2c37407160d2d1"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part08_of13.zip.005",
+      "bytes": 75958355,
+      "sha256": "f9dae9e76d089aada1f6a806b63b02d0495415cc242bac87292442207aa700f0"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part09_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "64548ae68cc7ee9c354203c93a63691476ef015997b1830a9570fae5e59dfe1c"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part09_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "aca0b38daf64d893e21bdaf3178742ce9766e75acde44ab7d0b2ea7b3af26d10"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part09_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "f766f6ea80c7ae6e4c30262ddfb28bad0657ab0f8cb254729dd7a56b93cd3b13"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part09_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "5859a69c79fcc740b8c75f61f7cca5881fc4821e35e9817c15e584ca414aac05"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part09_of13.zip.005",
+      "bytes": 34291959,
+      "sha256": "d574aa75ce7ea3d25f1ed4790652251a59bafc295394f4e81e6fcfb0d0820421"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part10_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "eace0418b96e0659a085204521728a982cc4eee2a1a449f3d19946bae60f5bbb"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part10_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "d9f5a336fb6b8e5cdd6ca6ee90b7f4c21affbe49c058e18691b09a6d822abbc5"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part10_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "4dfb4abe6afddb08b2e745069bf28f5e3fe1ec40c8c8bedb7cc5ca263743c9e7"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part10_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "236b67a5e959f21c9b4db5461981e54e31ca6f9324a7998ef85b55823a975428"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part10_of13.zip.005",
+      "bytes": 75804763,
+      "sha256": "56e756ca5d8ab3749677791a6654c81d3b1fd58e5fd9485ddbc1e35a260ffd28"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part11_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "099f93c3db1a97e20b25b80c60720a3924295baf13319d87ecb96d90e8cf7039"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part11_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "e0f5ec01965cc14b524ca7ea945c4a8423da8d0eb30c39396b522fbd2273855f"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part11_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "e2ff827498dd8956e85d01a0ac1ea453288a4952896d774baa1becb2bb3158a3"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part11_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "052f0f4a40d5ef78def102da6158ce214d958893f098889606eb3fc138f2afbb"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part11_of13.zip.005",
+      "bytes": 66553844,
+      "sha256": "36c379bdb52034bd2c21879ff01b9ea1d5b0354617d25cc740f5167a31edbf7d"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part12_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "6e2f1db8d0d2906f47b6649a52ae2488e6a76015a6bd4f650f13a46f24ec7e92"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part12_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "a1b753f64503a88bd8db28e6f1e2bcb5952a450f325cead68b5c515a464dd6e3"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part12_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "53bf69c39e8f56a78f40b73b32527ff94010cb4a73da03af0ed24b8434ecf23a"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part12_of13.zip.004",
+      "bytes": 94371840,
+      "sha256": "cbb353615eb9e7062161186a1095042c971fbc2b7b1b8927a77637db5a009f3a"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part12_of13.zip.005",
+      "bytes": 76005258,
+      "sha256": "fe0cfa9664bd31bde4046f9c6cc58561f29e598fdac7ba1f7e6e6a9277838948"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part13_of13.zip.001",
+      "bytes": 94371840,
+      "sha256": "66110e68671c59b9e382ce2566b46a348c31be3a97911be10c1d047693c09813"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part13_of13.zip.002",
+      "bytes": 94371840,
+      "sha256": "5feaf859272907664d6508047c8abb38b34a384221d7af49c188c605b2e73e77"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part13_of13.zip.003",
+      "bytes": 94371840,
+      "sha256": "0f08d2d8dab66e2cbdd4433dd447d6931d619aca7a9bde3f6343950c143d659b"
+    },
+    {
+      "file_name": "Gastric_Checkpoints_20261117_part13_of13.zip.004",
+      "bytes": 70025860,
+      "sha256": "6ce6a426aa6faccd8e1045e3c46b319b05f3722fd0a2894fdb66bbafef90b4fe"
+    }
+  ],
+  "all_model_files_preserved_locally": true,
+  "local_backup_directory": "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\.sync-backups\\pc_transfer_20261117",
+  "excluded_from_portable_transfer": [
+    "raw dataset pixels",
+    "rebuildable caches",
+    "machine-specific virtual environments",
+    "local SQLite databases",
+    "historical full backups"
+  ],
+  "other_pc_checked_out_or_updated": false,
+  "incidental_system_change": "Windows python install manager auto-installed Python 3.15.2 when bare python was invoked for an inventory; subsequent commands explicitly used the existing .venv-research. Research environment packages unchanged.",
+  "restore_instructions": {
+    "drive_id": "18dbqaiz16SA3OuHgheAlPrNRH3GMA95O",
+    "url": "https://drive.google.com/file/d/18dbqaiz16SA3OuHgheAlPrNRH3GMA95O/view",
+    "bytes": 12083,
+    "size_verified": true
+  },
+  "restore_verification": "All 13 local archives reproduced by streaming SHA-256 over their chunks; small fixtures verified byte-identical reassembly, overwrite refusal, missing/corrupt chunk detection and explicit partial mode."
+}

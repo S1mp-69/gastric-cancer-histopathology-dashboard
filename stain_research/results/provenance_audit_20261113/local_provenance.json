@@ -1,0 +1,45 @@
+{
+  "dataset_images": 31096,
+  "png_dimensions": {
+    "(224, 224)": 31096
+  },
+  "png_header_key_counts": {},
+  "png_header_mapping_candidates": [],
+  "archive_size": 3251341572,
+  "archive_md5": "0d55aa70ac70cb237402bc035bbd2355",
+  "official_archive_md5": "0d55aa70ac70cb237402bc035bbd2355",
+  "archive_matches_official_figshare": true,
+  "archive_files": 31096,
+  "archive_non_image_members": [],
+  "clinical_rows": 300,
+  "clinical_distinct_patient_values": 300,
+  "clinical_columns": [
+    "Patient",
+    "Sex",
+    "Age",
+    "T staging",
+    "N staging",
+    "M staging",
+    "Comprehensive Staging",
+    "Histological Type",
+    "Lauren classification(Intestinal=0, Mixed=1, Diffuse=2)",
+    "Lymphovascular Invasion(Negative=0\uff0cPositive=1)",
+    "Venous Invasion(Negative=0\uff0cPositive=1)",
+    "Perineural Invasion(Negative=0\uff0cPositive=1)",
+    "Stroma Quantity(Medullary=0\uff0cIntermediate=1\uff0cScirrhous=2)",
+    "Tumor Infiltration Pattern",
+    "HER-2(Negative=0\uff0c1=1+\uff0c2=2+\uff0c3=3+)",
+    "",
+    ""
+  ],
+  "clinical_has_image_or_slide_column": false,
+  "class_number_filenames_only": true,
+  "mapping_verified": false,
+  "conclusion": "No verified patch-to-patient/slide linkage found. Numeric suffixes are not patient IDs. Patient-grouped splitting and confirmatory training remain unavailable.",
+  "test_access": "PNG headers and archive file bytes only; no test pixel decoding, model fitting or inference",
+  "sources": [
+    "https://api.figshare.com/v2/articles/25954813",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11754904/",
+    "https://github.com/TomHardy1997/GCTC"
+  ]
+}

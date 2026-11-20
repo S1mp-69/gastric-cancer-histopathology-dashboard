@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "independent_method": "sklearn sample_weight confusion_matrix, precision_recall_fscore_support and accuracy_score; weights regenerated per record, training mixtures recomputed from raw membership CSV.",
+  "runs": 15,
+  "schemes": 24,
+  "weighted_confusion_matrices_verified": 360,
+  "class_metric_rows": 1800,
+  "maximum_numeric_difference": 2.7755575615628914e-15,
+  "all_rankings_match": true,
+  "class_only_reweighting_recall_invariance_verified": true,
+  "decomposition_sums_verified": true,
+  "source_hashes": {
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet18_seed42_v3\\validation_predictions.csv": "ad7958a4fe8aca60c67ea0c24b2682281f084de32bf82c0c67ec9ae21a7133db",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_residual_fixed\\validation_predictions.csv": "d1a00872f015a21c683766a3e2d864ce4989f230d57f12f30fa840b9a34d8d2d",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_uniform_weaker\\validation_predictions.csv": "3fdb1236419e94f590609fc1da116051309d4e2f47ecc42b5cdb26aabe746afc",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_shuffled\\validation_predictions.csv": "5a777f568fa2e13f540b248e65bc75f8dc25656cdcbd49c66ccd3edef8e55ab9",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed42_adaptive\\validation_predictions.csv": "af11387729d97515d9d5d620e307ebe538f72f09e8496b119f0d460e5b14d811",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_standard\\validation_predictions.csv": "e5d166c9668bc65b74eb38327f274abf261d86a5ed2f389bb5c1db2788968459",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_residual_fixed\\validation_predictions.csv": "95a1992d4780388f00bf0076a52fea7067822b1af5e6c44193bce538c175de38",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_uniform_weaker\\validation_predictions.csv": "4554f2cf11cacdf3aefa7a53e689868db7788fff6758d2ada3ffbb52fa05ea61",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_shuffled\\validation_predictions.csv": "afe6d6c2effe49c24aeff1297b148f4806d8d45ddac6075d17888657cead45ab",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed43_adaptive\\validation_predictions.csv": "d09d08e97b0297062cb64d4c3bf5ca5736de5f88bf7f752e4dcfedd170c9167a",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_standard\\validation_predictions.csv": "70814384564dfce55df3be1e7d265f14727da787d3cbe9edb15dd6c95150f4d8",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_residual_fixed\\validation_predictions.csv": "19bb8f6bdaf90ff1054c737bdf6b43c6d409d3b430b9ed32b52428c8330ec44e",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_uniform_weaker\\validation_predictions.csv": "b59d4d43a9476b9678d3576d9fe32c13ed1e3959e5c7f0c58997619fe7718533",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_shuffled\\validation_predictions.csv": "9c79d902c72864243f2bb349e467618eed12556fd44cb514b3c2875bfd3f617e",
+    "C:\\Users\\gxhyp\\OneDrive\\Desktop\\gastric detection\\stain_research\\runs\\hiesd_resnet_ablation_v1\\seed44_adaptive\\validation_predictions.csv": "ccd24c1e3e8ae3c4c147d6ce90756482e9bd6c0b4564dbfa5378b69233b6b3f3"
+  },
+  "patient_count": 7,
+  "class_patient_counts": {
+    "tumor": 2,
+    "mucosa_inflammation": 7,
+    "intestinal_metaplasia": 5,
+    "lymphoid": 2,
+    "other": 3
+  },
+  "pixels_or_models_accessed": false,
+  "gpu_checks_or_training": false
+}

@@ -1,0 +1,3 @@
+# Experiment provenance hashes refer to exact bytes, across Windows checkouts.
+stain_research/** -text
+evaluation_package/** -text

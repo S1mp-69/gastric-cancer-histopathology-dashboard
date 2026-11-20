@@ -1,0 +1,7 @@
+{
+  "recovered_past_previously_failing_epoch": true,
+  "completed_epoch": 26,
+  "amp_skipped_steps": 1,
+  "gpu_sample": "3 %, 2170 MiB",
+  "validation_macro_f1": 0.6372948246938813
+}

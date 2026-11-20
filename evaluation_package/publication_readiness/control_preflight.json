@@ -1,0 +1,8 @@
+{
+  "valid_training_n": 23759,
+  "global_and_within_class_permutations_preserve_exact_strength_multisets": true,
+  "repeatability": true,
+  "invalid_decomposition_fallback": true,
+  "training_launched": false,
+  "test_accessed": false
+}

@@ -1,0 +1,14 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "max_epochs": 40,
+  "early_stopping_patience": 7,
+  "within_class_multiset_checks": 120,
+  "same_initial_weights_and_standard_pipeline": true,
+  "validation_unmodified": true,
+  "test_accessed": false,
+  "scope": "Post-hoc falsification control; no parameters tuned and no repeated GPU check."
+}

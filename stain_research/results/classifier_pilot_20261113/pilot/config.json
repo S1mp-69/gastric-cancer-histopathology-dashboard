@@ -1,0 +1,46 @@
+{
+  "mode": "pilot",
+  "seed": 42,
+  "epochs": 3,
+  "batch_size": 16,
+  "arms": [
+    "standard",
+    "original_san",
+    "residual_fixed",
+    "uniform_weaker",
+    "shuffled",
+    "adaptive"
+  ],
+  "train_images": 512,
+  "validation_images": 128,
+  "architecture": "Existing GastricCancerRNN: CNN + 2-layer BiLSTM + additive attention",
+  "optimizer": "AdamW lr=0.001 weight_decay=0.0001; clip=5; label_smoothing=.05",
+  "scheduler": "None; equal fixed budget; no early stopping",
+  "augmentation": "Shared H/V flips and rotation [-180,180] bilinear; standard arm alone uses original ColorJitter",
+  "original_san_scope": "Upstream-compatible SVD + spherical target + scalar U(.8,1.2) concentration branch; not all SAN experiments",
+  "shuffled_control": "Fixed permutation seed=43 of TRAIN strengths, assigned across training images; no validation fitting",
+  "evaluation": "Raw RGB resized 224; shared train-fitted channel standardization; no stain normalization or random augmentation",
+  "dataset_caching": "Selected resized source RGBs cached in host memory; online stain transforms every epoch",
+  "test_access": "NONE in this runner",
+  "patient_independence": "Unverified; exploratory image-split experiment",
+  "determinism": "CUDNN deterministic, benchmark off; deterministic algorithms warn_only; numerical nondeterminism remains possible",
+  "amp": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.22631-SP0",
+  "torch": "2.7.0+cu128",
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "gpu_capability": [
+    8,
+    6
+  ],
+  "gpu_total_mib": 4095.5,
+  "initial_state_sha256": "47b3df04a49e34ffd8d06e947f99a5a8cedc767c12026e2ef1c9ae69865b6ae0",
+  "source_sha256": {
+    "stain_research\\classifier_pilot.py": "8f6fd0e644dbb4b5704a6eb2aea3329c76241457a57cd10c13ec1c92995ff32e",
+    "app\\ml\\model.py": "2394d2238879cc09a86fb7787cec5e0d9c66c4684b4fa9c18123a0d0a7ad31f3",
+    "app\\ml\\preprocessing.py": "bed52abb31cd92e40670eed20ef2329c1de8695ccc023ef707c59891889e5e4f",
+    "stain_research\\controller.py": "d611157d8eb8d8eab3c57f4f6dee765d6c3bab5078faba424e7807d403697e46",
+    "stain_research\\transforms.py": "989c53992e39e4356092f34b536c44ae6f8da13c1290a215115e6ef98e8f28f9"
+  }
+}

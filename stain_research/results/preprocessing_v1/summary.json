@@ -1,0 +1,26 @@
+{
+  "status": "preprocessing validation only; no classification improvement evaluated",
+  "training_attempted": 160,
+  "training_success": 160,
+  "training_failed": 0,
+  "preview_images": 8,
+  "target_pre_clipping_variance_trace": 0.029630788385591467,
+  "sampling_qc": {
+    "spherical": {
+      "post_clipping_covariance_trace": 0.02954630980164437,
+      "zero_component_fraction": 0.0012833333333333334
+    },
+    "elliptical": {
+      "post_clipping_covariance_trace": 0.02942913380058425,
+      "zero_component_fraction": 0.0062
+    },
+    "uniform": {
+      "post_clipping_covariance_trace": 0.02946247943121058,
+      "zero_component_fraction": 0.0
+    }
+  },
+  "wall_seconds": 2.907768799981568,
+  "seed": 42,
+  "normalization_at_inference": "deterministic training-median matrix for all SAN variants",
+  "note": "Validation images are augmented only to illustrate transforms, not scored or used to fit parameters."
+}

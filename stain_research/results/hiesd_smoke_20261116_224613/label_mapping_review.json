@@ -1,0 +1,36 @@
+{
+  "paper": "A fully annotated pathology slide dataset for early gastric cancer and precancerous lesions",
+  "doi": "10.1038/s41597-025-05679-1",
+  "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12311038/fullTextXML",
+  "local_fulltext_sha256": "02fe2f97e6a40612e790ac8a90e58dd3a4cbf1d0a268bd6a5718ce32d416795e",
+  "upstream_code_commit": "f511e3bf4c47eb7fcdd1042b3d0ffde1137e05b2",
+  "status": "Five broad group semantics and ten release color labels verified against paper Figure 1/Table 2 and released annotation description.",
+  "mapping": {
+    "tumor": [
+      "tub1",
+      "tub2",
+      "pap"
+    ],
+    "mucosa_inflammation": [
+      "Normal Gland",
+      "Chronic Gastritis",
+      "Chronic atrophic gastritis"
+    ],
+    "intestinal_metaplasia": [
+      "C-Intestine",
+      "IC-Intestine"
+    ],
+    "lymphoid": [
+      "lymphoid follicles"
+    ],
+    "other": [
+      "Others"
+    ]
+  },
+  "distinction": "Group order differs from paper display order but is saved explicitly; same conceptual five-group histotype task, different model, selected cohort, patch size and training protocol. Not a benchmark replication or directly comparable score.",
+  "remaining_limitations": [
+    "No expert re-review of patch labels",
+    "Upstream preprocessing code includes extra colors beyond ten-category release; unrecognized pixels excluded by our purity policy",
+    "No GrandQC mask filtering applied; artifact screening remains incomplete"
+  ]
+}

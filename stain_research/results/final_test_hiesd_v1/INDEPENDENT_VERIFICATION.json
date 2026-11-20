@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "models": 18,
+  "patches": 1613,
+  "patients": 7,
+  "maximum_metric_error": 0.0,
+  "identity_and_probability_checks": true,
+  "all_class_metrics_verified": true,
+  "independent_patient_confusion_bootstrap_verified": true,
+  "scope": "No new inference; small-patient interval is descriptive and conditions on the three trained seeds."
+}

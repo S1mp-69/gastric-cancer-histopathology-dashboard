@@ -26,6 +26,9 @@ class InferenceService:
         self.model_loaded = False
         self.model_source = "prototype-baseline"
         self.checkpoint_validation_accuracy = 0.0
+        self.checkpoint_path = settings.model_checkpoint
+        self.normalization: dict[str, list[float]] | None = None
+        self.checkpoint_load_error: str | None = None
         self.device = None
         self.model = None
         if TORCH_AVAILABLE:
@@ -51,29 +54,51 @@ class InferenceService:
                 prototypes[class_name] = np.stack(signatures)
         return prototypes
 
+    def _get_checkpoint_path(self) -> tuple[Path, bool]:
+        """Return an explicitly approved new checkpoint, otherwise the original baseline."""
+        config_path = settings.active_model_config
+        if not config_path.exists():
+            return settings.model_checkpoint, False
+        try:
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            candidate = Path(config["checkpoint_path"])
+            if not candidate.is_absolute():
+                candidate = settings.model_checkpoint.parent.parent.parent / candidate
+            if config.get("approved") is True and candidate.exists():
+                return candidate, True
+        except (OSError, ValueError, KeyError, TypeError):
+            pass
+        return settings.model_checkpoint, False
+
     def _load_checkpoint(self) -> None:
         if not TORCH_AVAILABLE or self.model is None:
             return
 
-        checkpoint_path = settings.model_checkpoint
+        checkpoint_path, explicitly_approved = self._get_checkpoint_path()
+        self.checkpoint_path = checkpoint_path
         if checkpoint_path.exists():
-            state = torch.load(checkpoint_path, map_location=self.device)
-            self.checkpoint_validation_accuracy = float(state.get("val_accuracy", 0.0))
-            if self.checkpoint_validation_accuracy >= settings.minimum_checkpoint_accuracy:
-                self.model.load_state_dict(state["model_state_dict"])
-                self.model.eval()
-                self.model_loaded = True
-                self.model_source = "trained-checkpoint"
+            try:
+                state = torch.load(checkpoint_path, map_location=self.device)
+                self.checkpoint_validation_accuracy = float(state.get("val_accuracy", 0.0))
+                if explicitly_approved or self.checkpoint_validation_accuracy >= settings.minimum_checkpoint_accuracy:
+                    self.model.load_state_dict(state["model_state_dict"])
+                    self.normalization = state.get("normalization")
+                    self.model.eval()
+                    self.model_loaded = True
+                    self.model_source = "trained-checkpoint"
+            except (OSError, RuntimeError, KeyError, TypeError, ValueError) as exc:
+                self.checkpoint_load_error = str(exc)
 
     def status(self) -> dict:
         return {
             "mode": self.model_source,
             "checkpoint_available": self.model_loaded,
-            "checkpoint_found": settings.model_checkpoint.exists(),
+            "checkpoint_found": self.checkpoint_path.exists(),
             "checkpoint_validation_accuracy": round(self.checkpoint_validation_accuracy, 4),
             "torch_available": TORCH_AVAILABLE,
             "prototype_ready": bool(self.prototypes),
-            "checkpoint_path": str(settings.model_checkpoint),
+            "checkpoint_path": str(self.checkpoint_path),
+            "checkpoint_load_error": self.checkpoint_load_error,
         }
 
     def _format_result(self, probabilities: dict[str, float]) -> dict:
@@ -111,7 +136,11 @@ class InferenceService:
 
     def _predict_with_checkpoint(self, image_path: Path) -> dict:
         image = load_rgb_image(image_path, settings.image_size)
-        sequence = image_to_patch_sequence(image, settings.patch_size, settings.sequence_length)
+        mean = tuple(self.normalization["mean"]) if self.normalization else None
+        std = tuple(self.normalization["std"]) if self.normalization else None
+        sequence = image_to_patch_sequence(
+            image, settings.patch_size, settings.sequence_length, mean=mean, std=std
+        )
         sequence = sequence.unsqueeze(0).to(self.device)
 
         with torch.no_grad():

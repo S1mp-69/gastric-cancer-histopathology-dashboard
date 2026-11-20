@@ -1,0 +1,26 @@
+{
+  "status": "NOT LAUNCHED: verified patient/slide linkage is missing",
+  "training_ready": false,
+  "architecture": "Existing CNN-BiLSTM-attention",
+  "seed": 42,
+  "candidate_image_split": "manifest_exact_dedup.csv",
+  "future_split_requirement": "Build a new frozen patient-grouped development/evaluation design from verified linkage; do not infer patient IDs from image numbers",
+  "proposed_baseline_max_epochs": 40,
+  "early_stopping_patience": 7,
+  "batch_size": 16,
+  "optimizer": "AdamW lr=0.001 weight_decay=0.0001",
+  "selection_metric": "validation macro-F1; deterministic raw RGB evaluation with training-only channel moments",
+  "comparison_after_baseline": [
+    "standard",
+    "uniform_weaker",
+    "adaptive"
+  ],
+  "constraints": [
+    "isolated outputs",
+    "best checkpoint reload",
+    "no dashboard activation",
+    "test evaluation deferred until choices are fixed",
+    "equal budgets and initialization for comparisons"
+  ],
+  "runner_note": "The existing limited-pilot runner deliberately caps epochs at five. Implement and smoke-test a separate convergence runner only after resolving split readiness."
+}

@@ -1,0 +1,27 @@
+{
+  "dataset": "HiESD",
+  "patient_mapping_verified_against_local_release": true,
+  "patient_count": 44,
+  "slide_count": 104,
+  "tissue_strips": 308,
+  "patients_by_split": {
+    "validation": 7,
+    "reserved_test": 7,
+    "train": 30
+  },
+  "slides_by_split": {
+    "reserved_test": 13,
+    "train": 66,
+    "validation": 25
+  },
+  "patient_intersections": 0,
+  "manifest_sha256": "243cc41a2952930adfdaf178334d7213a858eee7839cae3004caef5a94e45b3c",
+  "mapping_sha256": "f3ab7a37c7915d5c241a3e1399c8b428c03061cd6086f364b0f29aa3e983db67",
+  "source_license": "CC BY 4.0 in Figshare metadata",
+  "raw_slides_count": 104,
+  "raw_slides_bytes": 58384058490,
+  "actual_image_files_downloaded": false,
+  "new_test_pixels_decoded": false,
+  "label_mapping_to_HMU_8_classes": "Not established; distinct annotated task requires separate protocol and classifier head",
+  "scope": "Prospective split frozen before image/model examination; class coverage and mapping consistency still require train-only acquisition checks. Metadata grouping is verified, not image extraction or external model validation."
+}

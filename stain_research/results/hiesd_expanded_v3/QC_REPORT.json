@@ -1,0 +1,829 @@
+{
+  "stage": "qc_complete",
+  "patches": 3794,
+  "coverage": {
+    "train": {
+      "tumor": {
+        "patches": 253,
+        "patients": [
+          "Patient13",
+          "Patient2",
+          "Patient20",
+          "Patient22",
+          "Patient27",
+          "Patient28",
+          "Patient3",
+          "Patient7"
+        ]
+      },
+      "mucosa_inflammation": {
+        "patches": 1484,
+        "patients": [
+          "Patient0",
+          "Patient13",
+          "Patient17",
+          "Patient2",
+          "Patient20",
+          "Patient22",
+          "Patient25",
+          "Patient27",
+          "Patient28",
+          "Patient29",
+          "Patient3",
+          "Patient36",
+          "Patient37",
+          "Patient4",
+          "Patient7",
+          "Patient8"
+        ]
+      },
+      "intestinal_metaplasia": {
+        "patches": 373,
+        "patients": [
+          "Patient2",
+          "Patient20",
+          "Patient22",
+          "Patient25",
+          "Patient27",
+          "Patient28",
+          "Patient29",
+          "Patient3",
+          "Patient37",
+          "Patient7",
+          "Patient8"
+        ]
+      },
+      "lymphoid": {
+        "patches": 206,
+        "patients": [
+          "Patient0",
+          "Patient13",
+          "Patient2",
+          "Patient20",
+          "Patient22",
+          "Patient25",
+          "Patient27",
+          "Patient28",
+          "Patient29",
+          "Patient3",
+          "Patient37",
+          "Patient4",
+          "Patient7",
+          "Patient8"
+        ]
+      },
+      "other": {
+        "patches": 227,
+        "patients": [
+          "Patient0",
+          "Patient13",
+          "Patient17",
+          "Patient22",
+          "Patient25",
+          "Patient27",
+          "Patient29",
+          "Patient3"
+        ]
+      }
+    },
+    "validation": {
+      "tumor": {
+        "patches": 99,
+        "patients": [
+          "Patient30",
+          "Patient5"
+        ]
+      },
+      "mucosa_inflammation": {
+        "patches": 823,
+        "patients": [
+          "Patient12",
+          "Patient18",
+          "Patient30",
+          "Patient32",
+          "Patient33",
+          "Patient34",
+          "Patient5"
+        ]
+      },
+      "intestinal_metaplasia": {
+        "patches": 166,
+        "patients": [
+          "Patient12",
+          "Patient18",
+          "Patient30",
+          "Patient32",
+          "Patient5"
+        ]
+      },
+      "lymphoid": {
+        "patches": 7,
+        "patients": [
+          "Patient30",
+          "Patient5"
+        ]
+      },
+      "other": {
+        "patches": 156,
+        "patients": [
+          "Patient30",
+          "Patient33",
+          "Patient34"
+        ]
+      }
+    }
+  },
+  "training_gate_passed": true,
+  "patient_overlap": false,
+  "exact_patch_overlap": false,
+  "reserved_test_accessed": false,
+  "qc_rule": {
+    "maximum_artifact_fraction": 0.05,
+    "maximum_unknown_fraction": 0.05,
+    "minimum_tissue_fraction": 0.8,
+    "minimum_annotation_group_purity": 0.9,
+    "max_patches_per_patient_class": 128,
+    "patch_span": 896,
+    "patch_output": 224,
+    "quality_coordinate_policy": "Normalized full-slide extent; reject aspect ratio disagreement above 0.5%; not landmark registration."
+  },
+  "manifest_sha256": "05840d3b64ac07e6a550bfcb3a5628e179c679ce0aa5421f47134303de2e2252",
+  "receipts": [
+    {
+      "slide_id": "e492f29a-a67b-4f16-8843-089487bf4bd9",
+      "patient_id": "Patient22",
+      "split": "train",
+      "dimensions": [
+        81920,
+        54271
+      ],
+      "quality_dimensions": [
+        20145,
+        13346
+      ],
+      "status": "screened",
+      "passed_before_sampling": 34,
+      "rejected": {
+        "low_tissue": 1
+      }
+    },
+    {
+      "slide_id": "bfa02384-d59e-43d2-9acf-3849061668c7",
+      "patient_id": "Patient36",
+      "split": "train",
+      "dimensions": [
+        65787,
+        14382
+      ],
+      "quality_dimensions": [
+        16178,
+        3536
+      ],
+      "status": "screened",
+      "passed_before_sampling": 1,
+      "rejected": {
+        "low_tissue": 65
+      }
+    },
+    {
+      "slide_id": "de824048-e4f7-4fd9-aa81-6a44d57c1e51",
+      "patient_id": "Patient19",
+      "split": "train",
+      "dimensions": [
+        45868,
+        32800
+      ],
+      "quality_dimensions": [
+        11279,
+        8065
+      ],
+      "status": "excluded_annotation_alignment"
+    },
+    {
+      "slide_id": "766e03a4-bdc5-4350-b427-4f6a7894c72a",
+      "patient_id": "Patient25",
+      "split": "train",
+      "dimensions": [
+        65784,
+        35888
+      ],
+      "quality_dimensions": [
+        16177,
+        8825
+      ],
+      "status": "screened",
+      "passed_before_sampling": 42,
+      "rejected": {
+        "low_tissue": 4,
+        "artifact": 19
+      }
+    },
+    {
+      "slide_id": "e4442edf-05b0-431b-bf61-ccf2d8cdebb6",
+      "patient_id": "Patient18",
+      "split": "validation",
+      "dimensions": [
+        39887,
+        28702
+      ],
+      "quality_dimensions": [
+        9808,
+        7058
+      ],
+      "status": "screened",
+      "passed_before_sampling": 10,
+      "rejected": {
+        "low_tissue": 1
+      }
+    },
+    {
+      "slide_id": "31ba6050-472e-414f-bef5-fa7e0bd8a877",
+      "patient_id": "Patient34",
+      "split": "validation",
+      "dimensions": [
+        65781,
+        41009
+      ],
+      "quality_dimensions": [
+        16176,
+        10084
+      ],
+      "status": "screened",
+      "passed_before_sampling": 78,
+      "rejected": {
+        "low_tissue": 45,
+        "artifact": 8
+      }
+    },
+    {
+      "slide_id": "e9055755-3238-4415-b90c-9d338a959d1b",
+      "patient_id": "Patient22",
+      "split": "train",
+      "dimensions": [
+        117597,
+        17500
+      ],
+      "quality_dimensions": [
+        28919,
+        4303
+      ],
+      "status": "screened",
+      "passed_before_sampling": 206,
+      "rejected": {
+        "low_tissue": 15,
+        "artifact": 13
+      }
+    },
+    {
+      "slide_id": "df8d49f3-d2e6-4f97-8354-653b14dac41c",
+      "patient_id": "Patient30",
+      "split": "validation",
+      "dimensions": [
+        99638,
+        63539
+      ],
+      "quality_dimensions": [
+        24502,
+        15625
+      ],
+      "status": "screened",
+      "passed_before_sampling": 365,
+      "rejected": {
+        "low_tissue": 5,
+        "artifact": 81
+      }
+    },
+    {
+      "slide_id": "8a34ec03-5b82-47a3-89c6-2efc2da8270c",
+      "patient_id": "Patient28",
+      "split": "train",
+      "dimensions": [
+        65777,
+        36897
+      ],
+      "quality_dimensions": [
+        16175,
+        9073
+      ],
+      "status": "screened",
+      "passed_before_sampling": 135,
+      "rejected": {
+        "low_tissue": 3,
+        "artifact": 1
+      }
+    },
+    {
+      "slide_id": "48a343ac-dda2-4fa3-9295-ad2bb6bafc96",
+      "patient_id": "Patient32",
+      "split": "validation",
+      "dimensions": [
+        91670,
+        58426
+      ],
+      "quality_dimensions": [
+        22543,
+        14367
+      ],
+      "status": "screened",
+      "passed_before_sampling": 452,
+      "rejected": {
+        "low_tissue": 30,
+        "artifact": 10
+      }
+    },
+    {
+      "slide_id": "7e95e101-ff4d-4495-be94-8f47d35b57db",
+      "patient_id": "Patient13",
+      "split": "train",
+      "dimensions": [
+        53837,
+        63521
+      ],
+      "quality_dimensions": [
+        13239,
+        15620
+      ],
+      "status": "screened",
+      "passed_before_sampling": 263,
+      "rejected": {
+        "artifact": 21,
+        "low_tissue": 10
+      }
+    },
+    {
+      "slide_id": "324885ef-b24a-4e67-85dd-42f1f6ca8dbb",
+      "patient_id": "Patient30",
+      "split": "validation",
+      "dimensions": [
+        103658,
+        61516
+      ],
+      "quality_dimensions": [
+        25491,
+        15127
+      ],
+      "status": "screened",
+      "passed_before_sampling": 418,
+      "rejected": {
+        "artifact": 66,
+        "low_tissue": 20
+      }
+    },
+    {
+      "slide_id": "f38d32f4-b610-485e-a021-3be524a887ce",
+      "patient_id": "Patient5",
+      "split": "validation",
+      "dimensions": [
+        109610,
+        75832
+      ],
+      "quality_dimensions": [
+        26954,
+        18648
+      ],
+      "status": "screened",
+      "passed_before_sampling": 287,
+      "rejected": {
+        "low_tissue": 34,
+        "artifact": 35
+      }
+    },
+    {
+      "slide_id": "dd621e0b-7c68-46b7-a8d3-d5ae58414ea4",
+      "patient_id": "Patient20",
+      "split": "train",
+      "dimensions": [
+        79726,
+        37927
+      ],
+      "quality_dimensions": [
+        19605,
+        9326
+      ],
+      "status": "screened",
+      "passed_before_sampling": 94,
+      "rejected": {
+        "artifact": 16
+      }
+    },
+    {
+      "slide_id": "09e6163a-30aa-4b03-828f-48c10b718703",
+      "patient_id": "Patient38",
+      "split": "train",
+      "dimensions": [
+        41883,
+        49187
+      ],
+      "quality_dimensions": [
+        10299,
+        12095
+      ],
+      "status": "excluded_annotation_alignment"
+    },
+    {
+      "slide_id": "0dddc3e2-b189-43fb-81c1-d0cac38f3cbd",
+      "patient_id": "Patient3",
+      "split": "train",
+      "dimensions": [
+        91681,
+        49216
+      ],
+      "quality_dimensions": [
+        22545,
+        12102
+      ],
+      "status": "screened",
+      "passed_before_sampling": 245,
+      "rejected": {
+        "low_tissue": 5,
+        "artifact": 3
+      }
+    },
+    {
+      "slide_id": "4d9b4a03-38dd-437f-9e5a-cd39b11f4f68",
+      "patient_id": "Patient8",
+      "split": "train",
+      "dimensions": [
+        41882,
+        52250
+      ],
+      "quality_dimensions": [
+        10299,
+        12849
+      ],
+      "status": "screened",
+      "passed_before_sampling": 158,
+      "rejected": {
+        "low_tissue": 7
+      }
+    },
+    {
+      "slide_id": "48b199a8-10fc-452e-a0e3-707b3f34a56a",
+      "patient_id": "Patient33",
+      "split": "validation",
+      "dimensions": [
+        81712,
+        24595
+      ],
+      "quality_dimensions": [
+        20094,
+        6048
+      ],
+      "status": "screened",
+      "passed_before_sampling": 406,
+      "rejected": {
+        "artifact": 19,
+        "low_tissue": 24
+      }
+    },
+    {
+      "slide_id": "bc0df5cb-8fa6-4230-9c9d-81e33a1c835b",
+      "patient_id": "Patient17",
+      "split": "train",
+      "dimensions": [
+        41882,
+        40991
+      ],
+      "quality_dimensions": [
+        10299,
+        10080
+      ],
+      "status": "screened",
+      "passed_before_sampling": 224,
+      "rejected": {
+        "low_tissue": 21
+      }
+    },
+    {
+      "slide_id": "335e9762-e6ed-40ec-973e-47ccfc25a6eb",
+      "patient_id": "Patient15",
+      "split": "train",
+      "dimensions": [
+        79743,
+        49206
+      ],
+      "quality_dimensions": [
+        19610,
+        12100
+      ],
+      "status": "excluded_annotation_alignment"
+    },
+    {
+      "slide_id": "6c6bcc80-c875-471e-87e9-1aef6725d80e",
+      "patient_id": "Patient12",
+      "split": "validation",
+      "dimensions": [
+        59809,
+        46123
+      ],
+      "quality_dimensions": [
+        14707,
+        11342
+      ],
+      "status": "screened",
+      "passed_before_sampling": 350,
+      "rejected": {
+        "low_tissue": 27,
+        "artifact": 1
+      }
+    },
+    {
+      "slide_id": "5f016de5-c205-4159-88de-9bf2ae7a5bfe",
+      "patient_id": "Patient0",
+      "split": "train",
+      "dimensions": [
+        55823,
+        46116
+      ],
+      "quality_dimensions": [
+        13727,
+        11340
+      ],
+      "status": "screened",
+      "passed_before_sampling": 189,
+      "rejected": {
+        "low_tissue": 2,
+        "artifact": 5
+      }
+    },
+    {
+      "slide_id": "97f6e6fd-ecb0-47e7-a5ca-0807d02e7126",
+      "patient_id": "Patient7",
+      "split": "train",
+      "dimensions": [
+        91687,
+        62529
+      ],
+      "quality_dimensions": [
+        22547,
+        15376
+      ],
+      "status": "screened",
+      "passed_before_sampling": 68,
+      "rejected": {
+        "low_tissue": 12,
+        "artifact": 1
+      }
+    },
+    {
+      "slide_id": "d30c4abc-2831-4939-998d-c70526150550",
+      "patient_id": "Patient32",
+      "split": "validation",
+      "dimensions": [
+        99641,
+        48189
+      ],
+      "quality_dimensions": [
+        24503,
+        11850
+      ],
+      "status": "screened",
+      "passed_before_sampling": 385,
+      "rejected": {
+        "low_tissue": 17,
+        "artifact": 12
+      }
+    },
+    {
+      "slide_id": "ad9d9983-8e0f-4cd2-aa73-9a8dd1362a8d",
+      "patient_id": "Patient18",
+      "split": "validation",
+      "dimensions": [
+        81723,
+        46133
+      ],
+      "quality_dimensions": [
+        20097,
+        11344
+      ],
+      "status": "screened",
+      "passed_before_sampling": 95,
+      "rejected": {
+        "low_tissue": 8
+      }
+    },
+    {
+      "slide_id": "1b1fbfd6-3de1-42c6-8305-d4ab74f93711",
+      "patient_id": "Patient37",
+      "split": "train",
+      "dimensions": [
+        53840,
+        44065
+      ],
+      "quality_dimensions": [
+        13239,
+        10836
+      ],
+      "status": "screened",
+      "passed_before_sampling": 54,
+      "rejected": {
+        "low_tissue": 3
+      }
+    },
+    {
+      "slide_id": "185da75d-8839-4ae3-acda-d3d0f95bc1aa",
+      "patient_id": "Patient5",
+      "split": "validation",
+      "dimensions": [
+        101650,
+        55353
+      ],
+      "quality_dimensions": [
+        24997,
+        13612
+      ],
+      "status": "screened",
+      "passed_before_sampling": 357,
+      "rejected": {
+        "artifact": 40,
+        "low_tissue": 52
+      }
+    },
+    {
+      "slide_id": "46e7dccd-521a-4d0f-80bd-10e960cd5905",
+      "patient_id": "Patient27",
+      "split": "train",
+      "dimensions": [
+        99655,
+        86087
+      ],
+      "quality_dimensions": [
+        24506,
+        21170
+      ],
+      "status": "screened",
+      "passed_before_sampling": 332,
+      "rejected": {
+        "low_tissue": 26,
+        "artifact": 6
+      }
+    },
+    {
+      "slide_id": "5ac0530a-b5b3-4022-b79f-ecef5728fcfa",
+      "patient_id": "Patient12",
+      "split": "validation",
+      "dimensions": [
+        91683,
+        61500
+      ],
+      "quality_dimensions": [
+        22546,
+        15123
+      ],
+      "status": "screened",
+      "passed_before_sampling": 480,
+      "rejected": {
+        "low_tissue": 77,
+        "artifact": 3
+      }
+    },
+    {
+      "slide_id": "d81140ca-8886-4b5f-95ec-bb7e539b5279",
+      "patient_id": "Patient18",
+      "split": "validation",
+      "dimensions": [
+        77738,
+        48173
+      ],
+      "quality_dimensions": [
+        19117,
+        11846
+      ],
+      "status": "screened",
+      "passed_before_sampling": 60,
+      "rejected": {
+        "artifact": 2,
+        "low_tissue": 13
+      }
+    },
+    {
+      "slide_id": "0a682165-55f9-4045-b550-b943291ad1b8",
+      "patient_id": "Patient25",
+      "split": "train",
+      "dimensions": [
+        73761,
+        34869
+      ],
+      "quality_dimensions": [
+        18139,
+        8574
+      ],
+      "status": "screened",
+      "passed_before_sampling": 56,
+      "rejected": {
+        "low_tissue": 5
+      }
+    },
+    {
+      "slide_id": "b463dadb-e8d1-40c2-a339-4ef0a5a85b26",
+      "patient_id": "Patient22",
+      "split": "train",
+      "dimensions": [
+        69767,
+        31787
+      ],
+      "quality_dimensions": [
+        17156,
+        7816
+      ],
+      "status": "screened",
+      "passed_before_sampling": 165,
+      "rejected": {}
+    },
+    {
+      "slide_id": "6f6c4841-e772-4043-ba7f-88245fa50500",
+      "patient_id": "Patient29",
+      "split": "train",
+      "dimensions": [
+        109623,
+        38992
+      ],
+      "quality_dimensions": [
+        26958,
+        9588
+      ],
+      "status": "screened",
+      "passed_before_sampling": 534,
+      "rejected": {
+        "artifact": 44,
+        "low_tissue": 25
+      }
+    },
+    {
+      "slide_id": "27100e3a-1641-4c58-bdf8-ad34f1eaa3c6",
+      "patient_id": "Patient22",
+      "split": "train",
+      "dimensions": [
+        115591,
+        28740
+      ],
+      "quality_dimensions": [
+        28425,
+        7067
+      ],
+      "status": "screened",
+      "passed_before_sampling": 274,
+      "rejected": {
+        "low_tissue": 68,
+        "artifact": 3
+      }
+    },
+    {
+      "slide_id": "cd02a9df-4ef4-4b94-87ca-cf8f0aa16bde",
+      "patient_id": "Patient4",
+      "split": "train",
+      "dimensions": [
+        73754,
+        50223
+      ],
+      "quality_dimensions": [
+        18137,
+        12350
+      ],
+      "status": "screened",
+      "passed_before_sampling": 214,
+      "rejected": {
+        "low_tissue": 5,
+        "artifact": 31
+      }
+    },
+    {
+      "slide_id": "5aa7c0dc-494b-41b4-8257-94557dc774b9",
+      "patient_id": "Patient12",
+      "split": "validation",
+      "dimensions": [
+        89761,
+        67639
+      ],
+      "quality_dimensions": [
+        22073,
+        16633
+      ],
+      "status": "screened",
+      "passed_before_sampling": 70,
+      "rejected": {
+        "artifact": 512,
+        "low_tissue": 23
+      }
+    },
+    {
+      "slide_id": "badcd77d-028d-4d6a-b3df-b8efd2139882",
+      "patient_id": "Patient2",
+      "split": "train",
+      "dimensions": [
+        103643,
+        78923
+      ],
+      "quality_dimensions": [
+        25487,
+        19408
+      ],
+      "status": "screened",
+      "passed_before_sampling": 708,
+      "rejected": {
+        "artifact": 11,
+        "low_tissue": 9
+      }
+    }
+  ]
+}

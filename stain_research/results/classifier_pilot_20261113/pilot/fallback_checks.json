@@ -1,0 +1,32 @@
+{
+  "original_san": {
+    "white": "unchanged extraction fallback passed",
+    "black": "unchanged extraction fallback passed",
+    "constant_gray": "unchanged extraction fallback passed",
+    "one_tissue_pixel": "unchanged extraction fallback passed"
+  },
+  "residual_fixed": {
+    "white": "unchanged extraction fallback passed",
+    "black": "unchanged extraction fallback passed",
+    "constant_gray": "unchanged extraction fallback passed",
+    "one_tissue_pixel": "unchanged extraction fallback passed"
+  },
+  "uniform_weaker": {
+    "white": "unchanged extraction fallback passed",
+    "black": "unchanged extraction fallback passed",
+    "constant_gray": "unchanged extraction fallback passed",
+    "one_tissue_pixel": "unchanged extraction fallback passed"
+  },
+  "shuffled": {
+    "white": "unchanged extraction fallback passed",
+    "black": "unchanged extraction fallback passed",
+    "constant_gray": "unchanged extraction fallback passed",
+    "one_tissue_pixel": "unchanged extraction fallback passed"
+  },
+  "adaptive": {
+    "white": "unchanged extraction fallback passed",
+    "black": "unchanged extraction fallback passed",
+    "constant_gray": "unchanged extraction fallback passed",
+    "one_tissue_pixel": "unchanged extraction fallback passed"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "arm": "residual_fixed",
+  "best_epoch": 3,
+  "validation": {
+    "accuracy": 0.3046875,
+    "macro_f1": 0.23234649122807016,
+    "loss": 1.7054441281147068,
+    "per_class": {
+      "ADI": {
+        "precision": 0.6363636363636364,
+        "recall": 0.875,
+        "f1-score": 0.7368421052631579,
+        "support": 16.0
+      },
+      "DEB": {
+        "precision": 0.125,
+        "recall": 0.0625,
+        "f1-score": 0.08333333333333333,
+        "support": 16.0
+      },
+      "LYM": {
+        "precision": 0.3181818181818182,
+        "recall": 0.875,
+        "f1-score": 0.4666666666666667,
+        "support": 16.0
+      },
+      "MUC": {
+        "precision": 0.25,
+        "recall": 0.125,
+        "f1-score": 0.16666666666666666,
+        "support": 16.0
+      },
+      "MUS": {
+        "precision": 0.25,
+        "recall": 0.375,
+        "f1-score": 0.3,
+        "support": 16.0
+      },
+      "NOR": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 16.0
+      },
+      "STR": {
+        "precision": 0.09090909090909091,
+        "recall": 0.125,
+        "f1-score": 0.10526315789473684,
+        "support": 16.0
+      },
+      "TUM": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 16.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        14,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        9,
+        1,
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        5,
+        1,
+        2,
+        2,
+        4,
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        1,
+        2,
+        2,
+        6,
+        0,
+        4,
+        0
+      ],
+      [
+        1,
+        1,
+        4,
+        2,
+        4,
+        0,
+        4,
+        0
+      ],
+      [
+        0,
+        0,
+        9,
+        0,
+        5,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        3,
+        4,
+        0,
+        3,
+        0,
+        6,
+        0
+      ]
+    ],
+    "ece_10_bins": 0.06310853862669316,
+    "multiclass_brier": 0.7669092648846924
+  },
+  "checkpoint_reload_verified": true,
+  "checkpoint_sha256": "0feee58e691af59386aa60b6dbe04126a1470fbb36a486313d39b059d938e560",
+  "train_seconds_mean": 11.483614033333197,
+  "validation_seconds_mean": 0.21778929999997368,
+  "epoch_seconds_mean": 11.70140333333317,
+  "cuda_peak_allocated_mib": 395.90625,
+  "cuda_peak_reserved_mib": 724.0,
+  "failures_by_class": {
+    "ADI": 0,
+    "DEB": 0,
+    "LYM": 0,
+    "MUC": 0,
+    "MUS": 0,
+    "NOR": 0,
+    "STR": 0,
+    "TUM": 0
+  },
+  "attempts_by_class": {
+    "NOR": 192,
+    "STR": 192,
+    "LYM": 192,
+    "MUC": 192,
+    "TUM": 192,
+    "DEB": 192,
+    "ADI": 192,
+    "MUS": 192
+  }
+}

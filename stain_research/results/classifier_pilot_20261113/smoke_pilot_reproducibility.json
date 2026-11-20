@@ -1,0 +1,26 @@
+{
+  "standard": {
+    "train_identical": true,
+    "validation_identical": true
+  },
+  "original_san": {
+    "train_identical": true,
+    "validation_identical": true
+  },
+  "residual_fixed": {
+    "train_identical": true,
+    "validation_identical": true
+  },
+  "uniform_weaker": {
+    "train_identical": true,
+    "validation_identical": true
+  },
+  "shuffled": {
+    "train_identical": true,
+    "validation_identical": true
+  },
+  "adaptive": {
+    "train_identical": true,
+    "validation_identical": true
+  }
+}
